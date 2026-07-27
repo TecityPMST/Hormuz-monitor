@@ -1,0 +1,142 @@
+[
+  {
+    "date": "2026-06-12",
+    "score": 26,
+    "driver": "Score FALLS to 26/30 — the largest single-session drop of the monitor (28→26) — as a de-escalation unwound two elevated channels on the 11 Jun close."
+  },
+  {
+    "date": "2026-06-15",
+    "score": 23,
+    "driver": "Score FALLS to 23/30 — the largest single-session drop of the monitor (26→23) — as a confirmed US–Iran peace deal ends the war."
+  },
+  {
+    "date": "2026-06-16",
+    "score": 23,
+    "driver": "Score HOLDS at 23/30 — a consolidation after the peace-deal repricing; no channel moved on the 15 Jun close."
+  },
+  {
+    "date": "2026-06-17",
+    "score": 22,
+    "driver": "Score FALLS to 22/30 — the floor of the crisis band — as the oil channel downgrades 3→2."
+  },
+  {
+    "date": "2026-06-18",
+    "score": 22,
+    "driver": "Score HOLDS at 22/30 — the floor of the crisis band — as a hawkish FOMC crosscurrent offsets the continuing geopolitical de-escalation in the macro channels."
+  },
+  {
+    "date": "2026-06-22",
+    "score": 21,
+    "driver": "Score FALLS to 21/30 — exiting the crisis band (22–30) into the systemic-risk-watch band (15–21) for the first time since the war began on 28 Feb — as escalation-risk reverts 4→3 on the formally signed, in-effect peace deal."
+  },
+  {
+    "date": "2026-06-23",
+    "score": 20,
+    "driver": "Score FALLS to 20/30 — deeper into the systemic-risk-watch band (15–21) — as the US-inflation impulse downgrades 4→3."
+  },
+  {
+    "date": "2026-06-24",
+    "score": 20,
+    "driver": "Score HOLDS at 20/30 — the top of the systemic-risk-watch band — a consolidation as the deal grinds through a bumpy implementation; no channel moved on the 23 Jun close."
+  },
+  {
+    "date": "2026-06-25",
+    "score": 18,
+    "driver": "Score FALLS to 18/30 — deeper into the systemic-risk-watch band (15–21) — as oil's war premium and the forward-inflation impulse complete their round-trip to pre-war."
+  },
+  {
+    "date": "2026-06-26",
+    "score": 20,
+    "driver": "Score returns to 20/30 — a correction."
+  },
+  {
+    "date": "2026-06-29",
+    "score": 21,
+    "driver": "Score RISES +1 to 21/30 — the first uptick since the de-escalation began — as escalation-risk upgrades 3→4 on the first armed exchange since the MOU."
+  },
+  {
+    "date": "2026-06-30",
+    "score": 21,
+    "driver": "Score HOLDS at 21/30 — the escalation upgrade flagged on 29 Jun was confirmed and intensified over the weekend, then capped by a stand-down."
+  },
+  {
+    "date": "2026-07-01",
+    "score": 21,
+    "driver": "Score HOLDS at 21/30 for a second session — the military stand-down held, but the diplomatic de-escalation that would take the score back down has not materialized."
+  },
+  {
+    "date": "2026-07-06",
+    "score": 19,
+    "driver": "Score HOLDS at 19/30 — the stand-down survived the July-4th window (the key risk), keeping escalation at 3; the move down to 2 is blocked by a talks pause and the live routing dispute."
+  },
+  {
+    "date": "2026-07-07",
+    "score": 19,
+    "driver": "Score HOLDS at 19/30 for a third session — a quiet consolidation."
+  },
+  {
+    "date": "2026-07-08",
+    "score": 21,
+    "driver": "Score JUMPS +2 to 21/30 — the quiet consolidation has broken on a fresh re-escalation."
+  },
+  {
+    "date": "2026-07-09",
+    "score": 22,
+    "driver": "Score crosses into the CRISIS band at 22/30 (from 21) — the re-escalation has become a full kinetic exchange; escalation upgrades 4→5."
+  },
+  {
+    "date": "2026-07-10",
+    "score": 23,
+    "driver": "Score rises to 23/30 (from 22) — deeper into the CRISIS band — as maritime denial upgrades 4→5 on an effective strait re-closure, while escalation holds at 5 amid an intensifying two-way conflict."
+  },
+  {
+    "date": "2026-07-13",
+    "score": 23,
+    "driver": "Score HOLDS at 23/30 — but only because the two event channels are already maxed out."
+  },
+  {
+    "date": "2026-07-14",
+    "score": 24,
+    "driver": "Score rises to 24/30 as TREASURY STRESS UPGRADES 4→5 — the market's containment bet has broken."
+  },
+  {
+    "date": "2026-07-15",
+    "score": 25,
+    "driver": "Score rises to 25/30 as US INFLATION IMPULSE UPGRADES 3→4 — the second market-channel upgrade in two sessions."
+  },
+  {
+    "date": "2026-07-16",
+    "score": 25,
+    "driver": "Score HOLDS at 25/30 — but the internal picture has turned: the market has begun to de-escalate ahead of the still-maxed event channels."
+  },
+  {
+    "date": "2026-07-17",
+    "score": 25,
+    "driver": "Score HOLDS at 25/30 — all six channels unchanged — but the mid-week de-escalation the market priced has NOT been validated on the ground: the Muscat off-ramp FAILED."
+  },
+  {
+    "date": "2026-07-21",
+    "score": 25,
+    "driver": "Score HOLDS at 25/30 — all six channels unchanged — but the plateau is CRACKING: the 20 Jul US session repriced the war for the first time since mid-July."
+  },
+  {
+    "date": "2026-07-22",
+    "score": 25,
+    "driver": "Score HOLDS at 25/30 — all six channels unchanged, a sixth session at 25 — but the re-pricing that began on 20 Jul extended through a second consecutive US session, and Stage-4 Threshold B is now within 2."
+  },
+  {
+    "date": "2026-07-23",
+    "score": 25,
+    "driver": "Score HOLDS at 25/30 — all six channels unchanged, a seventh session at 25 — but the 22 Jul close put the first Stage-4 leg THROUGH its threshold: the 10Y closed 4."
+  },
+  {
+    "date": "2026-07-24",
+    "score": 25,
+    "driver": "Score HOLDS at 25/30 — all six channels unchanged, an eighth session at 25 — but the 23 Jul session was the war's most violent single-day repricing in seven weeks."
+  },
+  {
+    "date": "2026-07-27",
+    "score": 25,
+    "driver": "Score HOLDS at 25/30 — all six channels unchanged, a NINTH session at 25 — but the weekend flipped the board's direction."
+  }
+]
