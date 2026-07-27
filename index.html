@@ -2147,6 +2147,50 @@ function render(){
   document.getElementById('footRight').textContent = ed.editionLine;
 }
 
+// Peak-score and current-score markers + labels, mirroring the gas chart's
+// GAS_ANNOTATIONS pattern (dot marker, value+date label, edge-clip guard).
+const SCORE_ANNOTATIONS = {
+  id: 'scoreAnnotations',
+  afterDatasetsDraw(chart){
+    const {ctx, chartArea:{top}, scales:{x, y}} = chart;
+    const dates = SCORE_HISTORY.map(r=>r.date);
+    const vals = SCORE_HISTORY.map(r=>r.score);
+
+    ctx.save();
+
+    function drawPoint(idx, color, text, direction){
+      const px = x.getPixelForValue(idx);
+      const py = y.getPixelForValue(vals[idx]);
+      ctx.beginPath();
+      ctx.arc(px, py, 3, 0, Math.PI*2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.font = 'bold 9.5px Helvetica';
+      ctx.fillStyle = color;
+      ctx.textAlign = px > x.right - 95 ? 'right' : 'left';
+      const tx = ctx.textAlign === 'right' ? px - 7 : px + 7;
+      let ty = direction === 'above' ? py - 14 : py + 20;
+      if(direction === 'above' && ty - 8 < top) ty = py + 20; // flip if it would clip the top edge
+      ctx.fillText(text, tx, ty);
+    }
+
+    let peakIdx = 0;
+    vals.forEach((v,i)=>{ if(v > vals[peakIdx]) peakIdx = i; });
+    const curIdx = vals.length - 1;
+    // if the peak and the current reading land close together on the x-axis,
+    // force them to opposite sides so the two labels don't overlap
+    const closeTogether = Math.abs(curIdx - peakIdx) <= 3;
+
+    drawPoint(peakIdx, '#1f3a5f', `peak ${vals[peakIdx]}/30 · ${shortDate(dates[peakIdx])}`, 'above');
+    drawPoint(curIdx, '#c77f2e', `current ${vals[curIdx]}/30 · ${shortDate(dates[curIdx])}`, closeTogether ? 'below' : 'above');
+
+    ctx.restore();
+  }
+};
+
 let scoreChartInstance, gasChartInstance;
 function renderScoreChart(){
   const ctx = document.getElementById('scoreChart').getContext('2d');
@@ -2161,8 +2205,10 @@ function renderScoreChart(){
         fill:true, tension:0.15, pointRadius:2.5, pointBackgroundColor:'#1f3a5f'
       }]
     },
+    plugins:[SCORE_ANNOTATIONS],
     options:{
       responsive:true,
+      layout:{ padding:{ top: 18, right: 66, bottom: 4 } },
       plugins:{legend:{display:false}, tooltip:{callbacks:{afterLabel:c=>SCORE_HISTORY[c.dataIndex].driver}}},
       scales:{y:{min:0,max:30,ticks:{stepSize:5,font:{size:9}}, grid:{color:'#e9edf2'}}, x:{ticks:{font:{size:8}}, grid:{display:false}}}
     }
@@ -2219,7 +2265,11 @@ const GAS_ANNOTATIONS = {
     ctx.restore();
 
     // --- peak markers ---
-    function drawPeak(dates, vals, color, labelAbove){
+    // direction is forced per series (rather than auto-picked) so the two
+    // peak labels never land in the same vertical band even when the two
+    // peaks fall close together on the x-axis (as AAA's 20 May and DOE's
+    // 11 May do) — AAA peak always renders above its dot, DOE always below.
+    function drawPeak(dates, vals, color, direction){
       let peakIdx = 0;
       vals.forEach((v,i)=>{ if(v > vals[peakIdx]) peakIdx = i; });
       const px = x.getPixelForValue(idxForDate(dates[peakIdx]));
@@ -2234,13 +2284,14 @@ const GAS_ANNOTATIONS = {
       const text = `peak $${vals[peakIdx].toFixed(2)} · ${shortDate(dates[peakIdx])}`;
       ctx.font = 'bold 9.5px Helvetica';
       ctx.fillStyle = color;
-      const tooCloseToTop = py - top < 20;
-      ctx.textAlign = px > x.right - 90 ? 'right' : 'left';
+      ctx.textAlign = px > x.right - 95 ? 'right' : 'left';
       const tx = ctx.textAlign === 'right' ? px - 7 : px + 7;
-      ctx.fillText(text, tx, tooCloseToTop ? py + 16 : py - 11);
+      let ty = direction === 'above' ? py - 14 : py + 20;
+      if(direction === 'above' && ty - 8 < top) ty = py + 20; // flip if it would clip the top edge
+      ctx.fillText(text, tx, ty);
     }
-    drawPeak(aaaDates, aaaVals, '#1f3a5f');
-    drawPeak(doeDates, doeVals, '#c77f2e');
+    drawPeak(aaaDates, aaaVals, '#1f3a5f', 'above');
+    drawPeak(doeDates, doeVals, '#c77f2e', 'below');
 
     // --- latest-value labels ---
     function drawLast(dates, vals, color, decimals, dy){
@@ -2278,9 +2329,42 @@ function renderGasChart(){
     plugins:[GAS_ANNOTATIONS],
     options:{
       responsive:true, parsing:false,
-      layout:{ padding:{ right: 78, top: 16 } },
+      layout:{ padding:{ right: 78, top: 16, bottom: 22 } },
       plugins:{legend:{labels:{font:{size:9}}}},
-      scales:{x:{type:'category', ticks:{font:{size:8}}, grid:{display:false}}, y:{min:2.5,max:5.5, ticks:{font:{size:9}}, grid:{color:'#e9edf2'}}}
+      scales:{
+        x:{
+          type:'category',
+          // one tick per calendar month, formatted "mmm/yy" — filtering to
+          // month-start indices (rather than relying on autoSkip) keeps the
+          // spacing clean regardless of how many daily/weekly points exist
+          afterBuildTicks: scale => {
+            const labels = scale.chart.data.labels;
+            const monthStarts = [];
+            let lastKey = null;
+            labels.forEach((d,i)=>{
+              const key = d.slice(0,7);
+              if(key !== lastKey){ monthStarts.push(i); lastKey = key; }
+            });
+            scale.ticks = monthStarts.map(i=>({value:i}));
+          },
+          ticks:{
+            autoSkip:false, font:{size:9}, maxRotation:0, minRotation:0,
+            callback: function(value){
+              const label = this.getLabelForValue(value);
+              const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+              const d = new Date(label+'T00:00:00');
+              return months[d.getMonth()] + '/' + String(d.getFullYear()).slice(-2);
+            }
+          },
+          grid:{display:false}
+        },
+        y:{
+          min:2.5, max:5.5,
+          title:{ display:true, text:'US$', font:{size:10, weight:'bold'}, color:'#666666' },
+          ticks:{ font:{size:9}, callback: v => '$'+v.toFixed(2) },
+          grid:{color:'#e9edf2'}
+        }
+      }
     }
   });
 }
