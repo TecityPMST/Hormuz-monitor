@@ -2168,6 +2168,101 @@ function renderScoreChart(){
     }
   });
 }
+function shortDate(iso){
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const d = new Date(iso+'T00:00:00');
+  return d.getDate()+' '+months[d.getMonth()];
+}
+
+// Custom draw-on-canvas plugin (no extra vendored dependency) replicating the
+// PDF chart's annotations: a dashed "war start 28 Feb" line, a peak marker +
+// label per series, and a latest-value label per series.
+const GAS_ANNOTATIONS = {
+  id: 'gasAnnotations',
+  afterDatasetsDraw(chart){
+    const {ctx, chartArea:{top, bottom}, scales:{x, y}} = chart;
+    const labels = chart.data.labels;
+    const aaaDates = GAS_SERIES.aaa.map(r=>r.date), aaaVals = GAS_SERIES.aaa.map(r=>r.v);
+    const doeDates = GAS_SERIES.doe.map(r=>r.date), doeVals = GAS_SERIES.doe.map(r=>r.v);
+
+    function idxForDate(target){
+      const exact = labels.indexOf(target);
+      if(exact !== -1) return exact;
+      let best=0, bestDiff=Infinity;
+      labels.forEach((d,i)=>{
+        const diff = Math.abs(new Date(d) - new Date(target));
+        if(diff < bestDiff){ bestDiff = diff; best = i; }
+      });
+      return best;
+    }
+
+    ctx.save();
+
+    // --- war-start vertical dashed line ---
+    const warIdx = idxForDate('2026-02-28');
+    const warX = x.getPixelForValue(warIdx);
+    ctx.strokeStyle = '#8a94a0';
+    ctx.setLineDash([4,3]);
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(warX, top);
+    ctx.lineTo(warX, bottom);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.save();
+    ctx.translate(warX - 5, top + 2);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillStyle = '#666666';
+    ctx.font = '10px Helvetica';
+    ctx.textAlign = 'right'; // anchor at top+2, text extends DOWN into the chart (not up off the canvas)
+    ctx.fillText('war start 28 Feb', 0, 0);
+    ctx.restore();
+
+    // --- peak markers ---
+    function drawPeak(dates, vals, color, labelAbove){
+      let peakIdx = 0;
+      vals.forEach((v,i)=>{ if(v > vals[peakIdx]) peakIdx = i; });
+      const px = x.getPixelForValue(idxForDate(dates[peakIdx]));
+      const py = y.getPixelForValue(vals[peakIdx]);
+      ctx.beginPath();
+      ctx.arc(px, py, 3, 0, Math.PI*2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      const text = `peak $${vals[peakIdx].toFixed(2)} · ${shortDate(dates[peakIdx])}`;
+      ctx.font = 'bold 9.5px Helvetica';
+      ctx.fillStyle = color;
+      const tooCloseToTop = py - top < 20;
+      ctx.textAlign = px > x.right - 90 ? 'right' : 'left';
+      const tx = ctx.textAlign === 'right' ? px - 7 : px + 7;
+      ctx.fillText(text, tx, tooCloseToTop ? py + 16 : py - 11);
+    }
+    drawPeak(aaaDates, aaaVals, '#1f3a5f');
+    drawPeak(doeDates, doeVals, '#c77f2e');
+
+    // --- latest-value labels ---
+    function drawLast(dates, vals, color, decimals, dy){
+      const i = dates.length - 1;
+      const px = x.getPixelForValue(idxForDate(dates[i]));
+      const py = y.getPixelForValue(vals[i]);
+      ctx.beginPath();
+      ctx.arc(px, py, 2.6, 0, Math.PI*2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.font = 'bold 10px Helvetica';
+      ctx.fillStyle = color;
+      ctx.textAlign = 'left';
+      ctx.fillText(`$${vals[i].toFixed(decimals)} · ${shortDate(dates[i])}`, px + 7, py + dy);
+    }
+    drawLast(aaaDates, aaaVals, '#1f3a5f', 2, 3);
+    drawLast(doeDates, doeVals, '#c77f2e', 3, 3);
+
+    ctx.restore();
+  }
+};
+
 function renderGasChart(){
   const ctx = document.getElementById('gasChart').getContext('2d');
   if(gasChartInstance) gasChartInstance.destroy();
@@ -2180,8 +2275,10 @@ function renderGasChart(){
         {label:'DOE regular retail spot (weekly)', data: GAS_SERIES.doe.map(r=>({x:r.date,y:r.v})), borderColor:'#c77f2e', backgroundColor:'#c77f2e', pointRadius:3, tension:0.1}
       ]
     },
+    plugins:[GAS_ANNOTATIONS],
     options:{
       responsive:true, parsing:false,
+      layout:{ padding:{ right: 78, top: 16 } },
       plugins:{legend:{labels:{font:{size:9}}}},
       scales:{x:{type:'category', ticks:{font:{size:8}}, grid:{display:false}}, y:{min:2.5,max:5.5, ticks:{font:{size:9}}, grid:{color:'#e9edf2'}}}
     }
