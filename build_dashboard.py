@@ -251,6 +251,8 @@ HTML = r"""<!DOCTYPE html>
 
     <h2 class="section">9 &middot; Methodology</h2>
     <p class="body-text"><b>Shock-score scale.</b> <span id="methScale"></span></p>
+    <p class="body-text" id="methScaleCapP"><b>Scale cap.</b> <span id="methScaleCap"></span></p>
+    <p class="body-text" id="methIntegrityP"><b>Data integrity this edition.</b> <span id="methIntegrity"></span></p>
     <p class="body-text"><b>Gasoline series.</b> <span id="methGasoline"></span></p>
     <p class="body-text"><b>Pre-war anchor (27 Feb 2026 close).</b> <span id="methAnchor"></span></p>
     <p class="body-text"><b>Intraday caveat.</b> <span id="methIntraday"></span></p>
@@ -428,6 +430,13 @@ function render(){
 
   // Section 9 — methodology
   document.getElementById('methScale').textContent = ed.methodology.scale;
+  // Optional paragraphs — present from the 30 Jul 2026 edition onward. Hidden
+  // entirely for earlier editions rather than rendering "undefined".
+  [['methScaleCap','scaleCap'],['methIntegrity','integrity']].forEach(([id,key])=>{
+    const val = ed.methodology[key];
+    document.getElementById(id+'P').style.display = val ? '' : 'none';
+    document.getElementById(id).textContent = val || '';
+  });
   document.getElementById('methGasoline').textContent = ed.methodology.gasoline;
   document.getElementById('methAnchor').textContent = ed.methodology.anchor;
   document.getElementById('methIntraday').textContent = ed.methodology.intraday;
