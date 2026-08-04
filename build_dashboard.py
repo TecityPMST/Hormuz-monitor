@@ -482,9 +482,11 @@ const SCORE_ANNOTATIONS = {
       ctx.fillStyle = color;
       ctx.textAlign = px > x.right - 95 ? 'right' : 'left';
       const tx = ctx.textAlign === 'right' ? px - 7 : px + 7;
+      let resolved = direction;
       let ty = direction === 'above' ? py - 14 : py + 20;
-      if(direction === 'above' && ty - 8 < top) ty = py + 20; // flip if it would clip the top edge
+      if(direction === 'above' && ty - 8 < top){ ty = py + 20; resolved = 'below'; } // flip if it would clip the top edge
       ctx.fillText(text, tx, ty);
+      return resolved;
     }
 
     let peakIdx = 0;
@@ -494,8 +496,16 @@ const SCORE_ANNOTATIONS = {
     // force them to opposite sides so the two labels don't overlap
     const closeTogether = Math.abs(curIdx - peakIdx) <= 3;
 
-    drawPoint(peakIdx, '#1f3a5f', `peak ${vals[peakIdx]}/30 · ${shortDate(dates[peakIdx])}`, 'above');
-    drawPoint(curIdx, '#c77f2e', `current ${vals[curIdx]}/30 · ${shortDate(dates[curIdx])}`, closeTogether ? 'below' : 'above');
+    if(peakIdx === curIdx){
+      // the latest reading IS the all-time peak — one marker, one combined label,
+      // otherwise the two labels print on top of each other
+      drawPoint(curIdx, '#c77f2e', `peak & current ${vals[curIdx]}/30 · ${shortDate(dates[curIdx])}`, 'above');
+    } else {
+      const peakSide = drawPoint(peakIdx, '#1f3a5f', `peak ${vals[peakIdx]}/30 · ${shortDate(dates[peakIdx])}`, 'above');
+      // put the current label on the side the peak label did NOT end up on
+      const curSide = closeTogether ? (peakSide === 'above' ? 'below' : 'above') : 'above';
+      drawPoint(curIdx, '#c77f2e', `current ${vals[curIdx]}/30 · ${shortDate(dates[curIdx])}`, curSide);
+    }
 
     ctx.restore();
   }
@@ -596,9 +606,11 @@ const GAS_ANNOTATIONS = {
       ctx.fillStyle = color;
       ctx.textAlign = px > x.right - 95 ? 'right' : 'left';
       const tx = ctx.textAlign === 'right' ? px - 7 : px + 7;
+      let resolved = direction;
       let ty = direction === 'above' ? py - 14 : py + 20;
-      if(direction === 'above' && ty - 8 < top) ty = py + 20; // flip if it would clip the top edge
+      if(direction === 'above' && ty - 8 < top){ ty = py + 20; resolved = 'below'; } // flip if it would clip the top edge
       ctx.fillText(text, tx, ty);
+      return resolved;
     }
     drawPeak(aaaDates, aaaVals, '#1f3a5f', 'above');
     drawPeak(doeDates, doeVals, '#c77f2e', 'below');
