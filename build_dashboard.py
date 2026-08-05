@@ -468,7 +468,16 @@ const SCORE_ANNOTATIONS = {
 
     ctx.save();
 
-    function drawPoint(idx, color, text, direction){
+    // resolve() answers "which side will this label actually end up on",
+    // accounting for the top-edge clip guard, WITHOUT drawing anything. The
+    // caller needs this to keep two labels off the same side.
+    function resolve(idx, direction){
+      const py = y.getPixelForValue(vals[idx]);
+      if(direction === 'above' && (py - 14) - 8 < top) return 'below';
+      return direction;
+    }
+
+    function drawPoint(idx, color, text, direction, stack){
       const px = x.getPixelForValue(idx);
       const py = y.getPixelForValue(vals[idx]);
       ctx.beginPath();
@@ -482,9 +491,9 @@ const SCORE_ANNOTATIONS = {
       ctx.fillStyle = color;
       ctx.textAlign = px > x.right - 95 ? 'right' : 'left';
       const tx = ctx.textAlign === 'right' ? px - 7 : px + 7;
-      let resolved = direction;
-      let ty = direction === 'above' ? py - 14 : py + 20;
-      if(direction === 'above' && ty - 8 < top){ ty = py + 20; resolved = 'below'; } // flip if it would clip the top edge
+      const resolved = resolve(idx, direction);
+      let ty = resolved === 'above' ? py - 14 : py + 20;
+      ty += (stack || 0);          // extra line offset when both labels share a side
       ctx.fillText(text, tx, ty);
       return resolved;
     }
@@ -503,8 +512,14 @@ const SCORE_ANNOTATIONS = {
     } else {
       const peakSide = drawPoint(peakIdx, '#1f3a5f', `peak ${vals[peakIdx]}/30 · ${shortDate(dates[peakIdx])}`, 'above');
       // put the current label on the side the peak label did NOT end up on
-      const curSide = closeTogether ? (peakSide === 'above' ? 'below' : 'above') : 'above';
-      drawPoint(curIdx, '#c77f2e', `current ${vals[curIdx]}/30 · ${shortDate(dates[curIdx])}`, curSide);
+      const want = closeTogether ? (peakSide === 'above' ? 'below' : 'above') : 'above';
+      // ...but the top-edge clip guard can force it straight back onto the peak's
+      // side (both labels high on the y-axis, e.g. a peak set one session before
+      // the latest reading at the same score). Ask where it would actually land,
+      // and if that is the same side, stack it a line clear instead of overprinting.
+      const curSide = resolve(curIdx, want);
+      const stack = (closeTogether && curSide === peakSide) ? 13 : 0;
+      drawPoint(curIdx, '#c77f2e', `current ${vals[curIdx]}/30 · ${shortDate(dates[curIdx])}`, curSide, stack);
     }
 
     ctx.restore();
