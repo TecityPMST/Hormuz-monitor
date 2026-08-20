@@ -1,3602 +1,496 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Builds editions.json with the FULL content of each PDF edition (all 9
-sections, verbatim from the PDF build scripts / extracted PDF text) so the
-HTML dashboard can mirror the PDF format exactly rather than a condensed
-summary. Run once per edition change, then run build_dashboard.py.
+Source of truth for editions.json — the two-edition toggle on the dashboard.
+
+Holds the FULL section-by-section content of the two most recent editions as
+Python literals, copied from that edition's PDF build script. Edit this file,
+never editions.json. Keep exactly two dates: when a new edition is added,
+delete the oldest block.
+
+Run:  python3 generate_editions.py
 """
 import json
 
 EDITIONS = {}
-# ======================================================================
-# 2026-08-06
-# ======================================================================
-EDITIONS['2026-08-06'] = {'label': '6 Aug 2026',
- 'editionLine': 'Daily edition · 6 Aug 2026 intraday · Bloomberg · Singapore '
-                '6 Aug AM update',
- 'score': '27',
- 'band': 'CRISIS',
- 'sequencing': '27 → 27 → 27',
- 'sessionNote': 'Score held · no channel moved · Treasury holds coupon sizes '
-                'and the Stage-4 supply test passes · MOVE breaks below 75 · '
-                'Iran and Oman agree route coordinates · Iran threatens Gulf '
-                'energy infrastructure',
- 'headline': 'Note: 6 Aug figures are intraday prints; the last confirmed '
-             'close is Wednesday 5 Aug. The integrity check clears — the 5 '
-             'Aug row has refreshed with true closes. Score HOLDS at 27/30. '
-             'No channel moved. The edition turns on two things. First, the '
-             'dated Stage-4 supply test came in benign. The Treasury '
-             'quarterly refunding statement on Wednesday held coupon sizes '
-             'at exactly the guided 3Y $58bn / 10Y $42bn / 30Y $25bn — no '
-             'increase, three days after Treasury raised its July–September '
-             'borrowing estimate by $68bn to $739bn. The long end had '
-             'already rallied into it and kept rallying: the 30Y closed '
-             '5.1680%, its lowest since 28 July, Stage-4 Threshold B is '
-             'unsatisfied on a third consecutive close, and MOVE collapsed '
-             '3.98 points to 73.58 — below the 75 line that forms the second '
-             'leg of the Treasury downgrade for the first time since 29 '
-             'July, and within 0.20 points of its pre-war level. For the '
-             'first time in this war one of the two Treasury downgrade legs '
-             'is satisfied on a confirmed close. The other is not: the 30Y '
-             'is 16.80 bp above the 5.00% line, wider than the 6.90 bp gap '
-             'of 17 July when the two were last simultaneously in range. The '
-             'downgrade has rotated, not arrived — and the actual auction, '
-             'the 30Y refunding leg, is on 13 August. Second, the corridor '
-             'negotiation acquired an architecture and a countervailing '
-             'threat in the same 24 hours. Baghaei said on Wednesday that '
-             'Iran and Oman have agreed the geographical coordinates of the '
-             'route and that a joint statement is in final drafting; Axios '
-             'reported a 60-day interim mechanism with inbound traffic '
-             'through Iranian waters, outbound through Omani waters, no '
-             'tolls for 60 days and mine clearing targeted at 30 days. '
-             'Against that: no Omani confirmation of any kind could be '
-             'sourced, deputy foreign minister Gharibabadi said flatly that '
-             'US claims of negotiations ‘are untrue’, Axios and the Irish '
-             'Times contradict each other on whether the Supreme Leader has '
-             'approved, Trump said the cancelled strike package could be '
-             'sent ‘up again’, and Reuters reported that Araghchi warned '
-             'Saudi, Turkish and Qatari counterparts and Pakistan’s army '
-             'chief that Iran will strike Gulf energy facilities, '
-             'refineries, power grids, water infrastructure and oil fields '
-             'if Washington attacks Iranian infrastructure. A tanker '
-             'reported two explosions off Kumzar in the strait this morning. '
-             'Five of six channels remain maxed; only oil, at 2/5, can raise '
-             'this number, and its downgrade anchor is $5.38 away on the '
-             'last close. Sequencing 27 → 27 → 27.',
- 'tape': {'note': '6 Aug 2026 readings are intraday prints from the '
-                  'Singapore morning. The 5 Aug row has refreshed and is a '
-                  'confirmed close; the integrity check clears. d/d is 6 Aug '
-                  'intraday vs the 5 Aug close; w/w is vs the 30 Jul close '
-                  '(five sheet-rows back); vs-pre-war is against the 27 Feb '
-                  '2026 close. Restated continuation series (front-month '
-                  'CO2/CL2) in force. Wednesday’s US session was the '
-                  'quietest reconciliation in a fortnight in crude — Brent '
-                  'closed 10 cents ABOVE the snapshot — but not in European '
-                  'gas or rates volatility, where it was not quiet at all.',
-          'oilGasHeader': ['Benchmark',
-                           'Intraday 6 Aug',
-                           '∆ d/d',
-                           '∆ vs pre-war close (27 Feb)',
-                           'BBG ticker'],
-          'oilGas': [['Brent front-month',
-                      '$78.20 /bbl (H 78.34 / L 77.39)',
-                      '+$0.34 (–$8.68 w/w)',
-                      'from $72.48 (+7.9%) — a $5.72/bbl premium. The '
-                      'two-session collapse has stopped: Brent has now '
-                      'traded a 95-cent range on the morning and is 34 cents '
-                      'above Wednesday’s close, the first up-session in '
-                      'four. Active COA prints $79.93',
-                      'CO2 Comdty (Close)'],
-                     ['Brent · 5 Aug close (last confirmed)',
-                      '$77.86 /bbl',
-                      '–$0.07 vs the 4 Aug close $77.93',
-                      '$17.14 below the $95 trigger on a close basis; $5.38 '
-                      'above the $72.48 downgrade anchor, marginally '
-                      'narrower than Tuesday’s $5.45 and the narrowest of '
-                      'the war since 10 Jul. After falling $10.00 in two '
-                      'sessions the market simply stopped: seven cents on '
-                      'the day. Wednesday’s close ran 10 cents ABOVE my '
-                      'Wednesday-morning snapshot — the smallest crude '
-                      'reconciliation gap since 21 Jul, one session after '
-                      'the largest.',
-                      'CO2 Comdty (Close)'],
-                     ['WTI front-month',
-                      '$74.45 /bbl',
-                      '+$0.40 (–$6.35 w/w)',
-                      'from $67.02 (+11.1%) — the CL2 artifact against the '
-                      'active contract persists, CLA prints $75.64 against '
-                      'CL2’s $74.45. The 5 Aug close of $74.05 is the lowest '
-                      'of the war since 10 Jul',
-                      'CL2 Comdty (Close)'],
-                     ['Brent–WTI spread',
-                      '$3.75 /bbl',
-                      'narrower by $0.06 on the day',
-                      '$4.29 on the active contracts (COA $79.93 / CLA '
-                      '$75.64). The spread has held between $3.14 and $3.81 '
-                      'for five sessions after halving from $6.44 on the 31 '
-                      'Jul close. The Hormuz-specific premium that came out '
-                      'on the de-escalation trade has still not gone back '
-                      'in, and this morning’s bounce lifted both benchmarks '
-                      'together',
-                      'derived'],
-                     ['Henry Hub natural gas',
-                      '$2.672 /MMBtu',
-                      '–$0.016 (–$0.086 w/w)',
-                      'from $3.06 (–12.8%) — the lowest reading since 29 '
-                      'Apr, and a third consecutive new post-April low. US '
-                      'gas is now further below pre-war than at any point in '
-                      'the war; twenty-three weeks in, the '
-                      'Hormuz/LNG-routing signature is intact and '
-                      'strengthening. This remains a routing shock, not a '
-                      'global-energy shock',
-                      'NGA Comdty (Close)'],
-                     ['TTF Dutch gas (active)',
-                      '€53.850 /MWh',
-                      '+€1.446 (–€4.467 w/w)',
-                      'from €31.23 (+72.4%) — a bounce off Wednesday’s close '
-                      'of €52.404, the lowest since 13 Jul. That close fell '
-                      '€3.517 on the day and ran €2.696 BELOW my '
-                      'Wednesday-morning snapshot; European gas has now '
-                      'given back €11.245 from the 24 Jul war record of '
-                      '€63.649 in eight sessions',
-                      'TZTA Comdty (Close)'],
-                     ['Japan/Asia LNG (5 Aug close — no 6 Aug print)',
-                      '¥3,353',
-                      '–¥87 vs the 4 Aug ¥3,440',
-                      'from ¥1,669 (+100.9%) — the 5 Aug print BACKFILLED in '
-                      'this extract and is the lowest since 17 Jul. There is '
-                      'no 6 Aug print, flagged and NOT carried forward. Asia '
-                      'LNG has now turned down with TTF rather than against '
-                      'it, closing the divergence flagged yesterday. Hormuz '
-                      'still moves roughly a fifth of global LNG',
-                      'JGLA Comdty (Close)']],
-          'ustNote': '6 Aug 2026 yields are intraday. The 5 Aug close is '
-                     'confirmed and is the reading on which every trigger '
-                     'and Stage-4 test below is judged. d/d is vs the 5 Aug '
-                     'close; w/w vs 30 Jul. Wednesday’s US session moved the '
-                     'curve only 1.0 to 1.3 bp below the Singapore-morning '
-                     'snapshot — a tenth of Tuesday’s gap — but it took MOVE '
-                     'down 3.98 points, which is the move that matters.',
-          'ustHeader': ['Tenor',
-                        'Yield (%) — intraday 6 Aug',
-                        '∆ d/d (bp)',
-                        '∆ w/w (bp)',
-                        '∆ vs pre-war (bp)',
-                        'BBG ticker'],
-          'ust': [['2-year UST',
-                   '4.19',
-                   '+0.4',
-                   '–6.1',
-                   '+81.0 (from 3.37%) — the front end has given back 10.6 '
-                   'bp from the 31 Jul close, still more than the long end',
-                   'USGG2YR Index'],
-                  ['5-year UST',
-                   '4.32',
-                   '–0.2',
-                   '–6.4',
-                   '+82.2 (from 3.50%)',
-                   'USGG5YR Index'],
-                  ['10-year UST',
-                   '4.61',
-                   '–0.2',
-                   '–6.3',
-                   '+67.3 (from 3.94%) — the 5 Aug close of 4.6127% is a '
-                   'third consecutive close below the 4.65% Stage-4 leg, '
-                   '3.73 bp under it, and the lowest since 28 Jul. This '
-                   'morning’s 4.6107% is 3.93 bp below the leg. The war '
-                   'record is the 4.7347% of 31 Jul, now 12.4 bp away',
-                   'USGG10YR Index'],
-                  ['30-year UST',
-                   '5.16',
-                   '–0.4',
-                   '–5.0',
-                   '+55.3 (from 4.61%) — the 5 Aug close of 5.1680% is the '
-                   'lowest since 28 Jul, 3.20 bp below the 5.20% Stage-4 '
-                   'leg, 11.80 bp above the 13 May auction stop against '
-                   '12.43 bp on Tuesday, and 16.80 bp above the 5.00% '
-                   'downgrade line. This morning’s 5.1638% extends it. The '
-                   'war record is the 5.2724% of 31 Jul',
-                   'USGG30YR Index'],
-                  ['2s10s spread',
-                   '+42.3 bp',
-                   '–0.4',
-                   '–0.2',
-                   '–13.3 (still flatter than pre-war) — the curve is '
-                   'unchanged on the week to within a fifth of a basis point '
-                   'while the level of yields fell 5 to 6 bp. This remains a '
-                   'parallel unwind, not a change in curve shape. It is 18.1 '
-                   'bp off the 24 Jun war low of +24.25 bp',
-                   'USYC2Y10 Index'],
-                  ['10Y breakeven inflation',
-                   '2.216',
-                   '–0.1',
-                   '–4.4',
-                   '–4.1 (from 2.2569%) — the 5 Aug close of 2.2176% is a '
-                   'second consecutive close BELOW the pre-war anchor and '
-                   'the lowest since 28 Jul. Spot inflation compensation has '
-                   'more than round-tripped the war premium it built in July',
-                   'USGGBE10 Index'],
-                  ['5Y5Y forward inflation',
-                   '2.306',
-                   '–0.1',
-                   '–2.4',
-                   '+16.4 (from 2.14%) — the 5 Aug close of 2.3067% is a '
-                   'SEVENTH consecutive close above the 2.30% trigger that '
-                   'fired this channel 4→5 on 31 Jul — but by only 0.67 bp, '
-                   'and it is the lowest since 28 Jul. A fourth consecutive '
-                   'decline from the 2.3597% war record. The forward has '
-                   'given back 5.30 bp in total while spot compensation gave '
-                   'back 6.70 bp and crude gave back $10.07',
-                   'USGG5Y5Y Index'],
-                  ['SOFR (blank 5 and 6 Aug)',
-                   '3.66',
-                   '—',
-                   'no print',
-                   'the 4 Aug print has BACKFILLED at 3.66, a basis point '
-                   'above the 3.65 reported as the last print yesterday. 5 '
-                   'and 6 Aug are blank, flagged and NOT carried as fresh. '
-                   'Two consecutive dark sessions',
-                   'SOFRRATE Index']],
-          'crossHeader': ['Gauge',
-                          'Latest',
-                          'As of',
-                          '∆ vs pre-war',
-                          'Interpretation'],
-          'cross': [['DXY',
-                     '99.670',
-                     '6 Aug intraday',
-                     '+2.06 (from 97.61)',
-                     'Flat this morning after Wednesday closed at 99.676 — '
-                     'the lowest close since 16 June and a fifth consecutive '
-                     'daily decline. The dollar has fallen every session '
-                     'since the de-escalation trade began; it did not firm '
-                     'as a haven and has not firmed as yields fell, which is '
-                     'a US-rates unwind rather than a risk event.'],
-                    ['MOVE',
-                     '73.58',
-                     '5 Aug close (no 6 Aug print)',
-                     '+0.20 (from 73.38)',
-                     'Down 3.98 on the session, 9.44 from Friday’s 83.02, '
-                     'and its lowest since 20 July. Two things follow. '
-                     'First, MOVE is now BELOW the 75 line forming the '
-                     'second leg of the Treasury downgrade — the first time '
-                     'since 29 July, and the leg is satisfied on a confirmed '
-                     'close. Second, at 73.58 it is 0.20 points above where '
-                     'it stood the day before the war started: rates '
-                     'volatility has fully round-tripped the conflict. 56.42 '
-                     'points below Threshold C. No 6 August print.'],
-                    ['VIX',
-                     '15.81',
-                     '5 Aug close (no 6 Aug print)',
-                     '–4.05 (from 19.86)',
-                     'Down 0.69 and its lowest since 15 July, reversing '
-                     'Tuesday’s rise. Equity and rates volatility fell '
-                     'together this session after diverging on Tuesday. It '
-                     'sits 4.05 points below pre-war and 15.24 below the '
-                     '31.05 war high of 27 March. There is no 6 August '
-                     'print.'],
-                    ['AAA gasoline',
-                     '$4.75 /gal',
-                     '4 Aug print (5–6 Aug blank)',
-                     '+$1.23 (from $3.52, +34.9%)',
-                     'Political-stress score reference. The 4 Aug print has '
-                     'BACKFILLED at $4.75 — one cent below Monday and the '
-                     'FIRST print not above the $4.75 trigger since 29 July. '
-                     'The run through the line is therefore three closes '
-                     '(30, 31 Jul, 3 Aug), not four. The channel does not '
-                     'move: $4.75 is the trigger level itself, not a retreat '
-                     'from it, and hysteresis requires a sustained reversal '
-                     'past a wider threshold. Blank 5 and 6 Aug, flagged not '
-                     'carried. Basis note: all-grades, not the regular-grade '
-                     'average AAA publishes, which printed $4.0801 on 5 '
-                     'Aug.'],
-                    ['DOE gasoline',
-                     '$4.079 /gal',
-                     '3 Aug weekly print (no new release)',
-                     '+$1.14 (from ~$2.94, +38.9%)',
-                     'Corroboration only. No new print — weekly series, next '
-                     'EIA release Monday 10 Aug. AAA’s own regular-grade '
-                     'average fell to $4.0801 on 5 Aug from $4.0892 on 4 Aug '
-                     'and $4.0907 a week earlier: retail gasoline is '
-                     'flat-to-easing on every corroborating measure. Diesel '
-                     'is doing the opposite — $5.3622 on 5 Aug against '
-                     '$5.3293 a week earlier and $4.7773 a month earlier, up '
-                     '58.5 cents in a month.']],
-          'gasChartNote': 'AUTMUSAG (AAA all-grades retail pump, daily) is '
-                          'the political-stress score reference (pre-war '
-                          '$3.52, peak $5.18, latest confirmed print $4.75 '
-                          'on 4 Aug, backfilled in this extract; 5 and 6 Aug '
-                          'blank); USRFRUSA (DOE regular-grade retail spot, '
-                          'weekly) is the complementary gauge (pre-war '
-                          '~$2.94, peak $4.50, latest $4.079 for the week to '
-                          '3 Aug, no new release until 10 Aug). The dotted '
-                          'line is the $4.75 political→5 threshold. The '
-                          'shape at the right-hand end is the story: exactly '
-                          '$4.75 on 24, 27, 28 and 29 Jul, through the line '
-                          'at $4.76 on 30 and 31 Jul and 3 Aug — three '
-                          'closes that fired and then reinforced the 4→5 '
-                          'upgrade — and now a 4 Aug backfill at $4.75, back '
-                          'ON the line rather than through it. The break has '
-                          'stopped extending. Diesel has not: AAA had '
-                          'on-highway diesel up 58.5 cents on the month at '
-                          '$5.3622, with EIA distillate stocks down 3.5 mb '
-                          'in the week to 31 Jul to about 12% below the '
-                          'five-year average.',
-          'straitHeader': ['Indicator', 'Current reading', 'Source'],
-          'strait': [['Strait closed · day 158',
-                      'Closed since 28 Feb. UKMTO’s JMIC Advisory Note '
-                      'Update 080 of 4 Aug — superseding the Update 079 of 2 '
-                      'Aug reported yesterday — records 80 maritime security '
-                      'incidents since 1 March, holds the Strait of Hormuz '
-                      'at SEVERE with the Gulf of Oman and southern Red Sea '
-                      'SUBSTANTIAL, logs single-digit tanker transits a day '
-                      'against a 138/day historical average, and puts US '
-                      'blockade redirections at 44 vessels as of 3 Aug. '
-                      'Lloyd’s List Intelligence counted 84 transits in the '
-                      'week to 2 Aug against 45 the week before, 52 '
-                      'non-Iranian-linked against 28 — the largest '
-                      'proportional weekly rise of the war, from a very low '
-                      'base, alongside two confirmed strikes on ships using '
-                      'the Omani route since 1 Aug and 65 vessels trapped '
-                      'inside the Gulf. Other trackers stay irreconcilable '
-                      'and are reported unreconciled: Windward 15 transits '
-                      'in the 24h to 3 Aug with 4 dark; TankerMap ZERO on 5 '
-                      'Aug; straits.live 2 vessels on 2 Aug against a '
-                      'typical 73.',
-                      'UKMTO / Lloyd’s List Intelligence / Windward / '
-                      'TankerMap / straits.live'],
-                     ['THE CORRIDOR TALKS ACQUIRE AN ARCHITECTURE — AND '
-                      'STILL NO OMANI VOICE',
-                      'Baghaei said on 5 Aug that Iran and Oman have agreed '
-                      'the geographical coordinates of the proposed route '
-                      'and that a joint statement remains in final review '
-                      'and drafting, contingent on ‘no interference from '
-                      'third parties’ — while adding it ‘in itself does not '
-                      'mean the strait is safe’ with the US blockade in '
-                      'place. Axios reported a 60-day interim mechanism: '
-                      'inbound via a northern lane through Iranian waters, '
-                      'outbound via a southern lane through Omani waters, no '
-                      'tolls for 60 days, mine clearing targeted at 30 days, '
-                      'Qatar/Pakistan/Saudi Arabia mediating, Witkoff, '
-                      'Araghchi and Badr al-Busaidi as principals. Nothing '
-                      'is signed and no Omani statement of any kind could be '
-                      'sourced. Axios says Iranian leadership approved on 4 '
-                      'Aug; the Irish Times says the Supreme Leader must '
-                      'still approve; Pezeshkian says contact with him is '
-                      '‘very difficult’. Trump said the two sides ‘are '
-                      'talking’, refused Iranian fees, and said the '
-                      'cancelled strike package may have to be sent ‘up '
-                      'again’; Gharibabadi said US claims of negotiations '
-                      '‘are untrue’. A Gulf official told CNN a deal by '
-                      'Friday was 50-50.',
-                      'Reuters / Bloomberg / Axios / ABC News / CBS News / '
-                      'CNN / Irish Times / IRNA (Tier 3)'],
-                     ['IRAN THREATENS GULF ENERGY INFRASTRUCTURE IF THE US '
-                      'STRIKES — Reuters exclusive',
-                      'Araghchi contacted his Saudi, Turkish and Qatari '
-                      'counterparts and Pakistan’s army chief with an '
-                      'unequivocal warning that Iran would retaliate against '
-                      'Gulf energy facilities, refineries, electricity '
-                      'grids, water infrastructure, transport networks and '
-                      'oil fields if Washington attacked Iranian '
-                      'infrastructure, with explicit reference to the 2019 '
-                      'Aramco attacks. Saudi Crown Prince Mohammed bin '
-                      'Salman phoned Trump urging delay; Riyadh separately '
-                      'told Tehran it would defend itself. This is the most '
-                      'specific threat to Gulf energy infrastructure the '
-                      'monitor has recorded, and it is conditional on a US '
-                      'strike that has not come.',
-                      'Reuters (Hafezi / Nakhoul), 5 Aug'],
-                     ['A seventh session without a strike — and a third '
-                      'maritime incident in four days',
-                      'No Tier 1 outlet reported a new US, Israeli or '
-                      'Iranian strike on 4–6 Aug. CENTCOM has issued no '
-                      'combat release since 29 Jul and stated on 5 Aug that '
-                      'the southern route ‘remains free and open for all '
-                      'commercial vessels’, with 1,000+ vessels assisted in '
-                      'three months. Against that: this morning a tanker '
-                      'reported two explosions while transiting about 9 nm '
-                      'south-east of Kumzar, Oman, vessel and crew safe, no '
-                      'attribution. The Minoan Pioneer struck off Khasab on '
-                      '4 Aug remains unresolved — no attribution, no news of '
-                      'the missing third engineer, no salvage report after 4 '
-                      'Aug. In the Red Sea the Houthis claimed missile '
-                      'attacks on the Saudi tankers Wafa off Yanbu and Daisy '
-                      'in the Gulf of Aden (combatant claims, no Saudi '
-                      'confirmation) and told Bloomberg they will target '
-                      'tankers in the NORTHERN Red Sea.',
-                      'CENTCOM / UKMTO via Al Jazeera / Bloomberg / CBS News '
-                      '/ Splash247'],
-                     ['Both dated tests landed, and both landed benign',
-                      'The Treasury quarterly refunding statement (5 Aug) '
-                      'held every coupon size — 3Y $58bn, 10Y $42bn, 30Y '
-                      '$25bn inside a $125bn August package, exactly the 6 '
-                      'May guidance, with no increase despite Monday’s $68bn '
-                      'upgrade to quarterly borrowing. Buybacks up to $38bn '
-                      'off-the-run plus $25bn for cash management; TIPS '
-                      'held. Auctions 11, 12 and 13 Aug (30Y), settling 17 '
-                      'Aug. The EIA weekly (week to 31 Jul): crude 407.0 mb '
-                      '(+2.5), gasoline 209.7 mb (−1.6), distillate 107.2 mb '
-                      '(−3.5, ~12% below the five-year average), refinery '
-                      'utilisation 96.5%, and SPR 304.8 mb after a 3.0 mb '
-                      'draw, a second consecutive weekly draw from 307.7 mb.',
-                      'US Treasury (sb0590) / EIA Weekly Petroleum Status '
-                      'Report']]},
- 'analysis': {'intro': 'The shock holds at 27/30 and no channel moved, and '
-                       'this time the composition barely moved either — '
-                       'which is itself the finding. Wednesday was the first '
-                       'session in five that did not reprice something: '
-                       'Brent closed seven cents lower, the curve fell 1.0 '
-                       'to 1.3 bp, and the whole US session ran ten cents '
-                       'ABOVE my morning Brent snapshot after Tuesday’s '
-                       '$3.99 miss. Underneath that calm the two dated tests '
-                       'this monitor had been pointing at for a week both '
-                       'landed and both landed benign. Treasury held coupon '
-                       'sizes at exactly the guided 3Y $58bn / 10Y $42bn / '
-                       '30Y $25bn, and the EIA weekly showed crude building '
-                       '2.5 mb. The long end took the statement as '
-                       'permission: the 30Y closed at its lowest since 28 '
-                       'July and MOVE fell 3.98 to 73.58, its lowest since '
-                       '20 July and the first close below the 75 leg of the '
-                       'Treasury downgrade since 29 July. On the news side '
-                       'the corridor negotiation gained architecture — '
-                       'agreed coordinates, a 60-day interim mechanism, mine '
-                       'clearing targeted at 30 days — and simultaneously '
-                       'gained a threat: Reuters reported Iran warning three '
-                       'Gulf foreign ministers and Pakistan’s army chief '
-                       'that it would hit Gulf energy infrastructure if '
-                       'Washington struck Iranian infrastructure. The '
-                       'correct reading of a quiet tape is not that the risk '
-                       'fell. It is that the market has now priced the deal '
-                       'and the fiscal test, and has priced neither the '
-                       'seven-day-old strike package Trump says could be '
-                       'sent ‘up again’ nor the retaliation Tehran has just '
-                       'described in detail.',
-              'bondYieldNote': '6 Aug yields are intraday; the 5 Aug close '
-                               'is confirmed and every trigger runs off it. '
-                               'No channel moved. Score holds at 27/30.',
-              'bondYield': [{'title': '(i) Treasury — held at 5 (max), and '
-                                      'for the first time in the war one leg '
-                                      'of its downgrade is satisfied.',
-                             'text': 'The refunding statement was the event. '
-                                     'Treasury held nominal coupon and FRN '
-                                     'auction sizes at the levels guided on '
-                                     '6 May — 3Y $58bn, 10Y $42bn, 30Y $25bn '
-                                     'inside a $125bn August package — three '
-                                     'days after telling the market it would '
-                                     'need to borrow $739bn this quarter '
-                                     'against the $671bn projected in May. '
-                                     'The supply test that armed Stage-4 '
-                                     'Threshold A therefore did not fire. '
-                                     'What did move is volatility: MOVE '
-                                     'closed 73.58, down 3.98 on the session '
-                                     'and 9.44 from Friday’s 83.02, its '
-                                     'lowest since 20 July, and BELOW the 75 '
-                                     'line that forms the second leg of this '
-                                     'channel’s downgrade. At 73.58 the '
-                                     'index is 0.20 points from its 73.38 '
-                                     'pre-war anchor; rates volatility has '
-                                     'round-tripped the entire war. The '
-                                     'downgrade still fails, and it fails on '
-                                     'the other leg: the 30Y closed 5.1680%, '
-                                     '16.80 bp above the 5.00% line. That '
-                                     'matters more than it looks. The last '
-                                     'time both legs were simultaneously in '
-                                     'range was 17 July, when MOVE was 70.88 '
-                                     'and the 30Y was 5.0690% — a 6.90 bp '
-                                     'gap. Today the volatility leg is '
-                                     'satisfied outright and the yield leg '
-                                     'is two and a half times further away '
-                                     'than it was a month ago. The downgrade '
-                                     'has rotated rather than approached, '
-                                     'and the honest description of this '
-                                     'channel is that it is pinned at 5 by a '
-                                     'long end that has repriced war risk '
-                                     'without repricing the fiscal '
-                                     'arithmetic. Treasury still needs $68bn '
-                                     'more this quarter than it said in May; '
-                                     'it has simply chosen to fund it in '
-                                     'bills and buybacks rather than '
-                                     'coupons. One wording change is flagged '
-                                     'and reported as unverified at primary '
-                                     'level: the statement says Treasury '
-                                     '‘anticipates maintaining’ coupon and '
-                                     'FRN sizes, where the prior '
-                                     'construction was that it did not '
-                                     'anticipate needing to INCREASE them. '
-                                     'BMO and Santander strategists, quoted '
-                                     'second-hand, read that as a possible '
-                                     'step away from forward guidance; the 6 '
-                                     'May text could not be retrieved for a '
-                                     'word-level comparison.'},
-                            {'title': '(ii) Oil — held at 2, and the session '
-                                      'that stopped falling is more '
-                                      'informative than the two that fell.',
-                             'text': 'Brent’s 5 August close of $77.86 is '
-                                     'seven cents below Tuesday after a '
-                                     '$10.00 two-session collapse, and this '
-                                     'morning it prints $78.20, the first '
-                                     'up-session in four. The close sits '
-                                     '$17.14 below the $95 upgrade trigger '
-                                     'and $5.38 above the $72.48 downgrade '
-                                     'anchor — the narrowest that gap has '
-                                     'been in the war since 10 July, seven '
-                                     'cents narrower than yesterday. The '
-                                     'downgrade needs both legs: a mediated '
-                                     'pause AND a close at or below $72.48. '
-                                     'Neither is met, and the reason the '
-                                     'price leg has not carried on falling '
-                                     'is worth stating. The de-escalation '
-                                     'trade ran for two sessions on '
-                                     'cabinet-level statements and stopped '
-                                     'when the physical facts did not '
-                                     'follow: the strait is shut on day 158, '
-                                     'UKMTO holds it at SEVERE, TankerMap '
-                                     'counted zero transits on 5 August, and '
-                                     'the EIA weekly showed distillate '
-                                     'stocks falling 3.5 mb to about 12% '
-                                     'below the five-year average with '
-                                     'refinery utilisation still at 96.5%. '
-                                     'Spare capacity was ~0.17 mb/d on the '
-                                     'IEA’s July estimate, so September’s '
-                                     '188k b/d is a quota rather than a '
-                                     'cargo; Jizan is out to ~15 August; '
-                                     'Abqaiq and Damietta unreported since '
-                                     '30 July. The market has repriced the '
-                                     'probability of a settlement, not the '
-                                     'balance. At 2/5 this channel is the '
-                                     'only one that can raise the score, and '
-                                     'it is still closer to falling than '
-                                     'rising — but the fall requires an '
-                                     'instrument nobody has published.'},
-                            {'title': '(iii) Escalation risk — held at 5 '
-                                      '(max). The downgrade candidate is '
-                                      'stronger in form and weaker in '
-                                      'evidence than yesterday.',
-                             'text': 'Stronger in form: agreed route '
-                                     'coordinates, a joint statement in '
-                                     'final drafting, a 60-day interim '
-                                     'mechanism with a 30-day mine-clearing '
-                                     'target, named principals, three named '
-                                     'mediators, and a seventh consecutive '
-                                     'session with no reported strike on '
-                                     'Iran. Weaker in evidence: every '
-                                     'element of it is Iranian-sourced or '
-                                     'single-outlet. No Omani statement of '
-                                     'any kind could be sourced — the '
-                                     'mediator has said nothing on the '
-                                     'record. Axios and the Irish Times '
-                                     'contradict each other on whether the '
-                                     'Supreme Leader has approved, and '
-                                     'Pezeshkian’s remark that contact with '
-                                     'him is ‘very difficult’ makes the '
-                                     'approval claim harder to sustain, not '
-                                     'easier. Gharibabadi said on the record '
-                                     'that there are no negotiations with '
-                                     'the United States at all. And the same '
-                                     '24 hours produced Reuters’ report that '
-                                     'Iran warned three Gulf foreign '
-                                     'ministers and Pakistan’s army chief it '
-                                     'would strike Gulf energy facilities, '
-                                     'refineries, grids, water and transport '
-                                     'if Washington attacked Iranian '
-                                     'infrastructure, plus Trump’s statement '
-                                     'that the cancelled package could be '
-                                     'sent ‘up again’, plus a tanker '
-                                     'reporting two explosions off Kumzar '
-                                     'this morning. A channel does not come '
-                                     'off its maximum in a window that '
-                                     'contains an explicit threat to Gulf '
-                                     'energy infrastructure and an '
-                                     'unexplained detonation beside a ship. '
-                                     'The 3 August episode remains the '
-                                     'reference case: an announcement is not '
-                                     'an event.'},
-                            {'title': '(iv) US inflation impulse — held at 5 '
-                                      '(max), and the forward is now 0.67 bp '
-                                      'from giving back the break that fired '
-                                      'it.',
-                             'text': '5Y5Y forward inflation closed 2.3067% '
-                                     'on 5 August — a seventh consecutive '
-                                     'close above the 2.30% trigger, a '
-                                     'fourth consecutive decline from the '
-                                     '2.3597% war record, and the lowest '
-                                     'since 28 July. It has given back 5.30 '
-                                     'bp in total. The 10Y breakeven closed '
-                                     '2.2176%, a second consecutive close '
-                                     'below the 2.2569% pre-war anchor and '
-                                     'also the lowest since 28 July. Spot '
-                                     'inflation compensation has now more '
-                                     'than round-tripped its war premium; '
-                                     'the forward is within two-thirds of a '
-                                     'basis point of doing the same. Under '
-                                     'the documented rule this channel does '
-                                     'not move: the downgrade is 5Y5Y '
-                                     'sustained at or below the 2.142% '
-                                     'pre-war anchor, which is 16.47 bp '
-                                     'away, and hysteresis requires a '
-                                     'sustained reversal past a wider '
-                                     'threshold than the one that fired the '
-                                     'upgrade. The tension between those two '
-                                     'statements is real and is flagged '
-                                     'rather than resolved: the channel '
-                                     'fired 4→5 on a 2.30% break that is '
-                                     'about to disappear, while its stated '
-                                     'downgrade sits 16 bp lower. What '
-                                     'argues for holding is not the rule '
-                                     'alone. It is the data underneath. ISM '
-                                     'services prices-paid jumped to 70.3 on '
-                                     '5 August against a headline that '
-                                     'missed at 54.1, ADP printed +44k '
-                                     'against a ~+70k consensus, and Federal '
-                                     'Reserve Governor Lisa Cook said the '
-                                     'same day that ‘if I do not see signs '
-                                     'of continued disinflation soon, I am '
-                                     'prepared to act’ — having voted with '
-                                     'the majority to hold on 29 July. A '
-                                     'soft labour print with a hot prices '
-                                     'index and a hawkish shift from a '
-                                     'median voter is not the configuration '
-                                     'in which forward inflation '
-                                     'compensation is safely unwinding. '
-                                     'Payrolls land on 7 August and CPI on '
-                                     '12 August.'},
-                            {'title': '(v) Political stress — held at 5 '
-                                      '(max), but the break has stopped '
-                                      'extending.',
-                             'text': 'AUTMUSAG has backfilled 4 August at '
-                                     '$4.75 — one cent below Monday and the '
-                                     'first print not ABOVE the trigger '
-                                     'since 29 July. The run of closes '
-                                     'through the line is three (30 and 31 '
-                                     'July and 3 August), not four, and '
-                                     'yesterday’s framing that the upgrade '
-                                     'was being ‘reinforced’ is therefore '
-                                     'corrected: it is intact, not '
-                                     'reinforced. The channel does not move. '
-                                     '$4.75 is the trigger level itself '
-                                     'rather than a retreat from it, the '
-                                     'downgrade condition is a sustained '
-                                     'retreat toward the $3.52 pre-war '
-                                     'anchor, and the series is $1.23 above '
-                                     'that anchor. The series is blank for 5 '
-                                     'and 6 August and is flagged rather '
-                                     'than carried. Every corroborating '
-                                     'retail gasoline measure is now flat to '
-                                     'easing — AAA’s own regular-grade '
-                                     'average $4.0801 on 5 August against '
-                                     '$4.0907 a week earlier, the DOE weekly '
-                                     '$4.079 with no new release until 10 '
-                                     'August. Diesel is the counterweight '
-                                     'and it is getting heavier. AAA had '
-                                     'on-highway diesel at $5.3622 on 5 '
-                                     'August, up 58.5 cents in a month '
-                                     'against a flat gasoline, and the EIA '
-                                     'weekly showed distillate stocks down '
-                                     '3.5 mb to roughly 12% below the '
-                                     'five-year average — the widest deficit '
-                                     'of the three product series and wider '
-                                     'than the ~10% reported a week ago. '
-                                     'Refining, not crude, is the binding '
-                                     'constraint on the pump, which is why '
-                                     'Brent at $77.86 has not disarmed this '
-                                     'channel.'},
-                            {'title': '(vi) Maritime denial — held at 5 '
-                                      '(max), and the traffic data moved for '
-                                      'the first time in weeks.',
-                             'text': 'The strait is closed on day 158. '
-                                     'Lloyd’s List Intelligence counted 84 '
-                                     'total transits in the week to 2 August '
-                                     'against 45 the week before, with '
-                                     'non-Iranian-linked transits up from 28 '
-                                     'to 52 and westbound non-Iranian-linked '
-                                     'from 11 to 21 — the largest '
-                                     'proportional weekly increase of the '
-                                     'war. That is a real signal and it is '
-                                     'nowhere near the downgrade condition. '
-                                     'Against UKMTO’s own historical '
-                                     'baseline of 138 transits a day, 84 in '
-                                     'a week is about 9% of normal; the '
-                                     'condition is traffic above 25% of '
-                                     'normal sustained for ten sessions. '
-                                     'UKMTO holds the strait at SEVERE, logs '
-                                     'single-digit tanker transits a day, '
-                                     'and records 44 vessels redirected '
-                                     'under the US blockade as of 3 August; '
-                                     'TankerMap counted zero on 5 August; '
-                                     'Lloyd’s List notes 65 vessels that '
-                                     'entered during the lull and remain '
-                                     'trapped, plus 70 more stuck since the '
-                                     'conflict began, and two confirmed '
-                                     'strikes on ships using the Omani route '
-                                     'since 1 August. CENTCOM’s 5 August '
-                                     'statement that the southern route '
-                                     '‘remains free and open’ sits awkwardly '
-                                     'beside a tanker reporting two '
-                                     'explosions off Kumzar this morning, '
-                                     'and the monitor reports both rather '
-                                     'than choosing. The instrument that '
-                                     'would start the ten-session clock — a '
-                                     'signed corridor agreement — has '
-                                     'coordinates and a draft and no '
-                                     'signature.'}],
-              'stage4Note': 'Stage 4 is a credit/auction event. Threshold '
-                            'A’s statement leg resolved benignly on 5 '
-                            'August; its auction leg is on 13 August. '
-                            'Threshold B is unsatisfied on a third close.',
-              'stage4': [{'title': 'Threshold A · 13 May 30Y auction, '
-                                   'cleared 5.050% — the statement passed, '
-                                   'the auction is next.',
-                          'text': 'Treasury’s quarterly refunding statement '
-                                  'on 5 August held every nominal coupon '
-                                  'size at the level guided on 6 May: 2Y '
-                                  '$69bn, 3Y $58bn, 5Y $70bn, 7Y $44bn, 10Y '
-                                  '$42bn new issue, 20Y $16bn, 30Y $25bn new '
-                                  'issue, 2Y FRN $28bn — a $125bn August '
-                                  'package. It did so three days after '
-                                  'raising July–September net marketable '
-                                  'borrowing to $739bn from the $671bn '
-                                  'projected on 4 May, funding the gap with '
-                                  'bills, buybacks of up to $38bn '
-                                  'off-the-run plus $25bn for cash '
-                                  'management, and a possible short-dated '
-                                  'CMB around end-August. The specific '
-                                  'sequence that would make this threshold '
-                                  'live rather than historical was a coupon '
-                                  'increase followed by a weak long-end '
-                                  'auction. The first leg did not happen. '
-                                  'The second is dated: 3Y on 11 August, 10Y '
-                                  'on 12 August and the 30Y on 13 August, '
-                                  'all settling 17 August. The 5 August '
-                                  'close of 5.1680% is 11.80 bp above the '
-                                  'May stop, down from 12.43 bp on Tuesday '
-                                  'and 22.24 bp at the 31 July war-widest. A '
-                                  'tail on 13 August into a long end still '
-                                  '55 bp above its pre-war anchor is what '
-                                  'would re-arm this.'},
-                         {'title': 'Threshold B · 30Y above 5.20% with 10Y '
-                                   'above 4.65% — NOT SATISFIED, third '
-                                   'consecutive close.',
-                          'text': 'The 5 August close of 5.1680% / 4.6127% '
-                                  'misses both legs by 3.20 bp and 3.73 bp, '
-                                  'and this morning’s 5.1638% / 4.6107% '
-                                  'misses by 3.62 bp and 3.93 bp. The '
-                                  'satisfied run it ended was 29 July '
-                                  'through 3 August, four closes including '
-                                  'the 5.2724% and 4.7347% war records of 31 '
-                                  'July. Two qualifications stand from '
-                                  'yesterday and one is new. The unwind '
-                                  'remains a risk-premium unwind rather than '
-                                  'a repair of the fiscal arithmetic — '
-                                  'Treasury still needs $68bn more this '
-                                  'quarter than it said in May, it has just '
-                                  'chosen not to raise coupons to get it. '
-                                  'The threshold can still re-arm on a '
-                                  'single bad auction, and the auction is on '
-                                  '13 August. What is new is that the '
-                                  'refunding statement has removed the most '
-                                  'obvious catalyst for a re-arm inside the '
-                                  'next week, which is why the long end kept '
-                                  'rallying after it.'},
-                         {'title': 'Threshold C · MOVE above 130 — far off, '
-                                   'and the index has now round-tripped the '
-                                   'war.',
-                          'text': 'MOVE closed 73.58 on 5 August, down 3.98 '
-                                  'on the session and 9.44 from Friday’s '
-                                  '83.02, its lowest since 20 July. That is '
-                                  '56.42 points below the threshold and '
-                                  '41.44 below the 115.02 war high of 26 '
-                                  'March, so C is not close on any reading. '
-                                  'The observation that matters is '
-                                  'elsewhere: 73.58 is 0.20 points above the '
-                                  '73.38 pre-war anchor and 1.42 points '
-                                  'BELOW the 75 line that forms the second '
-                                  'leg of the Treasury downgrade. Rates '
-                                  'volatility has fully unwound the conflict '
-                                  'while the level of long-end yields has '
-                                  'not — the 30Y is still 55.3 bp above its '
-                                  'anchor. That combination, low volatility '
-                                  'and a high term premium, is the market '
-                                  'saying it expects the long end to stay '
-                                  'where it is rather than that it has '
-                                  'stopped worrying about it. There is no 6 '
-                                  'August print and the number is flagged '
-                                  'rather than carried as fresh.'}],
-              'crossAsset': 'The cross-asset signature is the absence of '
-                            'one. After Friday’s largest upside '
-                            'reconciliation gap and Tuesday’s largest '
-                            'downside gap, Wednesday’s US session moved '
-                            'almost nothing: Brent closed ten cents ABOVE my '
-                            'snapshot, the 30Y 1.26 bp below it, the 10Y '
-                            '1.01 bp below, the 5Y5Y 1.04 bp below and the '
-                            '10Y breakeven 1.18 bp below. Two fields are the '
-                            'exception. MOVE printed an actual 73.58 against '
-                            'the 77.56 carried forward, a 3.98-point fall '
-                            'the morning snapshot could not have shown '
-                            'because the index did not print at all on '
-                            'Tuesday; and TTF closed €52.404 against my '
-                            '€55.100 snapshot before bouncing €1.446 this '
-                            'morning, so European gas is still trading the '
-                            'deal in a way crude has stopped doing. '
-                            'Underneath, the routing signature is at its '
-                            'clearest of the war. Henry Hub prints $2.672 '
-                            'this morning, the lowest since 29 April and '
-                            '12.8% BELOW pre-war, while Asia LNG at ¥3,353 '
-                            'is 100.9% above it and TTF 72.4% above. US '
-                            'natural gas is not participating in this war at '
-                            'all; Asian and European gas are participating '
-                            'entirely. That is a Hormuz-routing shock, not a '
-                            'global-energy shock, and no amount of '
-                            'de-escalation trading has changed it. The '
-                            'dollar fell for a fifth consecutive session to '
-                            'its lowest close since 16 June, which is a '
-                            'US-rates unwind rather than a haven bid, and '
-                            'VIX at 15.81 is 4.05 points below pre-war. The '
-                            'reading to take is that everything except the '
-                            'physical strait has now priced a reopening.'},
- 'channels': [{'name': 'Maritime denial',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). Strait closed to commercial '
-                            'traffic, day 158. Lloyd’s List Intelligence '
-                            'counted 84 transits in the week to 2 Aug '
-                            'against 45 the week before — the largest '
-                            'proportional weekly rise of the war, and still '
-                            'only about 9% of UKMTO’s 138/day historical '
-                            'baseline. UKMTO Update 080 (4 Aug) holds Hormuz '
-                            'at SEVERE, logs single-digit tanker transits a '
-                            'day and 44 vessels redirected; TankerMap '
-                            'counted ZERO on 5 Aug; 65 vessels are trapped '
-                            'inside the Gulf. Coordinates agreed with Oman, '
-                            'joint statement in drafting, nothing signed and '
-                            'no Omani statement of any kind.',
-               'upgrade': 'at max',
-               'downgrade': 'verified reopening (escorted convoys) with '
-                            'traffic above 25% of normal for 10 sessions → '
-                            'to 3–4. A signed corridor agreement starts that '
-                            'clock; agreed coordinates do not.'},
-              {'name': 'Oil price shock',
-               'score': 2,
-               'state': 'open',
-               'rationale': 'Held at 2 — the only channel that can raise the '
-                            'score. Last confirmed close $77.86 (5 Aug), '
-                            '$17.14 below the $95 trigger and $5.38 above '
-                            'the $72.48 anchor, the narrowest since 10 Jul; '
-                            'intraday $78.20, the first up-session in four '
-                            'after a $10.00 two-session fall. The '
-                            'de-escalation trade stalled when the physical '
-                            'facts did not follow: distillate stocks −3.5 mb '
-                            'to ~12% below the 5-yr average, refinery '
-                            'utilisation 96.5%, spare capacity ~0.17 mb/d, '
-                            'Jizan out to ~15 Aug, Abqaiq and Damietta '
-                            'unreported.',
-               'upgrade': 'Brent above $95 sustained → to 3',
-               'downgrade': 'mediated pause + close at/below the $72.48 '
-                            'anchor → to 1. The price leg is within reach; '
-                            'the pause leg is NOT met — coordinates are not '
-                            'a pause, and a tanker reported explosions off '
-                            'Kumzar this morning.'},
-              {'name': 'US inflation impulse',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). 5Y5Y closed 2.3067% on 5 Aug, '
-                            'a SEVENTH consecutive close above the 2.30% '
-                            'trigger — but by only 0.67 bp, a fourth '
-                            'consecutive decline and the lowest since 28 '
-                            'Jul. BE10 closed 2.2176%, a second consecutive '
-                            'close below the 2.2569% pre-war anchor. Holding '
-                            'is supported by the data underneath: ISM '
-                            'services prices-paid 70.3 on a 54.1 headline '
-                            'miss, ADP +44k against ~+70k, and Governor Cook '
-                            'saying she is ‘prepared to act’ if disinflation '
-                            'does not resume.',
-               'upgrade': 'at max',
-               'downgrade': '5Y5Y sustained at/below the 2.142% pre-war '
-                            'anchor → to 4 (16.47 bp away on the last close, '
-                            '1.13 bp closer than Tuesday).'},
-              {'name': 'Treasury stress',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). The refunding statement held '
-                            'every coupon size — 3Y $58bn / 10Y $42bn / 30Y '
-                            '$25bn, exactly as guided on 6 May — so the '
-                            'Stage-4 supply test did not fire. The 30Y '
-                            'closed 5.1680%, its lowest since 28 Jul, and '
-                            'MOVE fell 3.98 to 73.58, BELOW the 75 downgrade '
-                            'leg for the first time since 29 Jul and 0.20 '
-                            'pts from its pre-war level. Threshold B '
-                            'unsatisfied on a third close. The 30Y refunding '
-                            'leg auctions 13 Aug.',
-               'upgrade': 'at max',
-               'downgrade': '30Y close under 5.00% with MOVE under 75 '
-                            'sustained → to 4. The MOVE leg is now '
-                            'SATISFIED; the 30Y leg fails by 16.80 bp — '
-                            'wider than the 6.90 bp of 17 Jul when both were '
-                            'last in range.'},
-              {'name': 'Political stress',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max), but the break has stopped '
-                            'extending. AUTMUSAG has BACKFILLED 4 Aug at '
-                            '$4.75 — one cent lower and the first print NOT '
-                            'above the trigger since 29 Jul, so the run '
-                            'through the line is three closes, not four. '
-                            'Blank 5 and 6 Aug, flagged not carried. All '
-                            'corroborating retail gasoline measures are flat '
-                            'to easing. Diesel is not: AAA on-highway '
-                            '$5.3622, up 58.5c on the month, with distillate '
-                            'stocks ~12% below the 5-yr average.',
-               'upgrade': 'at max',
-               'downgrade': 'sustained retreat toward the $3.52 pre-war '
-                            'level → to 4 then 3. $1.23 above the anchor; '
-                            '$4.75 is the trigger level itself, not a '
-                            'retreat from it.'},
-              {'name': 'Escalation risk',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). The downgrade candidate is '
-                            'stronger in FORM and weaker in EVIDENCE. Form: '
-                            'agreed route coordinates, a joint statement in '
-                            'drafting, a 60-day interim mechanism, 30-day '
-                            'mine-clearing target, seventh session with no '
-                            'reported strike. Evidence: every element '
-                            'Iranian-sourced or single-outlet, no Omani '
-                            'statement at all, Gharibabadi denying any '
-                            'US–Iran negotiation, Axios and the Irish Times '
-                            'contradicting each other on Supreme Leader '
-                            'approval — and Reuters reporting Iran '
-                            'threatened Gulf energy infrastructure if the US '
-                            'strikes.',
-               'upgrade': 'at max',
-               'downgrade': 'mediated stand-down + talks resume → to 4–3. '
-                            'Requires a signed or published instrument, '
-                            'mediator confirmation, and a sustained window '
-                            'with no vessel casualties.'}],
- 'scoreTotal': 'CRISIS band — HELD. No channel moved. Five of six channels '
-               'are maxed and only oil, at 2/5, can raise this number. Both '
-               'dated tests landed benign: coupon sizes held and crude '
-               'built. The composition change worth recording is that one '
-               'leg of the Treasury downgrade is satisfied for the first '
-               'time in the war while the other moved further away, and that '
-               'the diplomatic track gained an architecture and an explicit '
-               'Iranian threat to Gulf energy infrastructure in the same 24 '
-               'hours.',
- 'whatsChanged': {'title': "4 · What's changed since the last edition (5 Aug "
-                           'AM → 6 Aug AM)',
-                  'items': ['Score holds at 27/30; no channel moved. '
-                            'Treasury holds coupon sizes. MOVE breaks below '
-                            '75. Iran and Oman agree route coordinates. Iran '
-                            'threatens Gulf energy infrastructure. Source: '
-                            'Bloomberg unless stated.',
-                            'Treasury held every coupon size, and the '
-                            'Stage-4 supply test did not fire. The quarterly '
-                            'refunding statement of 5 August kept 3Y at '
-                            '$58bn, 10Y at $42bn and 30Y at $25bn inside a '
-                            '$125bn August package, with 2Y $69bn, 5Y $70bn, '
-                            '7Y $44bn, 20Y $16bn and the 2Y FRN $28bn — '
-                            'exactly the 6 May guidance, and no increase '
-                            'despite Monday’s $68bn upgrade to quarterly '
-                            'borrowing. Buybacks of up to $38bn off-the-run '
-                            'plus $25bn for cash management; TIPS held; a '
-                            'short-dated CMB flagged for around end-August. '
-                            'The 3Y auctions 11 August, the 10Y 12 August '
-                            'and the 30Y 13 August, all settling 17 August. '
-                            'One wording change is noted and NOT relied '
-                            'upon: ‘anticipates maintaining’ replaced a '
-                            'prior construction about not needing to '
-                            'increase, which BMO and Santander strategists '
-                            'read second-hand as a possible step back from '
-                            'forward guidance; the 6 May text could not be '
-                            'retrieved for a word-level comparison. Source: '
-                            'US Treasury press release sb0590.',
-                            'MOVE fell 3.98 to 73.58 — below the 75 leg of '
-                            'the Treasury downgrade for the first time since '
-                            '29 July. The index has fallen 9.44 points from '
-                            'Friday’s 83.02 and is now 0.20 points above its '
-                            '73.38 pre-war anchor, having fully '
-                            'round-tripped the war. This is the first time '
-                            'in the war that one of the two Treasury '
-                            'downgrade legs is satisfied on a confirmed '
-                            'close. The channel does not move because the '
-                            'other leg fails: the 30Y closed 5.1680%, 16.80 '
-                            'bp above the 5.00% line, against a 6.90 bp gap '
-                            'on 17 July when the two were last '
-                            'simultaneously in range. Source: Bloomberg.',
-                            'Iran said it has agreed route coordinates with '
-                            'Oman, and Axios reported a 60-day interim '
-                            'mechanism. Baghaei said on 5 August that ‘the '
-                            'geographical coordinates of the route proposed '
-                            'by both sides have been agreed upon’ and that a '
-                            'joint statement is in final review and '
-                            'drafting, contingent on no third-party '
-                            'interference. Axios reported the terms as a '
-                            '60-day interim arrangement — inbound via a '
-                            'northern lane in Iranian waters, outbound via a '
-                            'southern lane in Omani waters, no tolls or fees '
-                            'for 60 days, naval mine clearing targeted at 30 '
-                            'days — with Qatar, Pakistan and Saudi Arabia '
-                            'mediating and Witkoff, Araghchi and Badr '
-                            'al-Busaidi as principals. Nothing is signed. No '
-                            'Omani official statement of any kind could be '
-                            'sourced, and Axios’ claim that Iranian '
-                            'leadership completed its approval on 4 August '
-                            'is contradicted by the Irish Times. Source: '
-                            'Reuters, Bloomberg, Axios, Irish Times, Al '
-                            'Jazeera.',
-                            'Reuters reported Iran warning three Gulf states '
-                            'it would strike their energy infrastructure if '
-                            'Washington attacks. Araghchi contacted his '
-                            'Saudi, Turkish and Qatari counterparts and '
-                            'Pakistan’s army chief with an ‘unequivocal’ '
-                            'message that Iran would retaliate against Gulf '
-                            'energy facilities, refineries, electricity '
-                            'grids, water infrastructure, transport networks '
-                            'and oil fields if the US struck Iranian '
-                            'infrastructure, invoking the 2019 Aramco '
-                            'attacks. Saudi Crown Prince Mohammed bin Salman '
-                            'phoned Trump urging delay; Riyadh separately '
-                            'warned Tehran it would defend itself. This is '
-                            'the most specific threat to Gulf energy '
-                            'infrastructure recorded by this monitor, and it '
-                            'is conditional on a strike that has not come. '
-                            'Source: Reuters exclusive, 5 August.',
-                            'The EIA weekly showed crude building and '
-                            'distillate tightening further, with a second '
-                            'SPR draw. For the week to 31 July: crude stocks '
-                            '407.0 mb, up 2.5 mb and about 6% below the '
-                            'five-year average; gasoline 209.7 mb, down 1.6 '
-                            'mb and 7% below; distillate 107.2 mb, down 3.5 '
-                            'mb and about 12% below — the widest of the '
-                            'three and wider than the ~10% of a week '
-                            'earlier; refinery utilisation 96.5% from 97.2%; '
-                            'and the SPR at 304.8 mb after a 3.0 mb draw, '
-                            'following the prior week’s 3.7 mb. Source: EIA '
-                            'Weekly Petroleum Status Report, 5 August.',
-                            'A tanker reported two explosions in the strait '
-                            'this morning; the Minoan Pioneer remains '
-                            'unresolved. UKMTO reported, via Al Jazeera at '
-                            '00:30 GMT on 6 August, a tanker hearing two '
-                            'explosions while transiting about 9 nm '
-                            'south-east of Kumzar, Oman, with vessel and '
-                            'crew safe and no attribution — the third '
-                            'maritime safety event in the waterway in four '
-                            'days. No follow-up on the Minoan Pioneer could '
-                            'be sourced after 4 August: no attribution, no '
-                            'news of the missing third engineer, no salvage '
-                            'report. UKMTO’s latest published advisory is '
-                            'Update 080 of 4 August, which corrects '
-                            'yesterday’s reference to Update 079 of 2 '
-                            'August. Source: UKMTO via Al Jazeera; UKMTO '
-                            'JMIC Advisory Note Update 080.',
-                            'US labour data softened while services prices '
-                            'accelerated, and a median FOMC voter turned '
-                            'hawkish. ADP private payrolls rose 44,000 in '
-                            'July against a consensus near 70,000, with June '
-                            'revised down to +95k. ISM services printed 54.1 '
-                            'against 54.5 expected, with the employment '
-                            'gauge showing its biggest drop since March — '
-                            'but prices paid jumped to 70.3. Federal Reserve '
-                            'Governor Lisa Cook, who voted with the majority '
-                            'to hold on 29 July, said on 5 August that ‘if I '
-                            'do not see signs of continued disinflation '
-                            'soon, I am prepared to act.’ A market-implied '
-                            'September hike probability of about 56% is '
-                            'reported second-hand via Kalshi News and is not '
-                            'verified direct from CME Group. Payrolls land 7 '
-                            'August, CPI 12 August. Source: ADP, ISM, '
-                            'American Banker/CNBC, Kalshi News.']},
- 'scenarios': [{'name': 'Return to full war',
-                'p': 30,
-                'desc': 'Lower for a second session, and still the modal '
-                        'path. Seven consecutive sessions with no reported '
-                        'US, Israeli or Iranian strike; CENTCOM’s only '
-                        'release since 29 Jul is a change of command; the '
-                        'cancelled strike package has not been revived. But '
-                        'it has not been shelved either: Trump said on 5 Aug '
-                        'the US had been ‘all set for the biggest attack '
-                        'since World War II’ and that ‘we may have to send '
-                        'it up again’, and Vance called Iran’s government '
-                        '‘fractured’ with factions wanting the war to '
-                        'continue.',
-                'path': 'Brent $105–140; MOVE above 90; oil to 3–4; score '
-                        '28–29 (only oil can rise).'},
-               {'name': 'Deal collapse — talks stall on terms',
-                'p': 28,
-                'desc': 'Unchanged, and still the largest non-war line. The '
-                        'architecture became specific and so did the failure '
-                        'conditions. No Omani statement of any kind exists; '
-                        'Gharibabadi denies any US–Iran negotiation; Axios '
-                        'and the Irish Times contradict each other on '
-                        'Supreme Leader approval and Pezeshkian says contact '
-                        'with him is ‘very difficult’; the deal is '
-                        'conditional on lifting a blockade UKMTO records as '
-                        'still being enforced; and Trump has publicly '
-                        'refused the fee mechanism Iran has proposed.',
-                'path': 'Brent $88–105; oil back toward 3; Threshold B '
-                        're-arms; score 28.'},
-               {'name': 'Mediated pause — the strait reopens',
-                'p': 16,
-                'desc': 'Higher for a second session, on agreed coordinates, '
-                        'a drafted joint statement, a 60-day interim '
-                        'mechanism with a 30-day mine-clearing target, and a '
-                        'Gulf official telling CNN the odds of a deal by '
-                        'Friday are 50-50. A signed instrument starts the '
-                        'ten-session maritime clock and supplies the '
-                        'mediated-pause leg the oil downgrade needs, with '
-                        'the price already $5.38 from the anchor. It remains '
-                        'unsigned, unconfirmed by the mediator and '
-                        'conditional.',
-                'path': 'Brent $70–80; MOVE under 75; maritime→3–4 on '
-                        'verified traffic, oil→1, escalation→4; score falls '
-                        'toward 21–23.'},
-               {'name': 'Contained but violent — blockaded stalemate',
-                'p': 15,
-                'desc': 'Lower, mechanically, as the pause line rises — but '
-                        'the content of this path strengthened. The strait '
-                        'is shut on day 158 at UKMTO threat level SEVERE, '
-                        'TankerMap counted zero transits on 5 Aug, a tanker '
-                        'reported explosions off Kumzar this morning, the '
-                        'Houthis say they will now target tankers in the '
-                        'NORTHERN Red Sea, and the score sits at 27 '
-                        'regardless because five of six channels are pinned '
-                        'at 5.',
-                'path': 'Brent $75–90; MOVE 72–82; risk premium $3–12/bbl; '
-                        'score holds 27.'},
-               {'name': 'Regional relapse — Gulf energy infrastructure hit',
-                'p': 11,
-                'desc': 'Unchanged in probability and materially worse in '
-                        'character. Iran has now explicitly threatened Gulf '
-                        'energy facilities, refineries, grids, water and '
-                        'transport in a message to three Gulf foreign '
-                        'ministers — but conditional on a US strike whose '
-                        'probability fell this session. The unconditional '
-                        'odds are flat; the conditional severity is higher. '
-                        'Exposure unchanged: Jizan out to ~15 Aug, Abqaiq '
-                        'and Damietta unreported since 30 Jul, spare '
-                        'capacity ~0.17 mb/d, and a 7 Aug Iraqi deadline '
-                        'that remains Tier 3.',
-                'path': 'Brent $150+; emergency policy response; HY spreads '
-                        'above 500 bp; score 29–30.'}],
- 'scenarioShift': 'Probability shifts from the 5 Aug edition: mediated pause '
-                  '+5 (11→16), the largest single rise for a second '
-                  'consecutive session, on agreed coordinates and a drafted '
-                  'joint statement; full war −3 (33→30) on a seventh session '
-                  'without a strike, tempered by Trump’s ‘send it up again’; '
-                  'contained-but-violent −2 (17→15), mechanically, as the '
-                  'pause line rises; deal collapse unchanged at 28% and '
-                  'still the largest non-war line; regional relapse '
-                  'unchanged at 11%, because Iran’s explicit threat to Gulf '
-                  'energy infrastructure raises the severity of that path '
-                  'rather than its probability, being conditional on a US '
-                  'strike that became less likely this session. '
-                  'Probabilities sum to 100. The map has now tilted toward '
-                  'de-escalation for a second session, and it still rests '
-                  'entirely on an instrument no one has published and a '
-                  'mediator who has said nothing.',
- 'watchlist': ['The 30Y refunding leg on Thursday 13 August — the statement '
-               'passed, the auction is the real test. Treasury held coupon '
-               'sizes on 5 August, so the supply shock this monitor had '
-               'flagged for a fortnight did not arrive through the '
-               'announcement. It can still arrive through demand. The 3Y '
-               'auctions 11 August at $58bn, the 10Y 12 August at $42bn and '
-               'the 30Y 13 August at $25bn, all settling 17 August, into a '
-               'long end 55.3 bp above its pre-war anchor and 11.80 bp above '
-               'the 13 May stop of 5.050%. A tail on the 30Y leg re-arms '
-               'Threshold B quickly, and it would do so with MOVE at 73.58 — '
-               'that is, with the market positioned for the opposite.',
-               'Whether an Iran–Oman joint statement is actually published — '
-               'and whether Oman ever says anything. This remains the single '
-               'event that could move two channels. What has changed is that '
-               'the thing to verify is now concrete: a published joint '
-               'statement with the agreed coordinates, an Omani confirmation '
-               'from Badr al-Busaidi or the Omani foreign ministry, a US '
-               'position on lifting the port blockade UKMTO still records as '
-               'being enforced against 44 vessels, and clarity on fees after '
-               'Trump publicly refused them. Note what is missing from every '
-               'account so far: the mediator has not spoken. An announcement '
-               'does not move a channel; the 3 August episode is the '
-               'reference case.',
-               'July payrolls on 7 August, into a softening labour tape and '
-               'a hardening inflation tape. ADP printed +44k against a '
-               'consensus near +70k with June revised down, and ISM services '
-               'missed at 54.1 with its employment gauge falling the most '
-               'since March — but ISM prices paid jumped to 70.3. Governor '
-               'Cook, a majority voter on 29 July, now says she is ‘prepared '
-               'to act’ if disinflation does not resume. A weak payroll with '
-               'hot services prices is the configuration that most '
-               'complicates a September decision, and 5Y5Y at 2.3067% says '
-               'forward inflation compensation has not yet conceded the '
-               'point. CPI lands 12 August, before the 15–16 September FOMC.',
-               'AUTMUSAG’s next print, now that the break has stopped '
-               'extending. The scored series backfilled 4 August at $4.75 — '
-               'back on the trigger rather than through it, and the first '
-               'print not above the line since 29 July — and is blank for 5 '
-               'and 6 August. Every corroborating retail gasoline measure is '
-               'flat to easing. What would change the read is a backfill '
-               'materially below $4.75; what argues it will not come is '
-               'diesel, up 58.5 cents on the month at $5.3622 with '
-               'distillate stocks 3.5 mb lower on the week and about 12% '
-               'below the five-year average. Refining, not crude, is the '
-               'binding constraint.',
-               'The Kumzar explosions, the unresolved Minoan Pioneer, and '
-               'the Houthis moving north. A tanker reported two explosions '
-               'about 9 nm south-east of Kumzar this morning with no '
-               'attribution — the third maritime safety event in the strait '
-               'in four days, against CENTCOM’s statement that the southern '
-               'route ‘remains free and open’. The Minoan Pioneer’s '
-               'attribution, missing third engineer and salvage status have '
-               'produced no reporting since 4 August and are carried as '
-               'unresolved rather than closed. In the Red Sea the Houthis '
-               'claimed the Wafa off Yanbu and the Daisy in the Gulf of Aden '
-               'and told Bloomberg they will target tankers in the northern '
-               'Red Sea, which extends the threat envelope toward Saudi '
-               'Arabia’s alternative export route.',
-               'The 7 August Iraqi deadline, Jizan’s restart, and three '
-               'series to re-verify. The 7 August Islamic Resistance in Iraq '
-               'deadline to Baghdad remains Tier 3 in origin (Press TV, 29 '
-               'July) with Tier 3 corroboration only and no militia activity '
-               'reported 4–6 August — it is watched, not used. Aramco’s 400k '
-               'b/d Jizan complex is still targeted to restart about 15 '
-               'August with no update since 30 July; Abqaiq and Damietta '
-               'remain unreported. On the data side: JGLA backfilled 5 '
-               'August at ¥3,353 and has no 6 August print; AUTMUSAG is '
-               'blank for 5 and 6 August; SOFR backfilled 4 August at 3.66 '
-               'and is blank for 5 and 6 August; MOVE and VIX printed for 5 '
-               'August but not 6 August.'],
- 'sourceLog': {'tier1Market': 'Tier 1 — primary market data. Bloomberg '
-                              'Terminal extract (US Iran BBG Data.xlsx, 155 '
-                              'data rows × 99 columns, restated front-month '
-                              'continuation series). Tickers: CO2/CL2 Comdty '
-                              '(front-month; last confirmed close $77.86 / '
-                              '$74.05 on 5 Aug, intraday $78.20 / $74.45 '
-                              'with a Brent high of 78.34 and low of 77.39); '
-                              'COA/CLA Comdty (active, unscored — $79.93 / '
-                              '$75.64); NGA ($2.672 intraday, the lowest '
-                              'since 29 Apr), TZTA (€53.850 intraday after a '
-                              '5 Aug close of €52.404, the lowest since 13 '
-                              'Jul) and JGLA (5 Aug BACKFILLED at ¥3,353, '
-                              'the lowest since 17 Jul; no 6 Aug print, '
-                              'flagged not carried); '
-                              'USGG2YR/5YR/10YR/20YR/30YR (the 30Y closed '
-                              '5.1680% on 5 Aug, the lowest since 28 Jul, '
-                              'and the 10Y 4.6127%, a third consecutive '
-                              'close below the 4.65% Stage-4 leg; 5.1638% / '
-                              '4.6107% intraday); USYC2Y10 (+42.730 close, '
-                              '+42.339 intraday); USGGBE10 (2.2176 close, a '
-                              'second consecutive close below the 2.2569 '
-                              'pre-war anchor and the lowest since 28 Jul; '
-                              '2.2164 intraday); USGG5Y5Y (2.3067 close, a '
-                              'seventh consecutive close above the 2.30% '
-                              'trigger by 0.67 bp and the lowest since 28 '
-                              'Jul; 2.3061 intraday); SOFRRATE (4 Aug '
-                              'BACKFILLED at 3.66; blank 5 and 6 Aug, '
-                              'flagged not carried); MOVE (73.58 on the 5 '
-                              'Aug close, −3.98, the lowest since 20 Jul and '
-                              'BELOW the 75 Treasury-downgrade leg for the '
-                              'first time since 29 Jul; no 6 Aug print) and '
-                              'VIX (15.81, −0.69, the lowest since 15 Jul; '
-                              'no 6 Aug print); DXY (99.676 close, the '
-                              'lowest since 16 Jun and a fifth consecutive '
-                              'decline, 99.670 intraday); AUTMUSAG (AAA '
-                              'all-grades pump — score reference; 4 Aug '
-                              'BACKFILLED at $4.75, the first print not '
-                              'above the $4.75 trigger since 29 Jul; blank 5 '
-                              'and 6 Aug) and USRFRUSA (DOE regular spot, '
-                              'weekly — corroboration; $4.079 for the week '
-                              'to 3 Aug, no new release until 10 Aug). '
-                              'Data-integrity note: the stale-row check '
-                              'clears. The 5 Aug row has refreshed and '
-                              'differs materially from the intraday values '
-                              'published for it (TTF €52.404 against '
-                              '€55.100; MOVE an actual 73.58 against a '
-                              'carried 77.56; DXY 99.676 against 99.850), so '
-                              'it is a true close and every trigger test in '
-                              'this edition runs off it. Three series '
-                              'backfilled in this extract: JGLA for 5 Aug, '
-                              'AUTMUSAG for 4 Aug and SOFRRATE for 4 Aug. '
-                              'The 27 Feb 2026 anchor was re-verified field '
-                              'by field and is unchanged.',
-               'tier1News': 'Tier 1 — news and institutional. US Treasury '
-                            '(Quarterly Refunding Statement, press release '
-                            'sb0590, 5 Aug: 2Y $69bn, 3Y $58bn, 5Y $70bn, 7Y '
-                            '$44bn, 10Y $42bn new, 20Y $16bn, 30Y $25bn new, '
-                            '2Y FRN $28bn — a $125bn August package with no '
-                            'coupon increase; buybacks up to $38bn '
-                            'off-the-run plus $25bn for cash management; '
-                            'TIPS held; possible short-dated CMB around '
-                            'end-August; auctions 11, 12 and 13 Aug settling '
-                            '17 Aug; the guidance sentence ‘Treasury '
-                            'anticipates maintaining nominal coupon and FRN '
-                            'auction sizes for at least the next several '
-                            'quarters’; and the 3 Aug borrowing estimates of '
-                            '$739bn for Jul–Sep and $628bn for Oct–Dec). EIA '
-                            '(Weekly Petroleum Status Report of 5 Aug for '
-                            'the week to 31 Jul: crude 407.0 mb +2.5, '
-                            'gasoline 209.7 mb −1.6, distillate 107.2 mb '
-                            '−3.5 and ~12% below the five-year average, '
-                            'refinery utilisation 96.5%, SPR 304.8 mb after '
-                            'a 3.0 mb draw; and the Gasoline and Diesel Fuel '
-                            'Update for the week to 3 Aug — regular $4.079, '
-                            'on-highway diesel $5.348). AAA (regular-grade '
-                            'national average $4.0801 and diesel $5.3622 on '
-                            '5 Aug, against $4.0892 / $5.3715 on 4 Aug, '
-                            '$4.0907 / $5.3293 a week earlier and $3.8039 / '
-                            '$4.7773 a month earlier). Reuters and Bloomberg '
-                            '(Baghaei on 5 Aug that the geographical '
-                            'coordinates of the route proposed by Iran and '
-                            'Oman have been agreed, the talks are '
-                            '‘professional’, a joint statement is in final '
-                            'review and drafting contingent on no '
-                            'third-party interference, and the agreement ‘in '
-                            'itself does not mean the strait is safe’ while '
-                            'the US blockade stands). Axios (the 60-day '
-                            'interim mechanism: inbound via a northern lane '
-                            'in Iranian waters, outbound via a southern lane '
-                            'in Omani waters, no tolls or fees for 60 days, '
-                            'naval mine clearing targeted at 30 days, a '
-                            'permanent arrangement to follow, '
-                            'Qatar/Pakistan/Saudi Arabia mediating, '
-                            'Witkoff/Araghchi/Badr al-Busaidi as principals, '
-                            'and Iranian leadership approval completed on 4 '
-                            'Aug). Irish Times (that the Supreme Leader must '
-                            'still approve, and that the US would lift the '
-                            'blockade and reinstate an oil sales waiver if '
-                            'the agreement holds) — directly contradicting '
-                            'Axios on approval. Reuters (Pezeshkian on state '
-                            'television that contact with the new Supreme '
-                            'Leader is ‘very difficult’ at present; and the '
-                            '5 Aug exclusive that Araghchi warned his Saudi, '
-                            'Turkish and Qatari counterparts and Pakistan’s '
-                            'army chief that Iran would retaliate against '
-                            'Gulf energy facilities, refineries, electricity '
-                            'grids, water infrastructure, transport networks '
-                            'and oil fields if the US struck Iranian '
-                            'infrastructure, with reference to the 2019 '
-                            'Aramco attacks; that MBS phoned Trump urging '
-                            'delay; and that Riyadh warned Tehran it would '
-                            'defend itself). ABC News and CBS News (Trump on '
-                            '5 Aug that the two sides ‘are talking’, that '
-                            'the US had been ‘all set for the biggest attack '
-                            'since World War II’ before Iran asked for '
-                            'talks, ‘we may have to send it up again’, and '
-                            '‘I’d rather make a deal because I don’t want to '
-                            'kill people’). CNBC (Bessent signalling a deal '
-                            'is close; and the 6 Aug pickup of Gharibabadi). '
-                            'CNN (a senior Gulf official putting an '
-                            'Iran–Oman deal by Friday at ‘50-50’). Al '
-                            'Jazeera (Vance on 5–6 Aug that the talks are '
-                            '‘messy’ and Iran’s government ‘fractured’; '
-                            'Iranian officials that any Hormuz agreement '
-                            'does not mean a return to pre-war conditions; '
-                            'and the UKMTO report at 00:30 GMT on 6 Aug of a '
-                            'tanker hearing two explosions about 9 nm '
-                            'south-east of Kumzar, Oman, vessel and crew '
-                            'safe). US State Department (Rubio and UK '
-                            'Foreign Secretary Miliband reaffirming '
-                            'commitment to open Strait transit, 5 Aug). '
-                            'CENTCOM (no combat release since 29 Jul; a 5 '
-                            'Aug change-of-command release; and a 5 Aug '
-                            'statement that the southern route through the '
-                            'strait ‘remains free and open for all '
-                            'commercial vessels’ with more than 1,000 '
-                            'vessels assisted in three months). UKMTO (JMIC '
-                            'Advisory Note Update 080 of 4 Aug: 80 maritime '
-                            'security incidents since 1 Mar; Hormuz SEVERE, '
-                            'Gulf of Oman and southern Red Sea SUBSTANTIAL, '
-                            'Arabian Gulf MODERATE; incidents 103-26 of 2 '
-                            'Aug — VHF threats claiming to be from the '
-                            '‘Sepah Navy’ with explosions near vessels in '
-                            'Omani territorial waters — and 104-26 of 3 Aug, '
-                            'the Minoan Pioneer; single-digit tanker '
-                            'transits a day against a 138/day historical '
-                            'average; 44 vessels redirected under US '
-                            'blockade enforcement as of 3 Aug). Lloyd’s List '
-                            'Intelligence (Strait of Hormuz Brief of 5 Aug: '
-                            '84 total transits 27 Jul–2 Aug against 45 the '
-                            'week before, 52 non-Iranian-linked against 28, '
-                            '21 westbound non-Iranian-linked against 11; two '
-                            'confirmed strikes on ships using the Omani '
-                            'route since 1 Aug; 65 vessels trapped inside '
-                            'the Gulf after entering during the lull, plus '
-                            '70 more stuck since the conflict began). '
-                            'Windward (15 transits in the 24 hours to 3 Aug, '
-                            '10 outbound and 5 inbound, 4 AIS-dark), '
-                            'TankerMap (zero transits 5 Aug; seven-day '
-                            'average near 1.0) and straits.live (2 vessels '
-                            'on 2 Aug against a typical 73; 227 vessels '
-                            'holding; war-risk cover near 30 times '
-                            'pre-crisis with a VLCC premium around $10m a '
-                            'voyage and six P&I clubs withdrawn). Lloyd’s '
-                            'Market Association (safety concerns rather than '
-                            'insurance availability are suppressing '
-                            'traffic). Bloomberg (the Houthis saying they '
-                            'will target tankers in the northern Red Sea). '
-                            'gCaptain (the Indian MSV Faize Noore Oliya '
-                            'sinking off Hodeidah on 4 Aug with all 14 crew '
-                            'rescued). ADP (+44,000 private jobs in July, '
-                            'June revised to +95k, annual pay +4.4%), ISM '
-                            '(services 54.1 with prices paid 70.3 and the '
-                            'largest employment drop since March, 5 Aug), '
-                            'Federal Reserve (Governor Lisa Cook, 5 Aug: ‘If '
-                            'I do not see signs of continued disinflation '
-                            'soon, I am prepared to act’; the 29 Jul hold at '
-                            '3.50–3.75%, 9–3 with three dissents for a '
-                            'hike). OPEC (the 2 Aug decision to add 188k b/d '
-                            'for September). IEA (Oil Market Report of 10 '
-                            'July: effective OPEC+ spare capacity ~0.17 '
-                            'mb/d). Reuters citing IIR (Jizan targeted to '
-                            'restart about 15 August). Iraqi News (July '
-                            'seaborne crude exports 1.25 mb/d, up 153% on '
-                            'June’s 493k b/d but down 63% on July 2025’s '
-                            '3.38 mb/d). Fortune (1 Aug: Melius Research '
-                            'estimating nearly 10% of world refining '
-                            'capacity offline; Exxon’s Woods and Hansen and '
-                            'Chevron’s Wirth on refining as the binding '
-                            'constraint and upward pressure on product '
-                            'prices into Q3).',
-               'tier3': 'Tier 3 — state media and combatant claims '
-                        '(labelled). IRNA carried Gharibabadi’s 5 Aug '
-                        'statement that ‘US claims that they are negotiating '
-                        'with Iran are untrue, and there are no '
-                        'negotiations’, while confirming Tehran has received '
-                        'US messages indicating readiness to return to its '
-                        'obligations; CNBC picked it up at Tier 1 on 6 Aug. '
-                        'The Houthi claims of ballistic-missile attacks on '
-                        'the Saudi tankers Wafa off Yanbu and Daisy in the '
-                        'Gulf of Aden on 5 Aug are combatant claims, '
-                        'reported by Al Jazeera and CBS News but with no '
-                        'Saudi confirmation and no damage or casualty '
-                        'figures. The 7 August Islamic Resistance in Iraq '
-                        'deadline to Baghdad originated with Press TV on 29 '
-                        'July and has Tier 3 corroboration only. Corrections '
-                        'and re-verifications this edition: (i) the figure '
-                        'that roughly 10% of global refining capacity is '
-                        'offline, carried in the 1–5 August editions as an '
-                        'Exxon and Chevron statement, in fact originates '
-                        'with Melius Research via Fortune of 1 August — the '
-                        'Exxon and Chevron executives made qualitative '
-                        'statements only, and a competing estimate citing '
-                        'IEA data puts the peak outage nearer 3.5% of global '
-                        'capacity, so the attribution is corrected and the '
-                        'magnitude is reported as contested; (ii) UKMTO’s '
-                        'latest advisory is Update 080 of 4 August, not '
-                        'Update 079 of 2 August as reported yesterday; (iii) '
-                        'yesterday’s reading that the political-stress '
-                        'upgrade was being ‘reinforced’ is corrected — '
-                        'AUTMUSAG’s 4 August backfill at $4.75 is not above '
-                        'the trigger, so the run through the line is three '
-                        'closes and the upgrade is intact rather than '
-                        'strengthening; (iv) the SOFR ‘last print 3.65 on 3 '
-                        'August’ reported yesterday is superseded by the 4 '
-                        'August backfill at 3.66; (v) the Minoan Pioneer '
-                        'items — attribution, the missing third engineer and '
-                        'salvage — produced no reporting after 4 August and '
-                        'are carried as unresolved, with an unverified '
-                        'social-media attribution to Iran explicitly NOT '
-                        'used; (vi) the September hike probability is '
-                        'reported at about 56% second-hand via Kalshi News '
-                        'for 5 August, still not sourced direct from CME '
-                        'Group, and remains labelled unverified.'},
- 'protocol': [{'step': 'Refresh the Bloomberg extract',
-               'detail': 'Parse the latest dated row (6 Aug, Thursday) as '
-                         'intraday; re-map columns via the robust scan '
-                         '(front-month CO2/CL2; DXY resolves as DXY Index). '
-                         'The stale-row integrity check CLEARS: the 5 Aug '
-                         'row has refreshed with true closes that differ '
-                         'materially from the intraday values published for '
-                         'it — TTF €52.404 against €55.100, MOVE an actual '
-                         '73.58 against a carried 77.56, DXY 99.676 against '
-                         '99.850. Three series BACKFILLED: JGLA for 5 Aug at '
-                         '¥3,353, AUTMUSAG for 4 Aug at $4.75 and SOFRRATE '
-                         'for 4 Aug at 3.66. Currently dark and flagged, not '
-                         'carried: JGLA, AUTMUSAG, SOFRRATE, MOVE and VIX '
-                         'all have no 6 Aug print.'},
-              {'step': 'Recompute deltas',
-               'detail': 'd/d vs the 5 Aug close; w/w vs the close five '
-                         'trading sessions back (30 Jul this edition); '
-                         'vs-pre-war against the 27 Feb 2026 anchor, '
-                         're-verified field by field and unchanged.'},
-              {'step': 'Re-evaluate the six channels',
-               'detail': 'Market channels move on confirmed closes only. No '
-                         'channel moved; the score holds at 27/30. Oil held '
-                         'at 2 (last close $77.86, $17.14 below $95 and '
-                         '$5.38 above the $72.48 anchor — the pause leg is '
-                         'not met). US inflation held at 5 (5Y5Y closed '
-                         '2.3067%, a seventh consecutive close above 2.30% '
-                         'but by only 0.67 bp; the downgrade sits at the '
-                         '2.142% anchor, 16.47 bp lower). Treasury held at 5 '
-                         '— the MOVE leg of its downgrade is SATISFIED at '
-                         '73.58 for the first time in the war, and the 30Y '
-                         'leg fails by 16.80 bp. Political held at 5, with '
-                         'the break no longer extending after the 4 Aug '
-                         'backfill at $4.75. Maritime and escalation are '
-                         'event-based and both maxed; the escalation '
-                         'downgrade candidate gained architecture and lost '
-                         'evidence in the same session.'},
-              {'step': 'Reconcile against the prior edition',
-               'detail': 'Wednesday’s US session was the quietest '
-                         'reconciliation in a fortnight on price and the '
-                         'noisiest on volatility. My 5 Aug intraday Brent '
-                         '$77.76 versus the $77.86 close (+$0.10, the '
-                         'smallest crude gap since 21 Jul); WTI $74.17 vs '
-                         '$74.05 (−$0.12); COA $79.17 vs $79.45; CLA $75.44 '
-                         'vs $75.22; Henry Hub $2.693 vs $2.688; TTF €55.100 '
-                         'vs €52.404 (−€2.696); 30Y 5.1806% vs 5.1680% '
-                         '(−1.26 bp); 10Y 4.6228% vs 4.6127% (−1.01 bp); '
-                         '2s10s +41.879 vs +42.730 (+0.85 bp); BE10 2.2294% '
-                         'vs 2.2176% (−1.18 bp); 5Y5Y 2.3171% vs 2.3067% '
-                         '(−1.04 bp); DXY 99.850 vs 99.676 (−0.174); MOVE a '
-                         'carried 77.56 vs an actual 73.58 (−3.98); VIX a '
-                         'carried 16.50 vs an actual 15.81 (−0.69).'},
-              {'step': 'Update scenarios and watchlist',
-               'detail': 'Re-rank catalysts: the 30Y refunding leg on 13 Aug '
-                         'is now the live Stage-4 test after the statement '
-                         'passed; whether an Iran–Oman joint statement is '
-                         'published and whether Oman ever speaks; payrolls 7 '
-                         'Aug into ADP +44k and ISM prices-paid 70.3, then '
-                         'CPI 12 Aug; AUTMUSAG’s next print against a break '
-                         'that has stopped extending; the Kumzar explosions '
-                         'and the unresolved Minoan Pioneer; the Tier 3 7 '
-                         'Aug Iraqi deadline and Jizan’s ~15 Aug restart. '
-                         'Mediated pause 11→16, full war 33→30, '
-                         'contained-but-violent 17→15, deal collapse '
-                         'unchanged at 28, regional relapse unchanged at '
-                         '11.'}],
- 'methodology': {'scale': 'Shock-score scale. Six transmission channels '
-                          '(maritime denial, oil, US inflation impulse, '
-                          'Treasury stress, political stress, escalation '
-                          'risk), each 0–5, summed to 0–30. Bands: 0–7 watch '
-                          '· 8–14 stress · 15–21 systemic-risk watch · 22–30 '
-                          'crisis. Market channels move only on a confirmed '
-                          'close through a trigger; escalation-risk and '
-                          'maritime denial are event-based. Hysteresis: '
-                          'upgrades fire on a sustained break, downgrades '
-                          'only on a sustained reversal past a wider '
-                          'threshold, deliberately, to avoid whipsawing. '
-                          'This edition applies the rule three times in '
-                          'three directions. Treasury holds at 5 although '
-                          'one leg of its downgrade is now satisfied, '
-                          'because the rule requires both. US inflation '
-                          'holds at 5 although the 2.30% break that fired '
-                          'the upgrade is 0.67 bp from disappearing, because '
-                          'the stated downgrade sits 16.47 bp lower at the '
-                          'pre-war anchor — a tension this monitor flags '
-                          'rather than resolves quietly. Escalation holds at '
-                          '5 although the diplomatic track gained '
-                          'coordinates, a drafted statement and a 60-day '
-                          'mechanism, because a mediator that has never '
-                          'spoken on the record is not confirmation and a '
-                          'threat to Gulf energy infrastructure is not a '
-                          'stand-down. The 25–26 June whipsaw and the 3 '
-                          'August announcement that never became an event '
-                          'remain the reference cases.',
-                 'scaleCap': 'Scale cap — binding on five of six channels, '
-                             'and cutting both ways. Maritime and escalation '
-                             'have been pinned at 5/5 since 10 and 9 July, '
-                             'Treasury since 14 July, US inflation since 31 '
-                             'July and political stress since 4 August. Only '
-                             'oil, at 2/5, retains any upward range — three '
-                             'points in a thirty-point scale. Readers have '
-                             'been asked for a month to hold the consequence '
-                             'that further geopolitical deterioration cannot '
-                             'raise this score; the mirror image now applies '
-                             'with force. This session delivered a benign '
-                             'fiscal test, a fully round-tripped rates '
-                             'volatility index, a third close with Threshold '
-                             'B unsatisfied, and a negotiation with agreed '
-                             'coordinates — and the score did not move a '
-                             'point, because no event channel can come off '
-                             'its maximum until a de-escalation has '
-                             'persisted rather than merely been described. A '
-                             'flat 27 is a saturated scale, not a stable '
-                             'situation.',
-                 'integrity': 'Data integrity this edition. The stale-row '
-                              'check clears: the extract’s 5 August row '
-                              'refreshed properly and its closes differ '
-                              'materially from the intraday values published '
-                              'for it (TTF €52.404 against €55.100, MOVE an '
-                              'actual 73.58 against a carried 77.56, DXY '
-                              '99.676 against 99.850), so 5 August is a '
-                              'confirmed close and every trigger test runs '
-                              'off it. The other side of the two-way check '
-                              'also reports: three series flagged as dark '
-                              'yesterday have BACKFILLED — JGLA for 5 August '
-                              'at ¥3,353, AUTMUSAG for 4 August at $4.75 and '
-                              'SOFRRATE for 4 August at 3.66 — and the '
-                              'AUTMUSAG backfill changes a substantive '
-                              'reading, because $4.75 is not above the '
-                              'trigger and yesterday’s ‘reinforced’ framing '
-                              'is corrected accordingly. Currently dark and '
-                              'flagged rather than carried: JGLA, AUTMUSAG, '
-                              'SOFRRATE, MOVE and VIX all have no 6 August '
-                              'print. Where third-party sources disagree '
-                              'materially the disagreement is reported '
-                              'rather than resolved by preference: the '
-                              'Hormuz transit trackers continue to disagree '
-                              'by an order of magnitude on the same days — '
-                              'Lloyd’s List 84 transits in the week to 2 '
-                              'August, Windward 15 in the 24 hours to 3 '
-                              'August, TankerMap zero on 5 August, '
-                              'straits.live 2 on 2 August — with pre-war '
-                              'baselines quoted anywhere between 73 and 138 '
-                              'crossings a day, and no average is taken '
-                              'across incompatible vessel universes. The '
-                              'Bloomberg extract governs for every scored '
-                              'series; no price, yield or spread in this '
-                              'document comes from a news source.',
-                 'gasoline': 'Gasoline series. Political stress is scored on '
-                             'AUTMUSAG (AAA all-grades retail pump; pre-war '
-                             '$3.52, peak $5.18, latest confirmed print '
-                             '$4.75 on 4 August — backfilled in this '
-                             'extract, one cent below Monday and the first '
-                             'print not above the $4.75 trigger since 29 '
-                             'July, so the run through the line is $4.76 on '
-                             '30 and 31 July and 3 August, three closes '
-                             'rather than four — with 5 and 6 August blank). '
-                             'USRFRUSA (DOE regular spot; pre-war ~$2.94, '
-                             'peak $4.50, latest $4.079 for the week to 3 '
-                             'August, no new release until 10 August) is '
-                             'tracked alongside as corroboration only. '
-                             'Neither series is re-based. The basis note '
-                             'matters more now that the two are diverging: '
-                             'AUTMUSAG is an ALL-GRADES series and AAA’s own '
-                             'published national average is REGULAR-grade, '
-                             'which printed $4.0801 on 5 August. The gap is '
-                             'structural and runs the whole history of this '
-                             'monitor — the same gap exists at the pre-war '
-                             'anchor, $3.52 against ~$2.94 — so a reader '
-                             'comparing the scored $4.75 with a press report '
-                             'of $4.08 is comparing different series, not '
-                             'finding an error. The trigger, the anchor and '
-                             'the full history are all set on AUTMUSAG and '
-                             're-basing would invalidate them. Diesel is '
-                             'reported separately because the binding '
-                             'constraint on the pump is refining rather than '
-                             'crude: AAA had on-highway diesel at $5.3622 on '
-                             '5 August, up 58.5 cents in a month, and EIA '
-                             'distillate stocks fell 3.5 mb in the week to '
-                             '31 July to about 12% below the five-year '
-                             'average.',
-                 'anchor': 'Pre-war anchor (27 Feb 2026 close). Brent '
-                           '$72.48; WTI $67.02; 2Y 3.375%; 5Y 3.502%; 10Y '
-                           '3.938%; 30Y 4.611%; 2s10s +55.64 bp; 5Y5Y '
-                           '2.142%; 10Y BE 2.257%; MOVE 73.38; VIX 19.86; '
-                           'DXY 97.608; gasoline (AAA) $3.52; Henry Hub '
-                           '$3.06; TTF €31.23; Asia LNG ¥1,669. (Re-verified '
-                           'field by field — unchanged.) Brent +7.9%, WTI '
-                           '+11.1%, TTF +72.4%, Asia LNG +100.9%; the 30Y '
-                           '(+55.3 bp), 10Y (+67.3 bp), 5Y5Y (+16.4 bp), DXY '
-                           '(+2.06) and now only marginally MOVE (+0.20) sit '
-                           'above their anchors; the 10Y breakeven (−4.1 '
-                           'bp), VIX (−4.05) and Henry Hub (−12.8%) are '
-                           'below pre-war. The composition of that list is '
-                           'the edition in one line: rates volatility has '
-                           'returned to where it started the war and spot '
-                           'inflation compensation has gone below it, while '
-                           'the level of long-end yields has not moved back '
-                           'at all. The 30Y is still 55.3 bp above its '
-                           'anchor with MOVE at 73.58. That is a '
-                           'term-premium story, not a volatility story, and '
-                           'it is why this channel is pinned at 5 on one leg '
-                           'rather than released on both.',
-                 'intraday': 'Intraday caveat. The latest dated row is a '
-                             'Singapore-AM snapshot and US hours set the '
-                             'close. The error is regime-dependent rather '
-                             'than random — large when the US session has '
-                             'something to trade, small when it does not — '
-                             'and this session is the small case, four '
-                             'sessions after the largest upside gap and one '
-                             'after the largest downside one: Brent closed '
-                             'ten cents ABOVE my snapshot and the curve '
-                             'within 1.3 bp of it. The corollary flagged on '
-                             '5 August still stands in reverse: a quiet '
-                             'reconciliation is not evidence that the next '
-                             'one will be quiet. Two fields moved anyway and '
-                             'both were invisible in the morning print — '
-                             'MOVE, which had not printed at all on Tuesday '
-                             'and closed 3.98 lower than the value carried, '
-                             'and TTF, which closed €2.696 below the '
-                             'snapshot. Recent Brent gaps between my '
-                             'snapshot and the subsequent close: −$2.01, '
-                             '−$3.32, −$0.84, +$1.97, −$0.47, −$3.99, '
-                             '+$0.10. CL2 remains an artifact against active '
-                             'CLA and the front-month/active gap is $1.73 in '
-                             'Brent; the scored CO2 continuation series is '
-                             'unaffected. Triggers are evaluated on '
-                             'confirmed closes; escalation-risk and maritime '
-                             'denial are event-based. Restated-series levels '
-                             'are not comparable with pre-restatement '
-                             'editions, though the directional analysis is '
-                             'continuous.'}}
 
-# ======================================================================
-# 2026-08-07
-# ======================================================================
-EDITIONS['2026-08-07'] = {'label': '7 Aug 2026',
- 'editionLine': 'Daily edition · 7 Aug 2026 intraday · Bloomberg · Singapore '
-                '7 Aug AM update',
+# =====================================================================
+# 19 AUGUST 2026
+# =====================================================================
+EDITIONS['2026-08-19'] = {
+ 'label': '19 Aug 2026',
+ 'editionLine': 'Daily edition · 19 Aug 2026 intraday · Bloomberg · Singapore 19 Aug AM update · covers two sessions',
  'score': '27',
  'band': 'CRISIS',
- 'sequencing': '27 → 27 → 27 → 27',
- 'sessionNote': 'Score held for a fourth session · no channel moved · the '
-                'snapshot missed the widest upside crude session on record · '
-                'Stage-4 Threshold B re-arms six days before the 30Y auction '
-                '· MOVE’s break below 75 lasts one day · an Iranian bill '
-                'would charge up to 7% of cargo value · Trump says no deal '
-                'has been reached',
- 'headline': 'Note: 7 Aug figures are intraday prints; the last confirmed '
-             'close is Thursday 6 Aug. The integrity check clears — the 6 '
-             'Aug row has refreshed with true closes. Score HOLDS at 27/30, '
-             'a fourth consecutive session. No channel moved. Three things '
-             'define the edition. First, yesterday’s Singapore snapshot '
-             'missed the largest upside crude session of the war and most of '
-             'a six-basis-point selloff in the long end. Brent closed $80.46 '
-             'against the $78.20 I published, $2.26 above the snapshot — the '
-             'widest upside crude gap this monitor has recorded — and the '
-             '30Y closed 5.2242% against 5.1638%, 6.04 bp higher. Every '
-             'directional statement in yesterday’s edition about a rallying '
-             'long end was reversed by the close. Second, Stage-4 Threshold '
-             'B RE-ARMED on that close — 30Y 5.2242% with 10Y 4.6778%, both '
-             'legs satisfied after two sessions unsatisfied — and it did so '
-             'six days before the 30Y refunding auction on 13 August. In the '
-             'same session MOVE’s break below 75 lasted exactly one day: it '
-             'closed 76.12, up 2.54, so the Treasury downgrade leg that was '
-             'satisfied for the first time in the war on Wednesday is '
-             'unsatisfied again on Thursday, while the 30Y leg widened from '
-             '16.80 bp to 22.42 bp. The rotation reported yesterday has '
-             'reversed; both legs now fail and both are further away. Third, '
-             'the corridor deal cracked on terms rather than on trust. An '
-             'Iranian parliamentary committee is reviewing a draft bill to '
-             'bar US, Israeli and other ‘hostile’ vessels from Hormuz and to '
-             'charge transit fees of up to 7% of cargo value with fines to '
-             '20% — which directly contradicts the no-tolls term at the '
-             'centre of the mechanism Axios described. Trump said on '
-             'Thursday that no deal has been reached and that the blockade '
-             'stays. Oman has still said nothing: the foreign ministry’s '
-             'last statement of any kind is dated 27 July. Gharibabadi’s '
-             'description of the route contradicts Axios’; AP reports the '
-             'Supreme Leader has yet to approve, where Axios said approval '
-             'completed on 4 August; and parliament speaker Ghalibaf called '
-             'the whole American track ‘theater diplomacy on loop’. Iranian '
-             'state media claimed a naval engagement with ‘hostile targets’ '
-             'off Qeshm on Thursday night — denied by Iran’s own Hormozgan '
-             'deputy governor, so the quiet run is contested rather than '
-             'broken. Against that, a senior Saudi official told Reuters and '
-             'CNN that Riyadh expects imminent coordinated attacks from '
-             'north and south on energy infrastructure, ports and airports. '
-             'Five of six channels remain maxed; only oil, at 2/5, can raise '
-             'this number, and its downgrade anchor moved from $5.38 to '
-             '$7.98 away. Sequencing 27 → 27 → 27 → 27.',
- 'tape': {'note': '7 Aug 2026 readings are intraday prints from the '
-                  'Singapore morning. The 6 Aug row has refreshed and is a '
-                  'confirmed close; the integrity check clears. d/d is 7 Aug '
-                  'intraday vs the 6 Aug close; w/w is vs the 31 Jul close '
-                  '(five sheet-rows back); vs-pre-war is against the 27 Feb '
-                  '2026 close. Restated continuation series (front-month '
-                  'CO2/CL2) in force. Thursday’s US session produced the '
-                  'widest upside crude reconciliation gap this monitor has '
-                  'recorded — Brent closed $2.26 ABOVE my snapshot — one '
-                  'session after the narrowest. The error is '
-                  'regime-dependent, and this was the bad regime.',
-          'oilGasHeader': ['Benchmark',
-                           'Intraday 7 Aug',
-                           '∆ d/d',
-                           '∆ vs pre-war close (27 Feb)',
-                           'BBG ticker'],
-          'oilGas': [['Brent front-month',
-                      '$80.93 /bbl (H 81.50 / L 80.85)',
-                      '+$0.47 (–$7.00 w/w)',
-                      'from $72.48 (+11.7%) — an $8.45/bbl premium, up from '
-                      '$5.72 yesterday. The bounce that began Thursday is '
-                      'extending: a 65-cent range on the morning, entirely '
-                      'above Thursday’s close, and a third consecutive '
-                      'up-session. Active COA prints $83.16',
-                      'CO2 Comdty (Close)'],
-                     ['Brent · 6 Aug close (last confirmed)',
-                      '$80.46 /bbl',
-                      '+$2.60 vs the 5 Aug close $77.86',
-                      '$14.54 below the $95 trigger on a close basis; $7.98 '
-                      'above the $72.48 downgrade anchor, against $5.38 '
-                      'yesterday. The downgrade price leg has WIDENED by '
-                      '$2.60 in a single session and is no longer the '
-                      'narrowest of the war. Thursday’s close ran $2.26 '
-                      'ABOVE my Thursday-morning snapshot — the largest '
-                      'upside crude gap the monitor has recorded, exceeding '
-                      'the +$1.97 of 31 Jul. Bloomberg attributed the move '
-                      'to the Iranian transit-fee bill and to reports of an '
-                      'Iranian engagement off Qeshm.',
-                      'CO2 Comdty (Close)'],
-                     ['WTI front-month',
-                      '$76.58 /bbl',
-                      '+$0.42 (–$4.91 w/w)',
-                      'from $67.02 (+14.3%) — the CL2 artifact against the '
-                      'active contract persists, CLA prints $77.82 against '
-                      'CL2’s $76.58. The 6 Aug close of $76.16 is $2.11 '
-                      'above the 5 Aug close',
-                      'CL2 Comdty (Close)'],
-                     ['Brent–WTI spread',
-                      '$4.35 /bbl',
-                      'wider by $0.05 on the day',
-                      '$5.34 on the active contracts (COA $83.16 / CLA '
-                      '$77.82). The spread has widened for a third '
-                      'consecutive session from $3.53 on the 4 Aug close and '
-                      'is at its widest since the 31 Jul close of $6.44. The '
-                      'Hormuz-specific premium that came out on the '
-                      'de-escalation trade is going back in — and it is '
-                      'going into Brent rather than WTI, which is what a '
-                      'waterborne-supply risk looks like',
-                      'derived'],
-                     ['Henry Hub natural gas',
-                      '$2.620 /MMBtu',
-                      '–$0.020 (–$0.127 w/w)',
-                      'from $3.06 (–14.5%) — a NEW LOW FOR THE ENTIRE WAR, '
-                      'taking out every print since 28 Feb and a fifth '
-                      'consecutive new low. US gas is further below pre-war '
-                      'than at any point in this conflict on the same '
-                      'morning that Brent trades an $8.45 premium. The '
-                      'Hormuz/LNG-routing signature is at its most extreme '
-                      'reading to date: this is a routing shock, not a '
-                      'global-energy shock',
-                      'NGA Comdty (Close)'],
-                     ['TTF Dutch gas (active)',
-                      '€58.400 /MWh',
-                      '+€2.631 (–€0.671 w/w)',
-                      'from €31.23 (+87.0%) — a third consecutive advance '
-                      'and €5.996 off Wednesday’s €52.404 low in two '
-                      'sessions, an 11.4% round trip. European gas has now '
-                      'recovered more than half of the €11.245 it gave back '
-                      'from the 24 Jul war record of €63.649, and is flat on '
-                      'the week. It is trading the transit-fee bill, not the '
-                      'deal',
-                      'TZTA Comdty (Close)'],
-                     ['Japan/Asia LNG (6 Aug close — no 7 Aug print)',
-                      '¥3,276',
-                      '–¥77 vs the 5 Aug ¥3,353',
-                      'from ¥1,669 (+96.3%) — the 6 Aug print BACKFILLED in '
-                      'this extract, a third consecutive decline and the '
-                      'lowest since 16 Jul. There is no 7 Aug print, flagged '
-                      'and NOT carried forward. Asia LNG is now falling '
-                      'while TTF rises, re-opening the divergence that '
-                      'closed yesterday. Hormuz still moves roughly a fifth '
-                      'of global LNG',
-                      'JGLA Comdty (Close)']],
-          'ustNote': '7 Aug 2026 yields are intraday. The 6 Aug close is '
-                     'confirmed and is the reading on which every trigger '
-                     'and Stage-4 test below is judged. d/d is vs the 6 Aug '
-                     'close; w/w vs 31 Jul. Thursday’s US session sold the '
-                     'curve off 6.0 to 6.7 bp from the Singapore-morning '
-                     'snapshot — five times Wednesday’s gap and the second '
-                     'largest long-end miss the monitor has recorded — and '
-                     'took MOVE back up 2.54 points. Every trigger distance '
-                     'reported yesterday was computed off the wrong side of '
-                     'that move.',
-          'ustHeader': ['Tenor',
-                        'Yield (%) — intraday 7 Aug',
-                        '∆ d/d (bp)',
-                        '∆ w/w (bp)',
-                        '∆ vs pre-war (bp)',
-                        'BBG ticker'],
-          'ust': [['2-year UST',
-                   '4.25',
-                   '–0.0',
-                   '–4.6',
-                   '+87.0 (from 3.37%) — the front end reversed 6.4 bp of '
-                   'Wednesday’s rally on the Thursday close and is unchanged '
-                   'this morning to two-hundredths of a basis point',
-                   'USGG2YR Index'],
-                  ['5-year UST',
-                   '4.39',
-                   '–0.4',
-                   '–5.7',
-                   '+89.1 (from 3.50%)',
-                   'USGG5YR Index'],
-                  ['10-year UST',
-                   '4.67',
-                   '–0.4',
-                   '–6.1',
-                   '+73.6 (from 3.94%) — the 6 Aug close of 4.6778% is back '
-                   'ABOVE the 4.65% Stage-4 leg by 2.78 bp, ending a '
-                   'three-close run below it and re-satisfying half of '
-                   'Threshold B. This morning’s 4.6739% holds 2.39 bp above '
-                   'the leg. The war record is the 4.7347% of 31 Jul, 5.7 bp '
-                   'above the 6 Aug close',
-                   'USGG10YR Index'],
-                  ['30-year UST',
-                   '5.22',
-                   '–0.4',
-                   '–5.3',
-                   '+61.0 (from 4.61%) — the 6 Aug close of 5.2242% is back '
-                   'ABOVE the 5.20% Stage-4 leg by 2.42 bp, 17.42 bp above '
-                   'the 13 May auction stop against 11.80 bp on Wednesday, '
-                   'and 22.42 bp above the 5.00% downgrade line against '
-                   '16.80 bp. This morning’s 5.2199% holds above the leg. '
-                   'The war record is the 5.2724% of 31 Jul, 4.8 bp above '
-                   'the 6 Aug close',
-                   'USGG30YR Index'],
-                  ['2s10s spread',
-                   '+42.5 bp',
-                   '–0.2',
-                   '–1.5',
-                   '–13.2 (still flatter than pre-war) — the curve was '
-                   'unchanged to within a tenth of a basis point on the '
-                   'Thursday close (+42.614 against +42.730) while the level '
-                   'of yields rose 6 bp. A parallel selloff, not a change in '
-                   'curve shape, exactly as the rally was a parallel unwind. '
-                   'It is 18.2 bp off the 24 Jun war low of +24.25 bp',
-                   'USYC2Y10 Index'],
-                  ['10Y breakeven inflation',
-                   '2.251',
-                   '+0.3',
-                   '–3.4',
-                   '–0.6 (from 2.2569%) — the 6 Aug close of 2.2481% rose '
-                   '3.05 bp and is back within a third of a basis point of '
-                   'the pre-war anchor, ending the two-close run below it. '
-                   'Spot inflation compensation gave back its round trip in '
-                   'one session',
-                   'USGGBE10 Index'],
-                  ['5Y5Y forward inflation',
-                   '2.334',
-                   '+0.3',
-                   '–2.6',
-                   '+19.2 (from 2.14%) — the 6 Aug close of 2.3305% is an '
-                   'EIGHTH consecutive close above the 2.30% trigger that '
-                   'fired this channel 4→5 on 31 Jul, and now by 3.05 bp '
-                   'rather than Wednesday’s 0.67 bp. The four-session '
-                   'decline is over: the forward rose 2.38 bp and the '
-                   'tension flagged yesterday has resolved in favour of the '
-                   'upgrade, not against it',
-                   'USGG5Y5Y Index'],
-                  ['SOFR (blank 6 and 7 Aug)',
-                   '3.64',
-                   '—',
-                   'no print',
-                   'the 5 Aug print has BACKFILLED at 3.64, two basis points '
-                   'below the 3.66 reported as the last print yesterday. 6 '
-                   'and 7 Aug are blank, flagged and NOT carried as fresh. '
-                   'Three of the last four sessions dark',
-                   'SOFRRATE Index']],
-          'crossHeader': ['Gauge',
-                          'Latest',
-                          'As of',
-                          '∆ vs pre-war',
-                          'Interpretation'],
-          'cross': [['DXY',
-                     '99.990',
-                     '7 Aug intraday',
-                     '+2.38 (from 97.61)',
-                     'A second consecutive advance after Thursday closed at '
-                     '99.930 — up 0.254 on the session and ending a run of '
-                     'five straight declines that had taken it to its lowest '
-                     'close since 16 June. The dollar turned with the long '
-                     'end rather than against it, which again reads as a '
-                     'US-rates repricing rather than a haven bid.'],
-                    ['MOVE',
-                     '76.12',
-                     '6 Aug close (no 7 Aug print)',
-                     '+2.74 (from 73.38)',
-                     'Up 2.54 on the session, and the break below 75 lasted '
-                     'exactly one day. Wednesday’s 73.58 was the first close '
-                     'in the war to satisfy the volatility leg of the '
-                     'Treasury downgrade; Thursday’s 76.12 unsatisfies it. '
-                     'The index is now 2.74 points ABOVE its pre-war anchor, '
-                     'not 0.20 above it, so the ‘fully round-tripped’ '
-                     'reading published yesterday no longer holds on the '
-                     'latest close. 53.88 points below Threshold C. No 7 '
-                     'August print.'],
-                    ['VIX',
-                     '15.15',
-                     '6 Aug close (no 7 Aug print)',
-                     '–4.71 (from 19.86)',
-                     'Down 0.66 to the second-lowest close of the entire '
-                     'war, behind only the 15.03 of 10 July. Equity '
-                     'volatility fell while rates volatility rose — the two '
-                     'diverged again. A VIX at 15.15 against a shock score '
-                     'of 27/30 is the single widest gap between this monitor '
-                     'and the equity market recorded to date. There is no 7 '
-                     'August print.'],
-                    ['AAA gasoline',
-                     '$4.74 /gal',
-                     '5 Aug print (6–7 Aug blank)',
-                     '+$1.22 (from $3.52, +34.7%)',
-                     'Political-stress score reference. The 5 Aug print '
-                     'BACKFILLED at $4.74 — one cent BELOW the $4.75 trigger '
-                     'and the first print of the war beneath it since the '
-                     'upgrade fired. The channel does not move: the '
-                     'documented downgrade is a sustained retreat toward the '
-                     '$3.52 anchor, which is $1.22 lower, and hysteresis '
-                     'requires a reversal past a wider threshold than the '
-                     'one that fired the upgrade. But the tension is real '
-                     'and is flagged, not buried. Blank 6 and 7 Aug — two '
-                     'dark sessions — so the retreat rests on one print that '
-                     'is now stale. Basis note: all-grades, not the '
-                     'regular-grade average AAA publishes, which printed '
-                     '$4.0633 on 6 Aug.'],
-                    ['DOE gasoline',
-                     '$4.079 /gal',
-                     '3 Aug weekly print (no new release)',
-                     '+$1.14 (from ~$2.94, +38.9%)',
-                     'Corroboration only. No new print — weekly series, next '
-                     'EIA release 11 Aug. AAA’s own regular-grade average '
-                     'fell again to $4.0633 on 6 Aug from $4.0801, down 1.68 '
-                     'cents on the day and 3.48 cents on the week: the '
-                     'retreat in the scored series is independently '
-                     'corroborated, which matters given AUTMUSAG has gone '
-                     'dark. Diesel is doing the opposite on the week — '
-                     '$5.3474 on 6 Aug, down 1.48 cents on the day but up '
-                     '0.81 cents on the week and $1.6072 on the year, and '
-                     'roughly 47 cents below its all-time record.']],
-          'gasChartNote': 'AUTMUSAG (AAA all-grades retail pump, daily) is '
-                          'the political-stress score reference (pre-war '
-                          '$3.52, peak $5.18, latest confirmed print $4.74 '
-                          'on 5 Aug, backfilled in this extract; 6 and 7 Aug '
-                          'blank); USRFRUSA (DOE regular-grade retail spot, '
-                          'weekly) is the complementary gauge (pre-war '
-                          '~$2.94, peak $4.50, latest $4.079 for the week to '
-                          '3 Aug, no new release until 11 Aug). The dotted '
-                          'line is the $4.75 political→5 threshold. The '
-                          'shape at the right-hand end is the story: exactly '
-                          '$4.75 on 24, 27, 28 and 29 Jul, through the line '
-                          'at $4.76 on 30 and 31 Jul and 3 Aug — three '
-                          'closes that fired the 4→5 upgrade — back ON the '
-                          'line at $4.75 on 4 Aug, and now $4.74 on 5 Aug, '
-                          'the first print BELOW the trigger since the '
-                          'upgrade. The break has not just stopped '
-                          'extending; it has reversed by a cent. Two dark '
-                          'sessions follow it. Diesel is the counterweight: '
-                          'AAA had on-highway diesel at $5.3474 on 6 Aug, '
-                          'still up 0.81 cents on the week and $1.6072 on '
-                          'the year, with EIA distillate stocks down 3.5 mb '
-                          'in the week to 31 Jul to about 12% below the '
-                          'five-year average.',
-          'straitHeader': ['Indicator', 'Current reading', 'Source'],
-          'strait': [['Strait closed · day 159',
-                      'Closed since 28 Feb. UKMTO’s JMIC Advisory Note '
-                      'Update 080 of 4 Aug remains the latest published '
-                      'advisory — no Update 081 could be sourced — holding '
-                      'the Strait of Hormuz at SEVERE against a 138/day '
-                      'historical average with single-digit tanker transits '
-                      'a day. Lloyd’s List Intelligence’s brief of 5 Aug '
-                      'counts 84 transits in the week to 2 Aug against 45 '
-                      'the week before, 52 non-Iranian-linked against 28, '
-                      'and puts US blockade redirections at 45 vessels, 2 '
-                      'disabled and 2 boarded; a compilation of CENTCOM’s '
-                      'own 5 Aug statement gives 48 redirected, and the two '
-                      'are reported unreconciled. About a quarter of '
-                      'non-Iranian-linked traffic uses the Omani coastal '
-                      'route, on which two ships have been struck since 1 '
-                      'Aug. Roughly 135 vessels are trapped inside the Gulf '
-                      '— 65 that entered during the lull plus more than 70 '
-                      'there since the conflict began. Trackers remain '
-                      'irreconcilable and are reported so: IMF PortWatch 2 '
-                      'crossings on 2 Aug against ITS OWN 73/day baseline '
-                      '(3%), against Lloyd’s List’s 84/week (about 9% of '
-                      'UKMTO’s 138/day). Naming the denominator matters; no '
-                      'average is taken across them.',
-                      'UKMTO / Lloyd’s List Intelligence / IMF PortWatch via '
-                      'straits.live / CENTCOM'],
-                     ['THE DEAL CRACKS ON TERMS — AN IRANIAN BILL WOULD '
-                      'CHARGE UP TO 7% OF CARGO VALUE',
-                      'An Iranian parliamentary committee is reviewing a '
-                      'draft bill to bar vessels of the US, Israel and other '
-                      'states Iran deems hostile from Hormuz and the Gulf, '
-                      'and to impose transit fees of up to 7% of cargo value '
-                      'with fines to 20% for violations, plus denial of '
-                      'transit to states held responsible for damage to Iran '
-                      'until compensation is paid. Originally Fars (Tier 3), '
-                      'carried by NPR and Reuters. It is under expert review '
-                      'and not finalised — but it directly contradicts the '
-                      '‘no tolls or fees for 60 days’ term at the centre of '
-                      'the mechanism Axios reported, and CNBC attributed '
-                      'Thursday’s crude rally to it. Italy’s Tajani had '
-                      'already pressed Araghchi on 5 Aug for navigation '
-                      '‘without the imposition of tariffs’, and Trump has '
-                      'publicly refused Iranian fees.',
-                      'Fars (Tier 3) via NPR / Reuters / CNBC / Italian MFA '
-                      'readout'],
-                     ['TRUMP: NO DEAL YET, BLOCKADE STAYS — AND OMAN HAS '
-                      'STILL SAID NOTHING',
-                      'Trump said in the Oval Office on 6 Aug that a deal '
-                      'has NOT been reached and that the US will maintain '
-                      'its blockade of Iranian ports, adding only that it '
-                      '‘could be soon’. That supersedes Wednesday’s ‘send it '
-                      'up again’ and expires the CNN report of a Gulf '
-                      'official putting a deal by Friday at 50-50. No Omani '
-                      'statement of any kind exists: fm.gov.om’s last '
-                      'published statement is dated 27 July. Two '
-                      'contradictions stand. On approval, Axios says Iranian '
-                      'leadership completed it on 4 Aug; AP reports the deal '
-                      'is still awaiting the Supreme Leader. On terms, Axios '
-                      'describes paired 60-day lanes; Gharibabadi describes '
-                      'both legs through Iranian waters, closure of the '
-                      'existing lanes, a two-to-four-month term and a joint '
-                      'coordination centre. Parliament speaker Ghalibaf '
-                      'called Washington’s track ‘theater diplomacy on '
-                      'loop’. Netanyahu: ‘They sent us a draft. We have not '
-                      'agreed to anything.’',
-                      'Times of Israel / Axios / AP / NPR / CNN / Al Jazeera '
-                      '/ Omani MFA (checked directly)'],
-                     ['SAUDI ARABIA EXPECTS IMMINENT COORDINATED ATTACKS '
-                      'FROM NORTH AND SOUTH',
-                      'A senior Saudi official said on 6 Aug that Riyadh '
-                      'expects imminent coordinated attacks by Iraqi '
-                      'militias and the Houthis ‘under the supervision of '
-                      'Iran’s IRGC’, with intelligence from Saudi, US and '
-                      'other regional sources pointing at energy '
-                      'infrastructure, ports and airports, and drones and '
-                      'missiles observed being moved. This is Tier 1 '
-                      'corroboration of Monday’s Reuters exclusive that '
-                      'Araghchi warned Saudi, Turkish and Qatari '
-                      'counterparts and Pakistan’s army chief that Iran '
-                      'would strike Gulf energy facilities if Washington '
-                      'attacked Iranian infrastructure. Baghdad moved first: '
-                      'military spokesman Sabah al-Numan said on 6 Aug Iraq '
-                      'had begun implementing a security plan and would ‘not '
-                      'allow any attack from inside Iraq targeting any '
-                      'neighboring country’. Separately, Saudi Arabia, '
-                      'Turkey and Pakistan are reported to sign a joint '
-                      'defence pact in Jeddah today.',
-                      'Reuters / CNN / Times of Israel / Dijlah TV via Iran '
-                      'International / AFP'],
-                     ['An eighth session without a Tier 1 strike — but Qeshm '
-                      'is contested and Kumzar is unattributed',
-                      'No Tier 1 outlet reported a confirmed US, Israeli or '
-                      'Iranian strike on 6–7 Aug. Tasnim and Fars (Tier 3) '
-                      'claimed Iranian forces engaged ‘hostile enemy '
-                      'targets’ at the entrance to the strait late on 6 Aug '
-                      'after two explosions on Qeshm Island — but Hormozgan '
-                      'deputy governor Ahmad Nafisi said no strike or '
-                      'incident had been reported and that authorities were '
-                      'investigating. Bloomberg headlined it as an Iranian '
-                      'strike and crude rallied on it; CENTCOM issued '
-                      'nothing. The monitor treats the run as contested, not '
-                      'broken. Separately UKMTO reported a tanker hearing '
-                      'two explosions about 10 nm (16 km) south-east of '
-                      'Kumzar, Oman on 6 Aug — correcting yesterday’s 9 nm — '
-                      'vessel and crew safe, no attribution; the IRGC has '
-                      'claimed two ‘deviant’ tankers exploded on an unsafe '
-                      'route, but no source links the two. The Minoan '
-                      'Pioneer remains unresolved: no attribution, no '
-                      'salvage report, the third engineer still missing.',
-                      'CENTCOM / UKMTO via Arab News and Anadolu / Bloomberg '
-                      '/ Tasnim and Fars (Tier 3) / Middle East Eye'],
-                     ['Red Sea: the insurance perimeter moved north, and '
-                      'Lebanon hit a six-week high in strikes',
-                      'The Joint War Committee has expanded the Red Sea '
-                      'listed area roughly 800 km north, so Jeddah and Yanbu '
-                      'calls now attract additional war-risk premium — a '
-                      'direct cost on Saudi Arabia’s alternative export '
-                      'route. Lloyd’s List records Bab el Mandeb transits '
-                      'stabilising at 266 for 27 Jul–2 Aug against 269, with '
-                      'mainstream tanker traffic down 42% to 53, and Suez '
-                      'broadly flat at 275 but with VLCC traffic quadrupled. '
-                      'Houthi claims on the Saudi tankers Wafa and Daisy '
-                      'remain uncorroborated by any independent tracker and '
-                      'Riyadh has not commented. On 6 Aug Houthi missiles '
-                      'and drones killed at least 58 Yemeni government '
-                      'soldiers in Marib and Hadramawt and wounded 11 '
-                      'civilians in Najran. In Lebanon, UNIFIL recorded 120 '
-                      'Israeli projectiles between midnight and 4pm on 6 '
-                      'Aug, above the 113 of the full day on 5 Aug and the '
-                      'highest since 21 June, with no Hezbollah launches '
-                      'detected.',
-                      'Lloyd’s List Intelligence (Red Sea Brief, 6 Aug) / '
-                      'AFP / Arab News / UNIFIL via Arab News']]},
- 'analysis': {'intro': 'The shock holds at 27/30 for a fourth session and no '
-                       'channel moved — but unlike Wednesday, the '
-                       'composition moved a great deal, and most of it moved '
-                       'back. Thursday’s US session reversed almost '
-                       'everything this monitor reported on Thursday '
-                       'morning. Brent closed $80.46 against my $78.20 '
-                       'snapshot, the widest upside crude gap recorded; the '
-                       '30Y closed 5.2242% against my 5.1638%, 6.04 bp '
-                       'higher; MOVE closed 76.12 against the 73.58 carried, '
-                       '2.54 higher. The consequences are mechanical and '
-                       'they all point the same way. Stage-4 Threshold B is '
-                       'satisfied again after two sessions unsatisfied, six '
-                       'days before the 30Y refunding auction. The MOVE leg '
-                       'of the Treasury downgrade, satisfied for the first '
-                       'time in the war on Wednesday, is unsatisfied after '
-                       'one day, and the 30Y leg widened from 16.80 bp to '
-                       '22.42 bp. The 5Y5Y break that fired the inflation '
-                       'upgrade, 0.67 bp from disappearing on Wednesday, is '
-                       '3.05 bp clear on Thursday. The oil downgrade anchor '
-                       'moved from $5.38 to $7.98 away. Every de-escalation '
-                       'reading in yesterday’s edition has been partially '
-                       'unwound by the close beneath it. The cause is not '
-                       'obscure: an Iranian parliamentary committee '
-                       'published terms that contradict the deal’s central '
-                       'term, Trump said no deal has been reached and the '
-                       'blockade stays, and Iranian state media claimed a '
-                       'naval engagement at the mouth of the strait. The '
-                       'market spent two sessions pricing a settlement and '
-                       'has spent three taking it back.',
-              'bondYieldNote': '7 Aug yields are intraday; the 6 Aug close '
-                               'is confirmed and every trigger runs off it. '
-                               'No channel moved. Score holds at 27/30, a '
-                               'fourth consecutive session.',
-              'bondYield': [{'title': '(i) Treasury — held at 5 (max), and '
-                                      'the rotation reported yesterday '
-                                      'reversed inside one session.',
-                             'text': 'On Wednesday MOVE closed 73.58, '
-                                     'satisfying the volatility leg of this '
-                                     'channel’s downgrade for the first time '
-                                     'in the war, and this monitor said the '
-                                     'downgrade had rotated rather than '
-                                     'approached. It has now rotated back. '
-                                     'MOVE closed 76.12 on Thursday, up 2.54 '
-                                     'and above the 75 line again, so the '
-                                     'leg is unsatisfied after exactly one '
-                                     'session; and the 30Y closed 5.2242%, '
-                                     'widening the yield leg from 16.80 bp '
-                                     'to 22.42 bp above the 5.00% line. Both '
-                                     'legs now fail and both are further '
-                                     'from firing than they were 24 hours '
-                                     'ago, which is a cleaner statement than '
-                                     'yesterday’s and a less comfortable '
-                                     'one. The correction to make '
-                                     'explicitly: at 76.12 MOVE is 2.74 '
-                                     'points ABOVE its 73.38 pre-war anchor, '
-                                     'not 0.20 above it, so the claim '
-                                     'published yesterday that rates '
-                                     'volatility had fully round-tripped the '
-                                     'war does not survive the latest close '
-                                     'and is withdrawn. What has not changed '
-                                     'is the underlying diagnosis. The long '
-                                     'end is not pricing the fiscal '
-                                     'arithmetic. Treasury held coupon sizes '
-                                     'on 5 August at exactly the 6 May '
-                                     'guidance while needing $68bn more this '
-                                     'quarter than it projected in May, '
-                                     'funding the gap in bills and buybacks; '
-                                     'the market rallied on that for one '
-                                     'session and gave it all back on the '
-                                     'next. The 30Y is now 61.0 bp above its '
-                                     'pre-war anchor and 17.42 bp above the '
-                                     '13 May auction stop of 5.050%, against '
-                                     '11.80 bp on Wednesday. The auction '
-                                     'that tests all of this is on 13 '
-                                     'August.'},
-                            {'title': '(ii) Oil — held at 2, and the '
-                                      'downgrade candidate that had been '
-                                      'live for three editions has receded.',
-                             'text': 'Brent’s 6 August close of $80.46 is '
-                                     '$2.60 above Wednesday and $2.26 above '
-                                     'the snapshot I published for that '
-                                     'session. The close sits $14.54 below '
-                                     'the $95 upgrade trigger and $7.98 '
-                                     'above the $72.48 downgrade anchor. '
-                                     'Yesterday that second figure was $5.38 '
-                                     'and was described as the narrowest of '
-                                     'the war since 10 July; it has widened '
-                                     'by $2.60 in one session and that '
-                                     'reading no longer stands. The '
-                                     'downgrade needs both legs and neither '
-                                     'is now close: the price leg has moved '
-                                     'away and the pause leg was explicitly '
-                                     'denied by the US President, who said '
-                                     'on Thursday that no deal has been '
-                                     'reached and that the blockade of '
-                                     'Iranian ports will be maintained. What '
-                                     'repriced crude was not supply data but '
-                                     'terms: a draft Iranian bill charging '
-                                     'up to 7% of cargo value in transit '
-                                     'fees, which is the opposite of the '
-                                     'no-tolls mechanism the market had been '
-                                     'trading, plus a Tier 3 claim of an '
-                                     'Iranian naval engagement off Qeshm. '
-                                     'The physical balance is unchanged and '
-                                     'unhelpful — distillate stocks about '
-                                     '12% below the five-year average, '
-                                     'refinery utilisation 96.5%, effective '
-                                     'spare capacity ~0.17 mb/d on the IEA’s '
-                                     'July estimate, September’s OPEC+ 188k '
-                                     'b/d a quota rather than a cargo, Jizan '
-                                     'out to about 15 August on third-party '
-                                     'intelligence that Aramco has never '
-                                     'confirmed, Abqaiq and Damietta '
-                                     'unreported since 30 July. At 2/5 this '
-                                     'channel remains the only one that can '
-                                     'raise the score, and for the first '
-                                     'time in a week it is no longer closer '
-                                     'to falling than rising.'},
-                            {'title': '(iii) Escalation risk — held at 5 '
-                                      '(max). The downgrade candidate lost '
-                                      'evidence on every axis this session.',
-                             'text': 'Yesterday the candidate was stronger '
-                                     'in form and weaker in evidence. Today '
-                                     'it is weaker in both. On form: Trump '
-                                     'said in the Oval Office that a deal '
-                                     'has NOT been reached and that the '
-                                     'blockade stays, which retires the CNN '
-                                     'report of a 50-50 chance of agreement '
-                                     'by today, and an Iranian parliamentary '
-                                     'committee is reviewing a bill that '
-                                     'would bar US and Israeli vessels '
-                                     'outright and charge up to 7% of cargo '
-                                     'value — a direct contradiction of the '
-                                     'no-tolls term Axios reported four days '
-                                     'ago. On evidence: Oman has still said '
-                                     'nothing, and the foreign ministry’s '
-                                     'own site carries no statement of any '
-                                     'kind since 27 July; AP reports the '
-                                     'deal awaiting the Supreme Leader where '
-                                     'Axios said approval completed on 4 '
-                                     'August; Gharibabadi’s account of the '
-                                     'route contradicts Axios’ paired-lane '
-                                     'description and he continues to deny '
-                                     'that Iran is negotiating with the '
-                                     'United States at all; and parliament '
-                                     'speaker Ghalibaf called the American '
-                                     'track ‘theater diplomacy on loop’. Set '
-                                     'against that, a senior Saudi official '
-                                     'told Reuters and CNN that Riyadh '
-                                     'expects imminent coordinated attacks '
-                                     'from Iraqi militias and the Houthis '
-                                     'under IRGC supervision, aimed at '
-                                     'energy infrastructure, ports and '
-                                     'airports. On the quiet run this '
-                                     'monitor is deliberately conservative '
-                                     'in both directions: Iranian state '
-                                     'media claimed a naval engagement at '
-                                     'the mouth of the strait on Thursday '
-                                     'night and an Iranian provincial '
-                                     'official denied it, so the eighth '
-                                     'session is recorded as contested '
-                                     'rather than broken, and a Tier 3 claim '
-                                     'contradicted by a Tier 1 official does '
-                                     'not become an event because Bloomberg '
-                                     'wrote a headline about it. The 3 '
-                                     'August reference case stands: an '
-                                     'announcement is not an event, and '
-                                     'neither is a denial.'},
-                            {'title': '(iv) US inflation impulse — held at 5 '
-                                      '(max), and the tension flagged '
-                                      'yesterday resolved in favour of the '
-                                      'upgrade.',
-                             'text': '5Y5Y forward inflation closed 2.3305% '
-                                     'on 6 August — an eighth consecutive '
-                                     'close above the 2.30% trigger that '
-                                     'fired this channel 4→5 on 31 July, and '
-                                     'now clear of it by 3.05 bp rather than '
-                                     'the 0.67 bp reported yesterday. The '
-                                     'four-session decline from the 2.3597% '
-                                     'war record is over; the forward rose '
-                                     '2.38 bp on the session. The 10Y '
-                                     'breakeven did the same, closing '
-                                     '2.2481% after rising 3.05 bp, ending '
-                                     'the two-close run below the 2.2569% '
-                                     'pre-war anchor and finishing within a '
-                                     'third of a basis point of it. '
-                                     'Yesterday this monitor flagged an open '
-                                     'tension — a channel fired on a 2.30% '
-                                     'break that was about to disappear, '
-                                     'with a documented downgrade sitting 16 '
-                                     'bp lower — and said it would report '
-                                     'the tension rather than quietly move '
-                                     'the line. That was the right call: the '
-                                     'break did not disappear, and the '
-                                     'downgrade at the 2.142% anchor is now '
-                                     '18.85 bp away, wider than Wednesday’s '
-                                     '16.47 bp. The data underneath '
-                                     'continues to argue for the hold. ISM '
-                                     'services prices-paid at 70.3 against a '
-                                     '54.1 headline miss, ADP at +44k, and '
-                                     'Governor Cook’s ‘if I do not see signs '
-                                     'of continued disinflation soon, I am '
-                                     'prepared to act’ describe a soft '
-                                     'labour tape with a hot price tape. '
-                                     'July payrolls are released at 8:30am '
-                                     'ET today, after this snapshot was '
-                                     'taken; the consensus is not agreed, '
-                                     'spanning +83k at CNBC, +85k at '
-                                     'Kiplinger and a FactSet median of '
-                                     '+97.5k on a 65k–130k range, against '
-                                     'June’s +57k and an expected 4.2% '
-                                     'unemployment rate. CPI lands 12 '
-                                     'August.'},
-                            {'title': '(v) Political stress — held at 5 '
-                                      '(max), and the scored series has now '
-                                      'printed BELOW its trigger.',
-                             'text': 'AUTMUSAG has backfilled 5 August at '
-                                     '$4.74 — one cent below the $4.75 line '
-                                     'and the first print beneath it since '
-                                     'the upgrade fired on 4 August. '
-                                     'Yesterday the series was on the line; '
-                                     'today it is under it. This is the same '
-                                     'configuration the 5Y5Y presented on '
-                                     'Wednesday and it is handled the same '
-                                     'way: the documented downgrade is a '
-                                     'sustained retreat toward the $3.52 '
-                                     'pre-war anchor, which is $1.22 below '
-                                     'the last print, and hysteresis '
-                                     'requires a reversal past a wider '
-                                     'threshold than the one that fired the '
-                                     'upgrade. The channel does not move on '
-                                     'a one-cent undershoot, and it will not '
-                                     'move on a second one. But the tension '
-                                     'is stated in the open rather than '
-                                     'buried: the trigger that fired this '
-                                     'channel three days ago has been given '
-                                     'back, and the rule that holds it at 5 '
-                                     'is the anchor 122 cents lower. Two '
-                                     'things qualify the reading. First, the '
-                                     'series has not printed for 6 or 7 '
-                                     'August — two dark sessions — so the '
-                                     'retreat rests on a single print that '
-                                     'is already stale, and this monitor '
-                                     'does not treat a stale low as '
-                                     'information. Second, it is '
-                                     'independently corroborated: AAA’s own '
-                                     'regular-grade national average fell to '
-                                     '$4.0633 on 6 August, down 1.68 cents '
-                                     'on the day and 3.48 cents on the week. '
-                                     'The counterweight is diesel and the '
-                                     'refining constraint behind it. AAA had '
-                                     'on-highway diesel at $5.3474, still up '
-                                     '0.81 cents on the week and $1.6072 on '
-                                     'the year, EIA distillate stocks fell '
-                                     '3.5 mb in the week to 31 July to about '
-                                     '12% below the five-year average, and '
-                                     'the Joint War Committee has just '
-                                     'extended the Red Sea war-risk listed '
-                                     'area roughly 800 km north to capture '
-                                     'Jeddah and Yanbu, raising the cost of '
-                                     'the route Saudi Arabia is using to '
-                                     'bypass Hormuz. Product, not crude, is '
-                                     'what reaches the pump.'},
-                            {'title': '(vi) Maritime denial — held at 5 '
-                                      '(max), and the reopening instrument '
-                                      'moved further away, not closer.',
-                             'text': 'The strait is closed on day 159. '
-                                     'Lloyd’s List Intelligence’s count of '
-                                     '84 transits in the week to 2 August '
-                                     'against 45 the week before remains the '
-                                     'most encouraging traffic datum of the '
-                                     'war and remains nowhere near the '
-                                     'downgrade condition: against UKMTO’s '
-                                     '138/day historical baseline that is '
-                                     'about 9% of normal, and the condition '
-                                     'is traffic above 25% of normal '
-                                     'sustained for ten sessions. The '
-                                     'denominator has to be named, because '
-                                     'IMF PortWatch counted 2 crossings on 2 '
-                                     'August against its own 73/day '
-                                     'baseline, which is 3% — the trackers '
-                                     'are measuring different vessel '
-                                     'universes and the monitor reports the '
-                                     'spread rather than averaging it. '
-                                     'Lloyd’s List also records US blockade '
-                                     'redirections at 45 vessels with 2 '
-                                     'disabled and 2 boarded, where a '
-                                     'compilation of CENTCOM’s own 5 August '
-                                     'statement gives 48; roughly 135 '
-                                     'vessels are trapped inside the Gulf; '
-                                     'and about a quarter of '
-                                     'non-Iranian-linked traffic is now '
-                                     'using the Omani coastal route, on '
-                                     'which two ships have been struck since '
-                                     '1 August. What matters for the score '
-                                     'is the instrument, and the instrument '
-                                     'went backwards. A signed corridor '
-                                     'agreement starts the ten-session '
-                                     'clock. Trump said on Thursday there is '
-                                     'no agreement and the blockade stays; '
-                                     'Oman has published nothing since 27 '
-                                     'July; and an Iranian parliamentary '
-                                     'bill would bar US and Israeli vessels '
-                                     'from the waterway altogether. A draft '
-                                     'that would exclude an entire flag '
-                                     'category is not a reopening.'}],
-              'stage4Note': 'Stage 4 is a credit/auction event. Threshold '
-                            'A’s statement leg resolved benignly on 5 '
-                            'August; its auction leg is on 13 August. '
-                            'Threshold B RE-ARMED on the 6 August close.',
-              'stage4': [{'title': 'Threshold A · 13 May 30Y auction, '
-                                   'cleared 5.050% — the statement passed, '
-                                   'the auction is six days away and the gap '
-                                   'has widened.',
-                          'text': 'Treasury’s quarterly refunding statement '
-                                  'on 5 August held every nominal coupon '
-                                  'size at the level guided on 6 May: 2Y '
-                                  '$69bn, 3Y $58bn, 5Y $70bn, 7Y $44bn, 10Y '
-                                  '$42bn new issue, 20Y $16bn, 30Y $25bn new '
-                                  'issue, 2Y FRN $28bn — a $125bn August '
-                                  'package, three days after raising '
-                                  'July–September net marketable borrowing '
-                                  'to $739bn from the $671bn projected on 4 '
-                                  'May. The first leg of the sequence that '
-                                  'would make this threshold live, a coupon '
-                                  'increase, did not happen. The second is '
-                                  'dated: 3Y on 11 August, 10Y on 12 August '
-                                  'alongside CPI, and the 30Y on 13 August, '
-                                  'all settling 17 August. The 6 August '
-                                  'close of 5.2242% is 17.42 bp above the '
-                                  'May stop, against 11.80 bp on Wednesday '
-                                  'and 22.24 bp at the 31 July war-widest. '
-                                  'One session reversed nearly half the '
-                                  'compression this monitor reported '
-                                  'yesterday. A tail on 13 August into a '
-                                  'long end 61.0 bp above its pre-war anchor '
-                                  'is what re-arms this, and the market is '
-                                  'walking into it with the concession going '
-                                  'back on rather than coming off.'},
-                         {'title': 'Threshold B · 30Y above 5.20% with 10Y '
-                                   'above 4.65% — SATISFIED AGAIN on the 6 '
-                                   'August close.',
-                          'text': 'The 6 August close of 5.2242% / 4.6778% '
-                                  'clears both legs by 2.42 bp and 2.78 bp, '
-                                  'ending a two-close run unsatisfied, and '
-                                  'this morning’s 5.2199% / 4.6739% holds '
-                                  'above both by 1.99 bp and 2.39 bp. The '
-                                  'satisfied run that preceded this was 29 '
-                                  'July through 3 August, four closes '
-                                  'including the 5.2724% and 4.7347% war '
-                                  'records of 31 July. Three points follow. '
-                                  'First, the threshold has now cycled twice '
-                                  'in a fortnight, which is what a market '
-                                  'trading headlines rather than '
-                                  'fundamentals looks like at the long end. '
-                                  'Second, the qualification stands and '
-                                  'strengthens: this was never a repair of '
-                                  'the fiscal arithmetic, and the last two '
-                                  'sessions have simply removed the '
-                                  'risk-premium unwind that was disguising '
-                                  'it — Treasury still needs $68bn more this '
-                                  'quarter than it said in May. Third, and '
-                                  'most important, the threshold is '
-                                  'satisfied going INTO the auction week '
-                                  'rather than out of it. The 30Y refunding '
-                                  'leg on 13 August now prices against a '
-                                  'curve that has already re-cleared both '
-                                  'Stage-4 legs, which is the configuration '
-                                  'in which a tail does the most damage.'},
-                         {'title': 'Threshold C · MOVE above 130 — far off, '
-                                   'and the round-trip claim is withdrawn.',
-                          'text': 'MOVE closed 76.12 on 6 August, up 2.54 on '
-                                  'the session, 53.88 points below the '
-                                  'threshold and 38.90 below the 115.02 war '
-                                  'high of 26 March. C is not close on any '
-                                  'reading and has not been for four months. '
-                                  'The observation that matters is the '
-                                  'correction. Yesterday this monitor '
-                                  'reported that rates volatility had fully '
-                                  'round-tripped the war at 73.58, 0.20 '
-                                  'points above the 73.38 pre-war anchor. On '
-                                  'the latest close it is 2.74 points above '
-                                  'that anchor and back above the 75 '
-                                  'downgrade leg, and the round-trip reading '
-                                  'is withdrawn. What survives the '
-                                  'correction is the shape of the problem '
-                                  'rather than its magnitude: MOVE is 3.7% '
-                                  'above pre-war while the 30Y is 61.0 bp, '
-                                  'or 13.2%, above pre-war. Volatility has '
-                                  'retraced far more of the war than the '
-                                  'level of long-end yields has, and that '
-                                  'combination still describes a '
-                                  'term-premium problem rather than a '
-                                  'volatility problem. There is no 7 August '
-                                  'print and the number is flagged rather '
-                                  'than carried as fresh.'}],
-              'crossAsset': 'The cross-asset signature is a reversal that '
-                            'the morning print could not see. Thursday’s US '
-                            'session moved Brent $2.26 above my snapshot, '
-                            'the 30Y 6.04 bp above it, the 10Y 6.71 bp, the '
-                            '2Y 6.02 bp, the 10Y breakeven 3.17 bp and the '
-                            '5Y5Y 2.44 bp — every one in the direction of '
-                            'more risk, not less, and every one against the '
-                            'direction I reported. MOVE printed an actual '
-                            '76.12 against the 73.58 carried. This is the '
-                            'second time in eight sessions that the snapshot '
-                            'has missed the whole US session in both price '
-                            'and rates at once, and it is the larger of the '
-                            'two on crude. Underneath the reversal, the '
-                            'routing signature reached its most extreme '
-                            'reading of the war. Henry Hub prints $2.620 '
-                            'this morning — a new low for the entire '
-                            'conflict, 14.5% BELOW pre-war — on the same '
-                            'morning Brent trades an $8.45 premium, TTF is '
-                            '87.0% above pre-war and Asia LNG 96.3% above. '
-                            'US natural gas is not merely failing to '
-                            'participate in this war; it is at its cheapest '
-                            'point since it began, while the seaborne gas '
-                            'markets that depend on Hormuz routing are near '
-                            'their most expensive. No cleaner statement of a '
-                            'routing shock exists in the data. Two other '
-                            'divergences are worth recording. The Brent–WTI '
-                            'spread has widened three sessions running to '
-                            '$4.35, and $5.34 on the actives, so the premium '
-                            'is going back into the waterborne benchmark '
-                            'specifically. And VIX closed 15.15, the '
-                            'second-lowest reading of the entire war, '
-                            'against a shock score of 27/30 and a '
-                            'rates-volatility index that rose 2.54 on the '
-                            'same day. Equity markets are pricing the '
-                            'quietest conditions of the conflict; the bond '
-                            'market and this monitor are not.'},
- 'channels': [{'name': 'Maritime denial',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). Strait closed to commercial '
-                            'traffic, day 159. Lloyd’s List Intelligence '
-                            'counted 84 transits in the week to 2 Aug '
-                            'against 45 the week before — about 9% of '
-                            'UKMTO’s 138/day baseline; IMF PortWatch counted '
-                            '2 on 2 Aug against its OWN 73/day baseline, 3%. '
-                            'UKMTO Update 080 (4 Aug) is still the latest '
-                            'advisory and holds Hormuz at SEVERE. Blockade '
-                            'redirections 45 (LLI) or 48 (CENTCOM '
-                            'compilation), unreconciled; ~135 vessels '
-                            'trapped. Trump said 6 Aug there is no deal and '
-                            'the blockade stays; an Iranian bill would bar '
-                            'US and Israeli vessels entirely.',
-               'upgrade': 'at max',
-               'downgrade': 'verified reopening (escorted convoys) with '
-                            'traffic above 25% of normal for 10 sessions → '
-                            'to 3–4. A signed corridor agreement starts that '
-                            'clock. There is no agreement, and the draft on '
-                            'the table excludes a flag category rather than '
-                            'reopening to it.'},
-              {'name': 'Oil price shock',
-               'score': 2,
-               'state': 'sub',
-               'rationale': 'Held at 2 — the only channel that can raise the '
-                            'score. Last confirmed close $80.46 (6 Aug), '
-                            '$14.54 below the $95 trigger and $7.98 above '
-                            'the $72.48 anchor — the anchor gap WIDENED '
-                            '$2.60 in one session from $5.38. Intraday '
-                            '$80.93, a third up-session. The close ran $2.26 '
-                            'ABOVE my snapshot, the widest upside crude gap '
-                            'recorded. Physical balance unchanged: '
-                            'distillate ~12% below the 5-yr average, '
-                            'utilisation 96.5%, spare capacity ~0.17 mb/d, '
-                            'Jizan out to ~15 Aug on unconfirmed third-party '
-                            'intelligence.',
-               'upgrade': 'Brent above $95 sustained → to 3',
-               'downgrade': 'mediated pause + close at/below the $72.48 '
-                            'anchor → to 1. Both legs moved AWAY this '
-                            'session: the price leg by $2.60, and the pause '
-                            'leg was denied outright by the US President.'},
-              {'name': 'US inflation impulse',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). 5Y5Y closed 2.3305% on 6 Aug, '
-                            'an EIGHTH consecutive close above the 2.30% '
-                            'trigger and now clear by 3.05 bp against '
-                            'Wednesday’s 0.67 bp — the four-session decline '
-                            'is over and yesterday’s flagged tension '
-                            'resolved in favour of the upgrade. BE10 closed '
-                            '2.2481%, up 3.05 bp, ending its run below the '
-                            'pre-war anchor. Data underneath unchanged: ISM '
-                            'services prices-paid 70.3 on a 54.1 headline '
-                            'miss, ADP +44k, Governor Cook ‘prepared to '
-                            'act’. Payrolls release after this snapshot.',
-               'upgrade': 'at max',
-               'downgrade': '5Y5Y sustained at/below the 2.142% pre-war '
-                            'anchor → to 4 (18.85 bp away on the last close, '
-                            '2.38 bp WIDER than Wednesday).'},
-              {'name': 'Treasury stress',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). Stage-4 Threshold B RE-ARMED '
-                            'on the 6 Aug close — 30Y 5.2242% and 10Y '
-                            '4.6778%, both legs clear after two sessions '
-                            'unsatisfied, six days before the 30Y auction. '
-                            'MOVE’s break below 75 lasted exactly one '
-                            'session: 76.12 on the 6 Aug close, up 2.54, so '
-                            'the volatility leg is unsatisfied again and the '
-                            'index is 2.74 pts ABOVE pre-war rather than '
-                            '0.20. The 30Y is 17.42 bp above the 13 May '
-                            'stop, from 11.80 bp.',
-               'upgrade': 'at max',
-               'downgrade': '30Y close under 5.00% with MOVE under 75 '
-                            'sustained → to 4. BOTH legs now fail and both '
-                            'widened: the 30Y leg from 16.80 to 22.42 bp, '
-                            'the MOVE leg from satisfied to unsatisfied. The '
-                            'rotation reported yesterday has reversed.'},
-              {'name': 'Political stress',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max), and the scored series has '
-                            'printed BELOW its trigger for the first time. '
-                            'AUTMUSAG BACKFILLED 5 Aug at $4.74 — one cent '
-                            'under the $4.75 line that fired the upgrade on '
-                            '4 Aug. Blank 6 and 7 Aug, two dark sessions, so '
-                            'the retreat rests on a stale print — but it is '
-                            'independently corroborated: AAA’s regular-grade '
-                            'average fell to $4.0633 on 6 Aug, −1.68c d/d '
-                            'and −3.48c w/w. Diesel is the counterweight at '
-                            '$5.3474, +0.81c w/w, and the JWC has extended '
-                            'Red Sea war-risk cover north over Jeddah and '
-                            'Yanbu.',
-               'upgrade': 'at max',
-               'downgrade': 'sustained retreat toward the $3.52 pre-war '
-                            'level → to 4 then 3. $1.22 above the anchor. A '
-                            'one-cent undershoot of the upgrade trigger is '
-                            'not the documented downgrade; the tension is '
-                            'flagged, not resolved.'},
-              {'name': 'Escalation risk',
-               'score': 5,
-               'state': 'max',
-               'rationale': 'Held at 5 (max). The downgrade candidate lost '
-                            'evidence on every axis. Trump said 6 Aug no '
-                            'deal has been reached and the blockade stays; '
-                            'an Iranian parliamentary bill would charge up '
-                            'to 7% of cargo value, contradicting the '
-                            'no-tolls term; Oman has published nothing since '
-                            '27 July; AP contradicts Axios on Supreme Leader '
-                            'approval; Gharibabadi contradicts Axios on the '
-                            'route and denies any US–Iran negotiation; '
-                            'Ghalibaf calls it ‘theater diplomacy on loop’. '
-                            'A senior Saudi official expects imminent '
-                            'coordinated attacks on Gulf energy '
-                            'infrastructure.',
-               'upgrade': 'at max',
-               'downgrade': 'mediated stand-down + talks resume → to 4–3. '
-                            'Requires a signed or published instrument, '
-                            'mediator confirmation, and a sustained window '
-                            'with no vessel casualties. All three moved '
-                            'further away this session.'}],
- 'scoreTotal': 'CRISIS band — HELD, fourth consecutive session. No channel '
-               'moved. Five of six channels are maxed and only oil, at 2/5, '
-               'can raise this number. The composition changes worth '
-               'recording: Stage-4 Threshold B re-armed on the 6 Aug close, '
-               'six days before the 30Y auction; the Treasury downgrade '
-               'rotation reported yesterday reversed inside a session; the '
-               '5Y5Y tension resolved in favour of the upgrade; and the oil '
-               'downgrade anchor moved $2.60 further away. Every '
-               'de-escalation reading published yesterday was partially '
-               'unwound by the close beneath it.',
- 'whatsChanged': {'title': "4 · What's changed since the last edition (6 Aug "
-                           'AM → 7 Aug AM)',
-                  'items': ['Score holds at 27/30 for a fourth session; no '
-                            'channel moved. Threshold B re-arms. MOVE’s '
-                            'sub-75 break lasts one day. An Iranian bill '
-                            'would charge 7% of cargo value. Trump says '
-                            'there is no deal. Source: Bloomberg unless '
-                            'stated.',
-                            'The snapshot missed the widest upside crude '
-                            'session and most of a 6 bp long-end selloff. '
-                            'Brent closed $80.46 on 6 August against the '
-                            '$78.20 published from the Singapore morning — a '
-                            '$2.26 gap, the widest upside crude '
-                            'reconciliation this monitor has recorded, '
-                            'exceeding the +$1.97 of 31 July. The curve '
-                            'closed 6.02 to 6.71 bp above the snapshot '
-                            'across 2Y, 10Y and 30Y, and MOVE printed an '
-                            'actual 76.12 against the 73.58 carried. Every '
-                            'directional reading in yesterday’s edition '
-                            'about a rallying long end and a falling '
-                            'volatility index was reversed by the close. '
-                            'Source: Bloomberg.',
-                            'Stage-4 Threshold B RE-ARMED — six days before '
-                            'the 30Y refunding auction. The 6 August close '
-                            'of 5.2242% on the 30Y and 4.6778% on the 10Y '
-                            'clears both legs by 2.42 bp and 2.78 bp, ending '
-                            'a two-close run unsatisfied and restoring the '
-                            'condition that held from 29 July to 3 August. '
-                            'This morning’s 5.2199% / 4.6739% keeps it '
-                            'satisfied. The threshold has now cycled twice '
-                            'in a fortnight. It is satisfied going INTO '
-                            'auction week — 3Y on 11 August, 10Y on 12 '
-                            'August alongside CPI, 30Y on 13 August — with '
-                            'the 30Y 17.42 bp above the 13 May stop of '
-                            '5.050%, against 11.80 bp on Wednesday. Source: '
-                            'Bloomberg; US Treasury sb0590.',
-                            'MOVE’s break below 75 lasted exactly one '
-                            'session, and the round-trip claim is withdrawn. '
-                            'MOVE closed 76.12 on 6 August, up 2.54, back '
-                            'above the 75 line that forms the second leg of '
-                            'the Treasury downgrade. The leg satisfied for '
-                            'the first time in the war on Wednesday is '
-                            'unsatisfied on Thursday. At 76.12 the index is '
-                            '2.74 points ABOVE its 73.38 pre-war anchor, not '
-                            '0.20 above it, so yesterday’s statement that '
-                            'rates volatility had fully round-tripped the '
-                            'conflict does not survive the latest close and '
-                            'is withdrawn. The 30Y leg widened in the same '
-                            'session from 16.80 bp to 22.42 bp: both legs '
-                            'now fail and both are further away. Source: '
-                            'Bloomberg.',
-                            'An Iranian parliamentary bill would bar US and '
-                            'Israeli vessels and charge up to 7% of cargo '
-                            'value. A parliamentary committee is reviewing a '
-                            'draft bill to prohibit vessels of the US, '
-                            'Israel and other states Iran deems hostile from '
-                            'Hormuz and the Gulf, prohibit military and '
-                            'civilian cargo linked to Israel, deny transit '
-                            'to states held responsible for damage to Iran '
-                            'until compensation is paid, and impose transit '
-                            'fees of up to 7% of cargo value with fines to '
-                            '20% for violations. It is under expert review '
-                            'and not finalised. It directly contradicts the '
-                            '‘no tolls or fees for 60 days’ term at the '
-                            'centre of the mechanism Axios reported on 5 '
-                            'August, and CNBC attributed Thursday’s crude '
-                            'rally to it. Origin Fars (Tier 3), carried by '
-                            'NPR and Reuters.',
-                            'Trump said no deal has been reached and the '
-                            'blockade stays. Speaking in the Oval Office on '
-                            '6 August the President said a deal has not yet '
-                            'been reached with Iran to reopen Hormuz, that '
-                            'it ‘could be soon’, and that the US will '
-                            'maintain its blockade of Iranian ports in the '
-                            'meantime. That supersedes Wednesday’s ‘we may '
-                            'have to send it up again’ and retires the CNN '
-                            'report of a senior Gulf official putting the '
-                            'odds of a deal by Friday at 50-50. Netanyahu, '
-                            'separately, on the draft: ‘They sent us a '
-                            'draft. We have not agreed to anything.’ Source: '
-                            'Times of Israel liveblog, 6 August.',
-                            'Two fresh contradictions in the corridor '
-                            'account, and Oman is still silent. On approval: '
-                            'Axios reported Iranian leadership completed its '
-                            'process on 4 August; AP reports the finalised '
-                            'deal is still awaiting the Supreme Leader. On '
-                            'terms: Axios describes paired 60-day lanes, '
-                            'inbound through Iranian and outbound through '
-                            'Omani waters; Gharibabadi describes both legs '
-                            'largely through Iranian territorial waters, '
-                            'closure of the existing temporary lanes, a '
-                            'two-to-four-month term and a joint Iran–Oman '
-                            'coordination centre, while continuing to deny '
-                            'that Iran is negotiating with the United '
-                            'States. Oman’s foreign ministry has published '
-                            'no statement of any kind since 27 July, '
-                            'verified directly against fm.gov.om. Parliament '
-                            'speaker Ghalibaf called the American track '
-                            '‘theater diplomacy on loop’. Source: Axios, AP, '
-                            'NPR, Al Jazeera, Omani MFA.',
-                            'Saudi Arabia says it expects imminent '
-                            'coordinated attacks from north and south. A '
-                            'senior Saudi official told Reuters and CNN on 6 '
-                            'August that Riyadh expects imminent coordinated '
-                            'attacks by Iraqi militias and the Houthis '
-                            '‘under the supervision of Iran’s IRGC’, with '
-                            'intelligence from Saudi, US and other regional '
-                            'sources indicating energy infrastructure, ports '
-                            'and airports could be targeted, and drones and '
-                            'missiles observed being moved. This is Tier 1 '
-                            'corroboration of Monday’s Reuters exclusive on '
-                            'Iran’s warning to Gulf capitals. Iraq moved '
-                            'first: military spokesman Sabah al-Numan said '
-                            'Baghdad had begun implementing a security plan '
-                            'and would ‘not allow any attack from inside '
-                            'Iraq targeting any neighboring country’, ahead '
-                            'of the Tier 3 7 August militia deadline. '
-                            'Separately Saudi Arabia, Turkey and Pakistan '
-                            'are reported by AFP to sign a joint defence '
-                            'pact in Jeddah today.',
-                            'An eighth session with no Tier 1 strike — but '
-                            'Iranian state media claimed one and an Iranian '
-                            'official denied it. Tasnim and Fars claimed on '
-                            'the night of 6 August that Iranian forces '
-                            'engaged ‘hostile enemy targets’ at the entrance '
-                            'to the strait after two explosions on Qeshm '
-                            'Island. Hormozgan deputy governor Ahmad Nafisi '
-                            'said no strike or incident had been reported '
-                            'and that authorities were investigating. '
-                            'Bloomberg headlined it as an Iranian strike and '
-                            'crude rallied; CENTCOM issued nothing and its '
-                            'last combat release remains 29 July. The '
-                            'monitor records the run as contested rather '
-                            'than broken. Sources: Tasnim and Fars (Tier 3), '
-                            'Bloomberg, Middle East Eye.',
-                            'The Washington Post reported that munitions '
-                            'shortages were part of why the strike package '
-                            'was pulled. Trump confronted Defense Secretary '
-                            'Hegseth at Camp David over not having been told '
-                            'about extreme munitions shortages, and one '
-                            'source said the shortages were part of the '
-                            'reason he pulled back from launching additional '
-                            'massive strikes on Iran. On 6 August he ordered '
-                            'new investigations into the leaks; the White '
-                            'House says the US has enough munitions for any '
-                            'operation. If accurate this reframes the '
-                            'eight-session pause as partly capacity-driven '
-                            'rather than diplomacy-driven, which cuts the '
-                            'probability of an imminent US strike and does '
-                            'nothing for the durability of the pause. '
-                            'Single-outlet and reported as such. Source: '
-                            'Washington Post, 5 August.',
-                            'Lebanon reached its heaviest day of Israeli '
-                            'fire since 21 June, and the Houthis had their '
-                            'deadliest day since 2022. UNIFIL recorded 120 '
-                            'Israeli projectiles between midnight and 4pm on '
-                            '6 August, surpassing the full-day total of 113 '
-                            'on 5 August and the highest since 21 June, with '
-                            'no Hezbollah launches detected in either '
-                            'period; two Israeli reservists were killed by '
-                            'an IED on 5 August. In Yemen, Houthi missiles '
-                            'and drones killed at least 58 government '
-                            'soldiers in Marib and Hadramawt, and 11 '
-                            'civilians were wounded in Najran. The Joint War '
-                            'Committee has extended the Red Sea war-risk '
-                            'listed area roughly 800 km north, so Jeddah and '
-                            'Yanbu calls now carry additional premium. '
-                            'Source: UNIFIL via Arab News, AP, AFP, Lloyd’s '
-                            'List Intelligence.']},
- 'scenarios': [{'name': 'Deal collapse — talks stall on terms',
-                'p': 33,
-                'desc': 'Sharply higher and now the modal path for the first '
-                        'time in this monitor. The failure condition stopped '
-                        'being about trust and became about terms. An '
-                        'Iranian parliamentary bill would charge up to 7% of '
-                        'cargo value and bar US and Israeli vessels '
-                        'outright, against a mechanism whose central term '
-                        'was no tolls for 60 days; Trump says no deal has '
-                        'been reached and the blockade stays; Oman has '
-                        'published nothing since 27 July; AP and Axios '
-                        'contradict each other on Supreme Leader approval '
-                        'and Gharibabadi and Axios contradict each other on '
-                        'the route itself.',
-                'path': 'Brent $88–105; oil back toward 3; Threshold B holds '
-                        'satisfied; score 28.'},
-               {'name': 'Return to full war',
-                'p': 28,
-                'desc': 'Lower for a third session and no longer modal. '
-                        'Eight sessions without a Tier 1 confirmed strike; '
-                        'CENTCOM’s last combat release is 29 Jul; and the '
-                        'Washington Post reports munitions shortages were '
-                        'part of why the strike package was pulled, which is '
-                        'a capacity constraint rather than a choice. Against '
-                        'that, Iranian state media claimed a naval '
-                        'engagement at the mouth of the strait on Thursday '
-                        'night, and a senior Saudi official expects imminent '
-                        'coordinated militia and Houthi attacks under IRGC '
-                        'supervision.',
-                'path': 'Brent $105–140; MOVE above 90; oil to 3–4; score '
-                        '28–29 (only oil can rise).'},
-               {'name': 'Contained but violent — blockaded stalemate',
-                'p': 16,
-                'desc': 'Higher. This is where the evidence actually sits: '
-                        'strait shut on day 159 at UKMTO threat level '
-                        'SEVERE, a tanker reporting explosions off Kumzar '
-                        'with no attribution, the Minoan Pioneer unresolved, '
-                        'the JWC extending Red Sea war-risk cover 800 km '
-                        'north over Jeddah and Yanbu, Lebanon at its '
-                        'heaviest day of Israeli fire since 21 Jun, and the '
-                        'Houthis’ deadliest day against Yemeni government '
-                        'forces since 2022 — with the score pinned at 27 '
-                        'regardless because five of six channels are maxed.',
-                'path': 'Brent $75–90; MOVE 72–82; risk premium $3–12/bbl; '
-                        'score holds 27.'},
-               {'name': 'Mediated pause — the strait reopens',
-                'p': 12,
-                'desc': 'Sharply lower. The 50-50-by-Friday call did not '
-                        'survive contact with the President, who said on '
-                        'Thursday that no deal has been reached. What '
-                        'remains is coordinates neither party has published, '
-                        'a joint statement in drafting, a mediator that has '
-                        'said nothing in eleven days, and a legislature '
-                        'drafting a fee regime that contradicts the deal’s '
-                        'core term. A signed instrument would still start '
-                        'the ten-session maritime clock and supply the '
-                        'mediated-pause leg the oil downgrade needs — but '
-                        'that price leg also widened $2.60 this session, to '
-                        '$7.98.',
-                'path': 'Brent $70–80; MOVE under 75; maritime→3–4 on '
-                        'verified traffic, oil→1, escalation→4; score falls '
-                        'toward 21–23.'},
-               {'name': 'Regional relapse — Gulf energy infrastructure hit',
-                'p': 11,
-                'desc': 'Unchanged in probability, and the evidence base '
-                        'moved from Iranian threat to Saudi expectation. A '
-                        'senior Saudi official now says Riyadh anticipates '
-                        'imminent coordinated attacks from Iraqi militias '
-                        'and the Houthis under IRGC supervision, aimed at '
-                        'energy infrastructure, ports and airports, with '
-                        'drones and missiles observed moving. That is Tier 1 '
-                        'corroboration of Monday’s Reuters report — but the '
-                        'path remains conditional on a US strike whose '
-                        'near-term probability fell again. Exposure '
-                        'unchanged: Jizan out to ~15 Aug, Abqaiq and '
-                        'Damietta unreported, spare capacity ~0.17 mb/d, and '
-                        'a 7 Aug Iraqi deadline that is Tier 3 and that '
-                        'Baghdad has pre-empted.',
-                'path': 'Brent $150+; emergency policy response; HY spreads '
-                        'above 500 bp; score 29–30.'}],
- 'scenarioShift': 'Probability shifts from the 6 Aug edition: deal collapse '
-                  '+5 (28→33), the largest single move, on an Iranian fee '
-                  'bill that contradicts the deal’s central term and a '
-                  'presidential statement that no deal exists; mediated '
-                  'pause −4 (16→12), giving back most of the two sessions of '
-                  'gains, as the 50-50-by-Friday call expired; full war −2 '
-                  '(30→28) on an eighth session without a Tier 1 strike and '
-                  'the Washington Post’s report that munitions shortages '
-                  'contributed to the package being pulled; '
-                  'contained-but-violent +1 (15→16); regional relapse '
-                  'unchanged at 11%, because Saudi Arabia’s expectation of '
-                  'imminent coordinated attacks raises the evidentiary '
-                  'weight of that path while leaving it conditional on a US '
-                  'strike that became less likely. Probabilities sum to 100. '
-                  'The material change is the ordering: for the first time '
-                  'in this monitor the modal path is not a return to full '
-                  'war but a negotiation that fails on its terms. Note what '
-                  'that does NOT mean — deal collapse is the path in which '
-                  'Brent trades $88 to $105 and Threshold B stays satisfied '
-                  'into an auction, not a benign outcome.',
- 'watchlist': ['July payrolls at 8:30am ET today — released AFTER this '
-               'snapshot was taken. This is the one case where the '
-               'Singapore-AM cut is a disadvantage rather than an advantage: '
-               'the print lands hours after this edition closes and the '
-               'reaction will not appear until Monday’s row. The consensus '
-               'is not agreed and that is itself the signal — +83k at CNBC, '
-               '+85k at Kiplinger, a FactSet median of +97.5k on a 65k–130k '
-               'range, against June’s +57k and an expected 4.2% unemployment '
-               'rate. ADP printed +44k and ISM services employment fell the '
-               'most since March, while ISM prices paid jumped to 70.3. A '
-               'weak print with hot prices is the configuration that most '
-               'complicates September, and 5Y5Y at 2.3305% says forward '
-               'compensation has not conceded. CPI lands 12 August.',
-               'The 30Y refunding leg on Thursday 13 August, now with '
-               'Threshold B satisfied going in. Treasury held coupon sizes '
-               'on 5 August so the supply shock did not arrive through the '
-               'announcement. It can still arrive through demand, and the '
-               'setup deteriorated this session. The 3Y auctions 11 August '
-               'at $58bn, the 10Y 12 August at $42bn alongside CPI, and the '
-               '30Y 13 August at $25bn, all settling 17 August — into a long '
-               'end 61.0 bp above its pre-war anchor and 17.42 bp above the '
-               '13 May stop of 5.050%, against 11.80 bp on Wednesday. '
-               'Threshold B is satisfied on the last close rather than '
-               'lapsed, and MOVE is back above 75. A tail on 13 August now '
-               'lands on a curve that has already re-cleared both Stage-4 '
-               'legs.',
-               'Whether the Iranian fee bill advances — and whether Oman '
-               'ever says anything. The bill is the concrete failure '
-               'condition the corridor talks lacked. It is under expert '
-               'review, originated with Fars at Tier 3, and is carried by '
-               'NPR and Reuters; what matters is whether it clears '
-               'committee, what fee number survives, and whether the '
-               'government distances itself from it. Set against it: no '
-               'published joint statement, no published coordinates, no '
-               'Omani statement of any kind since 27 July, an AP–Axios '
-               'contradiction on Supreme Leader approval and a '
-               'Gharibabadi–Axios contradiction on the route. An '
-               'announcement does not move a channel; a signed and published '
-               'instrument with a mediator’s name on it would move two.',
-               'AUTMUSAG’s next print, now that the scored series has gone '
-               'BELOW its trigger. The series backfilled 5 August at $4.74, '
-               'a cent under the $4.75 line that fired the upgrade on 4 '
-               'August, and is blank for 6 and 7 August. Two dark sessions '
-               'mean the reading rests on one stale print, and this monitor '
-               'does not treat a stale low as information — but it is '
-               'independently corroborated by AAA’s own regular-grade '
-               'average falling to $4.0633 on 6 August, down 3.48 cents on '
-               'the week. What would matter is a second print materially '
-               'below $4.75; what argues against it is diesel at $5.3474, '
-               'still up on the week and the year, distillate stocks about '
-               '12% below the five-year average, and the JWC extending Red '
-               'Sea war-risk cover over Jeddah and Yanbu.',
-               'Saudi Arabia’s expectation of imminent attacks, the Tier 3 '
-               'Iraqi deadline that falls today, and the Jeddah pact. A '
-               'senior Saudi official expects coordinated Iraqi-militia and '
-               'Houthi attacks under IRGC supervision on energy '
-               'infrastructure, ports and airports. The Islamic Resistance '
-               'in Iraq deadline to Baghdad expires today; it originated '
-               'with Press TV on 29 July, has Tier 3 corroboration only, and '
-               'Baghdad has pre-empted it with a security plan and an '
-               'explicit warning under the anti-terrorism law. Saudi Arabia, '
-               'Turkey and Pakistan are reported by AFP to sign a joint '
-               'defence pact in Jeddah today — with Pakistan simultaneously '
-               'mediating between Washington and Tehran. Watch Najran, Jizan '
-               'and the Iraqi border rather than the strait.',
-               'Data hygiene: five series dark or stale, and one '
-               'prior-edition figure superseded. JGLA backfilled 6 August at '
-               '¥3,276 and has no 7 August print; AUTMUSAG backfilled 5 '
-               'August at $4.74 and is blank for 6 and 7 August; SOFR '
-               'backfilled 5 August at 3.64 — two basis points BELOW the '
-               '3.66 reported yesterday as the 4 August print — and is blank '
-               'for 6 and 7 August; MOVE and VIX printed for 6 August but '
-               'not 7 August. Aramco has still issued no statement on Jizan '
-               'and the ~15 August restart remains third-party intelligence; '
-               'Abqaiq and Damietta remain unreported since 30 July.'],
- 'sourceLog': {'tier1Market': 'Tier 1 — primary market data. Bloomberg '
-                              'Terminal extract (US Iran BBG Data.xlsx, 156 '
-                              'data rows × 99 columns, restated front-month '
-                              'continuation series). Tickers: CO2/CL2 Comdty '
-                              '(front-month; last confirmed close $80.46 / '
-                              '$76.16 on 6 Aug, intraday $80.93 / $76.58 '
-                              'with a Brent high of 81.50 and low of 80.85); '
-                              'COA/CLA Comdty (active, unscored — $83.16 / '
-                              '$77.82); NGA ($2.620 intraday, a NEW LOW FOR '
-                              'THE WAR), TZTA (€58.400 intraday after a 6 '
-                              'Aug close of €55.769, a third consecutive '
-                              'advance) and JGLA (6 Aug BACKFILLED at '
-                              '¥3,276, the lowest since 16 Jul; no 7 Aug '
-                              'print, flagged not carried); '
-                              'USGG2YR/5YR/10YR/20YR/30YR (the 30Y closed '
-                              '5.2242% on 6 Aug and the 10Y 4.6778%, both '
-                              'back above their Stage-4 legs, re-arming '
-                              'Threshold B; 5.2199% / 4.6739% intraday); '
-                              'USYC2Y10 (+42.614 close, +42.451 intraday); '
-                              'USGGBE10 (2.2481 close, up 3.05 bp and back '
-                              'within a third of a basis point of the 2.2569 '
-                              'pre-war anchor; 2.2511 intraday); USGG5Y5Y '
-                              '(2.3305 close, an eighth consecutive close '
-                              'above the 2.30% trigger and now clear by 3.05 '
-                              'bp; 2.3337 intraday); SOFRRATE (5 Aug '
-                              'BACKFILLED at 3.64, two basis points below '
-                              'the 3.66 reported yesterday; blank 6 and 7 '
-                              'Aug, flagged not carried); MOVE (76.12 on the '
-                              '6 Aug close, +2.54, back ABOVE the 75 '
-                              'Treasury-downgrade leg after exactly one '
-                              'session below it; no 7 Aug print) and VIX '
-                              '(15.15, −0.66, the second-lowest close of the '
-                              'entire war; no 7 Aug print); DXY (99.930 '
-                              'close, a second consecutive advance, 99.990 '
-                              'intraday); AUTMUSAG (AAA all-grades pump — '
-                              'score reference; 5 Aug BACKFILLED at $4.74, '
-                              'the first print BELOW the $4.75 trigger since '
-                              'the upgrade fired; blank 6 and 7 Aug) and '
-                              'USRFRUSA (DOE regular spot, weekly — '
-                              'corroboration; $4.079 for the week to 3 Aug, '
-                              'no new release until 11 Aug). Data-integrity '
-                              'note: the stale-row check clears decisively. '
-                              'The 6 Aug row has refreshed and differs '
-                              'materially from the intraday values published '
-                              'for it on every field (Brent $80.46 against '
-                              '$78.20; the 30Y 5.2242% against 5.1638%; MOVE '
-                              'an actual 76.12 against a carried 73.58), so '
-                              'it is a true close and every trigger test in '
-                              'this edition runs off it. Two series '
-                              'backfilled in this extract: JGLA for 6 Aug '
-                              'and SOFRRATE for 5 Aug. AUTMUSAG did NOT '
-                              'backfill for 6 Aug and is now dark for two '
-                              'sessions. The 27 Feb 2026 anchor was '
-                              're-verified field by field and is unchanged.',
-               'tier1News': 'Tier 1 — news and institutional. Times of '
-                            'Israel liveblog (Trump in the Oval Office, 6 '
-                            'Aug: a deal has not yet been reached to reopen '
-                            'Hormuz, it ‘could be soon’, and the US will '
-                            'maintain its blockade of Iranian ports in the '
-                            'meantime; and Netanyahu on the draft, ‘They '
-                            'sent us a draft. We have not agreed to '
-                            'anything’). NPR and Reuters carrying Fars (Tier '
-                            '3 origin) (an Iranian parliamentary committee '
-                            'reviewing a draft bill to bar vessels of the '
-                            'US, Israel and other states Iran deems hostile '
-                            'from Hormuz and the Gulf, prohibit cargo linked '
-                            'to Israel, deny transit to states held '
-                            'responsible for damage to Iran until '
-                            'compensation is paid, and impose transit fees '
-                            'of up to 7% of cargo value with fines to 20%; '
-                            'under expert review, not finalised). CNBC (7 '
-                            'Aug: attributing the crude rally to the Iranian '
-                            'draft plan for the strait). AP (Iranian and '
-                            'Omani negotiators saying the finalised deal is '
-                            'still awaiting approval from Supreme Leader '
-                            'Mojtaba Khamenei — contradicting Axios’ report '
-                            'that Iranian leadership completed approval on 4 '
-                            'Aug). NPR (Gharibabadi describing entry and '
-                            'exit largely through Iranian territorial waters '
-                            'with some parts through Oman’s, closure of the '
-                            'existing temporary lanes, a two-to-four-month '
-                            'term and a joint coordination centre — '
-                            'contradicting Axios’ paired-lane description; '
-                            'and his continued denial that Iran is '
-                            'negotiating with the United States). Omani '
-                            'Ministry of Foreign Affairs (checked directly: '
-                            'the most recent published statement of any kind '
-                            'is dated 27 July; nothing on the corridor). Al '
-                            'Jazeera and Times of Israel (Ghalibaf on 6 Aug '
-                            'calling Washington’s approach ‘theater '
-                            'diplomacy on loop’). Reuters and CNN (6 Aug: a '
-                            'senior Saudi official saying Riyadh expects '
-                            'imminent coordinated attacks from Iraqi '
-                            'militias and the Houthis under IRGC '
-                            'supervision, with intelligence pointing at '
-                            'energy infrastructure, ports and airports, and '
-                            'drones and missiles observed being moved; '
-                            'Saudi–US and CENTCOM cooperation described as '
-                            'very high). Washington Post (5 Aug: Trump '
-                            'confronting Defense Secretary Hegseth at Camp '
-                            'David over munitions shortages, with one source '
-                            'saying the shortages were part of the reason he '
-                            'pulled back from additional strikes on Iran; '
-                            'single-outlet and reported as such). UKMTO via '
-                            'Arab News and Anadolu (a tanker hearing two '
-                            'explosions about 10 nm / 16 km south-east of '
-                            'Kumzar, Oman on 6 Aug, vessel and crew safe, no '
-                            'attribution — correcting the 9 nm reported '
-                            'yesterday). Lloyd’s List Intelligence (Strait '
-                            'of Hormuz Brief of 5 Aug: 84 transits 27 Jul–2 '
-                            'Aug against 45, 52 non-Iranian-linked against '
-                            '28, about a quarter of non-Iranian-linked '
-                            'traffic on the Omani coastal route with two '
-                            'ships struck since 1 Aug, blockade redirections '
-                            '45 with 2 disabled and 2 boarded, 65 vessels '
-                            'trapped after entering during the lull plus '
-                            'more than 70 there since the conflict began; '
-                            'and the Red Sea Brief of 6 Aug: Bab el Mandeb '
-                            '266 transits 27 Jul–2 Aug against 269, '
-                            'mainstream tanker traffic down 42% to 53, Suez '
-                            '275 against 273 with VLCC traffic quadrupled, '
-                            'and the Joint War Committee expanding the Red '
-                            'Sea listed area roughly 800 km north so that '
-                            'Jeddah and Yanbu calls attract additional '
-                            'war-risk premium). IMF PortWatch via '
-                            'straits.live (2 crossings on 2 Aug against ITS '
-                            'OWN 73/day baseline). CENTCOM (no combat '
-                            'release since 29 Jul; the 5 Aug '
-                            'change-of-command release remains the latest). '
-                            'AAA (regular-grade national average $4.0633 and '
-                            'diesel $5.3474 on 6 Aug, against $4.0801 / '
-                            '$5.3622 on 5 Aug, $4.0981 / $5.3393 a week '
-                            'earlier and $3.7968 / $4.7562 a month earlier; '
-                            'all-time records $5.0165 and $5.8159, both June '
-                            '2022). EIA (Weekly Petroleum Status Report of 5 '
-                            'Aug for the week to 31 Jul: crude 407.0 mb '
-                            '+2.5, gasoline 209.7 mb, distillate 107.2 mb '
-                            'and ~12% below the five-year average, refinery '
-                            'utilisation 96.5%, SPR 304.8 mb; and the retail '
-                            'update for the week to 3 Aug — regular $4.079, '
-                            'on-highway diesel $5.348, next release 11 Aug). '
-                            'US Treasury (sb0590: 3Y $58bn on 11 Aug, 10Y '
-                            '$42bn on 12 Aug, 30Y $25bn on 13 Aug, all '
-                            'settling 17 Aug). BLS (July Employment '
-                            'Situation released 8:30am ET on 7 Aug, after '
-                            'this snapshot; June was +57k with unemployment '
-                            '4.2%). CNBC, Kiplinger and FactSet (payroll '
-                            'consensus of +83k, +85k and a +97.5k median on '
-                            'a 65k–130k range; unemployment 4.2% expected). '
-                            'ADP (+44,000 private jobs in July), ISM '
-                            '(services 54.1 with prices paid 70.3), Federal '
-                            'Reserve (Governor Cook, 5 Aug, ‘If I do not see '
-                            'signs of continued disinflation soon, I am '
-                            'prepared to act’; the 29 Jul hold at '
-                            '3.50–3.75%, 9–3 with three dissents for a hike; '
-                            'Chair Kevin Warsh). OPEC (the 2 Aug decision to '
-                            'add 188k b/d for September). IEA (Oil Market '
-                            'Report of 10 July: effective spare capacity '
-                            '~0.17 mb/d; the August report is not yet '
-                            'published). Reuters citing IIR (Jizan targeted '
-                            'to restart about 15 August — third-party '
-                            'intelligence, never confirmed by Aramco). AFP '
-                            '(Saudi Arabia, Turkey and Pakistan to sign a '
-                            'joint defence pact in Jeddah on 7 Aug). UNIFIL '
-                            'via Arab News (120 Israeli projectiles between '
-                            'midnight and 4pm on 6 Aug against 113 for the '
-                            'full day on 5 Aug, the highest since 21 June, '
-                            'with no Hezbollah launches detected). AP (two '
-                            'Israeli reservists killed by an IED in southern '
-                            'Lebanon on 5 Aug). AFP via Times of Israel (at '
-                            'least 58 Yemeni government soldiers killed by '
-                            'Houthi missiles and drones in Marib and '
-                            'Hadramawt on 6 Aug) and Arab News (11 civilians '
-                            'wounded in Najran). Italian MFA '
-                            '(Tajani–Araghchi call of 5 Aug pressing for '
-                            'navigation ‘without the imposition of tariffs '
-                            'or other restrictions’).',
-               'tier3': 'Tier 3 — state media and combatant claims '
-                        '(labelled). Tasnim and Fars claimed that two '
-                        'explosions on Qeshm Island late on 6 Aug were '
-                        'Iranian forces confronting ‘hostile enemy targets’ '
-                        'at the entrance to the strait, with ‘achievements’ '
-                        'to be announced; Hormozgan deputy governor Ahmad '
-                        'Nafisi, an Iranian official, said no strike or '
-                        'incident had been reported and that authorities '
-                        'were investigating. Bloomberg relayed the claim at '
-                        'Tier 1 in a headline; no CENTCOM release, damage '
-                        'assessment or independent attribution exists, and '
-                        'the monitor records the quiet run as contested '
-                        'rather than broken. The IRGC separately claimed two '
-                        '‘deviant’ tankers exploded after using an unsafe '
-                        'route; no source links that claim to the Kumzar '
-                        'incident and the linkage is NOT used. Houthi claims '
-                        'of missile attacks on the Saudi tankers Wafa and '
-                        'Daisy remain combatant claims: no independent '
-                        'tracker has verified either, no UKMTO advisory '
-                        'corroborates them, and Saudi Arabia has not '
-                        'commented — only the Encelia of 22 Jul ever drew '
-                        'outside confirmation. The 7 August Islamic '
-                        'Resistance in Iraq deadline originated with Press '
-                        'TV on 29 July, has Tier 3 corroboration only, and '
-                        'no Tier 1 outlet independently confirms the date. '
-                        'Corrections and re-verifications this edition: (i) '
-                        'the claim published yesterday that MOVE had fully '
-                        'round-tripped the war at 0.20 points above its '
-                        'pre-war anchor is withdrawn — the 6 August close of '
-                        '76.12 is 2.74 points above it and back above the 75 '
-                        'downgrade leg; (ii) yesterday’s statement that the '
-                        'Brent downgrade anchor was $5.38 away and the '
-                        'narrowest of the war is superseded — the 6 August '
-                        'close of $80.46 puts it $7.98 away; (iii) the '
-                        'September hike probability of about 56% attributed '
-                        'to 5 August is mis-dated: the hard-sourced readings '
-                        'are CME FedWatch 55.9% and Kalshi 54%, both dated '
-                        '29 July, and no verified 6–7 August reading could '
-                        'be obtained direct from CME Group; (iv) the '
-                        'war-risk figures carried from straits.live — cover '
-                        'near 30 times pre-crisis, a VLCC premium around '
-                        '$10m a voyage, and six P&I clubs withdrawn — are '
-                        'retracted as fact and reported as contested: '
-                        'Lloyd’s List has published an explicit rebuttal '
-                        'that P&I clubs have not cancelled war-risk cover, '
-                        'and published trade-press premium ranges of '
-                        '$220k–$1.1m and $1.5m–$4.5m sit an order of '
-                        'magnitude below the $10m blog estimate; (v) the '
-                        'Kumzar explosions were about 10 nm / 16 km '
-                        'south-east, not 9 nm; (vi) the Minoan Pioneer was '
-                        'struck at about 22:00 UTC on 3 August roughly 20 nm '
-                        'north-east of Khasab — 4 August was the reporting '
-                        'date — and attribution, salvage and the fate of the '
-                        'missing third engineer remain unresolved, with '
-                        'OSINT attributions to Iran explicitly NOT used; '
-                        '(vii) the SPR draw for the week to 31 July is '
-                        'reported as 2.8 to 3.0 mb against the 3.0 mb '
-                        'carried, the sources disagreeing on the change '
-                        'while agreeing on the 304.8 mb level; (viii) '
-                        'blockade redirections are 45 (Lloyd’s List) or 48 '
-                        '(a compilation of CENTCOM’s 5 August statement), '
-                        'superseding the 44-as-of-3-August figure and '
-                        'reported unreconciled; and (ix) straits.live’s ‘2 '
-                        'vessels against a typical 73’ uses IMF PortWatch’s '
-                        'own 73/day baseline, not UKMTO’s 138/day — the '
-                        'denominator is now named wherever a percentage of '
-                        'normal is quoted.'},
- 'protocol': [{'step': 'Refresh the Bloomberg extract',
-               'detail': 'Parse the latest dated row (7 Aug, Friday) as '
-                         'intraday; re-map columns via the robust scan '
-                         '(front-month CO2/CL2; DXY resolves as DXY Index). '
-                         'The stale-row integrity check CLEARS decisively: '
-                         'the 6 Aug row has refreshed with true closes that '
-                         'differ materially from the intraday values '
-                         'published for it on every field — Brent $80.46 '
-                         'against $78.20, the 30Y 5.2242% against 5.1638%, '
-                         'MOVE an actual 76.12 against a carried 73.58. Two '
-                         'series BACKFILLED: JGLA for 6 Aug at ¥3,276 and '
-                         'SOFRRATE for 5 Aug at 3.64. AUTMUSAG did NOT '
-                         'backfill and is dark for two sessions. Currently '
-                         'dark and flagged, not carried: JGLA, AUTMUSAG, '
-                         'SOFRRATE, MOVE and VIX all have no 7 Aug print.'},
-              {'step': 'Recompute deltas',
-               'detail': 'd/d vs the 6 Aug close; w/w vs the close five '
-                         'trading sessions back (31 Jul this edition); '
-                         'vs-pre-war against the 27 Feb 2026 anchor, '
-                         're-verified field by field and unchanged.'},
-              {'step': 'Re-evaluate the six channels',
-               'detail': 'Market channels move on confirmed closes only. No '
-                         'channel moved; the score holds at 27/30 for a '
-                         'fourth session. Oil held at 2 (last close $80.46, '
-                         '$14.54 below $95 and $7.98 above the $72.48 '
-                         'anchor, $2.60 wider than yesterday; the pause leg '
-                         'was denied by the President). US inflation held at '
-                         '5 (5Y5Y closed 2.3305%, an eighth consecutive '
-                         'close above 2.30% and clear by 3.05 bp; '
-                         'yesterday’s flagged tension resolved in favour of '
-                         'the upgrade). Treasury held at 5 — the MOVE leg is '
-                         'UNSATISFIED again after one session and the 30Y '
-                         'leg widened to 22.42 bp; Stage-4 Threshold B '
-                         'RE-ARMED. Political held at 5 although the scored '
-                         'series printed $4.74, a cent BELOW its upgrade '
-                         'trigger — the documented downgrade is the $3.52 '
-                         'anchor, $1.22 lower, and the tension is flagged '
-                         'rather than acted on. Maritime and escalation are '
-                         'event-based and both maxed.'},
-              {'step': 'Reconcile against the prior edition',
-               'detail': 'Thursday’s US session produced the widest upside '
-                         'crude gap the monitor has recorded and the second '
-                         'widest long-end gap. My 6 Aug intraday Brent '
-                         '$78.20 versus the $80.46 close (+$2.26, exceeding '
-                         'the +$1.97 of 31 Jul); WTI $74.45 vs $76.16 '
-                         '(+$1.71); COA $79.93 vs $82.49 (+$2.56); CLA '
-                         '$75.64 vs $77.29 (+$1.65); Henry Hub $2.672 vs '
-                         '$2.640 (−$0.032); TTF €53.850 vs €55.769 '
-                         '(+€1.919); 30Y 5.1638% vs 5.2242% (+6.04 bp); 10Y '
-                         '4.6107% vs 4.6778% (+6.71 bp); 2Y 4.1852% vs '
-                         '4.2454% (+6.02 bp); 2s10s +42.34 vs +42.614 (+0.27 '
-                         'bp); BE10 2.2164% vs 2.2481% (+3.17 bp); 5Y5Y '
-                         '2.3061% vs 2.3305% (+2.44 bp); DXY 99.670 vs '
-                         '99.930 (+0.260); MOVE a carried 73.58 vs an actual '
-                         '76.12 (+2.54); VIX a carried 15.81 vs an actual '
-                         '15.15 (−0.66).'},
-              {'step': 'Update scenarios and watchlist',
-               'detail': 'Re-rank catalysts: July payrolls at 8:30am ET '
-                         'today, AFTER this snapshot; the 30Y refunding leg '
-                         'on 13 Aug with Threshold B now satisfied going in; '
-                         'whether the Iranian fee bill advances and whether '
-                         'Oman ever speaks; AUTMUSAG’s next print after a '
-                         '$4.74 backfill below the trigger; Saudi Arabia’s '
-                         'expectation of imminent coordinated attacks, the '
-                         'Tier 3 Iraqi deadline falling today, and the '
-                         'Jeddah defence pact. Deal collapse 28→33 and now '
-                         'modal for the first time, full war 30→28, mediated '
-                         'pause 16→12, contained-but-violent 15→16, regional '
-                         'relapse unchanged at 11.'}],
- 'methodology': {'scale': 'Shock-score scale. Six transmission channels '
-                          '(maritime denial, oil, US inflation impulse, '
-                          'Treasury stress, political stress, escalation '
-                          'risk), each 0–5, summed to 0–30. Bands: 0–7 watch '
-                          '· 8–14 stress · 15–21 systemic-risk watch · 22–30 '
-                          'crisis. Market channels move only on a confirmed '
-                          'close through a trigger; escalation-risk and '
-                          'maritime denial are event-based. Hysteresis: '
-                          'upgrades fire on a sustained break, downgrades '
-                          'only on a sustained reversal past a wider '
-                          'threshold, deliberately, to avoid whipsawing. '
-                          'This edition is the clearest vindication of that '
-                          'rule the monitor has produced. Yesterday one leg '
-                          'of the Treasury downgrade was satisfied for the '
-                          'first time in the war and the 5Y5Y break that '
-                          'fired the inflation upgrade was 0.67 bp from '
-                          'vanishing. Had either channel been moved on that '
-                          'session, both moves would have been wrong within '
-                          '24 hours: MOVE is back above 75 and the 5Y5Y is '
-                          '3.05 bp clear. The same discipline now applies in '
-                          'the other direction and against the monitor’s own '
-                          'instinct — political stress holds at 5 although '
-                          'AUTMUSAG has printed $4.74, a cent BELOW the '
-                          'trigger that fired it, because the documented '
-                          'downgrade is the $3.52 anchor 122 cents lower and '
-                          'because the print is two sessions stale. The '
-                          '25–26 June whipsaw and the 3 August announcement '
-                          'that never became an event remain the reference '
-                          'cases.',
-                 'scaleCap': 'Scale cap — binding on five of six channels. '
-                             'Maritime and escalation have been pinned at '
-                             '5/5 since 10 and 9 July, Treasury since 14 '
-                             'July, US inflation since 31 July and political '
-                             'stress since 4 August. Only oil, at 2/5, '
-                             'retains any upward range — three points in a '
-                             'thirty-point scale. This session the cap hid a '
-                             'genuine deterioration: an Iranian legislature '
-                             'drafting a fee regime that contradicts the '
-                             'deal on the table, a President stating there '
-                             'is no deal and that the blockade stays, a '
-                             'mediator silent for eleven days, Saudi Arabia '
-                             'expecting imminent coordinated attacks on Gulf '
-                             'energy infrastructure, Lebanon at its heaviest '
-                             'day of Israeli fire in six weeks, the '
-                             'deadliest Houthi strike on Yemeni government '
-                             'forces since 2022, and Stage-4 Threshold B '
-                             're-arming six days before a 30Y auction — and '
-                             'the score did not move a point, because five '
-                             'channels have nowhere to go and the sixth is '
-                             'oil. A flat 27 across four sessions is a '
-                             'saturated scale, not a stable situation, and '
-                             'readers should read the composition and the '
-                             'Stage-4 tests rather than the number.',
-                 'integrity': 'Data integrity this edition. The stale-row '
-                              'check clears decisively: the extract’s 6 '
-                              'August row refreshed and its closes differ '
-                              'materially from the intraday values published '
-                              'for it on every field (Brent $80.46 against '
-                              '$78.20, the 30Y 5.2242% against 5.1638%, MOVE '
-                              'an actual 76.12 against a carried 73.58), so '
-                              '6 August is a confirmed close and every '
-                              'trigger test runs off it. The two-way side of '
-                              'the check also reports: JGLA has BACKFILLED '
-                              'for 6 August at ¥3,276 and SOFRRATE for 5 '
-                              'August at 3.64 — the latter two basis points '
-                              'below the 3.66 reported yesterday for 4 '
-                              'August — while AUTMUSAG did NOT backfill and '
-                              'is now dark for two consecutive sessions, '
-                              'which is why this edition treats its $4.74 '
-                              'print as stale rather than as a trend. '
-                              'Currently dark and flagged rather than '
-                              'carried: JGLA, AUTMUSAG, SOFRRATE, MOVE and '
-                              'VIX all have no 7 August print. Where '
-                              'third-party sources disagree the disagreement '
-                              'is reported rather than resolved by '
-                              'preference, and this edition tightens that '
-                              'discipline in two places. Transit counts are '
-                              'now always quoted with their denominator — '
-                              'Lloyd’s List 84 in the week to 2 August is '
-                              'about 9% of UKMTO’s 138/day baseline, while '
-                              'IMF PortWatch’s 2 crossings on 2 August is 3% '
-                              'of PortWatch’s OWN 73/day baseline, and the '
-                              'two are not comparable. And the war-risk '
-                              'figures carried from straits.live are '
-                              'retracted as fact: Lloyd’s List has published '
-                              'a rebuttal of the claim that P&I clubs '
-                              'cancelled war-risk cover, and published '
-                              'trade-press VLCC premium ranges sit an order '
-                              'of magnitude below the $10m estimate. The '
-                              'Bloomberg extract governs for every scored '
-                              'series; no price, yield or spread in this '
-                              'document comes from a news source.',
-                 'gasoline': 'Gasoline series. Political stress is scored on '
-                             'AUTMUSAG (AAA all-grades retail pump; pre-war '
-                             '$3.52, peak $5.18, latest confirmed print '
-                             '$4.74 on 5 August — backfilled in this '
-                             'extract, one cent BELOW the $4.75 trigger and '
-                             'the first print beneath it since the upgrade '
-                             'fired on 4 August, with 6 and 7 August blank). '
-                             'USRFRUSA (DOE regular spot; pre-war ~$2.94, '
-                             'peak $4.50, latest $4.079 for the week to 3 '
-                             'August, no new release until 11 August) is '
-                             'tracked alongside as corroboration only. '
-                             'Neither series is re-based. The basis note '
-                             'matters: AUTMUSAG is an ALL-GRADES series and '
-                             'AAA’s own published national average is '
-                             'REGULAR-grade, which printed $4.0633 on 6 '
-                             'August. The gap is structural and runs the '
-                             'whole history of this monitor — the same gap '
-                             'exists at the pre-war anchor, $3.52 against '
-                             '~$2.94 — so a reader comparing the scored '
-                             '$4.74 with a press report of $4.06 is '
-                             'comparing different series, not finding an '
-                             'error. The trigger, the anchor and the full '
-                             'history are all set on AUTMUSAG and re-basing '
-                             'would invalidate them. The corroborating '
-                             'direction now matters more than usual because '
-                             'the scored series has gone dark: AAA’s '
-                             'regular-grade average fell 1.68 cents on the '
-                             'day and 3.48 cents on the week to 6 August, so '
-                             'the retreat is real even though the scored '
-                             'print is stale. Diesel is reported separately '
-                             'because the binding constraint on the pump is '
-                             'refining rather than crude: AAA had on-highway '
-                             'diesel at $5.3474 on 6 August, still up 0.81 '
-                             'cents on the week and $1.6072 on the year, EIA '
-                             'distillate stocks fell 3.5 mb in the week to '
-                             '31 July to about 12% below the five-year '
-                             'average, and the Joint War Committee has just '
-                             'extended the Red Sea war-risk listed area '
-                             'roughly 800 km north over Jeddah and Yanbu.',
-                 'anchor': 'Pre-war anchor (27 Feb 2026 close). Brent '
-                           '$72.48; WTI $67.02; 2Y 3.375%; 5Y 3.502%; 10Y '
-                           '3.938%; 30Y 4.611%; 2s10s +55.64 bp; 5Y5Y '
-                           '2.142%; 10Y BE 2.257%; MOVE 73.38; VIX 19.86; '
-                           'DXY 97.608; gasoline (AAA) $3.52; Henry Hub '
-                           '$3.06; TTF €31.23; Asia LNG ¥1,669. (Re-verified '
-                           'field by field — unchanged.) Brent +11.7%, WTI '
-                           '+14.3%, TTF +87.0%, Asia LNG +96.3%; the 30Y '
-                           '(+61.0 bp), 10Y (+73.6 bp), 5Y5Y (+19.2 bp), DXY '
-                           '(+2.38) and MOVE (+2.74) sit above their '
-                           'anchors; the 10Y breakeven (−0.6 bp), VIX '
-                           '(−4.71) and Henry Hub (−14.5%) are below '
-                           'pre-war. Two entries changed character this '
-                           'session and both are corrections to yesterday. '
-                           'MOVE is +2.74 rather than +0.20, so the '
-                           'round-trip reading is withdrawn. And Henry Hub '
-                           'at −14.5% is a new low for the entire war, '
-                           'printed on the same morning Brent trades an '
-                           '$8.45 premium and Asian and European gas trade '
-                           '96% and 87% above their anchors. That '
-                           'combination is the edition in one line: the '
-                           'cheapest US natural gas of the conflict '
-                           'alongside the most expensive seaborne gas, which '
-                           'is a routing shock in its purest recorded form — '
-                           'and a long end still 61 bp above its anchor with '
-                           'rates volatility only 3.7% above its own, which '
-                           'remains a term-premium story rather than a '
-                           'volatility story.',
-                 'intraday': 'Intraday caveat. The latest dated row is a '
-                             'Singapore-AM snapshot and US hours set the '
-                             'close. The error is regime-dependent rather '
-                             'than random — large when the US session has '
-                             'something to trade, small when it does not — '
-                             'and this session is the emphatic large case, '
-                             'one day after the small one. The corollary '
-                             'flagged on 5 August held exactly: a quiet '
-                             'reconciliation is not evidence that the next '
-                             'one will be quiet. Brent closed $2.26 ABOVE my '
-                             'snapshot, the widest upside crude gap '
-                             'recorded, and the curve closed 6.0 to 6.7 bp '
-                             'above it — the second largest long-end miss '
-                             'after the 7.59 bp of 31 July, and the second '
-                             'occasion in eight sessions on which the '
-                             'snapshot missed the entire US session in price '
-                             'and rates simultaneously. Recent Brent gaps '
-                             'between my snapshot and the subsequent close: '
-                             '−$3.32, −$0.84, +$1.97, −$0.47, −$3.99, '
-                             '+$0.10, +$2.26. Today the caveat runs the '
-                             'other way as well and more sharply than usual: '
-                             'July payrolls are released at 8:30am ET, '
-                             'roughly eleven hours after this snapshot was '
-                             'taken, so nothing in this edition reflects '
-                             'them and the first read will be Monday’s row. '
-                             'CL2 remains an artifact against active CLA and '
-                             'the front-month/active gap is $2.23 in Brent; '
-                             'the scored CO2 continuation series is '
-                             'unaffected. Triggers are evaluated on '
-                             'confirmed closes; escalation-risk and maritime '
-                             'denial are event-based. Restated-series levels '
-                             'are not comparable with pre-restatement '
-                             'editions, though the directional analysis is '
-                             'continuous.'}}
+ 'sequencing': '27 → 27 → 27 → 27 → 27 → 27 → 27 → 27',
+ 'sessionNote': 'Score held for a ninth edition · no channel moved · and the composition deteriorated further than at any point since 30 July. No 18 August edition, so this covers two sessions and publishes the 17 August close in full. The MoU lapsed, Iran declared a “fully offensive” posture, two ballistic missiles were fired at the UAE, and Washington threatened to bomb the mediator — against a 30-year at a new war high and an oil channel $3.98 from its upgrade on the active contract.',
+ 'headline': 'Score HOLDS at 27/30 for a ninth consecutive edition. No channel moved. And the composition has deteriorated further than at any point since 30 July. This edition follows a one-session gap and therefore publishes the 17 August close in full rather than as a reference. The single most important fact is that the interim US–Iran arrangement lapsed on 17 August with no extension and no successor process, and both parties have since confirmed it. The 17 June Memorandum of Understanding, brokered in Islamabad, carried a 60-day clock that expired on Monday; Bloomberg reported on 18 August that Trump “won’t try to revive” it, and on the same day he said no talks are under way or scheduled — one day after telling Fox News that a direct back-channel to the IRGC existed, which Tehran and the IRGC both denied. UKMTO’s own Update 086 independently records the lapse, and attributes a rise in attack frequency to Iranian claims of a shift in posture now that the 60-day period has run. That shift was then stated on the record: Reuters reported on 17 August, from a senior Iranian official, that Iran is moving to a “fully offensive” military posture, sets a deadline of “a few weeks” for the US to implement the MoU, and is prepared to conduct a “timely and precise” attack to break the naval blockade. On 18 August the UAE said two Iranian ballistic missiles were fired at its territory, the first such launch since May; both fell in or near territorial waters, Iran denied it, and residents received a phone alert two hours before the statement. And Washington threatened to bomb the mediator. Trump, on Fox News on 17 August: “if Oman gets in the way, we’ll bomb the s--- out of them” — because, US officials told the Washington Post the next day, he is unhappy with Oman’s bilateral deal with Iran. The market read all of this the way the score cannot. Brent has risen on three consecutive closes and the last confirmed close, $89.45 on 18 August, is the highest since 31 July; the active contract closed $91.02, its highest since 24 July. The oil channel — the only one of the six with headroom — is now $5.55 from its upgrade on the scored series and $3.98 on the active contract, from $8.43 and $6.48 a week ago. Second: this monitor got the 17 August close wrong in the most instructive way it has yet managed. The Singapore-morning snapshot carried Brent at $86.43; it closed $89.03. The gap of +$2.60 is the largest upside crude reconciliation error the monitor has recorded, beating the +$2.26 of 6 August. Worse, the snapshot carried the 30-year at 5.2593%, identical to the 14 August close to four decimal places, and — applying the rule that an identical value in a LIVE row is a market that has stopped moving — treated it as a genuine print. It was a stale carry. The 30-year closed 5.3060% on 17 August: a new war high, the first close above 5.30%, and 4.67 bp above the value published. The 2s10s spread closed 54.248 bp, the steepest since 19 May, not the 52.777 carried. The rule is hereby corrected: an identical-to-four-decimals field is UNRESOLVED regardless of whether the row around it is live. That correction is applied to this edition’s own data, where the 5- and 10-year both print unchanged to four decimals against Tuesday and are reported as unresolved rather than flat. Third, the consequence: every de-risking reading of the last fortnight is now gone. 5Y5Y has closed above 2.30% on three consecutive sessions and at 2.3243% is 18.23 bp above the anchor that would release the US-inflation channel, widened from 16.74. BE10 closed 2.3077%, its highest since 15 June and 5.08 bp above its pre-war anchor — a fortnight ago it was 0.21 bp. MOVE closed 75.63 on 17 August, ending the three-session sub-75 run and returning above the pre-war anchor, before slipping to 74.98. Threshold B has been armed on three consecutive closes and on 17 August the 30-year leg cleared by 10.60 bp, the widest 30-year clearance of the war. The Treasury downgrade is further away than at any point in the conflict: the 30-year leg failed by 30.60 bp on Monday, the widest reading the war has produced. Physically, the strait is now measurably emptier than at any point. UKMTO Update 086 records ZERO cargo and ZERO tanker transits on both 15 and 16 August in its own annex, and takes the cumulative incident count 89 to 91 — of which the material one is 115-26, a general cargo ship struck by a projectile in the engine room 0.5 nautical miles off Oman, with ONE CREW FATALITY, assisted by the Omani Coast Guard. Oman has published nothing about it, as it has published nothing about the two tankers struck in its territorial waters on 14 August, and nothing about being threatened with bombardment. And the diplomatic track has been made conditional on a document that does not exist: Qatar said on 18 August that mediators will return to push for US–Iran talks after the Iran–Oman Hormuz deal is announced — a deal Tehran says is agreed, Muscat has never confirmed, and Baghaei conceded on 18 August is delayed by “destructive efforts”. Sequencing 27 → 27 → 27.',
+ 'tape': {
+  'note': '19 Aug 2026 readings are intraday prints from the Singapore Wednesday morning. There was no 18 August edition, so this document covers two sessions and publishes the 17 August close in full. The last confirmed close, and the scoring reference throughout, is 18 August. d/d is 19 Aug intraday vs the 18 Aug close; w/w for every series runs against the 12 Aug close (five sheet-rows back), so the oil and rates bases do not diverge this edition. vs-pre-war is against the 27 Feb 2026 close, re-verified field by field and unchanged. The row-level stale check CLEARS decisively — the 17 Aug row settled with true closes that differ from the published snapshot on every field. Two fields are flagged under the corrected field-level rule: the 5-year (4.3656) and 10-year (4.7060) print identical to four decimals on 18 and 19 August. Basis note: the press quotes the ACTIVE contract; the scored CO2 continuation prints about $1.57 below COA.',
+  'oilGasHeader': ['Benchmark', 'Intraday 19 Aug', '∆ d/d', '∆ vs pre-war close (27 Feb)', 'BBG ticker'],
+  'oilGas': [
+   ['Brent front-month', '$90.24 /bbl (H 90.40 / L 89.69)', '+$0.79 (+$3.42 w/w vs 12 Aug)',
+    'from $72.48 (+24.5%) — a $17.76/bbl premium, the widest this document has carried since July. The overnight low of $89.69 is above Tuesday’s close, so the Wednesday tone is firm and the range is a narrow 71 cents. Active COA prints $91.81',
+    'CO2 Comdty (Close)'],
+   ['Brent · 18 Aug close (last confirmed — the scoring reference)', '$89.45 /bbl', '+$0.42 vs the 17 Aug close $89.03',
+    'The highest Brent close since 31 July ($90.12), and the THIRD consecutive up-close (14, 17 and 18 Aug); the 19 Aug intraday extends it to a fourth session if it holds. It leaves the channel $5.55 below the $95 upgrade trigger and $16.97 above the $72.48 downgrade anchor — against $8.43 and $14.09 in the last edition. The upgrade gap NARROWED by $2.88, the largest single-edition narrowing of the war, and it has now narrowed in three consecutive editions. On the active contract the upgrade leg is only $3.98 away, and COA’s $91.02 close is its highest since 24 July. Still $28.90 below the 31 Mar war high of $118.35',
+    'CO2 Comdty (Close)'],
+   ['Brent · 17 Aug close — PUBLISHED HERE IN FULL, AND THE LARGEST UPSIDE RECONCILIATION ERROR THE MONITOR HAS RECORDED', '$89.03 close vs $86.43 carried', 'gap +$2.60',
+    'The 17 August close was never published, and the snapshot on which the last edition was built understated it by $2.60 — beating the +$2.26 of 6 August as the largest upside crude gap on record. Running gap series: +$1.97, −$0.47, −$3.99, +$0.10, +$2.26, +$0.72, +$0.87, −$0.13, +$1.29, +$2.60. The close was +$2.46 on the day, not the −$0.14 the last edition carried. The session drivers were the Kpler weekend transit collapse published that morning, Reuters’ “fully offensive” exclusive, the report that the blockade can run indefinitely, and Trump’s Oman threat. The Singapore cut had seen none of them. This is the sixth occasion on which a published reading has had to be withdrawn as a result',
+    'CO2 Comdty (Close)'],
+   ['WTI front-month', '$84.92 /bbl', '+$0.86 (+$2.75 w/w)',
+    'from $67.02 (+26.7%) — the 18 Aug close of $84.06 is the highest since 24 July. CLA prints $85.82 against CL2’s $84.92; the continuation artifact persists at about 90 cents',
+    'CL2 Comdty (Close)'],
+   ['Brent–WTI spread', '$5.32 /bbl front', '$5.39 on the 18 Aug close, from $5.29 on 17 Aug',
+    '$5.99 on the active contracts intraday, from $6.08 on Tuesday and $6.37 on Monday. The active spread peaked at $6.37 on 17 Aug — wide, but NOT a war record: the war high is $6.82 on 5 May. The last edition’s “widest active spread since 5 May” framing survives re-verification, but the spread has since narrowed on two consecutive sessions while crude rose, which is the opposite of the routing signature and is worth watching rather than asserting',
+    'derived'],
+   ['Henry Hub natural gas', '$2.783 /MMBtu', '+$0.007 (−$0.021 w/w)',
+    'from $3.06 (−9.1%) — the 17 Aug close of $2.690 came within five cents of the $2.640 war low of 6 August before Tuesday recovered nine cents. Henry Hub remains the cleanest evidence in the document that this is a Hormuz routing dislocation and not a global-energy shock: US gas is 9% BELOW its pre-war level on the same day European gas set a war record and Brent rose 24.5%',
+    'NGA Comdty (Close)'],
+   ['TTF Dutch gas (active)', '€64.190 /MWh', '+€0.544 (+€3.169 w/w)',
+    'from €31.23 (+105.6%) — it has now more than doubled. The 18 August close of €63.646 finished three-tenths of a cent BELOW the €63.649 war record of 24 July: the record survives on closes, by a margin too small to be meaningful. The 19 Aug intraday print of €64.190 is above it, but an intraday print does not set a record and is not treated as one. Cited drivers are unchanged: Qatari cargo delays forcing European buyers to bid against Asia, and storage well below the five-year average',
+    'TZTA Comdty (Close)'],
+   ['Japan/Asia LNG (18 Aug close — no 19 Aug print)', '¥3,447', '+¥13 vs the 17 Aug close ¥3,434',
+    'from ¥1,669 (+106.5%) — the highest print since 30 July (¥3,527), and it has now risen on three consecutive prints (3,363 / 3,434 / 3,447). No 19 Aug print, flagged and NOT carried as a reading. The 11 Aug hole was never backfilled and is permanent. Hormuz still moves roughly a fifth of global LNG, and Bloomberg reported on 17 August that LNG carriers have now begun ship-to-ship transfers — the covert relay extending from crude into gas',
+    'JGLA Comdty (Close)'],
+  ],
+  'ustNote': 'The curve printed on all three sessions. Triggers and Stage-4 tests below are judged on the 18 Aug close. The corrected field-level rule is applied twice in this table. The last edition observed the 30-year printing 5.2593% on both 14 and 17 August and, because the row was live, treated it as genuine. It was a carry: the 17 August close was 5.3060%, a new war high. The rule is therefore restated — an identical-to-4dp field is UNRESOLVED regardless of row liveness — and applied here to the 5-year and the 10-year, which print unchanged to four decimals on 18 and 19 August and are reported as unresolved rather than as a flat market.',
+  'ustHeader': ['Tenor', 'Intraday 19 Aug (%)', '∆ d/d (bp)', '18 Aug close', '∆ vs pre-war (bp) and commentary', 'BBG ticker'],
+  'ust': [
+   ['2-year UST', '4.1729', '+0.20', '4.1709',
+    '+79.8 (from 3.37%) — the front end has barely moved across the two sessions: +0.62 bp on Monday, −0.44 on Tuesday. That is the whole point of the week. The tenor that trades the Fed is flat while the long end set a war high and gave part of it back. Note the market prices a September HIKE, not a cut, at roughly 31% on the freshest CME FedWatch reading available (14 Aug)',
+    'USGG2YR Index'],
+   ['5-year UST', '4.3656 (unchanged to 4dp — UNRESOLVED)', 'n/a', '4.3656',
+    '+86.4 (from 3.50%) — the 17 Aug close rose 1.06 bp to 4.3745 and Tuesday gave back 0.89. The 19 Aug value is identical to Tuesday to four decimal places and is not treated as a reading; under the corrected rule no d/d is asserted',
+    'USGG5YR Index'],
+   ['10-year UST', '4.7060 (unchanged to 4dp — UNRESOLVED)', 'n/a', '4.7060',
+    '+76.9 (from 3.94%) — the 17 Aug close of 4.7219% was the highest since the 31 July war high of 4.7347%, up 2.97 bp, before Tuesday gave back 1.59. It is the tenor holding Threshold B armed. As with the 5-year, the 19 Aug print is identical to four decimals and is reported unresolved',
+    'USGG10YR Index'],
+   ['30-year UST', '5.2879', '+0.21', '5.2858',
+    '+67.7 (from 4.61%) — THE HEADLINE MARKET FACT OF THIS EDITION. The 17 August close of 5.3060% is a NEW WAR HIGH and the first close above 5.30%, taking out the 5.2724% of 31 July, and it is 4.67 bp above the value the last edition published as a genuine print. It is 9.00 bp above the 5.216% at which the 13 August auction cleared and 25.60 bp above the 13 May stop of 5.050%. Tuesday retraced 2.02 bp. The Treasury downgrade leg needs a close under 5.00%: it failed by 30.60 bp on Monday, the WIDEST gap of the war, and by 28.58 bp on Tuesday, from 25.93',
+    'USGG30YR Index'],
+   ['2s10s spread', '+53.109 bp', '−0.195', '+53.304',
+    '−2.5 vs +55.64 pre-war — the 17 August close of 54.248 bp is the steepest since 19 May, not the 52.777 the last edition carried, and it was a bear steepener: 2Y +0.62 bp against 10Y +2.97. Two sessions of mild flattening have followed. The curve is re-steepening from the long end on term premium rather than from the front end on cuts, which is the more expensive version and the one consistent with a war high in the 30-year',
+    'USYC2Y10 Index'],
+   ['10-year breakeven', '2.3068', '−0.09', '2.3077',
+    '+50.8 vs 2.2569 pre-war — the 18 August close is the highest BE10 since 15 June. A fortnight ago this monitor reported spot inflation compensation as 0.21 bp from going below its pre-war level for the first time in the war. It is now 5.08 bp ABOVE it and has risen on two of the last three closes. The de-risking of early August has been fully unwound in the series that measures it most directly',
+    'USGGBE10 Index'],
+   ['5y5y forward breakeven', '2.3179', '−0.64', '2.3243',
+    '+18.23 on the 18 Aug close, which is the figure the trigger uses, vs 2.142% pre-war — a THIRD consecutive close above the 2.30% level whose sustained break fired this channel 4→5 on 31 July (2.3082, 2.3243, and 2.3179 intraday). The 13 August close of 2.2900% now stands as an isolated single session. The documented downgrade remains a sustained close at or below the 2.142% anchor: 18.23 bp away, WIDENED from 16.74 and from 14.80 the edition before. The rule was not moved when the trigger broke and it is not moved now',
+    'USGG5Y5Y Index'],
+  ],
+  'crossHeader': ['Gauge', 'Latest', 'Basis', '∆ vs pre-war', 'Reading'],
+  'cross': [
+   ['MOVE (rate vol)', '74.98', '18 Aug close (no 19 Aug print)', '+1.60 (from 73.38)',
+    'THE SUB-75 RUN ENDED AT THREE SESSIONS, AND MOVE IS BACK ABOVE ITS PRE-WAR ANCHOR. The series went 72.09, 69.23, 69.58 — then 75.63 on 17 August, a 6.05-point jump — then 74.98. The 14 August framing of MOVE as sitting below its pre-war anchor is withdrawn: it has closed above 73.38 on both sessions since. Tuesday’s 74.98 is technically back below 75 by two hundredths, which is a session and not a regime. None of this can move the channel, and the reason has widened: the 30-year leg failed by 30.60 bp on Monday, the widest gap of the war, and 28.58 bp on Tuesday. The rotation is now at its most extreme reading — the two legs have never been further from being simultaneously satisfied.'],
+   ['VIX (equity vol)', '15.84', '18 Aug close (no 19 Aug print)', '−4.02 (from 19.86)',
+    'Up 1.59 points from the 14.25 series low of 14 August, in two sessions. The 14.25 print remains the lowest anywhere in the series, pre-war included, but equity volatility has begun to re-price: 14.25, 15.19, 15.84. The move coincides with the MoU lapse, the Iranian “fully offensive” statement and the missiles fired at the UAE. It is a small move off a very low base and is reported as direction, not as stress.'],
+   ['DXY (dollar)', '99.649', '19 Aug intraday', '+2.04 (from 97.608)',
+    'Flat across all three sessions — 99.637, 99.657, 99.649 — a range of two hundredths. A dollar that will not move while the 30-year sets a war high is the term-premium signature rather than the safe-haven one: a genuine geopolitical flight would bid the dollar and the long bond together, and here the long bond is being sold.'],
+   ['SOFR', '3.66', '17 Aug close (18 and 19 Aug blank)', '−0.02 (from 3.68)',
+    'A new print on 17 August at 3.66, up from 3.62, then two dark sessions. The four-basis-point rise is the largest single-session move in the series since July and coincides with the $125bn August refunding settling on 17 August — a settlement effect, not funding stress. The series is not reporting for 18 or 19 August and is not treated as if it were.'],
+   ['AAA gasoline', '$4.77 /gal', '17 Aug print (18 and 19 Aug blank)', '+$1.25 (from $3.52, +35.5%)',
+    'Political-stress score reference. $4.77 on 17 August, level with 13 August and the joint-highest reading since 10 June. The $4.60 downgrade condition named on 11 August is 17 cents away, unchanged from the last edition and against 9 cents two editions ago. Two dark sessions since. Basis note: all-grades. AAA’s own daily regular series printed $4.0654 on 18 August, up from $4.0116 a week earlier.'],
+   ['DOE gasoline', '$4.049 /gal', 'week of 17 Aug (released Tue 18 Aug)', '+$1.11 (from ~$2.94, +37.7%)',
+    'Corroboration only. THE INDEPENDENT WEEKLY CORROBORATION ARRIVED AND IT CONFIRMS THE REVERSAL: $4.049, up 4.3 cents from $4.006, reversing the prior week’s decline. The release day has indeed moved to Tuesdays. The rise is entirely interior — Rocky Mountain +16.4c, Midwest +12.2c, Gulf Coast +7.9c — while the East Coast fell 2.1c and California fell 3.1c. Diesel is the real move: the DOE national on-highway average rose 19.7 cents to $5.454, and AAA diesel reached $5.4677 on 18 August, within 35 cents of its all-time record of $5.8159.'],
+  ],
+  'gasChartNote': 'AUTMUSAG (AAA all-grades retail pump, daily) is the political-stress score reference (pre-war $3.52, peak $5.18, latest print $4.77 on 17 Aug; 18 and 19 Aug blank); USRFRUSA (DOE regular-grade retail spot, weekly) is corroboration only (pre-war ~$2.94, peak $4.50, latest $4.049 for the week of 17 Aug). The dotted line is the $4.75 political→5 threshold. Both series now point the same way, which is the change this edition records. The navy line sits above the trigger and has held there for five prints; the amber line, which had captured only the early-August decline, turned up 4.3 cents on its first reading since. What the chart cannot show is where the pressure actually is: the US front-month diesel crack hit an all-time high of $102.20/bbl on 17 August, roughly five times normal, with European diesel near $170/bbl against Brent at $91 — and US distillate stocks 12% below the five-year average, near 23-year lows.',
+  'straitHeader': ['Indicator', 'Current reading', 'Source'],
+  'strait': [
+   ['Strait closed · day 173 — UKMTO 086 records ZERO transits on two consecutive days and a crew fatality 0.5nm off Oman. Count 89 to 91',
+    'UKMTO JMIC Advisory Update 086, covering 1 Mar to 18 Aug (ICOD 181500Z), has been retrieved and read directly. All threat levels held — Hormuz SEVERE, Gulf of Oman, Bab el-Mandeb and Gulf of Aden SUBSTANTIAL, Arabian Gulf and Arabian Sea MODERATE, East Med LOW, regional JMIC#001-26 SEVERE. Cumulative incidents 89 to 91. UKMTO 115-26 is the material one: a general cargo ship transiting SOUTHBOUND, 0.5 nautical miles off the coast of Oman, struck by an unknown projectile in the engine room, with ONE CREW FATALITY; SSAS alerts at 1848 UTC, AIS resumed 0130 UTC, the Omani Coast Guard rendered assistance. The advisory heads it 18 Aug but its own timeline implies the strike fell on the evening of 17 Aug UTC; both are reported and neither is asserted. A casualty conflict is recorded and not reconciled: UKMTO says one fatality, The National says one injured. UKMTO 114-26 is a Somali-basin hijack of the MV LUTUF and is NOT Iran-related; it is counted in the cumulative total but carries no Hormuz read. The annex is the emptiest of the war: Hormuz cargo 5 / 0 / 0 / 0 and tankers 0 / 0 / 0 / 3 across 14–17 Aug — two consecutive days of zero transits of any kind — against a stated ~138/day 2025 baseline, with 42 US NCAGS-facilitated transits over the 16–17 Aug 48 hours (a facilitated subset, a different universe, never added to the annex). Update 086 also notes AIS-on vessels are receiving directed hails instructing them to divert to the northern Iranian-controlled route, and that mine danger areas remain active. Update 087 is not published; VRA Overview No.3 is not published.',
+    'UKMTO JMIC Update 086 (to 18 Aug), read directly at ukmto.org'],
+   ['UKMTO 086 attributes the attack rise to the MoU lapse — the primary military source confirms the deadline was real',
+    'This resolves the open question the last edition flagged as the most consequential dated item in the document. Update 086 assesses that the increase in attack frequency “may coincide with Iranian claims of a shift in posture now that the 60-day period following the 17 June U.S.-Iran MOU has lapsed”. Tier 1 corroboration is comprehensive: Al Jazeera (17 Aug) — the MoU “expired on Monday amid faltering talks”; CNN, CBS, CNBC and the New York Times (17 Aug); and decisively Bloomberg (18 Aug): “Trump Refuses Iran Truce Extension”, reporting he will not try to revive it. The circulating “12 August agreement to extend” is RETRACTED: it traces to a single Tier 2 report citing unnamed Pakistani sources, was never corroborated, and has been falsified by events. Baghaei’s counter-framing is recorded: because of alleged US violation “the issue of a 60-day deadline became entirely moot”. Both sides now deny the deadline mattered, which is itself the evidence that no successor process exists.',
+    'UKMTO Update 086 / Al Jazeera, CNN, CBS, CNBC, NYT, 17 Aug / Bloomberg, 18 Aug'],
+   ['Iran states a “fully offensive” posture and a few-weeks ultimatum — an announcement, not an event',
+    'Reuters, 17 Aug, citing a senior Iranian official: Iran will shift to a “fully offensive” military posture because talks have stalled; Iranian entities “must be prepared to escalate tensions in the Strait of Hormuz and wider region”; Iran would conduct a “timely and precise” military attack to break the US naval blockade if diplomacy failed; and it sets a deadline of “a few weeks” for full US implementation of the MoU as a precondition for further talks. This is an ANNOUNCEMENT and the escalation channel does not move on it — the channel is at max in any case. Ghalibaf, Speaker of the Majlis, on 18 Aug: the strait remains closed until the US lifts the blockade, unfreezes assets, eases sanctions and halts military operations on all fronts. Note the title correction: Ghalibaf is Speaker, not — as one outlet had it — Tehran’s top negotiator. Against the announcement: CENTCOM’s public release index still shows nothing on combat inside Iran since 29 July, now a 21-day gap, verified directly. A circulating claim that the US struck Iran overnight around 18 Aug could not be sourced to any Tier 1 outlet and is contradicted by that index; it is REJECTED.',
+    'Reuters exclusive, 17 Aug / Ghalibaf via Washington Times and The National, 18 Aug / centcom.mil release index, read 19 Aug'],
+   ['Iran fired two ballistic missiles at the UAE on 18 August — the first such launch since May',
+    'The UAE said its air defences detected two ballistic missiles launched from Iran toward the country, the first falling outside its territorial waters and the second within them. The statement followed a phone alert to UAE residents warning of a potential missile threat by about two hours. No impacts on land and no casualties. Iran denied targeting the UAE. Tier 1: Bloomberg, AP, Al Jazeera and Euronews, all 18 Aug. This is an EVENT, not an announcement, and it is a state-on-state ballistic launch at a Gulf partner — the first since May 2026. It is not captured in UKMTO 086, which closed at 1500Z and covers maritime security rather than air defence. Context: the UAE named Iran and used the word “piracy” on 14 Aug over two ADNOC-affiliated vessels, and the GCC Secretary-General condemned it on 14 Aug. NOT FOUND, and it matters: any UAE or GCC sanction, designation, emergency session or UNSC referral flowing from that language. The rhetoric has not become an instrument.',
+    'UAE government via Bloomberg, AP, Al Jazeera and Euronews, 18 Aug / GCC Secretariat, 14 Aug'],
+   ['Trump threatened to bomb the mediator, and the stated reason is Oman’s deal with Iran',
+    'Trump, Fox News, 17 Aug: “If Oman gets in the way, we’ll bomb the s--- out of them.” Corroborated Tier 1 by CNN, CBS, the Washington Post and Al Jazeera. The Washington Post reported on 18 Aug, citing US officials, that the trigger is Oman’s bilateral Hormuz arrangement with Iran. It is his second such threat — the first was at a cabinet meeting on 27 May. In the same interview he said Iran should surrender and claimed a direct back-channel with the IRGC; Baghaei called that report psychological warfare and the IRGC denied it outright (via Tasnim, Tier 3, relayed by Al Jazeera). On 18 August Trump said no talks are taking place or scheduled — the day after asserting the channel existed. Kushner, Fox News, 18 Aug: contacts are “probably more robust than it’s maybe ever been… we’re not there yet”, and Trump does not want to rush a deal. NOT FOUND: any Hegseth or SecDef statement on Iran or Hormuz, 17–19 Aug.',
+    'Trump via Fox News, 17 Aug, corroborated by CNN/CBS/WaPo/Al Jazeera / WaPo, 18 Aug / CNN live blog, 18 Aug / The National, 18 Aug'],
+   ['The blockade tally rose 62 to 64 — and the pace has collapsed because there is almost nothing left to redirect',
+    'CENTCOM stated on 17 August, on its own official account and independently reproduced in UKMTO Update 086: 64 commercial vessels redirected, 3 disabled, 2 boarded. The series runs 44 (3 Aug), 55 (9 Aug), 59 (13 Aug), 62 (14 Aug), 64 (17 Aug). Two more in three days, against eleven in the preceding six — the deceleration is consistent with an annex showing zero transits on two of those days. A discrepancy is flagged and NOT used: a caption on CENTCOM’s own media page cites 91 redirected. It is irreconcilable with 64 and is not carried. On the carriers: USS George Washington had NOT entered the CENTCOM area of responsibility as of 17 August — it transited the Malacca Strait on 13 Aug and was last placed at an undisclosed Indian Ocean location — so both USS Abraham Lincoln and USS George H.W. Bush remain on station. The acting Navy Secretary calls the relief a “planned rotation”; the Washington Post and CNN tie it to reported material and habitability problems aboard the Lincoln. NO OFAC Iran action 17–19 Aug — the only entry in the window is an 18 Aug ICC and Venezuela package. Bessent’s trailed measures have not landed.',
+    'CENTCOM official post, 17 Aug, and UKMTO Update 086 / TWZ carrier tracker, 17 Aug / navy.mil, 14 Aug / ofac.treasury.gov recent actions, read 19 Aug'],
+   ['The Iran–Oman route map is agreed according to Tehran, unconfirmed by Muscat, and now the gate on all mediation',
+    'Baghaei, 17 Aug: Iran and Oman have agreed the MAP of the new route and are preparing a joint declaration, the deal to be finalised as a package of map plus statement. Reported structure: vessels enter near the Iranian coast and exit along the Omani side, with no transit fees or tolls during a transitional period of two to four months, convertible to a final route. Baghaei, 18 Aug: the joint announcement is NOT finalised, delayed by the complexity of the talks and by unnamed “destructive efforts”. Araghchi’s decoupling has hardened — the negotiations and reopening are “two separate issues”. And Qatar has made this document the precondition for everything else: its foreign ministry said on 18 August that mediators will return to push for US–Iran talks AFTER the Hormuz deal is announced. The entire diplomatic track is therefore gated on an instrument that is single-sourced to Tehran, unconfirmed by the counterparty, and whose co-signatory has just been threatened with bombardment by the blockading power. NOT FOUND: any Omani confirmation, any published fee or security terms, any joint working-group readout 17–19 Aug.',
+    'Baghaei via WaPo and Reuters, 17 Aug, and Al Jazeera and The National, 18 Aug / Qatar MFA via Al Jazeera, 18 Aug'],
+   ['Oman — the precise query, and the precise answer',
+    'This row states exactly what was asked of the primary source. Both fm.gov.om indexes — news and statements — were read directly on 19 Aug. (a) The most recent item of ANY kind is 17 Aug: Sultan Haitham bin Tarik made a “special fraternal visit” to the UAE, meeting Sheikh Mohamed bin Zayed, with a delegation including the Deputy PM for Defence Affairs, the Interior Minister and the Transport Minister. The readout says only that regional developments and ways to advance security and stability were discussed. The composition is a security-and-shipping delegation; the readout does not say so, and no inference is scored on it. (b) The most recent Iran/Hormuz-relevant news item remains 8 Aug; the most recent Hormuz-specific statement remains 14 July; the most recent Oman–Iran joint statement remains 23 June. (c) Nothing whatever was published on 18 or 19 August. The material negatives, all verified against the ministry’s own indexes rather than inferred: Oman has published nothing on the two tankers struck in its territorial waters on 14 August; nothing on UKMTO 115-26, in which a seafarer died 0.5nm off its coast and its own Coast Guard responded; and nothing in reply to being threatened with bombardment by the President of the United States. Al Jazeera separately notes Muscat has not publicly stated it intends to join Iran in controlling the strait.',
+    'Oman Ministry of Foreign Affairs, fm.gov.om news and statements indexes, read directly 19 Aug / Al Jazeera, 18 Aug'],
+   ['Five transit counts, five universes, no average taken',
+    'UKMTO annex (S&P/SeaVision, non-facilitated): 0 cargo and 0 tankers on both 15 and 16 Aug; 0 and 3 on 17 Aug, against its ~138/day 2025 baseline. Kpler via Reuters: 5 on 15 Aug, ZERO on 16 Aug — a weekend total of 5 against 31 the weekend before, on a stated pre-war baseline of “more than 130 ships a day”; no Kpler figure for 17–19 Aug. Windward, the broadest universe because it adds satellite detection of dark transits: 12 total on 16 Aug, 8 inbound and 4 outbound, with the dark share above 50% in both directions and vessels running dark for 8–17 hours; Windward publishes no percentage-of-normal and warns its own series is sensitive to collection effort. TankerMap, AIS tankers only: 2 / 1 / 1 / 0 across 15–18 Aug, a 7-day average of 1.1 against its own stated ~21/day, with zero LNG transits every day since 30 July. IMF PortWatch: 1 transit on 16 Aug against its own 73/day baseline. Lloyd’s List (cargo over 10,000 dwt, weekly): 78 for 3–9 Aug, from 95 — the 10–16 Aug brief was not retrievable. LSEG publishes no transit count at all. No provider published a 19 August figure. The universes point the same way and the residual gap between Windward’s 12 and UKMTO’s 0 is transponder-off traffic, which is the finding rather than a discrepancy.',
+    'UKMTO Update 086 annex / Kpler via Reuters, 18 Aug / Windward MIOC, 17 Aug (16 Aug data) / TankerMap, read 19 Aug / IMF PortWatch via Straits, 18 Aug / Lloyd’s List, 12 Aug'],
+   ['The covert relay extended into LNG, Aramco resumed loading inside the strait, and the blockade was breached once',
+    'Bloomberg, 17 Aug: LNG tankers now appear to be conducting ship-to-ship transfers — the relay measured last week in crude has extended to gas. Reuters, 18 Aug, on Kpler and Vortexa data: Saudi Aramco resumed crude loadings at Ras Tanura and Juaymah, ending a three-week gap, with three VLCCs each lifting about 2 mn bbl between 12 and 16 Aug and six more potentially loading later this month; LSEG places seven Bahri VLCCs off the UAE and Oman on 18 Aug with two more heading for Fujairah. Aramco’s Red Sea workaround is impaired: about 670,000 b/d is expected to load at Sidi Kerir this month against roughly 4 mb/d previously exported via Yanbu, where 20 vessels have now sat fully AIS-dark for a sixth consecutive week. Windward assesses the first breach of the blockade since it was reimposed on 13 July: the US-sanctioned LPG carrier AXON I, broadcasting a false Angola flag, took an STS transfer from the sanctioned SALUTE off Oman on 10–11 Aug after seven dark days, then switched declared destination twice. Kharg: all three terminals were empty on both 16 August satellite passes, with an assessed 15 dark tankers holding ~16.7 mn bbl in floating storage and the longest-waiting vessel present since mid-May. GPS jamming in the Gulf hit 615 vessels on 16 Aug, +261% on its seven-day average, with 4,472 false STS meetings in a single day.',
+    'Bloomberg, 17 Aug / Reuters via Kpler and Vortexa, 18 Aug / LSEG via Reuters, 18 Aug / Windward MIOC, 17 Aug'],
+   ['The Red Sea leg is unchanged and still bad — Al-Mokha remains completely closed',
+    'Update 086 records no confirmed attacks in the southern Red Sea or Bab el-Mandeb in the reporting period, and confirms Al-Mokha port remains completely closed to commercial traffic after more than 25 cumulative missile impacts and berth fires, forcing lower Red Sea logistics to reroute. Bab el-Mandeb transits: 59 over the 16–17 Aug 48 hours against a ~61/day 2023 baseline — roughly half normal. UKMTO assesses Houthi enforcement as selective, targeting Saudi- or Yemeni-government-linked assets, with broad indiscriminate attacks “possible but not probable”. The Houthis claimed a drone attack on Aramco’s Jazan refinery on 18 August via SABA (Tier 3), and NO Tier 1 outlet corroborated it and neither Saudi Arabia nor Aramco commented — it is carried as a CLAIM only, unlike the 9 and 13 August strikes which were confirmed. It would be the third in ten days. The 400,000 b/d Jizan restart remains scheduled for 30 August and no revision was found; whether the claimed 18 Aug strike affects it cannot be established. Five vessels remain under pirate or unauthorised control (HONOUR 25, SWARD, EUREKA, ASANA, and now LUTUF).',
+    'UKMTO Update 086 / SABA (Tier 3) via Middle East Monitor, 18 Aug / Reuters citing IIR, 10 Aug'],
+  ],
+ },
+ 'analysis': {
+  'intro': 'The score holds at 27/30 for a ninth consecutive edition and no channel moved, but this was the most adverse two-session window since 30 July. The interim US–Iran framework lapsed with no successor, Iran declared a “fully offensive” posture and attached a few-weeks ultimatum to an explicit threat against the blockade, two ballistic missiles were fired at a Gulf partner, a seafarer was killed 0.5nm off Oman, and the President of the United States threatened to bomb the mediator. Financially the direction is equally one-sided: a new war high in the 30-year, the steepest 2s10s since 19 May, rate volatility back above its pre-war anchor, ten-year inflation compensation at its highest since 15 June, and Brent at its highest close since 31 July. Only one channel can register any of it, and that channel is oil.',
+  'bondYieldNote': 'All tests run on the 18 August close, the last confirmed one, with the 17 August close published in full because no edition carried it. Monday is the analytically important session: it combined a new war high in the 30-year, the steepest 2s10s since 19 May and a six-point jump in rate volatility with the lapse of the US–Iran MoU and a $2.46 rise in Brent.',
+  'bondYield': [
+   {'title': '(i) US inflation impulse — held at 5 (max), and the trigger has fully un-broken',
+    'text': '5Y5Y closed 2.3082% on 17 August and 2.3243% on 18 August, up 1.61 bp — a third consecutive close above the 2.30% level whose sustained break fired this channel to 5 on 31 July. BE10 closed 2.2852% then 2.3077%, up 2.25 bp, its highest since 15 June. Import prices fell 0.4% m/m and export prices 1.3%, the latter a five-sigma miss, with import fuel down 7.2%. The pattern is the one that matters: imported goods disinflation running alongside rising domestic inflation compensation. The 13 August break below 2.30% now stands as an isolated single session, and the corroborating series has moved further and faster — BE10 has travelled from 0.21 bp above its pre-war anchor on 13 August to 5.08 bp above in three closes. A market that marks up ten-year spot compensation while tradeable goods prices fall is pricing something that does not arrive through the exchange rate. It is pricing energy, and specifically the distillate barrel, where the front-month crack set an all-time high of $102.20 on 17 August. The documented downgrade is a sustained close at or below the 2.142% pre-war anchor: 18.23 bp away and widened for a second consecutive edition, from 16.74 and before that 14.80.'},
+   {'title': '(ii) Treasury stress — held at 5 (max), and the downgrade moved away on BOTH legs at once',
+    'text': 'The 30-year closed 5.3060% on 17 August: a new war high and the first close above 5.30%, taking out the 5.2724% of 31 July, on a 4.67 bp rise. The 10-year closed 4.7219%, its highest since the 31 July war high, and 2s10s closed 54.248 bp, the steepest since 19 May. MOVE closed 75.63, a 6.05-point jump that ended the three-session sub-75 run and put rate volatility back above its 73.38 pre-war anchor. Tuesday retraced modestly — 30Y 5.2858%, MOVE 74.98. Three things follow. First, the last edition’s reading of this channel was built on a stale field: it published the 30-year at 5.2593%, unchanged to four decimals, and reasoned that because the row was live the print was genuine. The close was 47 hundredths of a percentage point higher and set a record. Second, the rotation has reached its widest reading of the war — MOVE went from 4.15 points below the pre-war anchor to 2.25 above it, while the 30-year leg went from failing by 25.93 bp to failing by 30.60 bp on Monday, the widest gap the war has produced, and 28.58 on Tuesday. Both legs moved away at once, which has not happened before. Third, the composition matters: the 2-year rose 0.62 bp on Monday against the 30-year’s 4.67. This is not a repricing of the policy rate; it is a repricing of the term premium, on a day whose news was the collapse of a diplomatic process and a threat to attack a naval blockade. The downgrade needs a 30-year close beneath 5.00% together with MOVE beneath 75, sustained.'},
+   {'title': '(iii) Oil price shock — held at 2, and it is the only channel that can move',
+    'text': 'Brent has closed higher on three consecutive sessions — $86.57, $89.03, $89.45 — with the 19 August intraday at $90.24 extending it to a fourth if it holds. The 18 August close is the highest since 31 July; the active contract at $91.02 is the highest since 24 July. TTF closed within three-tenths of a cent of its war record and Asia LNG reached its highest since 30 July. Henry Hub, alone, remains 9.1% below its pre-war level. The market commentary is consistent and it is not about supply loss: Bloomberg, counting on its own series, attributed a fourth consecutive daily gain to stalemate rather than escalation — no progress toward resolution after almost six months. The specific catalysts were the Kpler weekend transit collapse published Monday, the projectile strike on a vessel off Oman, the statement that the blockade can run indefinitely, and the record diesel crack pulling crude up from the product end. What is NOT in the price is a physical outage, and the reason is the covert relay. Energy Secretary Wright put Hormuz throughput at 9 mb/d over the prior seven days, roughly half pre-war rates. The upgrade needs sustained closes above $95. On the scored CO2 continuation the gap is $5.55, from $8.43 and before that $9.78 — narrowed in three consecutive editions and by $2.88 in this one, the largest single-edition narrowing of the war. On the active contract the gap is $3.98. This is the only headroom in the instrument, and it is closing.'},
+   {'title': '(iv) Political stress — held at 5 (max), and the corroborating series has confirmed the reversal',
+    'text': 'AUTMUSAG printed $4.77 on 17 August, level with 13 August and the joint-highest since 10 June, then went dark for two sessions. The corroborating DOE weekly arrived on Tuesday 18 August at $4.049, up 4.3 cents, reversing the prior week’s fall. The independent confirmation the last edition was waiting for has arrived and it confirms the reversal. Both series now point the same way, which removes the ambiguity that made the 12 August downgrade candidate look live. The composition is politically pointed: the national rise is entirely interior — Rocky Mountain +16.4 cents, Midwest +12.2, Ohio +28.1, Denver +23.3 — while the East Coast fell 2.1 cents and California fell 3.1. And the pressure has rotated decisively into distillate: the DOE on-highway diesel average rose 19.7 cents in a single week to $5.454, AAA diesel reached $5.4677, within 35 cents of the all-time record, and US distillate stocks sit 12% below the five-year average, near 23-year lows. Diesel is a freight and food-price input before it is a pump-price grievance. The downgrade needs three consecutive closes at or below $4.60 with no intervening print above $4.70: the series is 17 cents away, unchanged from the last edition, and is sitting above the $4.75 trigger that fired the channel.'},
+   {'title': '(v) Maritime denial — held at 5 (max), on the emptiest annex of the war',
+    'text': 'Day 173. UKMTO Update 086 takes the cumulative incident count 89 to 91 and its own transit annex records ZERO cargo and ZERO tanker transits on both 15 and 16 August — two consecutive days of no movement of any kind in that universe, against a stated ~138/day 2025 baseline. UKMTO 115-26 struck a general cargo ship in the engine room 0.5 nautical miles off the coast of Oman, killing one crew member, with the Omani Coast Guard rendering assistance; 114-26 is a Somali-basin hijack and is not Iran-related. Hormuz remains SEVERE and all threat levels are held. AIS-on vessels are receiving directed hails instructing them to divert toward the northern Iranian-controlled route, and mine danger areas remain active in and near the traffic separation scheme. Five independent transit universes are published with their own denominators and no average is taken: UKMTO annex 0 and 0, Kpler 5 then 0 across the weekend against 31 the weekend before, Windward 12 on 16 August with a dark share above 50% in both directions, TankerMap a 7-day average of 1.1 against its own ~21/day, and IMF PortWatch 1 against its own 73/day. The residual gap between Windward’s 12 and UKMTO’s 0 is transponder-off traffic, which is the finding rather than a discrepancy.'},
+   {'title': '(vi) Escalation risk — held at 5 (max), against the most adverse window since 30 July',
+    'text': 'The 17 June MoU lapsed on 17 August with no extension and no successor process — confirmed by Al Jazeera, CNN, CBS, CNBC and the NYT on the day, by Bloomberg on 18 August reporting that Trump will not try to revive it, and independently by UKMTO Update 086, which links a rise in attack frequency to it. Reuters reported the same day that Iran is moving to a “fully offensive” posture with a “few weeks” ultimatum and readiness to strike to break the blockade — an announcement, not an event, and the channel does not move on it. But two genuine events did occur: Iran fired two ballistic missiles at the UAE on 18 August, the first such launch since May, and a seafarer was killed by a projectile strike 0.5nm off Oman. Trump threatened to bomb Oman over its bilateral deal with Iran, and said on 18 August that no talks are taking place or scheduled. The blockade tally rose 62 to 64. The single countervailing fact, and it is load-bearing, is that CENTCOM’s public release index still shows nothing on combat inside Iran since 29 July — a 21-day gap, verified directly against the primary index this edition.'},
+  ],
+  'stage4Note': 'Stage 4 is a credit and auction event, tested on confirmed closes and on auction results. Threshold A is a failed-auction test, not a yield-level test.',
+  'stage4': [
+   {'title': 'Threshold A · a failed-auction test — does not arm; the two 19 August supply events fall after this snapshot',
+    'text': 'A is a FAILED-AUCTION test: an auction clearing with a tail above its when-issued level. No coupon auction settled between 17 and 18 August; the August refunding settled on 17 August. The 20-year auction falls on 19 August and the 30-year TIPS reopening on 20 August — both after this snapshot. Context, not test: the 30-year closed 9.00 bp above the 5.216% at which the 13 August auction cleared on Monday and 6.98 bp above on Tuesday, and 25.60 bp above the 13 May stop of 5.050%. The reference has moved — the US has term-funded at 5.216%, so 5.050% is a historical marker rather than a live comparison. A caution for the 19 August result: search engines return a 5.047% / $16bn 20-year figure that is the 21 May 2025 auction, not this one. The real comparable is the 22 July 2026 20-year, which cleared 5.163% and tailed 0.5 bp, graded weak, with indirects at 69.1%.'},
+   {'title': 'Threshold B · 30Y above 5.20% with 10Y above 4.65% — ARMED for a third consecutive close, and by the widest 30-year margin of the war',
+    'text': '14 Aug 5.2593 / 4.6922, 17 Aug 5.3060 / 4.7219, 18 Aug 5.2858 / 4.7060. Monday’s 30-year leg cleared by 10.60 bp — the widest 30-year clearance of the war — with the 10-year clearing by 7.19 bp, the second-widest binding leg after 31 July’s 7.24. Tuesday’s binding leg is 5.60 bp. This is still the FOURTH arming since 29 July, not a fifth — the 14 August arming has simply persisted — and it is the joint-longest armed run of the current regime, level with 10–12 August. Count armings, not cycles. The change worth recording is not the state but the margin: every earlier state in this sequence was decided by under 6 bp on one leg, and Monday cleared by more than 7 on both.'},
+   {'title': 'Threshold C · MOVE above 130 — not armed, and the pre-war framing is withdrawn',
+    'text': '74.98, which is 55.02 points below. The war high is 115.02 on 26 March and the series low 65.39 on 18 June. The 14 August framing that MOVE sat below its pre-war anchor is withdrawn: it has closed above 73.38 on both sessions since, at 75.63 and 74.98. The structural observation survives in weakened form — rate volatility remains close to pre-war while the 30-year sits 67.7 bp above its own anchor at a fresh war high — but it is no longer true that the market has normalised its expectation of movement, only that it has not yet un-normalised it.'},
+  ],
+  'crossAsset': 'The US macro data across these two sessions was weak and the long end ignored it, which is now a pattern rather than an observation. Housing starts fell 12.4% m/m to 1.239 mn against a 1.35 mn consensus, with single-family down 9.9%; permits rose 5.0%; industrial production rose 0.2% with capacity utilisation at 76.3%, 3.1 points below its 1972–2025 average; pending home sales fell 2.3% against a +0.3% consensus; the NAHB builder index printed 35, a sixteenth consecutive month below 40, with 35% of builders cutting prices. The Atlanta Fed cut its Q3 GDPNow to 4.03% from 4.31%. Against that, Empire State manufacturing printed 20.6 against 11 expected. On any conventional reading of that mix the long end rallies. It set a war high instead. Follow the sequence from the previous edition and the point becomes structural: on 14 August the curve sold off into retail sales of −0.6% and Michigan sentiment of 51.0; on 17 August it sold off further into nothing but geopolitics. The bond market has stopped trading US demand and started trading the supply of two things: duration, at a debt load near $40tn, and oil, at 0.07 mb/d of effective spare capacity. The dollar corroborates: DXY has moved two hundredths of a point across three sessions while the 30-year set a record. A term-premium sell-off does not bid the dollar; a safe-haven one does. The FOMC minutes of the 28–29 July meeting — a 9–3 hold with Hammack, Kashkari and Logan all dissenting for a hike, the first three-way dissent since 2016 — are released on 19 August after this snapshot, and the market prices roughly a 31% probability of a September hike on the freshest sourceable CME reading, dated 14 August. Nobody is pricing a cut. The reconciling fact remains the relay, and this week it grew a second leg: Bloomberg reported LNG carriers conducting ship-to-ship transfers on 17 August, and Reuters reported Aramco resuming loadings at Ras Tanura and Juaymah after a three-week gap. Brent is $90 rather than $130 because a shadow logistics system is moving perhaps 9 mb/d — half of pre-war throughput — by transfer rather than by transit, through water in which a seafarer was killed on Monday and two ballistic missiles were fired at a Gulf state on Tuesday. That relay is doing the work spare capacity would normally do, it has no redundancy, and the rally in crude is the market beginning to price the possibility that it is not indefinitely sustainable. It is still not priced in the VIX at 15.84.',
+ },
+ 'channels': [
+  {'name': 'Maritime denial', 'score': '5', 'state': 'max',
+   'rationale': 'Day 173. UKMTO Update 086 takes the cumulative count 89 to 91, and its annex records ZERO transits of any kind on both 15 and 16 August. UKMTO 115-26: a cargo ship struck in the engine room 0.5nm off Oman with one crew fatality. Hormuz SEVERE, all threat levels held. AIS-on vessels are being hailed and directed to the northern Iranian route. Kpler 5 then 0 across the weekend; TankerMap 7-day average 1.1 against ~21/day.',
+   'move': 'held (at max)'},
+  {'name': 'Oil price shock', 'score': '2', 'state': 'headroom',
+   'rationale': 'Brent closed $89.45 on 18 Aug, the highest since 31 July and a third consecutive up-close; the active contract closed $91.02. $5.55 below the $95 upgrade and $16.97 above the $72.48 downgrade; $3.98 on the active contract. The upgrade gap narrowed $2.88, the largest single-edition narrowing of the war, and has narrowed three editions running.',
+   'move': 'held — and closing'},
+  {'name': 'US inflation impulse', 'score': '5', 'state': 'max',
+   'rationale': 'A THIRD consecutive 5Y5Y close above 2.30%, at 2.3243%. BE10 closed 2.3077%, its highest since 15 June and 5.08 bp above its pre-war anchor, from 0.21 bp a fortnight ago. Import and export prices fell hard. The documented downgrade at the 2.142% anchor is 18.23 bp away, widened for a second edition.',
+   'move': 'held (at max)'},
+  {'name': 'Treasury stress', 'score': '5', 'state': 'max',
+   'rationale': 'The 30-year closed 5.3060% on 17 August — a NEW WAR HIGH and the first close above 5.30%. MOVE jumped 6.05 points to 75.63, ending the sub-75 run and returning above its pre-war anchor. The 30-year downgrade leg failed by 30.60 bp, the widest of the war. Both legs moved away at once — a first.',
+   'move': 'held (at max)'},
+  {'name': 'Political stress', 'score': '5', 'state': 'max',
+   'rationale': 'AUTMUSAG $4.77 on 17 Aug, joint-highest since 10 June, above the $4.75 trigger. The DOE weekly corroborated the reversal on 18 Aug at $4.049, up 4.3 cents. The $4.60 condition is 17 cents away, unchanged. AAA diesel $5.4677, within 35 cents of its all-time record; the diesel crack set an all-time high of $102.20 on 17 Aug.',
+   'move': 'held (at max)'},
+  {'name': 'Escalation risk', 'score': '5', 'state': 'max',
+   'rationale': 'The MoU lapsed on 17 August with no extension, confirmed by UKMTO 086 and by Bloomberg reporting Trump will not revive it. Iran declared a “fully offensive” posture with a few-weeks ultimatum and threatened a strike to break the blockade (announcement). Iran fired two ballistic missiles at the UAE on 18 August — an EVENT. Trump threatened to bomb Oman. Blockade tally 62 to 64. Against it: a 21-day gap in CENTCOM combat releases.',
+   'move': 'held (at max)'},
+ ],
+ 'scoreTotal': 'CRISIS band — HELD, ninth consecutive edition. Five of six channels are pinned at the top of the scale and the sixth, oil, is three points below it. The composite therefore cannot register the most adverse two-session window since 30 July — a lapsed ceasefire framework, a declared offensive posture, a state-on-state ballistic launch, a seafarer killed and a threat to bomb the mediator. Read the composition, not the total.',
+ 'whatsChanged': {
+  'title': '4 · What’s changed since the 17 August edition',
+  'items': [
+   'The MoU lapsed on 17 August with no extension and no successor process, and this is now confirmed by both parties and by a primary military source. The 17 June Islamabad-brokered memorandum carried a 60-day clock. Al Jazeera, CNN, CBS, CNBC and the NYT reported the expiry on the day; Bloomberg reported on 18 August that Trump will not try to revive it; and UKMTO Update 086 independently records the lapse and links it to a rise in attack frequency. The last edition flagged this as the most consequential undated item in the document and could not source it. It is now resolved, and the circulating “12 August extension” is formally retracted — Tier 2, single-sourced to unnamed Pakistani officials, never corroborated, falsified by events.',
+   'Iran stated a “fully offensive” military posture, set a few-weeks ultimatum, and threatened a “timely and precise” attack to break the naval blockade. Reuters, 17 August, from a senior Iranian official. Ghalibaf, as Speaker of the Majlis, said the strait stays shut until the blockade is lifted, assets unfrozen, sanctions eased and military operations halted on all fronts. An announcement is not an event and the channel does not move on it — but it is the first time in this war that Tehran has publicly attached a deadline to a threat against the blockade itself.',
+   'Iran fired two ballistic missiles at the UAE on 18 August, the first such launch since May. Both fell in or near territorial waters, no casualties; UAE residents received a phone alert two hours before the statement; Iran denied it. Bloomberg, AP, Al Jazeera and Euronews all carried it. This is a state-on-state event, not an announcement, and it follows the UAE naming Iran and using the word “piracy” on 14 August. NOT FOUND, and it is the tell: any UAE or GCC sanction, designation or referral flowing from that language. The rhetoric has not become policy.',
+   'Washington threatened to bomb the mediator. Trump, Fox News, 17 August: “if Oman gets in the way, we’ll bomb the s--- out of them”. The Washington Post reported the next day, citing US officials, that the reason is Oman’s bilateral Hormuz deal with Iran. In the same interview he claimed a direct back-channel to the IRGC, which Baghaei called psychological warfare and the IRGC denied outright; on 18 August he said no talks are taking place or scheduled.',
+   'The 17 August close was never published, and the snapshot understated Brent by $2.60 — the largest upside crude reconciliation error the monitor has recorded. Brent closed $89.03, not the $86.43 carried; the close was +$2.46 on the day, not −$0.14. The 30-year closed 5.3060%, a new war high, against the 5.2593% published; 2s10s closed 54.248 bp, the steepest since 19 May, against 52.777; MOVE jumped 6.05 points. This is the sixth occasion on which the monitor has had to withdraw a published reading because the snapshot missed the session.',
+   'The field-level stale-carry rule is corrected, and the correction is applied to this edition’s own data. The last edition observed the 30-year printing 5.2593% on both 14 and 17 August, identical to four decimal places, and reasoned that because every other field on the row had moved the print was genuine rather than a carry. It was a carry, and the true close was a war high 4.67 bp higher. The rule is restated: an identical-to-four-decimals field is UNRESOLVED regardless of whether the row around it is live. Accordingly the 5-year and 10-year, which print unchanged to four decimals on 18 and 19 August, are reported in this edition as unresolved and carry no d/d.',
+   'The 30-year set a war high and the Treasury downgrade moved further away on BOTH legs at once. A first. MOVE went from 4.15 points below its pre-war anchor to 2.25 above it, while the 30-year leg went from failing by 25.93 bp to failing by 30.60 bp, the widest gap of the war. Threshold B has been armed on three consecutive closes and on Monday the 30-year leg cleared by 10.60 bp, the widest 30-year clearance of the war — against a sequence in which every earlier state was decided by under 6 bp on one leg.',
+   'Oil is the only channel with headroom and the gap has now narrowed in three consecutive editions. $9.78, then $8.43, now $5.55 on the scored series and $3.98 on the active contract. Brent has closed up three sessions running, and risen on a fourth intraday, on stalemate rather than on a supply loss — the reported catalysts were the weekend transit collapse, the strike off Oman, the indefinite-blockade report and a record diesel crack pulling crude from the product end.',
+   'UKMTO 086 records two consecutive days of ZERO transits and a crew fatality 0.5nm off Oman. The cumulative count goes 89 to 91. 115-26 struck a cargo ship in the engine room, killing a crew member, with the Omani Coast Guard responding; 114-26 is a Somali-basin hijack and is not Iran-related. A casualty conflict between UKMTO and a secondary outlet is recorded unreconciled. The blockade tally rose 62 to 64, a sharp deceleration consistent with an empty waterway, and a 91-vessel figure on CENTCOM’s own media page is irreconcilable with it and is not used.',
+   'The diplomatic track has been made conditional on a document that does not exist. Qatar said on 18 August that mediators will return to push for US–Iran talks after the Iran–Oman Hormuz deal is announced. That deal is single-sourced to Tehran: Baghaei says the route map is agreed and a joint declaration is being prepared, then conceded on 18 August that it is delayed by “destructive efforts”; Muscat has never confirmed any of it, and the terms — reportedly entry near the Iranian coast, exit along the Omani side, no tolls for a transitional two to four months — remain unpublished by either party.',
+   'Oman’s public silence is now total and load-bearing, and it is documented from the ministry’s own indexes. Nothing on the two tankers struck in its territorial waters on 14 August; nothing on UKMTO 115-26, in which a seafarer died 0.5nm off its coast and its own Coast Guard rendered assistance; nothing in reply to being threatened with bombardment. The most recent Hormuz-relevant news item remains 8 August, the most recent Hormuz statement 14 July, the most recent Oman–Iran joint statement 23 June. The one signal is Sultan Haitham’s 17 August visit to Abu Dhabi with his defence, interior and transport ministers; the readout says only that regional security was discussed, and no inference is scored on it.',
+   'The covert relay extended into LNG and Aramco resumed loading inside the strait. Bloomberg reported LNG carriers conducting ship-to-ship transfers on 17 August. Reuters reported Aramco resuming loadings at Ras Tanura and Juaymah after a three-week gap, three VLCCs lifting ~2 mn bbl each between 12 and 16 August. Windward assessed the first breach of the blockade since 13 July — the sanctioned LPG carrier AXON I under a false Angola flag. Kharg’s three terminals were empty on both 16 August passes with ~16.7 mn bbl sitting in floating storage. Yanbu has been fully AIS-dark for six weeks.',
+   'The DOE weekly corroborated the gasoline reversal, and the real move is diesel. $4.049, up 4.3 cents, with the rise entirely interior and the East Coast and California both falling. The DOE on-highway diesel average rose 19.7 cents in one week to $5.454; AAA diesel reached $5.4677, within 35 cents of its all-time record; and the US front-month diesel crack hit an all-time high of $102.20/bbl on 17 August, roughly five times normal, with European diesel near $170/bbl. US distillate stocks are 12% below the five-year average.',
+   'Corrections and re-verifications carried into this edition. (a) The 17 August edition’s 30-year, 2s10s and Brent readings are withdrawn by name. (b) The claim that MOVE sat below its pre-war anchor is withdrawn — it has closed above 73.38 twice since. (c) The Brent–WTI active spread peaked at $6.37 on 17 August, which is wide but NOT a war record: $6.82 on 5 May is; the “widest since 5 May” framing survives, the record framing would not have. (d) Threshold B has been armed on three consecutive closes but this is still the fourth arming since 29 July, not a fifth — count armings, not cycles. (e) A claim that the US struck Iran overnight around 18 August could not be sourced to any Tier 1 outlet and is contradicted by CENTCOM’s own release index; rejected. (f) A 91-vessel redirected figure on CENTCOM’s media page conflicts with its own 17 August statement of 64; not used. (g) The Houthi claim of an 18 August strike on Jazan is Tier 3 and uncorroborated, unlike the confirmed 9 and 13 August attacks; carried as a claim. (h) A 5.047% / $16bn 20-year auction result circulating for 19 August 2026 is the 21 May 2025 auction and must not be used. (i) Ghalibaf is Speaker of the Majlis, not Iran’s lead negotiator, as one outlet described him. (j) The NAHB figure of 35 is confirmed as the August 2026 release.',
+  ],
+ },
+ 'scenarios': [
+  {'name': 'Deal collapse — talks stall on terms', 'p': '42',
+   'desc': 'Modal for a sixth consecutive edition. The strait stays shut not because talks failed to start but because the terms are irreconcilable: Iran demands sanctions relief, released assets, an end to the blockade and a halt to operations on all fronts; the US demands restored free passage, no nuclear weapons and no proxy funding, and is running a blockade to compel it.',
+   'shift': '+4 (38 → 42), the largest single move on this map since 7 August. The MoU lapsed with no extension and no successor process, Trump has ruled out reviving it and says nothing is scheduled, and Iran has attached a few-weeks ultimatum to a threat against the blockade. The two condition sets do not intersect at any point, and both sides now argue the deadline never mattered — which is the argument you make when there is nothing to replace it with.'},
+  {'name': 'Return to full war', 'p': '23',
+   'desc': 'Sustained US or Israeli strikes inside Iran resume, or Iran strikes US regional bases or Gulf states directly.',
+   'shift': '+2 (21 → 23). Iran fired two ballistic missiles at the UAE on 18 August, the first since May, and stated a “fully offensive” posture with an explicit threat of a “timely and precise” attack to break the blockade. Trump threatened to bomb Oman. Capped at +2 by the single strongest countervailing fact in the document: CENTCOM’s public release index shows nothing on combat inside Iran since 29 July, a 21-day gap, verified directly this edition.'},
+  {'name': 'Contained but violent', 'p': '21',
+   'desc': 'Attacks continue on shipping and on Gulf energy infrastructure; the blockade persists; neither side crosses into sustained state-on-state strikes.',
+   'shift': '−1 (22 → 21). The category is under strain from both ends. It absorbed a crew fatality 0.5nm off Oman and a claimed third strike on Jazan — but a ballistic launch at a Gulf state is not “contained but violent”, and probability moves out of this cell into full war rather than staying. The blockade tally decelerating to +2 in three days is not restraint; it is an empty waterway.'},
+  {'name': 'Regional relapse', 'p': '10',
+   'desc': 'The conflict widens through the Red Sea, Lebanon, Iraq or the Saudi energy complex rather than through the strait itself.',
+   'shift': '−2 (12 → 10). The quietest periphery in weeks and the fall is mechanical rather than benign. UKMTO 086 records no confirmed attacks in the southern Red Sea or Bab el-Mandeb in the period; no dated Israeli strike on Lebanon 17–19 August after the 15 August strikes that killed 11; nothing at all in Iraq. Al-Mokha remains closed and the Jazan claim is Tier 3 and uncorroborated. Probability has moved to the strait, not out of the war.'},
+  {'name': 'Mediated pause', 'p': '4',
+   'desc': 'A negotiated de-escalation restores partial transit under a supervised regime.',
+   'shift': '−3 (7 → 4), the lowest this map has carried and a full reversal of last edition’s rise. The two points added on 17 August for the Iran–Oman route map are withdrawn and one more with them. Qatar has made the un-issued joint declaration the gate on all mediation; Baghaei says it is delayed; Oman has never confirmed it; and the United States has threatened to bomb the co-signatory over it. Pakistan has been silent since 12 August and no talks are scheduled by either party’s account.'},
+ ],
+ 'scenarioShift': 'Probabilities sum to 100. Shifts from the 17 Aug edition: deal collapse +4 (38→42) on the MoU lapsing with no successor and non-intersecting condition sets; return to full war +2 (21→23) on the UAE ballistic launch and the “fully offensive” declaration, capped by CENTCOM’s 21-day silence; contained-but-violent −1 (22→21) because a ballistic launch at a Gulf state is not “contained”; regional relapse −2 (12→10) on the quietest periphery in weeks, a mechanical fall rather than a benign one; and mediated pause −3 (7→4), the lowest this map has carried, fully reversing last edition’s rise. The two paths in which the strait stays shut carry 65% between them, UP from 60% — reversing the first and only fall this map had recorded, which came last edition on the strength of the Iran–Oman route map. That instrument has since failed to materialise, been made the precondition for all other mediation, and become the stated reason the US is threatening its co-signatory.',
+ 'watchlist': [
+  'The three US events that fall AFTER this snapshot, all on 19 August. The 20-year auction is the first long-end supply since the 30-year cleared at 5.216% and comes with the 30-year at a fresh war high; read the bid composition, not the tail, and note the 22 July 20-year tailed 0.5 bp. The EIA weekly carries the follow-up test named two editions ago: do crude imports stay near 7.3 mb/d or revert to the 6.3 four-week average? The API estimated a small crude draw and a 2.8 mn bbl distillate draw for the week. And the FOMC minutes of the 9–3 July hold, with three dissents for a hike, are the first look inside a committee that has withdrawn forward guidance.',
+  'The SPR fell below 300 mn bbl for a second week and the EIA print will confirm the level. DOE data cited on 18 August puts the reserve at 293.4 mn bbl for the week ending 14 August, down a further 5.3 mn from 298.7 mn — which was itself the first reading below 300 mn since January 1983. Against ~415 mn pre-war and 714 mn of authorised capacity, the reserve is roughly 41% full. This figure is DOE-sourced via a secondary outlet and is flagged as such until the EIA weekly confirms it.',
+  'Whether Brent takes out $95, which is now the only live scoring question in the document. $5.55 on the scored continuation, $3.98 on the active contract, after three consecutive editions of narrowing and three consecutive up-closes. The trigger requires SUSTAINED closes above $95, not a touch, so a single print through it changes nothing — but this is the first time in the war that the oil channel has been within one bad session of its upgrade on the contract the market actually trades.',
+  'Whether Iran acts on the “few weeks” ultimatum, and whether CENTCOM’s 21-day silence breaks. The single most load-bearing negative in this document is that CENTCOM has published nothing on combat inside Iran since 29 July. That is an absence-of-evidence claim and it is re-verified against the primary index every edition it is repeated, because it is falsified by any single release. It is the reason full war sits at 23% rather than higher.',
+  'Whether the Iran–Oman joint declaration is ever issued, and whether Muscat confirms anything. Qatar has made it the gate on all mediation. It is single-sourced to Tehran, Baghaei says it is delayed by “destructive efforts”, no fee or security terms have been published by either party, and the US has threatened to bomb the co-signatory over it. Watch fm.gov.om, not Iranian spokesmen — and note that a joint declaration would be the first Oman–Iran joint statement since 23 June.',
+  'Whether the UAE’s position hardens after being fired at. Naming Iran and saying “piracy” on 14 August was a departure; two ballistic missiles on 18 August is a different order of provocation. Nothing material has followed either — no sanction, no designation, no GCC emergency session, no UNSC referral. The 19 August Rubio call with Sheikh Tahnoon, in which Rubio “underscored the importance of freedom of navigation”, is the only dated diplomatic response so far.',
+  'UKMTO Update 087 and VRA Overview No.3, neither yet published, and whether zero-transit days become the run rate rather than the exception. Two consecutive nil days in the annex is a first. Update 081 remains unretrievable for a fifth edition.',
+  'Whether the sub-75 MOVE regime is over. It closed 75.63 then 74.98 — the second is technically below the line by two hundredths, which is a session and not a regime. No MOVE print alone can move the Treasury channel while the 30-year leg is 28.58 bp away and set a war high on Monday, so the question is diagnostic rather than scoring: can rate volatility stay near pre-war through a 20-year auction, a 30-year TIPS reopening and Jackson Hole?',
+  'Jackson Hole, 27–29 August, topic “Financial Innovation: Implications for Payments and Policy”. Chair Warsh’s first symposium keynote as chair is expected Friday 28 August. Because he has deliberately withdrawn written forward guidance, a set-piece speech carries unusual weight — and it lands into a market pricing a September hike at roughly 31% and no cut at all. The agenda has not been published.',
+  'Bessent’s promised sanctions, still not delivered. OFAC’s recent-actions page was read directly on 19 August: no Iran action on 17, 18 or 19 August, the only entry being an 18 August ICC and Venezuela package, and the last Iran designations dated 7 and 29 July. Two Treasury releases with directly relevant titles could not be dated and are NOT attributed to this window. Watch the page, not the rhetoric.',
+ ],
+ 'sourceLog': {
+  'tier1Market': 'Tier 1 — primary market data. Bloomberg extract (US Iran BBG Data.xlsx), refreshed 19 Aug 2026: all price, yield, volatility and gasoline series. 167 raw rows × 99 columns; the header row is scanned rather than hardcoded, so relabelled tickers and inserted columns are absorbed. Front-month auto-detect resolved CO2/CL2; DXY resolved as “DXY Index”. The 27 Feb anchor was re-verified field by field and is unchanged. The row-level stale check clears — every field of the 17 Aug row differs from the published snapshot — and the corrected field-level check raises two flags (5Y and 10Y, identical to four decimals on 18 and 19 Aug), both reported as unresolved rather than as readings.',
+  'tier1News': 'Tier 1 — official and news. UKMTO JMIC Update 086 (to 18 Aug, ICOD 181500Z) read directly at ukmto.org: threat levels, incidents 114-26 and 115-26, the transit annex, the MoU-lapse assessment and the CENTCOM blockade tally. CENTCOM release index read directly on 19 Aug (most recent combat entry 29 July) and CENTCOM’s own 17 Aug statement of 64/3/2. Census housing starts and permits (18 Aug); Fed G.17 industrial production (18 Aug); BLS import and export prices (18 Aug); NAHB HMI (17 Aug, confirmed as the August 2026 release); EIA weekly retail gasoline and diesel survey (released Tue 18 Aug); OFAC recent actions read 19 Aug; fm.gov.om news and statements indexes read directly 19 Aug; State Department readout of the 19 Aug Rubio call. News: the MoU lapse (Al Jazeera, CNN, CBS, CNBC, NYT, 17 Aug; Bloomberg, 18 Aug, on Trump refusing to revive it); Reuters’ 17 Aug exclusive on the “fully offensive” posture; the UAE ballistic-missile statement (Bloomberg, AP, Al Jazeera, Euronews, 18 Aug); Trump’s Oman threat (Fox News, 17 Aug; CNN, CBS, WaPo, Al Jazeera) and the WaPo report of its stated reason; Qatar gating mediation on the Hormuz deal (Al Jazeera, 18 Aug); Aramco resuming loadings (Reuters on Kpler and Vortexa, 18 Aug); LNG ship-to-ship transfers (Bloomberg, 17 Aug); the record diesel crack (Bloomberg, 18 Aug).',
+  'tier3': 'Tier 3 — state media, labelled and corroborated before use. IRNA, IRIB, Tasnim, SABA and Defa Press. The IRGC’s denial of the back-channel reaches this document through Tasnim and is used only because Al Jazeera relays it. The Houthi claim of an 18 Aug drone strike on Aramco’s Jazan refinery originates with SABA, was corroborated by NO Tier 1 outlet, drew no Saudi or Aramco comment, and is carried as a CLAIM and used for nothing — unlike the 9 and 13 August strikes, which were confirmed. The Hormuz “Smart Management Plan” bill is sourced entirely to IRNA and Tier 2 aggregators — no Tier 1 outlet has covered it at any stage — and it remains in committee with no floor vote and no Guardian Council action. Tier 2 commercial trackers (Kpler, Windward, Vortexa, TankerMap, IMF PortWatch, LSEG, UANI, TankerTrackers) are reported with their own vessel universes and denominators and no average is taken; Windward’s own caveat that its series is sensitive to satellite collection effort is carried, and UANI and TankerTrackers published nothing 17–19 Aug. NOT FOUND, recorded rather than filled: no transit count of any kind for 19 Aug from any provider; no EIA weekly, no 20-year auction result and no FOMC minutes at the time of this snapshot; no UKMTO Update 087 or VRA Overview No.3; no Omani statement on the 14 Aug attacks, on UKMTO 115-26, or on Trump’s threat; no Omani confirmation of the route map and no published fee or security terms; no Hegseth or SecDef statement; no Gharibabadi or Rezaei statement; no UAE or GCC sanction or referral; no dated Israeli strike on Lebanon and no Iraq spillover; no CME FedWatch reading datestamped 17 Aug or later; no Fed speaker; no Jackson Hole agenda; no Baltic week-34 tanker averages; no war-risk premium newer than Marsh’s 7.5–10% of hull of 22 July; no new EIA, IEA, OPEC or OPEC+ release; no revision to the 30 Aug Jizan restart; no OFAC Iran action. REJECTED as stale, mis-dated or unsourceable: the “12 August agreement to extend the MoU” (Tier 2, unnamed Pakistani sources, never corroborated, falsified by the 17 Aug lapse — formally retracted); a 5.047% / $16bn 20-year auction result circulating for 19 Aug 2026, which is the 21 May 2025 auction; a claim that the US struck Iran overnight around 18 Aug, contradicted by CENTCOM’s own release index; a 91-vessel redirected figure on CENTCOM’s media page, irreconcilable with its own 17 Aug statement of 64; and a “13 vessels against a ~140 baseline” UKMTO attribution that could not be verified against the primary annex.',
+ },
+ 'protocol': [
+  {'step': 'Refresh and integrity-check the extract',
+   'detail': 'Scan the header row rather than hardcoding columns; auto-detect the Brent and WTI front month. Run the row-level stale check by diffing the prior row against the figures published for it, and the field-level check for values identical to four decimals. This edition: the row check CLEARS decisively — every field of the 17 Aug row differs from the published snapshot — and two fields are flagged and reported as UNRESOLVED under the corrected rule.'},
+  {'step': 'Compute deltas and test every trigger explicitly',
+   'detail': 'd/d against the last confirmed close, w/w against five sheet-rows back, and vs the 27 Feb anchor re-verified field by field. Test all four market channels and Stage-4 A, B and C on the confirmed close only, and record the distance in basis points or dollars so the direction of travel is visible edition to edition. Run min, max and last-prior-occurrence queries on the full series before writing any superlative — three were checked and one corrected this edition.'},
+  {'step': 'Verify the news on both tracks and re-verify what was inherited',
+   'detail': 'Military and diplomatic on one track, shipping, energy and macro on the other. Re-run negative claims every edition they are repeated — absence-of-evidence decays faster than positive facts. State the exact query alongside the answer. Where several trackers disagree, publish every number with its denominator and take no average.'},
+  {'step': 'Reconcile the previous snapshot and withdraw conclusions by name',
+   'detail': 'The Singapore-morning cut regularly misses the US session, in either direction and sometimes in both at once. It has now produced six occasions on which a published reading had to be withdrawn, most recently by $2.60 on Brent. Report the gap on every asset, and where the previous edition built a narrative on the snapshot, withdraw the conclusion explicitly rather than quietly restating the number.'},
+  {'step': 'Score on confirmed closes, with hysteresis, and explain the composition',
+   'detail': 'Never move a market channel on an intraday print; never whipsaw on a single session; never move a downgrade rule to match the level that fired the upgrade. When the scale is saturated, say so — the total registers neither deterioration nor improvement, so the analysis has to carry what the number cannot. This edition is the clearest case yet: the most adverse two-session window since 30 July, and a flat 27.'},
+ ],
+ 'methodology': {
+  'scale': 'Shock-score scale. Six transmission channels (maritime denial, oil, US inflation impulse, Treasury stress, political stress, escalation risk), each 0–5, summed to 0–30. Bands: 0–7 watch · 8–14 stress · 15–21 systemic-risk watch · 22–30 crisis. Market channels move only on a confirmed close through a trigger, never on an intraday print. Maritime denial and escalation risk are event-based and move on events, not announcements. Hysteresis is asymmetric by design: a channel is upgraded on a sustained break of its trigger and downgraded only on a sustained reversal past a wider threshold. The value of that asymmetry is unusually visible in this edition. On 13 August the 5Y5Y level whose sustained break fired the US-inflation channel to 5 was itself broken to the downside, and the channel did not move because the documented downgrade sat far lower. Three closes later that break has been fully reversed and the gap to the downgrade has widened twice. A symmetric trigger would have produced a downgrade on 13 August and an upgrade within a week. The same logic held the political channel through a six-session gasoline decline that then round-tripped in two backfilled sessions.',
+  'scaleCap': 'The saturated scale. Five of the six channels are at 5; only oil, at 2, is not — three points below the cap, not one. The composite therefore cannot register further deterioration in the strait, and, as the 14 August edition demonstrated, cannot register improvement in the financial complex either. A flat 27 does not mean a stable situation; it means the instrument has run out of range in both directions. This edition is the starkest illustration the monitor has produced: a lapsed ceasefire framework, a declared offensive posture, a state-on-state ballistic launch at a Gulf partner, a seafarer killed in the strait, a threat to bomb the mediator, two days of zero transits and a new war high in the 30-year — and the number did not move. Readers should attend to the composition and to the distance-to-trigger figures, reported in basis points and dollars precisely so that movement inside a frozen total remains visible.',
+  'integrity': 'Data integrity this edition. The row-level stale check clears decisively: every field of the 17 August row differs from the snapshot published for it, and the differences are large — Brent +$2.60, the 30-year +4.67 bp, the 10-year +3.57, the 5-year +2.30, the 2-year +1.90 and 2s10s +1.471, with TTF the only asset that moved the other way. The field-level test has been REWRITTEN this edition because it failed. The previous rule held that an identical-to-four-decimals value in a BLANK row is a carry while the same value in a LIVE row is a market that has stopped moving. On 17 August the 30-year printed 5.2593%, identical to the 14 August close, inside a row where every other tenor had moved; it was treated as genuine, and it was a carry concealing a new war high of 5.3060%. The rule now reads: an identical-to-four-decimals field is UNRESOLVED regardless of row liveness, and no d/d is asserted for it. It is applied here to the 5-year and 10-year on 19 August. Note the surviving half of the old rule: a NEAR-identical value differing at the fourth decimal, as the 2-year did on 12 August, is genuine — the failure mode is exact equality. Where third-party sources disagree the disagreement is reported and every denominator is named; this edition carries five separate Hormuz transit universes and takes no average across them.',
+  'gasoline': 'Gasoline series. Political stress is scored on AUTMUSAG (AAA all-grades retail pump; pre-war $3.52, peak $5.18, latest print $4.77 on 17 August — level with 13 August and the joint-highest since 10 June — with 18 and 19 August blank). USRFRUSA (DOE regular spot; pre-war ~$2.94, peak $4.50) is corroboration only and printed $4.049 for the week of 17 August, up 4.3 cents, on its new Tuesday release schedule. Neither series is re-based. The independent confirmation the last edition was waiting for has therefore arrived and both series now point the same way. The basis note stands: AUTMUSAG is ALL-GRADES and AAA’s published national average is REGULAR-grade, which printed $4.0654 on 18 August. The composition of the DOE rise is entirely interior — Rocky Mountain +16.4 cents, Midwest +12.2 — while the East Coast fell 2.1 cents and California 3.1. And the pressure has rotated into distillate: the DOE on-highway diesel average rose 19.7 cents in one week to $5.454, AAA diesel reached $5.4677, within 35 cents of the all-time record of $5.8159, and the US front-month diesel crack hit an all-time high of $102.20/bbl on 17 August, roughly five times normal, with US distillate stocks 12% below the five-year average and near 23-year lows. Refining rather than crude remains the binding constraint on the pump.',
+  'anchor': 'Pre-war anchor (27 Feb 2026 close), re-verified field by field this edition and unchanged. Brent $72.48; WTI $67.02; 2Y 3.375%; 5Y 3.502%; 10Y 3.938%; 30Y 4.611%; 2s10s +55.64 bp; 5Y5Y 2.142%; 10Y breakeven 2.2569%; MOVE 73.38; VIX 19.86; DXY 97.608; gasoline (AAA all-grades) $3.52; Henry Hub $3.06; TTF €31.23; Asia LNG ¥1,669. Live triggers: oil to 3 on sustained closes above $95 and to 1 on a mediated pause with a close at or below $72.48; US inflation to 4 on sustained closes at or below 2.142%; Treasury to 4 on a 30-year close under 5.00% together with MOVE under 75, sustained; political stress to 4 on three consecutive AUTMUSAG closes at or below $4.60 with no intervening print above $4.70. Both crossings that were live a fortnight ago have closed: MOVE is back ABOVE its anchor at 74.98 after two closes above 73.38, and the 10-year breakeven, which came within 0.21 bp of its anchor on 13 August, has moved out to 5.08 bp above it. Meanwhile the 30-year sits 67.7 bp above its own anchor at a fresh war high.',
+  'intraday': 'Intraday caveat, and a note on the section references. Numbered references of the form §9.n in the PDF edition point to the monitor’s internal operating instructions and pitfalls register, which records every failure mode the process has hit since June and the rule adopted in response; they are not sections of the published document. The register was amended by this edition, the field-level stale-carry rule having been applied incorrectly in the last one. The latest dated row is a Singapore-AM snapshot and US hours set the close; the error is regime-dependent rather than random and has ranged from 13 cents to $3.99 on Brent within a fortnight. This edition’s was +$2.60, the largest upside crude error recorded, with the 30-year 4.67 bp adrift and carrying a war high the snapshot did not see. Series go dark for multiple sessions and backfill later, sometimes against the prevailing trend rather than with it. A row can fail to refresh entirely, and an individual field can carry forward inside an otherwise live row — which is precisely what happened to the 30-year on 17 August. Every one of these failure modes has occurred since 29 July, each is tested for explicitly on every run, and the results of those tests are published rather than assumed.',
+ },
+}
+
+# =====================================================================
+# 20 AUGUST 2026
+# =====================================================================
+EDITIONS['2026-08-20'] = {
+ 'label': '20 Aug 2026',
+ 'editionLine': 'Daily edition · 20 Aug 2026 intraday · Bloomberg · Singapore 20 Aug AM update',
+ 'score': '27',
+ 'band': 'CRISIS',
+ 'sequencing': '27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27',
+ 'sessionNote': 'Score held for a tenth edition · no channel moved · and on 19 August the issuer intervened in the price of its own long-dated debt. The US Treasury announced, outside the refunding cycle, that it will at least double long-end buybacks; the 30-year fell 9.15 bp, the dollar hit a three-month low and Threshold B lapsed, while an ugly 20-year auction and hawkish FOMC minutes were both swamped. Separately the UAE halted ALL trade and financial transactions with Iran — its largest trading relationship. Oil is $5.21 from its upgrade on the scored close and $3.03 on the intraday active.',
+
+ 'headline': 'Score HOLDS at 27/30 for a tenth consecutive edition. No channel moved. But on 19 August the issuer intervened in the price of its own long-dated debt, and the rates and dollar complex reversed in one session, while oil, breakevens and equity volatility did not. Before the New York open on Wednesday, and outside the quarterly refunding cycle, the US Treasury announced that it will at least double the size of its liquidity-support buyback operations in the 10-to-20 year and 20-to-30 year sectors, from a $2bn maximum per operation to at least $4bn, effective 9 September and running to 4 November. The 30-year fell 9.15 bp to 5.1911% — the second-largest one-day fall of the war, and at 11.49 bp over two sessions from Monday’s war high of 5.3060% the largest two-session fall the war has produced. The dollar fell 0.824 to 98.833, its lowest close since 14 May; 2s10s flattened 5.10 bp; MOVE fell 3.72 to 71.26. Stage-4 Threshold B lapsed. The two scheduled events that were supposed to set the session were both adverse, and both were swamped. The $16bn 20-year auction cleared 5.204%, the second-highest 20-year auction yield since the tenor was reintroduced in 2020, and the July FOMC minutes showed “many” participants judging that tightening would likely be necessary if inflation did not decline — the record of a 9–3 hold in which all three dissents were for a HIKE. Neither mattered. The long end rallied through both. The analytical point is the one this document exists to make, and the standing rule warns that an improvement narrative is the one a reader most wants to believe: a long end that falls 9 bp because the borrower has doubled its own bid is not the same thing as a long end that falls because the risk has receded. Jefferies’ Thomas Simons made the forward point to Reuters — because the announcement came outside the refunding cycle, it can be repeated at any time, and it raises the prospect that long-end auction sizes are cut. Second, the war produced the broadest economic instrument any Gulf state has yet used, and the first to reach financial transactions. The UAE announced early on 19 August that all trade, commercial exchanges and financial transactions with Iran have been halted until further notice, in response to the two ballistic missiles fired at its territory on 18 August — which its Ministry of Defence says were “targeting maritime navigation”. Dubai had quietly become Iran’s largest trading partner, supplying roughly one third of everything Iran imports annually, ahead of China and Türkiye, and serving as its principal discreet channel for moving money. The 14 August “piracy” attribution produced no instrument; two ballistic missiles produced this in 36 hours. Third, the shipping story of the week has been reframed by the provider that produced it. CNN reported on 18 August, citing Kpler, that more than 80% of Hormuz liquids transits over the past fortnight took the Omani route “or have been dark transits that likely took the Omani route”, with Kpler’s head of crude analysis saying Iran “has at least partially lost control of the strait”. Kpler’s own publication the next day says something materially different: the southern Omani corridor “was effectively gone by Week 4 after attacks on vessels using it”, the IMO route has been at zero since Week 5, and the figure above 80% is a Dark/Unknown share — with zero crossings route-confirmed as Omani in the week to 16 August. CNN’s formulation collapses a route-confirmed share and a dark share into one figure; Kpler’s own publication separates them. Name the denominator. Fourth, the standing crude-imports test resolves against the dislocation reading. EIA’s weekly for the week to 14 August put crude imports back at 6.6 mb/d with a four-week average of 6.5: the 7.3 mb/d print of the prior week was a one-week outlier, not a new run rate, and the follow-up question named two editions ago is answered. The same report confirms the SPR at 293.4 mn bbl, down 5.3 mn and the lowest since December 1982, and cuts distillate stocks to 105.6 mn bbl, 13% below the five-year average — and does so DESPITE refinery utilisation of 97.2%, the highest since September 2019. Fifth, and the only live scoring question in the document: oil keeps closing in. Brent closed $89.79 on 19 August, a fourth consecutive up-close and the highest since 31 July; the active contract closed $91.62, the highest since 24 July. The upgrade is $5.21 away on the scored series, $3.38 on the active close, and $3.03 on Thursday’s intraday active print — a fourth consecutive edition of narrowing. Against all of this the physical record is empty: no UKMTO Update 087, no new numbered incident, no CENTCOM release, and no kinetic event anywhere in the theatre dated 19 or 20 August. CENTCOM’s combat index still shows nothing inside Iran since 29 July, now 22 days. That silence is the single reason full war sits at 24% and not higher. The score cannot move for a separate reason: five of six channels are pinned at the top of the scale, and the sixth is three points below it. Sequencing 27 → 27 → 27.',
+
+ 'tape': {
+  'note': '20 Aug 2026 readings are intraday prints from the Singapore Thursday morning. The last confirmed close, and the scoring reference throughout, is 19 August. d/d is 20 Aug intraday vs the 19 Aug close. The two w/w bases diverge this edition and are labelled separately: five sheet-rows back from the latest row is 13 Aug, and five rows back from the confirmed close is 12 Aug. vs-pre-war is against the 27 Feb 2026 close, re-verified field by field and unchanged. The row-level stale check CLEARS decisively — every populated field of the 19 Aug row differs from the snapshot the last edition published for it. The field-level test under the corrected exact-equality rule returns NO flags on any of the last three rows. Two series backfilled and are reported as new prints, not carries: SOFR for 17 and 18 August at 3.66 and 3.65, and AUTMUSAG at $4.79 for 18 August. Basis note: the press quotes the ACTIVE contract; the scored CO2 continuation prints about $1.92 below COA.',
+
+  'oilGasHeader': ['Benchmark', 'Intraday 20 Aug', '∆ d/d', '∆ vs pre-war close (27 Feb)', 'BBG ticker'],
+  'oilGas': [
+   ['Brent front-month', '$90.05 /bbl (H 90.34 / L 89.62)', '+$0.26 (+$4.83 w/w vs 13 Aug)',
+    'from $72.48 (+24.2%) — a $17.57/bbl premium. The overnight low of $89.62 sits below Wednesday’s close and the range is a narrow 72 cents, so the Thursday tone is firm but not extending. Active COA prints $91.97, which is $3.03 from the $95 upgrade trigger. See the roll disclosure in the oil-channel analysis before reading that as a record proximity.',
+    'CO2 Comdty (Close)'],
+   ['Brent · 19 Aug close (last confirmed — the scoring reference)', '$89.79 /bbl', '+$0.34 vs the 18 Aug close $89.45 (+$2.97 w/w vs 12 Aug)',
+    'The highest Brent close since 31 July ($90.12) and a FOURTH consecutive up-close (14, 17, 18 and 19 Aug), which the 20 Aug intraday extends to a fifth session if it holds. It leaves the channel $5.21 below the $95 upgrade trigger and $17.31 above the $72.48 downgrade anchor. The upgrade gap has now narrowed in four consecutive editions — 9.78, 8.43, 5.55, 5.21 — though this edition’s narrowing of 34 cents is an eighth of the last one’s $2.88. On the active contract the upgrade leg is $3.38 away and COA’s $91.62 close is its highest since 24 July. Still $28.56 below the 31 Mar war high of $118.35.',
+    'CO2 Comdty (Close)'],
+   ['RECONCILIATION — the 19 August snapshot OVERSTATED the tape, and by the largest long-end margin on record', 'Brent closed $89.79 vs $90.24 carried', 'gap –$0.45',
+    'The mirror image of Monday. Every asset settled below the Singapore print: Brent –$0.45, COA –$0.19, WTI –$0.53, TTF –€0.809, DXY –0.816, and on the curve –9.68 bp on the 30-year, –5.10 on 2s10s and –1.06 on the 2-year. THE 5- AND 10-YEAR ARE EXCLUDED FROM THIS TABLE ON PURPOSE. Both were published last edition as UNRESOLVED because they printed identical to four decimals, and the rule forbids asserting a day-on-day change for such a field. A gap measured against a carry measures staleness, not the timing of the Singapore cut, and is not a reconciliation. The 30-year, 2s10s and 2-year snapshots were all live prints that differed from the prior close, so those three are measured. The 30-year gap of 9.68 bp is larger in absolute terms than any long-end reconciliation this monitor has recorded — the previous largest was +7.59 bp on 31 July — and it is the first of any size in which the snapshot OVERSTATED yields. Running Brent gap series: +$2.26, +$0.72, +$0.87, –$0.13, +$1.29, +$2.60, –$0.45. Cause: the Treasury buyback announcement landed on Wednesday morning New York time, hours after the Singapore cut. WITHDRAWN BY NAME: the last edition reported a 19 August TTF intraday of €64.190 as standing above the €63.649 war record on an intraday basis. TTF CLOSED €63.381 — twenty-seven cents BELOW the record. Also withdrawn: the 18 August trigger distances published last edition, a 5Y5Y gap of 18.23 bp and a 30-year leg of 28.58 bp, which the restatement puts at 17.87 and 28.26.',
+    'CO2 Comdty / derived'],
+   ['WTI front-month', '$84.61 /bbl', '+$0.22 (+$4.17 w/w vs 13 Aug)',
+    'from $67.02 (+26.2%) — the 19 Aug close of $84.39 is the highest since 24 July. CLA prints $86.12 against CL2’s $84.61; the continuation artifact has widened to about $1.51.',
+    'CL2 Comdty (Close)'],
+   ['Brent–WTI spread', '$5.44 /bbl front', '$5.40 on the 19 Aug close, from $5.39 on 18 Aug',
+    '$5.85 on the active contracts intraday and $5.79 on the 19 Aug close, from $6.08 and $6.37 earlier in the week. The active spread peaked at $6.37 on 17 Aug and is NOT a war record — the war high is $6.82 on 5 May. The active spread narrowed on two consecutive sessions from that peak and has widened again on the 20 Aug intraday, while the front spread widened on both sessions; there is no basis on which it has narrowed for three sessions and none is claimed. It remains a watch item rather than a finding.',
+    'derived'],
+   ['Henry Hub natural gas', '$2.784 /MMBtu', '–$0.030 (+$0.057 w/w vs 13 Aug)',
+    'from $3.06 (–9.1% intraday) — the 19 Aug close of $2.814 is the highest since 24 July, having been within five cents of the $2.640 war low two sessions earlier. Henry Hub is still the cleanest evidence in the document that this is a Hormuz routing dislocation and not a global-energy shock: US gas closed 8.1% BELOW its pre-war level while European gas trades at more than double its own.',
+    'NGA Comdty (Close)'],
+   ['TTF Dutch gas (active)', '€64.400 /MWh', '+€1.019 (+€4.000 w/w vs 13 Aug)',
+    'from €31.23 (+106.2%). The war record on CLOSES is unchanged at €63.649 (24 July). The 18 August close of €63.646 missed it by three-tenths of a cent; the 19 August close fell to €63.381. This is the second consecutive edition in which the Singapore intraday print has exceeded the record close without a close doing so — and last edition’s €64.190 intraday settled €0.81 lower. The €64.400 print here is treated the same way: above the record, but an intraday print does not set one. Cited drivers unchanged: Qatari cargo delays, and EU storage reported ~15 bcm below the five-year average.',
+    'TZTA Comdty (Close)'],
+   ['Japan/Asia LNG (19 Aug close — no 20 Aug print)', '¥3,527', '+¥80 vs the 18 Aug close ¥3,447',
+    'from ¥1,669 (+111.3%) — the highest close since 24 July (¥3,593), and a fourth consecutive rising print (3,363 / 3,434 / 3,447 / 3,527). No 20 Aug print; flagged and NOT carried as a reading. The level could not be corroborated outside the terminal and is single-sourced. Hormuz normally moves roughly a fifth of global LNG, and Kpler reports LNG carriers running dark since resuming in late July, with LPG crossings at zero since mid-July.',
+    'JGLA Comdty (Close)'],
+  ],
+
+  'ustNote': 'The curve printed on every session and there are no exact-equality flags this edition. Triggers and Stage-4 tests run on the 19 Aug close. The corrected field-level rule passed its first live test. The last edition observed the 5-year (4.3656) and 10-year (4.7060) printing identical to four decimals on 18 and 19 August and, under the corrected rule, reported both as UNRESOLVED rather than as a flat market. Both were carries. The 19 August closes settled at 4.3426 and 4.6466 — falls of 2.30 and 5.75 bp. Had the old rule been applied, the LAST edition would have published an unchanged 5- and 10-year into what turned out to be the largest two-session long-end rally of the war. Separately, the 18 August row was restated: the 10-year to 4.7041, the 30-year to 5.2826, 2s10s to 53.106, BE10 to 2.3097 and 5Y5Y to 2.3207. All trigger distances below use the restated figures; directional analysis is continuous, absolute levels are not comparable with the last edition.',
+  'ustHeader': ['Tenor', '19 Aug close (%)', '∆ d/d (bp)', '∆ w/w (vs 12 Aug)', 'Reading', '20 Aug intraday'],
+  'ust': [
+   ['2-year UST', '4.1623', '–0.86', '–3.88', 'The short end barely moved: 0.86 bp against the 30-year’s 9.15. This was not a Fed repricing. +78.74 bp vs pre-war.', '4.1600'],
+   ['5-year UST', '4.3426', '–2.30', '–3.91', 'Resolves the field flagged UNRESOLVED last edition. +84.09 bp vs pre-war.', '4.3355'],
+   ['10-year UST', '4.6466', '–5.75', '–4.59', 'The first close below 4.65% since 13 August, and the leg that broke Threshold B. +70.91 bp vs pre-war.', '4.6367'],
+   ['30-year UST', '5.1911', '–9.15', '–6.63', 'The second-largest one-day fall of the war (only 24 June, –10.57 bp, was larger) and the first close below 5.20% since 5 August. Measured from Monday’s war high of 5.3060%, the two-session fall of 11.49 bp is the largest the war has produced. It closed 2.49 bp BELOW the 13 August auction stop of 5.216% and 14.11 bp above the 13 May stop of 5.050%. Still +58.05 bp vs pre-war.', '5.1838'],
+   ['2s10s spread (separate ticker; does not tie exactly to its legs)', '48.009 bp', '–5.10', '–0.92', 'The fourth-largest one-day flattening of the war and the flattest since 11 August, reversing four sessions of bear steepening in one. A bull flattener driven entirely by the long end — the 2-year did not participate. 7.63 bp flatter than pre-war.', '47.459 bp'],
+   ['10-year breakeven', '2.3078', '–0.19', '+4.25', 'Essentially unchanged on the day and 5.09 bp above the 2.2569% pre-war anchor. The restated 18 August close of 2.3097%, 5.28 bp above the anchor, remains the highest since 15 June. Inflation compensation did NOT come down with nominal yields, which is the tell: the rally was in real yield and term premium, not in expected inflation.', '2.3073'],
+   ['5y5y forward breakeven', '2.3106', '–1.01', '–3.79', 'A FOURTH consecutive close above the 2.30% level whose sustained break fired this channel 4→5 on 31 July, by 1.06 bp. The documented downgrade at the 2.142% anchor is 16.86 bp away, narrowed from 17.87 — its first narrowing in three editions.', '2.3190'],
+  ],
+
+  'crossHeader': ['Gauge', '19 Aug close', '∆ d/d', 'vs pre-war', 'Reading'],
+  'cross': [
+   ['DXY (dollar)', '98.833', '–0.824', '97.608 (+1.3%)', 'The lowest close since 14 May and the fourth-largest one-day fall of the war. Bloomberg headlined it “Dollar Tumbles to Weakest in Three Months on Treasury Buyback”. Cross-market on the same driver: EUR/USD above 1.1675, GBP/USD above 1.3600, gold toward $4,500. A falling dollar alongside a falling long end and unchanged breakevens is the signature of a supply-side intervention, not of receding risk. The 20 Aug intraday holds it at 98.830.'],
+   ['MOVE / VIX', '71.26 / 14.89', '–3.72 / –0.95', '73.38 / 19.86', 'Both below pre-war. Threshold C sits 58.74 points away and the war high is 115.02 (26 March); the series low is 65.39 (18 June), so this is NOT the furthest from C the war has been. The pairing is the point: rate volatility is 2.12 points below its pre-war anchor while the 30-year sits 58.05 bp above its own, and on Wednesday the volatility fell because the issuer promised to absorb the supply. No 20 Aug print for either.'],
+   ['SOFR', 'no 19 Aug print', '—', '3.68', 'Backfilled for 18 August at 3.65 and for 17 August at 3.66 — new prints the last edition did not have. Blank on 19 and 20 August; not carried.'],
+   ['AAA all-grades retail pump (the scored series)', '$4.79 (18 Aug)', '+2c vs 17 Aug', '$3.52 (+36.1%)', 'BACKFILLED — a new print the last edition did not have, and the highest since 8 June ($4.80). It is 4 cents above the $4.75 trigger that fired this channel to 5 on 4 August, and the named $4.60 downgrade condition is now 19 cents away, WIDENED from 17. No print for 19 or 20 August. Dark sessions backfilled UP, in the same direction they did a fortnight ago.'],
+   ['AAA national averages (Tier 1, gasprices.aaa.com)', 'regular $4.0860 · diesel $5.5042', '+2.06c / +3.65c', 'n/a', 'AAA diesel made a new war high on 19 August and now sits 31.17 cents below its all-time record of $5.8159. Regular is up 5.0 cents on the week, diesel 14.7. AAA’s own site: “After Falling for a Week, National Average Climbing Again”. Do not merge this with the scored AUTMUSAG series — different grades, different construction. No 20 August publication at the time of writing.'],
+   ['US front-month diesel crack', '≈$101.2 /bbl (derived, 19 Aug)', 'no published print', '~$42.01 (27 Feb)', 'No new record. The all-time high stands at $102.20 intraday and $101.86 settle on 17 August, the first triple-digit settle in the series this document tracks. The 19 Aug figure is DERIVED from the ULSD September settle of $4.4523/gal against WTI September and is labelled as such; no outlet published a crack figure for 19 or 20 August. Distillate stocks are now 105.6 mn bbl, 13% below the five-year average. Two unresolved source conflicts: the pre-2026 record is given as $89 (Bloomberg) or $86.82 (DTN), and the stocks comparison as “lowest for the time of year since 1996” or “since 1998”.'],
+  ],
+
+  'gasChartNote': 'AUTMUSAG (AAA all-grades retail pump, daily) is the political-stress score reference (pre-war $3.52, peak $5.18, latest print $4.79 on 18 Aug, backfilled this edition; 19 and 20 Aug blank); USRFRUSA (DOE regular-grade retail spot, weekly) is corroboration only (pre-war ~$2.94, peak $4.50, latest $4.049 for the week of 17 Aug, carried unverified this edition). The dotted line is the $4.75 political→5 threshold. The navy line has now closed above the trigger on six consecutive prints and is at its highest since 8 June. The six-session decline that took it to $4.69 on 10 August has been fully round-tripped and then some. The divergence that matters is inside the barrel rather than between these two series: on the AAA national averages, retail diesel rose 14.7 cents on the week against gasoline’s 5.0 — which is what a distillate shortage looks like by the time it reaches a forecourt.',
+  'straitHeader': ['Indicator', 'Current reading', 'Source'],
+  'strait': [
+   ['Strait closed · day 174 — NO Update 087, no new numbered incident, and no kinetic event anywhere dated 19 or 20 August. Cumulative count frozen at 91',
+    'UKMTO Update 086 (ICOD 181500Z) remains the latest product and the cumulative count remains 91 — tested directly against the standard naming for 19, 20 and 21 August and against the advisories, weekly-reports and recent-incidents indexes, all of which render empty to an anonymous fetch. No new numbered incident (116-26 or later) exists. Threat levels unchanged: Hormuz SEVERE — deliberate hostile action “considered highly likely” — Gulf of Oman, Bab el-Mandeb and Gulf of Aden SUBSTANTIAL, Arabian Gulf and Arabian Sea MODERATE. VRA Overview No.3 has not been published; No.2 of 14 August remains current. Update 081 is unretrievable for a sixth consecutive edition. This is the quietest physical window since 12–13 August.',
+    'UKMTO Update 086, re-fetched 20 Aug (Tier 1 primary)'],
+   ['Incident 115-26 — the vessel is identified and the casualty conflict resolves, but the vessel TYPE does not',
+    'UKMTO records a vessel struck by an unknown projectile in the engine room 0.5NM off Oman while transiting southbound, one crew fatality, Omani Coast Guard assisting. The vessel is the MINOAN DIGNITY (IMO 9294484), a 76,800 dwt Liberia-flagged, Greek-managed bulk carrier; INTERCARGO confirms one seafarer dead and identifies him as the chief engineer. The casualty conflict resolves in favour of a fatality, against The National’s “injured”. Two things do not resolve and are reported rather than smoothed: UKMTO types her a general cargo ship while AIS and trade press type her a bulk carrier; and Windward reports she had been AIS-dark for about three weeks, was transmitting for the first time at the moment of the strike, last broadcast an Iranian port, and shares beneficial ownership with MINOAN PIONEER, struck on 4 August — noted, not interpreted; two vessels is not a pattern.',
+    'UKMTO 086 (Tier 1) / INTERCARGO via Maritime Executive, 18 Aug (Tier 2) / Windward MIOC, 19 Aug (Tier 2)'],
+   ['Hormuz transit counts — seven providers, each with its own denominator, never averaged',
+    'NOTHING AT ALL exists for 19 or 20 August from any provider. UKMTO annex (S&P/SeaVision), the only primary series: cargo 5/0/0/0 and tankers 0/0/0/3 across 14–17 Aug, against a ~138/day 2025 baseline; 15 and 16 August are zero cargo AND zero tankers, re-verified verbatim. US NCAGS-facilitated 42 over the 16–17 Aug 48 hours — a facilitated subset, never added to the others. Kpler via Reuters: 3 (15 Aug), 2 (16 Aug), 6 revised to 9 (17 Aug), 6 (18 Aug), against a stated 10-day average of 11 and a pre-war ~130–140/day; Kpler’s preliminary dailies revise UP, so no day-on-day delta should be computed off a same-day print. Windward (broadest — adds satellite detection): 15 contacts on 18 Aug, 13 identified plus 2 imagery-only, 6 in / 9 out, and 6 of the 15 running dark; Windward publishes no denominator and warns its series is sensitive to collection effort. TankerMap (AIS tankers only): 3 on 18 Aug, 2 on 19 Aug, 7-day average 1.7 against its own ~21/day — and its own headline text contradicts its own chart, so it is carried at low confidence. IMF PortWatch: still 1 for 16 Aug against its own ~73/day. Lloyd’s List 78 for 3–9 Aug, no later brief; LSEG 11 for 11 Aug, nothing since. All AIS-derived figures above carry a hard caveat this edition: Windward recorded 615 GPS-jammed vessels in the Persian Gulf on 18 August, +261.2% against its own seven-day average, and 4,472 false ship-to-ship meetings in a single day.',
+    'UKMTO 086 annex (Tier 1) / Reuters citing Kpler, 19 Aug (Tier 1) / Windward, TankerMap, IMF PortWatch (Tier 2)'],
+   ['THE ROUTE STORY IS REFRAMED BY ITS OWN SOURCE — do not print “80% Omani”',
+    'CNN (18 Aug, updated 19 Aug) reported that more than 80% of liquids transits over the past fortnight took the Omani route “or have been dark transits that likely took the Omani route”, with Kpler’s Homayoun Falakshahi saying Iran “has at least partially lost control of the strait”. Kpler’s own publication of 19 August says the southern Omani corridor peaked at 48 crossings in Week 2 and was “effectively gone by Week 4 after attacks on vessels using it”, with the IMO route at zero from Week 5, leaving a Dark/Unknown share that never fell below 44% and closed the window above 80%. Kpler’s own weekly for the week to 16 August splits 95 crossings into 51 Iranian Unilateral Scheme, 44 Route Undetermined, ZERO confirmed Hormuz TSS and ZERO confirmed Omani. The correct statement is that the dark/unknown share is above 80%, not that 80% is Omani. gCaptain reported the opposite conclusion on 14 August from AIS heat maps — that attacks pushed traffic TOWARD the Iranian route — and is consistent with Kpler’s route-confirmed data.',
+    'CNN, 18 Aug (Tier 1) / Kpler blog, 19 Aug (Tier 1 provider) / gCaptain, 14 Aug (Tier 2)'],
+   ['Throughput — three irreconcilable claims, presented side by side and NOT reconciled',
+    'Axios (19 Aug, two unnamed US officials): the US military runs a scheduled nightly convoy corridor along the southern Omani channel, 15–20 tankers in and out each night for the past fortnight, moving ~10 mn b/d out of the strait, “roughly half the pre-war volume”; on the night of 18 August more than 20 ships were slated and 8 Iranian drones and 2 cruise missiles were shot down. Energy Secretary Wright (12 Aug): ~15 mn b/d of transits plus reroutes. Kpler (19 Aug): 2.3 mb/d of confirmed clearance in the final MoU week and 6.1 mb/d across the 60-day window, against ~15 mb/d in 2025 — a shortfall of about 550 mn bbl of crude over the window, bridged by inventory draws and truce-window buffers that thin from September. These are different measures on different bases. Report the spread.',
+    'Axios, 19 Aug (Tier 1, unnamed) / CNN citing DOE, 12 Aug (Tier 1) / Kpler, 19 Aug (Tier 1 provider)'],
+   ['THE UAE IMPOSED AN INDEFINITE TOTAL TRADE AND FINANCIAL EMBARGO ON IRAN — the broadest economic instrument the Gulf side has used, and the first to reach financial transactions',
+    'Announced early on 19 August. UAE MFA verbatim: “All trade, commercial exchanges and financial transactions with Iran have been halted until further notice,” taken “in light of escalations that undermine peace and security in the region.” The UAE Ministry of Defence says the two ballistic missiles fired at its territory on 18 August were “targeting maritime navigation” and that it will “resolutely confront any attempt to undermine the security of the nation or maritime navigation in the region”. Dubai had quietly become Iran’s largest trading partner, supplying roughly one third of everything Iran imports annually, ahead of China and Türkiye, and providing Iran’s principal discreet channel for moving money. Sequencing note: the UAE suspended direct cargo shipping in early March and resumed only in late June via Jebel Ali — this is a re-imposition and a widening, NOT a first. A named regional analyst told Al Jazeera it may matter more than the US embargo and that Tehran could read it as bordering on an act of war, and expects other Gulf states to wait rather than follow — commentary, not an Iranian statement. NOT FOUND: any GCC, Arab League or UNSC action dated 19–20 August; any new ADNOC statement; any further attack on UAE-linked shipping.',
+    'Al Jazeera / Washington Post / Bloomberg / Reuters / Euronews, all 19 Aug (Tier 1)'],
+   ['US naval blockade — 64 redirected, re-verified and unchanged',
+    '64 commercial vessels redirected, three disabled, two boarded, as of 17 August. The figure is CENTCOM’s, reproduced verbatim in UKMTO Update 086. No figure above 64 exists for 19 or 20 August, and the “91 redirected” caption on CENTCOM’s own media page still conflicts with its own statement and is still NOT used. Trump on 18 August said the blockade remains in “full force and effect”. Against it: the Washington Post reported on 18 August that DoD is assessing whether to pull troops back from the Persian Gulf, while a senior Pentagon official said Hegseth has NOT ordered a formal posture review and called it prudent planning — two unnamed sources, carried as reporting, not as policy. No Hegseth or SecDef statement 19–20 August could be sourced.',
+    'CENTCOM via UKMTO 086 (Tier 1) / WaPo via Just Security, 19 Aug (Tier 1 outlet, Tier 2 sourcing)'],
+   ['CENTCOM combat activity — 22 days of silence inside Iran, verified against the right index',
+    'The public-releases index was read directly on 20 August. The most recent release describing a strike inside Iran is still 29 July — a 22-day gap. The most recent release of any kind is 15 August, on the CENTCOM commander’s regional trip; there is no release dated 19 or 20 August. Note that the NEWS-ARTICLES index is stale to February 2026 and is not a usable channel — the PUBLIC-RELEASES index is the primary source and must be the one queried. Carriers: USS George Washington is en route to relieve USS Abraham Lincoln, which has been deployed 250-plus days; no confirmation of GW’s arrival in the AOR, and nothing at all on USS George H.W. Bush, could be sourced for this window.',
+    'centcom.mil public releases, read 20 Aug (Tier 1 primary)'],
+   ['Diplomacy — the MoU lapse holds, no talks, and Iran’s response to the embargo was rhetorical',
+    'The MoU lapse was re-verified and holds: the 60-day window expired 17/18 August, the White House declined an extension, and Trump said on 18 August that “there are no talks or conversations going on, or scheduled”. No US–Iran contact, talks or back-channel is dated 19 or 20 August. Baghaei (19 Aug) rejected the UAE missile accusation as “baseless” and suggested a false-flag operation. Ghalibaf arrived in Baghdad on 19 August for a three-day visit and described Iraq’s Iran-backed militias as “a key component of the country’s national power” whose influence “has gone beyond the borders of the two countries”. A standing note of this monitor is contradicted here and the dispute is recorded rather than resolved: AP and Al Jazeera both describe Ghalibaf as chief negotiator, not only as Speaker of the Majlis. No statement from Araghchi, Pezeshkian or Gharibabadi, and no movement on the “few weeks” ultimatum. France announced on 19 August that it will expel two Iranian embassy staff after Iran expelled two French diplomats on 17 August. A line attributing to Trump a willingness to reopen talks “at some point” could not be retrieved from the source page and is NOT used.',
+    'AP, Al Jazeera, Reuters, 19 Aug (Tier 1)'],
+   ['Iran–Oman joint declaration — the gate on all mediation, and it has not opened',
+    'NOT ISSUED. Both fm.gov.om indexes were read directly on 20 August and the exact queries are recorded here. Most recent item of ANY kind: 19 August — two homepage items, on Türkiye ties and on humanitarian efforts, neither Iran- nor Hormuz-related; the site footer confirms a 19 August update, while the dedicated news index had not propagated past 17 August at fetch time. Most recent Iran/Hormuz news item: 8 August (twelve days). Most recent Hormuz statement: 14 July (thirty-seven days). Most recent Oman–Iran joint statement: 23 June. Oman has still published nothing on the 14 August tanker attacks in its own territorial waters, nothing on the death aboard MINOAN DIGNITY 0.5nm off its coast with its own Coast Guard responding, and nothing on being threatened with US bombardment — a threat Trump made on Fox News on 17 August, corroborated by CNN, CBS, the Washington Post and Al Jazeera. Qatar’s 18 August condition — that mediators return to push for US–Iran talks only after the Hormuz deal is announced — therefore remains a gate that has not opened.',
+    'fm.gov.om, both indexes read 20 Aug (Tier 1 primary)'],
+   ['The covert relay deepened — Aramco is now offering STS cargoes from inside the Gulf of Oman',
+    'Bloomberg (18 Aug): Aramco is offering Arab Medium and Arab Heavy on a ship-to-ship basis from locations including Sohar in the Gulf of Oman, currently only to some Chinese refiners, with satellite imagery showing at least 9 mn bbl of capacity loaded at or near Ras Tanura in a week. Bloomberg (19 Aug): three China-linked VLCCs made U-turns near the strait while two others crossed transponders-off. Kpler puts total crude on water in the Mideast Gulf and Gulf of Oman at 110 mn bbl on 18 August, down from ~130 mn on 16 August and 165 mn at MoU signing, with Iranian crude loadings collapsing from 893 kb/d in July to 156 kb/d through 17 August. Vortexa told Reuters that two Chinese shipping groups that carried half of China’s Middle East oil imports pre-war have kept their tankers out of both Hormuz and Bab el-Mandeb since late July. Windward’s 88-vessel blockade-breaker screen found zero vessels inside the ~65nm interdiction ring for a second consecutive day. The ~150 ships off Oman awaiting STS and the 16 August Kharg readings got no refresh and were neither confirmed nor contradicted.',
+    'Bloomberg via gCaptain, 18–19 Aug (Tier 1) / Kpler and Vortexa via Reuters, 19 Aug (Tier 1 provider) / Windward, UANI (Tier 2)'],
+   ['Red Sea and the wider periphery — unchanged, and quiet',
+    'Al-Mokha remains completely closed to commercial traffic after more than 25 cumulative missile impacts and berth fires, with seven dead and about $16m of losses. Bab el-Mandeb ran 59 transits over the 16–17 August 48 hours — about 30/day — against a ~61/day 2023 baseline, a shortfall of roughly half; Kpler counted 30 weekend commodity-vessel transits against 19 the prior week, with no tracked Saudi oil. The Houthi claim to have struck Aramco’s Jazan refinery on 18 August is now in its third day without Saudi or Aramco comment and without any Tier 1 corroboration — it is carried as a CLAIM only, unlike the confirmed 9 and 13 August strikes. The 400,000 b/d Jizan restart is still scheduled for 30 August with no revision found. Five vessels remain under pirate or unauthorised control (HONOUR 25, SWARD, EUREKA, ASANA, LUTUF) with 44 seafarers held and ransom demands escalated to $10m; a 21-state combined task force was announced on 17 August. This is Somali-basin piracy and is kept segregated from the Hormuz count. NO kinetic event anywhere in the theatre is dated 19 or 20 August.',
+    'UKMTO 086 (Tier 1) / Reuters citing Kpler, 19 Aug (Tier 1) / SABA (Tier 3), uncorroborated'],
+  ],
+ },
+ 'analysis': {
+  'intro': 'The score holds at 27/30 for a tenth consecutive edition and no channel moved, but the reason nothing moved is different from the last nine times. This window contained no kinetic event at all — no UKMTO Update 087, no new numbered incident, no CENTCOM release, nothing dated 19 or 20 August anywhere in the theatre — and it still contained two developments of first-order importance. A Gulf state severed Iran’s largest trading relationship, and the United States Treasury intervened in the price of its own long-dated debt. Neither could register: one channel is capped and the other did not travel far enough to trip a documented rule. Read the composition, not the total.',
+  'bondYieldNote': 'All tests run on the 19 August close, the last confirmed one. Wednesday is the analytically important session and it needs to be read in the right order. The Treasury buyback announcement landed before the New York open; the 20-year auction cleared at 1pm; the FOMC minutes were released at 2pm. The long end had already done most of its work by 09:00 ET, down 7.8 bp on a Tier 2 intraday reading, and neither the auction nor the minutes reversed it.',
+  'bondYield': [
+   {'title': '(i) Treasury stress — held at 5 (max); both legs converged for the first time since 13 August, and the cause is the issuer',
+    'text': 'The 30-year closed 5.1911%, down 9.15 bp — the second-largest one-day fall of the war and the first close below 5.20% since 5 August — and 11.49 bp below Monday’s war high of 5.3060%, which is the largest two-session fall the war has produced. MOVE fell 3.72 to 71.26, back below both the 75 threshold and the 73.38 pre-war anchor. The downgrade needs the 30-year below 5.00% with MOVE below 75, sustained. The volatility leg is satisfied, as it also was on Tuesday at 74.98 — but by a 3.74-point margin rather than by two hundredths of a point. The 30-year leg fails by 19.11 bp, narrowed from 28.26 and the narrowest since 5 August. The standing observation has been that these two legs rotate rather than converge, and the last edition recorded the first session in which both moved AWAY at once. This is the reverse: both moved toward the downgrade in the same session. It is still not close, and the governing precedent argues for caution — a satisfied leg has lapsed after exactly one session twice in this war, on 5 and 7 August. The reason not to read this as de-risking is the cause. The 30-year did not fall on demand for duration; it fell because the Treasury announced it would buy at least twice as much of it. A sustained 30-year below 5.00% with MOVE below 75 takes the channel to 4 and the score to 26. On these levels that requires another 19 bp.'},
+   {'title': '(ii) US inflation impulse — held at 5 (max); the downgrade gap narrowed for the first time in three editions',
+    'text': '5Y5Y closed 2.3106%, down 1.01 bp, a fourth consecutive close above the 2.30% level whose sustained break fired this channel 4→5 on 31 July. BE10 closed 2.3078%, essentially unchanged, and 5.09 bp above the 2.2569% pre-war anchor; the restated 18 August close of 2.3097%, 5.28 bp above the anchor, remains the highest since 15 June. The documented downgrade is a sustained close at or below the 2.142% anchor, 16.86 bp lower — narrowed from 17.87 on the restated 18 August close, its first narrowing in three editions. The firing trigger and the downgrade are 16.86 bp apart by design, the gap is reported rather than closed, and the rule is not moved to match the tape. The tell in Wednesday’s session is that inflation compensation did NOT fall with nominal yields. The 30-year fell 9.15 bp and BE10 fell 0.19; almost the entire move was real yield and term premium. A buyback changes who holds the duration. It does not change what the strait is doing to the price of diesel. Sustained closes at or below 2.142% take the channel to 4 and the score to 26. Nothing else moves it.'},
+   {'title': '(iii) Oil price shock — held at 2, and closer to an upgrade than at any point since the July contract roll',
+    'text': 'Brent closed $89.79, up 34 cents and the fourth consecutive up-close, the highest since 31 July; the active October contract closed $91.62, the highest since 24 July. WTI closed $84.39. The upgrade trigger is a sustained Brent close above $95 and it is $5.21 away on the scored series, $3.38 on the active close and $3.03 on Thursday’s intraday active print. That gap has narrowed in four consecutive editions. The only named attribution is to risk perception rather than to any event this document can date: Sparta Commodities’ June Goh told Reuters that “the shipping risks are increasing again as attacks from Iran and Houthis remain prevalent in both key chokepoints”, and that OPEC production can only rise once flows normalise in both directions. Note the tension: this window’s own physical record shows no kinetic event and no new incident, so the quoted increase in risk is an assessment, not a count. The unattributed drivers in Wednesday’s wraps were the UAE embargo, an SPR at a 44-year low that Washington must eventually refill, Trump’s confirmation that no negotiations are under way, single-digit transit counts, and US refinery utilisation at 97.2%, the highest since September 2019. Sustained closes above $95 take the channel to 3 and the score to 28. The trigger requires sustained closes, not a touch, and a single print through $95 will not move it. ROLL DISCLOSURE — a superlative check on the full series turned up something this document has to state plainly. The scored CO2 continuation shows closes of $100.69 on 23 July and $96.78 on 24 July — two consecutive closes above the $95 upgrade trigger. No upgrade was fired on those sessions, and none is fired retrospectively. The reason is a contract-roll artifact rather than a scoring failure: on the same two days the ACTIVE contract closed $94.26 and $91.68, both below $95, and the CO2/COA basis has since inverted — the continuation printed $6.43 ABOVE the active on 23 July and prints $1.92 BELOW it today. Vendor restatements already make absolute levels non-comparable across editions; a roll discontinuity does the same thing to a continuation series. The correct statement is therefore not that Brent has never closed above $95 since the channel was cut to 2 on 3 July. It is that the last two closes above $95 sit on the far side of a July roll on which the active contract never cleared the trigger, and that every distance quoted in this edition is measured on the current, post-roll basis. The $3.38 and $3.03 active-contract gaps are the tighter and more conservative measure; the $5.21 scored gap is the one the rule is actually written against. This is recorded as an open methodological item rather than resolved in a single edition.'},
+   {'title': '(iv) Political stress — held at 5 (max); the scored series backfilled UP to its highest since 8 June',
+    'text': 'AUTMUSAG backfilled to $4.79 for 18 August — a print the last edition did not have, the highest since 8 June ($4.80), and four cents above the $4.75 trigger that fired this channel to 5 on 4 August. No print for 19 or 20 August. AAA’s own national averages, a different and unscored construction, put regular at $4.0860 and diesel at $5.5042 on 19 August, the latter a new war high and 31.17 cents below the all-time record of $5.8159. The named downgrade condition — three consecutive closes at or below $4.60 with no intervening print above $4.70 — is 19 cents away and has WIDENED from 17. The rule written a fortnight ago after two dark sessions backfilled upward and reversed an apparent downgrade candidate has now been vindicated again, in the same direction. The transmission is intact and running through the distillate barrel: diesel is up 14.7 cents on the week against gasoline’s 5.0, and US distillate stocks fell to 105.6 mn bbl, 13% below the five-year average, despite refinery utilisation at a post-2019 high. The named condition, met three times running, takes the channel to 4 and the score to 26.'},
+   {'title': '(v) Maritime denial — held at 5 (max), on an empty physical record that is itself the finding',
+    'text': 'Day 174. There is no UKMTO Update 087, no new numbered incident, no CENTCOM release and no kinetic event anywhere in the theatre dated 19 or 20 August — the quietest physical window since 12–13 August. The cumulative count stays at 91 and the transit annex still ends at 17 August, with zero cargo AND zero tanker transits recorded on both 15 and 16 August against a ~138/day 2025 baseline. Incident 115-26 is identified as the MINOAN DIGNITY and the fatality is confirmed by INTERCARGO; the vessel type is disputed between UKMTO and the trade press and is reported rather than smoothed. Nothing at all exists for 19 or 20 August from any of the seven transit providers, and every AIS-derived figure in this edition carries a hard caveat: Windward recorded 615 GPS-jammed vessels in the Persian Gulf on 18 August, +261.2% against its own seven-day average, and 4,472 false ship-to-ship meetings in a single day. The channel is at its cap and cannot rise; a quiet window cannot lower it either, because the strait remains closed and the blockade tally of 64 is unrevised.'},
+   {'title': '(vi) Escalation risk — held at 5 (max), against a window in which the escalation was economic rather than kinetic',
+    'text': 'The UAE halted all trade, commercial exchanges and financial transactions with Iran until further notice, removing what Bloomberg describes as a key economic lifeline and what had quietly become Iran’s largest trading relationship. An embargo is not a kinetic event and is not scored as one; it is scored as what it removes from the negotiating space. Iran’s response was rhetorical — Baghaei called the missile accusation “baseless” and floated a false-flag — and its most forward-leaning act in the window was Ghalibaf’s three-day Baghdad visit, in which he described Iraq’s Iran-backed militias as “a key component of the country’s national power” whose influence “has gone beyond the borders of the two countries”. Against all of it, CENTCOM’s public-release index still shows nothing on combat inside Iran since 29 July — a 22-day gap, verified this edition against the public-releases index rather than the news-articles index, which is stale to February 2026. That silence is the single reason full war sits at 24% and not higher. The channel is capped: further deterioration in the physical or political situation cannot raise this score, so a flat number is an artifact of the scale rather than a statement about stability.'},
+  ],
+  'stage4Note': 'Stage 4 is a credit and auction event, tested on confirmed closes and on primary auction results only. Two of the three tests moved this edition, and the first of them turned on sourcing rather than on judgement.',
+  'stage4': [
+   {'title': 'Threshold A · a failed-auction test — DOES NOT ARM, and the reason is sourcing rather than judgement',
+    'text': 'A is a failed-auction test: an auction clearing with a tail above its when-issued level. The tail is not established. Treasury’s own results page could not be retrieved, the bid composition and the tail are single-sourced to one Tier 2 outlet, and this document does not arm a threshold on a figure it will not assert. The $16bn 20-year auction on 19 August cleared 5.204%, the second-highest 20-year auction yield since the tenor was reintroduced in 2020 (the record is 5.245%, October 2023), and is reported to have tailed 0.5 bp — the same tail as the 22 July 20-year, which did not arm A either. If the 0.5 bp figure is confirmed by a primary source, A’s written test is met on its face and the threshold must be revisited — that is stated here rather than disposed of by calling the tail immaterial. Read the bid composition, and the composition is where the deterioration is: bid-to-cover 2.53 and indirects 62.9%, both reported as the lowest since February against a recent indirect average of 66.7%, with directs at 24.6% taking up the slack and dealers at 12.5%. Provenance: the $16bn size is Bloomberg and the 5.204% clearing yield is Reuters; the bid composition and the tail are neither. Reuters independently describes “mediocre demand, with a softening bid-to-cover ratio and elevated yields”, which corroborates the direction but not the numbers. Context: the 30-year closed 2.49 bp BELOW the 13 August stop and 14.11 bp above the 13 May stop. The 30-year TIPS reopening, $8bn, auctions on 20 August, after this snapshot.'},
+   {'title': 'Threshold B · 30Y above 5.20% with 10Y above 4.65% — LAPSED, by the narrowest margins of the war on both legs at once',
+    'text': 'B lapsed on the 19 August close: the 30-year fails by 0.89 bp and the 10-year by 0.34 bp. This is the FOURTH lapse and the eighth state since 29 July — in 29 Jul–3 Aug, out 4–5 Aug, in 6 Aug, out 7 Aug, in 10–12 Aug, out 13 Aug, in 14–18 Aug, out 19 Aug. Four armings, four lapses. Count armings, not cycles. The arming that just ended ran three closes and was the longest since 10–12 August. The governing precedent cuts against reading anything structural into this: B has re-armed within one session before. The inference that has held since 13 August still holds — 4.65% and 5.20% are the middle of the distribution, not its edge — and every one of the eight state changes has been decided by under 6 bp on one leg.'},
+   {'title': 'Threshold C · MOVE above 130 — not armed, and the bounded framing stands',
+    'text': '71.26 on the 19 August close, 58.74 points below. The war high is 115.02 (26 March) and the series low is 65.39 (18 June), so this is NOT the furthest from C the war has been — the framing withdrawn on 17 August stays withdrawn. The pairing is the point: rate volatility is 2.12 points below its pre-war anchor while the 30-year sits 58.05 bp above its own, and on Wednesday the volatility fell because the issuer promised to absorb the supply.'},
+  ],
+  'crossAsset': 'The FOMC minutes of the 28–29 July meeting were released at 2pm on 19 August and were hawkish. The meeting was a 9–3 hold at 3.50–3.75% in which all three dissents — Hammack, Kashkari and Logan — were for a quarter-point HIKE, the first three-way dissent since 2016; Bloomberg reports that Schmid and Musalem, non-voters in July, have since said they would have backed a hike had they been voting. “Many” participants said tightening would likely be necessary if inflation did not decline, and some judged that financial conditions might not be tight enough. The minutes address this document’s subject directly. Participants attributed the rise in core and total inflation to “the lingering effects of tariffs, supply chain disruptions related to the closure of the Strait of Hormuz, and strength in demand for some goods and services stemming from robust AI-related investment”, and expected inflation to decline only as those disruptions diminish. On expectations the record is more comfortable than this document’s own series: longer-term measures “remained well anchored”, and near-term inflation compensation moved up only marginally despite the sharp increase in oil prices. The market treated the whole document as stale — Jefferies’ Simons said it “now gives an outdated economic picture” given the July payrolls miss and an on-consensus July CPI. September pricing has moved toward a hold: roughly 65% hold on a 19 August reading, from something close to an even split a fortnight ago, which implies about 35% for a hike. That figure is from a secondary aggregator, not from CME directly, and no clean datestamped CME hike probability for 19 or 20 August could be sourced; the ~31% of 14 August is not carried forward. Nobody is pricing a cut. No Fed speaker appeared on 19 August; Musalem was scheduled for 20 August, after this snapshot. Jackson Hole runs 27–29 August on “Financial Innovation: Implications for Payments and Policy”, with Chair Warsh delivering his first keynote as chair on Friday 28 August; he told reporters on 29 July that his remarks would address long-term structural questions rather than near-term guidance. The Thursday 20 August releases — jobless claims, Philly Fed, existing home sales and leading indicators — all fall after this snapshot and none has an actual. Atlanta Fed GDPNow was cut to 4.0% for Q3 on 18 August, from 4.3% on 14 August and 6.2% on 3 August. On the energy side there was no new EIA, IEA, OPEC or OPEC+ release, statement or revision in the window; the next OPEC+ meeting is 6 September, and the three figures this document carries survive unrevised — effective OPEC spare capacity 0.07 mb/d, a 3Q26 deficit of 1.8 mb/d, and 8.3 mb/d of Gulf output shut in. Freight: the Baltic week-34 averages are not yet published; week 33 was VLCC $234,821/day, Suezmax $269,824/day and Aframax $77,182/day. The TD3C MEG–China single-route index was assessed at about $510,000/day for 17 August, its highest since late June, and is NOT comparable with the global VLCC average; no print for 18–20 August. War-risk cover still has nothing newer than Marsh’s 7.5–10% of hull of 22 July, and the $1.5–2bn claims estimate from about 70 casualties is unchanged. No Iran-related OFAC action was taken on 19 or 20 August — the only entry is an 18 August ICC and Venezuela package — and Bessent’s trailed sanctions, promised for this week, have not issued. Separately, DOJ unsealed charges against 17 individuals tied to Iran’s Mabna Institute over a cyber-theft campaign.',
+ },
+
+ 'channels': [
+  {'name': 'Maritime denial', 'score': '5', 'state': 'max',
+   'rationale': 'Day 174. No Update 087, no new numbered incident and no kinetic event dated 19 or 20 August — the quietest physical window since 12–13 August. Cumulative count stays 91. Hormuz SEVERE, all threat levels held. The UKMTO annex still ends at 17 August with zero transits of any kind on both 15 and 16 August. 115-26 is identified as MINOAN DIGNITY and the fatality is confirmed by INTERCARGO; the vessel TYPE is disputed between UKMTO and the trade press. Kpler 6 on 18 Aug against a 10-day average of 11; nothing at all for 19–20 Aug from any provider.',
+   'move': 'held (at max)'},
+  {'name': 'Oil price shock', 'score': '2', 'state': 'headroom',
+   'rationale': 'Brent closed $89.79 on 19 Aug, a fourth consecutive up-close and the highest since 31 July; the active contract closed $91.62, the highest since 24 July. $5.21 below the $95 upgrade and $17.31 above the $72.48 downgrade; $3.38 on the active close and $3.03 on the 20 Aug intraday active. The upgrade gap has narrowed in four consecutive editions. Read the roll disclosure before treating that as a record proximity.',
+   'move': 'held — and still closing'},
+  {'name': 'US inflation impulse', 'score': '5', 'state': 'max',
+   'rationale': 'A FOURTH consecutive 5Y5Y close above 2.30%, at 2.3106%, 1.06 bp clear. BE10 at 2.3078% is 5.09 bp above its pre-war anchor and did not fall with nominal yields. The 2.142% downgrade is 16.86 bp away, narrowed from 17.87 — its first narrowing in three editions. The July minutes name Hormuz twice as a cause of the inflation the Committee is fighting.',
+   'move': 'held (at max)'},
+  {'name': 'Treasury stress', 'score': '5', 'state': 'max',
+   'rationale': 'The 30-year fell 9.15 bp to 5.1911% — the second-largest one-day fall of the war, the largest two-session fall of the war, and the first close below 5.20% since 5 August — on a Treasury announcement that it will at least double long-end buybacks. MOVE 71.26 satisfies the volatility leg; the 30-year leg fails by 19.11 bp, narrowed from 28.26. Both legs converged for the first time since 13 August. Threshold B lapsed.',
+   'move': 'held (at max)'},
+  {'name': 'Political stress', 'score': '5', 'state': 'max',
+   'rationale': 'AUTMUSAG backfilled to $4.79 for 18 Aug — the highest since 8 June — and 4 cents above the $4.75 trigger; no 19 or 20 Aug print. The $4.60 condition is 19 cents away, WIDENED from 17. AAA diesel made a new war high of $5.5042 on 19 Aug, 31.17 cents below its all-time record; distillate stocks fell to 105.6 mn bbl, 13% below the five-year average.',
+   'move': 'held (at max)'},
+  {'name': 'Escalation risk', 'score': '5', 'state': 'max',
+   'rationale': 'The UAE halted ALL trade, commercial exchanges and financial transactions with Iran until further notice — the broadest economic instrument the Gulf side has used and the first to reach financial transactions, aimed at what had become Iran’s largest trading relationship. Iran called the missile accusation “baseless” and alleged a false flag; Ghalibaf spent three days in Baghdad praising Iraq’s militias. Against it: a 22-day gap in CENTCOM combat releases and no kinetic event in the window.',
+   'move': 'held (at max)'},
+ ],
+
+ 'scoreTotal': 'CRISIS band — HELD, tenth consecutive edition. Five of six channels are pinned at the top of the scale and the sixth, oil, is three points below it. The composite cannot register either of this window’s two large developments — a Gulf state severing Iran’s principal economic lifeline, and the US Treasury intervening in the price of its own long-dated debt — because one channel is capped and the other did not travel far enough to trip a rule. Read the composition, not the total.',
+ 'whatsChanged': {
+  'title': '4 · What has changed since the 19 August edition',
+  'items': [
+   'The US Treasury announced, outside the refunding cycle, that it will at least double long-end buybacks. The 19 August release raises the maximum size of liquidity-support buyback operations in the 10-to-20 year and 20-to-30 year sectors from $2bn to at least $4bn per operation, effective 9 September through 4 November, with an updated tentative schedule to follow. The stated rationale is to provide greater liquidity support in longer-dated sectors “where there is consistent strong sponsorship from market participants”. The 30-year had fallen 7.8 bp by 09:00 ET — before the auction and before the minutes — and closed down 9.15; the 2-year fell only 0.86 bp. The intraday level is Tier 2, and it is the sequencing, not the causation, that carries the argument. That divergence is the whole story: this was a pure duration and term-premium event, not a Fed repricing. Jefferies’ Thomas Simons made the point that matters for the forward path — because it did not come as part of the quarterly refunding, “at any time in the future they could make more changes”, and it raises expectations that long-end auction sizes could be cut.',
+   'The 20-year auction was reported soft, its internals are unverified, and it moved the long end neither way. $16bn cleared at 5.204%, the second-highest 20-year auction yield since the tenor was reintroduced in 2020, with a reported 0.5 bp tail, bid-to-cover of 2.53 and indirects of 62.9%, both said to be the lowest since February. Treasury’s own results page could not be retrieved and the internals are single-sourced to one Tier 2 outlet; no tail is asserted as fact. Reuters’ independent characterisation — “mediocre demand, with a softening bid-to-cover ratio and elevated yields” — corroborates direction, not numbers.',
+   'The FOMC minutes were hawkish and were treated as stale. A 9–3 hold with three dissents for a hike, “many” participants seeing tightening as likely necessary if inflation does not decline, and two explicit attributions of current inflation to the closure of the Strait of Hormuz. The market read them against a July payrolls miss and an on-consensus CPI and ignored them.',
+   'The UAE imposed an indefinite total trade and financial embargo on Iran. Announced early on 19 August: “All trade, commercial exchanges and financial transactions with Iran have been halted until further notice”, in response to the two ballistic missiles fired at UAE territory on 18 August, which the UAE Ministry of Defence says were “targeting maritime navigation”. Dubai had become Iran’s largest trading partner, supplying roughly a third of Iranian imports and providing its principal discreet financial channel. The UAE suspended direct cargo shipping in March and resumed via Jebel Ali in late June, so this is a re-imposition and a widening, not a first. A named regional analyst told Al Jazeera it may matter more than the US embargo and that Tehran could read it as bordering on an act of war — commentary, not an Iranian statement; he also expects other Gulf states to wait rather than follow.',
+   'Kpler reframed its own headline figure. The “more than 80% Omani” number that circulated from CNN on 18 August is, in Kpler’s own 19 August publication, a Dark/Unknown share; the Omani corridor was “effectively gone by Week 4” and its own weekly records zero route-confirmed Omani crossings in the week to 16 August.',
+   'The crude-imports test resolves to reversion. EIA put imports at 6.6 mb/d for the week to 14 August against a four-week average of 6.5; the 7.3 mb/d of the prior week was a one-week outlier. Commercial crude built 4.4 mn bbl to 428.8 mn, a third consecutive build, on refinery utilisation of 97.2%, the highest since September 2019.',
+   'The SPR is confirmed by EIA at 293.4 mn bbl, down 5.3 mn, the lowest since December 1982, and the sub-300mn readings are no longer secondary-sourced. Distillate stocks fell 1.5 mn to 105.6 mn bbl, 13% below the five-year average — a fresh weekly print superseding the 107.1 and 12% carried since 7 August, not a restatement.',
+   'The physical record is empty and that is itself the finding. No Update 087, no incident 116-26, no CENTCOM release, no kinetic event, no blockade-tally revision past 64, no Iran-related OFAC action, no Bessent sanctions, no Iran–Oman joint declaration, no Omani statement on anything material, and no Hegseth statement.',
+   'Two data-integrity results. The row-level stale check clears decisively — every populated field of the 19 August row differs from the published snapshot. And the corrected field-level rule passed its first live test: the 5- and 10-year, flagged UNRESOLVED last edition because they printed identical to four decimals in a live row, were both carries, and settled 2.30 and 5.75 bp lower. That result in turn produced a new rule — a reconciliation gap may never be computed against a field the previous edition published as unresolved, because it would measure staleness rather than the timing of the Singapore cut. The 5- and 10-year were therefore excluded from this edition’s reconciliation by name.',
+   'A superlative sweep uncovered a contract-roll artifact and it is disclosed rather than buried. The scored CO2 continuation closed $100.69 on 23 July and $96.78 on 24 July, two consecutive closes above the $95 oil-upgrade trigger, and no upgrade was fired. On the same two days the active contract closed $94.26 and $91.68, both below $95, and the CO2/COA basis has since inverted. Every distance quoted in this edition is measured on the current, post-roll basis, and the question of which basis the channel should be scored on is recorded as open.',
+   'Corrections and retractions carried into this edition. The 18 August row was restated on five fields. The “80% Omani” framing is not used. A widely indexed GCC statement on the missile launch is dated 1 March 2026, not August, and is rejected. A line attributing to Trump on 19 August a willingness to reopen talks “at some point” could not be retrieved from the source page and is NOT used. The standing note that Ghalibaf is Speaker of the Majlis and not lead negotiator is now contradicted by AP and Al Jazeera, both of which call him chief negotiator in this window; the dispute is recorded rather than resolved. The Houthi Jazan claim of 18 August is in its third day uncorroborated and is still a claim. The MoU lapse and the 64-vessel blockade tally were both re-verified at primary source and both hold.',
+  ],
+ },
+
+ 'scenarios': [
+  {'name': 'Deal collapse — talks stall on terms', 'p': '43',
+   'desc': 'Modal for a seventh consecutive edition. The strait stays shut not because talks failed to start but because the terms are irreconcilable: Iran demands sanctions relief, released assets, an end to the blockade and a halt to operations on all fronts; the US demands restored free passage, no nuclear weapons and no proxy funding, and is running a blockade to compel it.',
+   'shift': '+1 (42 → 43). The UAE has removed Iran’s largest trading relationship and its principal discreet financial channel, which narrows the space in which any deal could be paid for. Trump reaffirmed on 18 August that no talks are under way or scheduled and that the blockade is in full force. Held to +1 because nothing in the window changed the terms themselves — the condition sets were already non-intersecting.'},
+  {'name': 'Return to full war', 'p': '24',
+   'desc': 'Sustained US or Israeli strikes inside Iran resume, or Iran strikes US regional bases or Gulf states directly.',
+   'shift': '+1 (23 → 24). A total embargo by a Gulf neighbour removes an economic lifeline rather than a military one; a named regional analyst told Al Jazeera Tehran could read it as bordering on an act of war, and that is commentary, not an Iranian statement, and is weighted as commentary. More concretely, Ghalibaf spent three days in Baghdad describing Iraq’s Iran-backed militias as a key component of national power whose reach “has gone beyond the borders of the two countries”. Watched but NOT scored, and carrying no part of this shift: the FT reports, on two unnamed Iranian sources, that Iran has assessed striking US assets in Bulgaria and Cyprus and cutting subsea cables in the strait. Capped again by the strongest countervailing fact in the document: CENTCOM shows nothing on combat inside Iran since 29 July, now 22 days, and no kinetic event anywhere is dated 19 or 20 August.'},
+  {'name': 'Contained but violent', 'p': '20',
+   'desc': 'Attacks continue on shipping and on Gulf energy infrastructure; the blockade persists; neither side crosses into sustained state-on-state strikes.',
+   'shift': '–1 (21 → 20). The window contained no kinetic event at all, which on its face argues for this cell. It is marked down anyway, because containment is now being maintained by economic instruments rather than by restraint — an embargo, a blockade, and a nightly escorted convoy corridor reported by Axios on two unnamed US officials and not independently corroborated — and every one of those is a mechanism whose failure mode is escalation rather than a return to normal.'},
+  {'name': 'Regional relapse', 'p': '10',
+   'desc': 'The conflict widens through the Red Sea, Lebanon, Iraq or the Saudi energy complex rather than through the strait itself.',
+   'shift': 'unchanged (10). Two offsetting groups. Arguing for a higher reading: Ghalibaf’s Baghdad visit puts the Iraqi militia axis back in play, and France’s expulsion of two Iranian diplomats widens the dispute into Europe. Arguing for a lower reading: no confirmed attack in the southern Red Sea in the period, nothing at all in Iraq or Lebanon, and the Jazan claim still uncorroborated on day three. Al-Mokha remains closed, which is a standing condition rather than a new one.'},
+  {'name': 'Mediated pause', 'p': '3',
+   'desc': 'A negotiated de-escalation restores partial transit under a supervised regime.',
+   'shift': '–1 (4 → 3), a new low for this map. The Iran–Oman joint declaration has still not been issued and Qatar has made it the gate on everything else. Oman’s foreign ministry published two items on 19 August and neither touched Iran; it has now been twelve days since any Iran or Hormuz item and thirty-seven since any Hormuz statement, through a fatality half a mile off its coast and the 17 August US threat to bomb it. The mediator is the actor with the least to say.'},
+ ],
+ 'scenarioShift': 'Probabilities sum to 100. Shifts from the 19 Aug edition: deal collapse +1 (42 → 43) on the UAE removing the financial space in which a deal could be paid for; full war +1 (23 → 24) on the embargo and the Baghdad visit, capped by 22 days of CENTCOM silence and no kinetic event; contained-but-violent −1 (21 → 20) because containment is now maintained by economic instruments whose failure mode is escalation; regional relapse unchanged at 10 on two offsetting groups; mediated pause −1 (4 → 3), a new low, on a joint declaration that has still not been issued and a mediator that has said nothing. The two paths in which the strait stays shut carry 67% between them, UP from 65% — a second consecutive rise and the highest this map has recorded. The composition of the rise is the point: it came entirely from economic coercion, not from violence. The window produced no attack, no strike and no new incident, and the two paths that keep the waterway closed still gained two points, because a Gulf state cut Iran’s largest trading relationship and Washington restated that nothing is scheduled.',
+
+ 'watchlist': [
+  'Whether the buyback rally holds, and the 30-year TIPS reopening that tests it. The $8bn 30-year TIPS reopening auctions on 20 August, after this snapshot, and is the first supply into a market that has just been told the issuer will buy at least twice as much long duration from 9 September. The governing precedent argues for caution in both directions: a satisfied downgrade leg has lapsed after exactly one session twice in this war, and Threshold B has re-armed within one session. B lapsed on 19 August by 0.89 bp and 0.34 bp — the narrowest margins of the war on both legs at once. A single close does not make a regime.',
+  'Whether Brent takes out $95 — still the only live scoring question in this document. $5.21 on the scored series, $3.38 on the active close and $3.03 on the 20 August intraday active, after four consecutive editions of narrowing. The trigger requires sustained closes, not a touch — and the roll disclosure should be read before any “closest of the war” framing is used.',
+  'Whether any other Gulf state follows the UAE. The embargo is the broadest economic instrument the war has produced from the Gulf side; the named expectation is that others wait rather than follow. Watch Saudi Arabia, Qatar and Bahrain, and watch for any Iranian retaliation beyond the “baseless” denial and the false-flag allegation. Also watch whether the UAE’s own hydrocarbon and re-export channels are carved out in practice, which would tell you how binding it is.',
+  'Whether Iran acts on the “few weeks” ultimatum for full US implementation of the lapsed MoU — reported by Reuters on 17 August from a senior Iranian official, alongside a declared “fully offensive” posture and an explicit threat to break the blockade — and whether CENTCOM’s combat silence breaks at 22 days. Re-verify against the public-releases index every edition, not the news-articles index, which is stale to February. It is the single reason full war sits at 24% and not higher.',
+  'UKMTO Update 087 and VRA Overview No.3. Neither exists; the cumulative count has been frozen at 91 and the transit annex at 17 August for two editions. Whether the two zero-transit days of 15–16 August were an anomaly or the run rate cannot be answered until the annex extends. Update 081 is unretrievable for a sixth edition.',
+  'Whether the Iran–Oman joint declaration is ever issued. Qatar has made it the gate on all mediation. Watch fm.gov.om, not Iranian spokesmen; it would be the first Oman–Iran joint statement since 23 June.',
+  'Jackson Hole, 27–29 August, and Warsh’s first keynote as chair on Friday 28 August, into a market pricing roughly a 65% chance of a September hold and 35% of a hike, with no cut priced at all — an aggregator reading of 19 August, not a CME print. He has said he will address structural questions rather than near-term guidance.',
+  'The Thursday 20 August US data — jobless claims, Philly Fed, existing home sales and leading indicators — all of which fall after this snapshot, and the next Atlanta Fed GDPNow revision from 4.0%.',
+  'Bessent’s sanctions, promised for this week and still undelivered. Watch the OFAC recent-actions page, not the rhetoric. The last Iran-related actions are 7 and 29 July.',
+  'Whether the AUTMUSAG series prints again at all. It has been dark for two sessions after backfilling up to a two-month high, and the DOE corroboration does not publish until 25 August. Whether the 20-year auction internals are ever confirmed by a primary source also matters: if the 0.5 bp tail is confirmed, Threshold A’s written test is met on its face and must be revisited.',
+ ],
+ 'sourceLog': {
+  'tier1Market': 'Tier 1 — primary market data. Bloomberg extract (US Iran BBG Data.xlsx), refreshed 20 Aug 2026: 168 raw rows × 99 columns, header row scanned rather than hardcoded, Brent and WTI front months auto-detected (CO2/CL2) and DXY resolved as “DXY Index”. The 27 Feb anchor was re-verified field by field and is unchanged. The row-level stale check CLEARS decisively and the corrected field-level check raises NO flags on any of the last three rows. SOFR and AUTMUSAG backfilled for 18 August and are reported as new prints. The 18 August row was restated on the 10Y, 30Y, 2s10s, BE10 and 5Y5Y.',
+  'tier1News': 'Tier 1 — official and news. US Treasury press release SB0607 (19 Aug) for the buyback expansion and its terms; the TreasuryDirect tentative auction schedule for the 30-year TIPS reopening; the Federal Reserve’s FOMC minutes of 28–29 July, released 19 Aug, for the 9–3 hold, the three hike dissents and the two Hormuz attributions; the EIA Weekly Petroleum Status Report for the week ending 14 Aug, released 19 Aug, for crude, gasoline, distillate and SPR levels, the crude-imports line and refinery utilisation; Atlanta Fed GDPNow (18 Aug); the OFAC recent-actions page; DOJ (18 Aug). Treasury’s own 20-year auction results page could NOT be retrieved and the auction internals are therefore not Tier 1. Maritime and military primary: UKMTO/JMIC Update 086 (ICOD 181500Z) and its annex, re-fetched 20 Aug; UKMTO VRA Overview No.2 (14 Aug); the centcom.mil PUBLIC-RELEASES index, read 20 Aug — the news-articles index is stale to February 2026 and is not a usable channel; fm.gov.om news and statements indexes, both read 20 Aug and queried on four separate questions, each answer stated with its query. News: Reuters (19 Aug, oil and rates); Bloomberg (18–19 Aug, dollar, Aramco STS, VLCC U-turns, diesel, UAE); Al Jazeera, Washington Post, Reuters and Euronews (19 Aug, UAE embargo); AP (19 Aug, Baghaei and Ghalibaf); CNN (18 Aug, Kpler route share); Axios (19 Aug, convoy corridor); CNBC; the Financial Times (18 Aug); gasprices.aaa.com, read directly. Tier 1 commercial providers: Kpler (blog, 19 Aug, and via Reuters); Vortexa via Reuters (19 Aug); Baltic Exchange week 33 (14 Aug); Marsh via S&P Global (22 Jul). Kpler’s preliminary dailies revise upward and no day-on-day delta is computed off a same-day print.',
+  'tier3': 'Tier 2 and Tier 3, and everything rejected. Tier 2 — secondary and trade: Windward MIOC (19 Aug); TankerMap; IMF PortWatch; UANI (19 Aug); Maritime Executive and INTERCARGO (18 Aug); the single outlet carrying the 20-year auction internals; CME FedWatch via aggregators; DTN and Trading Economics; straits.live. These supply the vessel identification for 115-26, the dark-transit and jamming counts, floating-storage vessel counts, the auction bid composition, September Fed pricing, and settlement colour. Every figure in this group is labelled Tier 2 in the text where it is used. The auction internals are single-sourced. The ~65% September hold reading is from an aggregator and not a CME print. straits.live’s war-risk figure is its own model, not a broker quote, and is not carried. Tier 3 — state media: SABA (18 Aug, the Jazan claim); IRNA (17 Aug, the French diplomats); Tasnim, IRIB and Defa Press by reference only. Nothing in this edition is scored off a Tier 3 source; the Houthi claim to have struck Jazan on 18 August is in its third day without Saudi, Aramco or Tier 1 corroboration and is carried as a claim only, unlike the confirmed 9 and 13 August strikes. Rejected, withdrawn or unresolved this edition, listed for audit: “more than 80% Omani” — the provider’s own next-day publication makes it a Dark/Unknown share with zero route-confirmed Omani crossings, and it is not used; a GCC statement on the missile launch — the indexed article is dated 1 March 2026 and is rejected; a line attributing to Trump a willingness to reopen talks “at some point” on 19 August — could not be retrieved from the source page and is not used; the “91 vessels redirected” caption on CENTCOM’s media page — irreconcilable with its own 64 and still not used; a 5.047% / $16bn 20-year auction result — that is the 21 May 2025 auction and is rejected again; a “19 August” Windward transit block — the page is explicitly headed 18 August and the attribution is a misreading of a publication date; the standing note that Ghalibaf is not lead negotiator — contradicted by AP and Al Jazeera in this window, and the dispute is recorded rather than resolved; the DOE weekly retail values of $4.049 and $5.454 — could not be re-verified outside the terminal and are carried with that flag. Also unresolved: the pre-2026 diesel-crack record ($89 or $86.82) and the distillate-stocks comparison (since 1996 or since 1998). Carried forward from previous editions: the “two VLCCs, 4 mn bbl at Kharg” March-vintage post; Türkiye Today and Seoul Economic Daily on a Hormuz toll law (March); gCaptain’s “Hormuz Is Reopening” (16 Jun); Axios on a “Hormuz Coalition” (16 Mar).',
+ },
+
+ 'protocol': [
+  {'step': 'Refresh and integrity-check the extract',
+   'detail': 'Scan the header row rather than hardcoding columns; auto-detect the Brent and WTI front month. Run the row-level stale check by diffing the prior row against the figures published for it, and the field-level check for values identical to four decimals. This edition: the row check CLEARS decisively, the field check raises NO flags, and two series — SOFR and AUTMUSAG — backfilled for 18 August and are reported as new prints rather than carried.'},
+  {'step': 'Compute deltas and test every trigger explicitly',
+   'detail': 'd/d against the last confirmed close, w/w against five sheet-rows back, and vs the 27 Feb anchor re-verified field by field. Test all four market channels and Stage-4 A, B and C on the confirmed close only, and record the distance in basis points or dollars so the direction of travel is visible edition to edition. Run min, max and last-prior-occurrence queries on the full series before writing any superlative — fourteen were checked this edition, two were narrowed before printing, and one of those queries is what uncovered the July contract-roll artifact disclosed in the oil-channel analysis.'},
+  {'step': 'Verify the news on both tracks and re-verify what was inherited',
+   'detail': 'Military and diplomatic on one track, shipping, energy and macro on the other. Re-run negative claims every edition they are repeated — absence-of-evidence decays faster than positive facts. State the exact query alongside the answer. Where several trackers disagree, publish every number with its denominator and take no average. Where a provider reframes its own figure, follow the provider, not the outlet that carried it.'},
+  {'step': 'Reconcile the previous snapshot and withdraw conclusions by name',
+   'detail': 'The Singapore-morning cut regularly misses the US session, in either direction and sometimes in both at once. This edition records the largest long-end reconciliation gap the monitor has produced — 9.68 bp on the 30-year — and the first in which the snapshot OVERSTATED yields. Report the gap on every asset, exclude by name any field the previous edition published as unresolved, and where the previous edition built a narrative on the snapshot, withdraw the conclusion explicitly rather than quietly restating the number.'},
+  {'step': 'Score on confirmed closes, with hysteresis, and explain the composition',
+   'detail': 'Never move a market channel on an intraday print; never whipsaw on a single session; never move a downgrade rule to match the level that fired the upgrade. When the scale is saturated, say so — the total registers neither deterioration nor improvement, so the analysis has to carry what the number cannot. This edition: a Gulf state severed Iran’s largest trading relationship, the US Treasury intervened in its own long end, and the score is flat at 27 for a tenth time.'},
+ ],
+
+ 'methodology': {
+  'scale': 'Shock-score scale. Six transmission channels (maritime denial, oil, US inflation impulse, Treasury stress, political stress, escalation risk), each 0–5, summed to 0–30. Bands: 0–7 watch · 8–14 stress · 15–21 systemic-risk watch · 22–30 crisis. Market channels move only on a confirmed close through a trigger, never on an intraday print. Maritime denial and escalation risk are event-based and move on events, not announcements: a declared posture, an agreed-but-unissued declaration or a trailed sanctions package is not an event. Hysteresis is asymmetric by design: a channel is upgraded on a sustained break of its trigger and downgraded only on a sustained reversal past a wider threshold. That property has three times in the last month held a channel through a single-session move that reversed within 48 hours, and the cost of it is visible in this document: the US-inflation channel fired on a 2.30% break in the 5-year-five-year forward and its documented downgrade sits 16.86 bp lower at the pre-war anchor. The gap is reported rather than closed, and the rule is not moved to match the tape. Where a downgrade condition proves untestable in practice it is replaced with a named, testable one that is wider than the level which fired the upgrade, and the change is recorded — as with the political-stress condition of three closes at or below $4.60 with no intervening print above $4.70.',
+  'scaleCap': 'The saturated scale. Five of the six channels are at 5; only oil, at 2, is not — three points below the cap, not one. Further deterioration in the strait or in the political situation cannot raise the total, so a flat score is an artifact of the scale rather than a statement about stability. The same failure runs in reverse: on 14 August every financial measure in the document improved and the total did not move a point, because none of it met a documented downgrade rule. This edition is a third variant of the same problem, and the cleanest one yet. The window contained no kinetic event at all — no new UKMTO update, no new incident, no CENTCOM release, nothing anywhere in the theatre dated 19 or 20 August — and it still contained two developments of first-order importance: a Gulf state severed Iran’s largest trading relationship and its principal discreet financial channel, and the sovereign intervened in the price of its own long-dated debt. Neither could register, because one channel is capped and the other did not travel far enough to trip a rule. Readers should attend to the composition and to the distance-to-trigger figures, reported in basis points and dollars precisely so that movement inside a frozen total remains visible.',
+  'integrity': 'Data integrity this edition. The row-level stale check clears decisively: every populated field of the 19 August row differs from the snapshot published for it. The corrected field-level rule — that a field printing identical to four decimals against the previous session is UNRESOLVED regardless of whether the row around it is live, with no day-on-day change asserted for it — passed its first live test. The last edition flagged the 5-year at 4.3656 and the 10-year at 4.7060 as unresolved; both were carries of the 18 August close, and the true 19 August closes were 4.3426 and 4.6466, falls of 2.30 and 5.75 bp. Under the weaker rule that was replaced on 19 August, this document would have reported an unchanged 5- and 10-year into the largest two-session long-end rally of the war. That result produced a further rule, applied here for the first time: a reconciliation gap may never be computed against a field the previous edition published as unresolved, because such a gap measures staleness in the extract rather than the timing of the Singapore cut. The 5- and 10-year were therefore excluded from this edition’s reconciliation table by name, and the exclusion is stated rather than done silently; the 30-year, 2s10s and 2-year snapshots were live prints and are measured. Two series backfilled and are reported as new prints rather than carried: SOFR for 17 and 18 August, and AUTMUSAG for 18 August. The 18 August row was restated by the vendor on five fields, so absolute levels are not comparable with the last edition while directional analysis is continuous. Where third-party sources disagree the disagreement is reported and every denominator is named; this edition carries seven separate Hormuz transit series and three irreconcilable throughput claims, and takes no average across any of them.',
+  'gasoline': 'Gasoline series. Political stress is scored on AUTMUSAG (AAA all-grades retail pump; pre-war $3.52, peak $5.18), which backfilled to $4.79 for 18 August — a print the last edition did not have and the highest since 8 June ($4.80) — and then went dark for 19 and 20 August. USRFRUSA (DOE regular spot; pre-war ~$2.94, peak $4.50) is corroboration only and last printed $4.049 for the week of 17 August; those values could not be re-verified outside the terminal this edition and are carried with that flag, with the next release on 25 August. Neither series is re-based. The basis note stands and matters more than usual this edition: AUTMUSAG is ALL-GRADES, while AAA’s own published national average is REGULAR-grade and printed $4.0860 on 19 August. They are not the same series and are never merged. The scored series is four cents above the $4.75 trigger that fired the channel to 5 on 4 August and nineteen cents from the named $4.60 downgrade condition, which has widened from seventeen. The pressure has rotated decisively into distillate: AAA diesel made a new war high of $5.5042 on 19 August, 31.17 cents below the all-time record of $5.8159, rising 14.7 cents on the week against gasoline’s 5.0; US distillate stocks fell to 105.6 mn bbl, 13% below the five-year average, despite refinery utilisation of 97.2%, the highest since September 2019; and the front-month diesel crack, which set an all-time high of $102.20 intraday and $101.86 settle on 17 August, is derived at roughly $101.2 for 19 August with no published print available. Refining rather than crude remains the binding constraint on the pump.',
+  'anchor': 'Pre-war anchor (27 Feb 2026 close), re-verified field by field this edition and unchanged. Brent $72.48; WTI $67.02; 2Y 3.375%; 5Y 3.502%; 10Y 3.938%; 30Y 4.611%; 2s10s +55.64 bp; 5Y5Y 2.142%; 10Y breakeven 2.2569%; MOVE 73.38; VIX 19.86; DXY 97.608; gasoline (AAA all-grades) $3.52; Henry Hub $3.06; TTF €31.23; Asia LNG ¥1,669. Live triggers: oil to 3 on sustained closes above $95 and to 1 on a mediated pause with a close at or below $72.48; US inflation to 4 on sustained closes at or below 2.142%; Treasury to 4 on a 30-year close under 5.00% together with MOVE under 75, sustained; political stress to 4 on three consecutive AUTMUSAG closes at or below $4.60 with no intervening print above $4.70. A caution on the oil trigger, disclosed in full in the oil-channel analysis: the scored CO2 continuation closed above $95 on 23 and 24 July while the active contract did not, and the basis between the two has since inverted, so distances are comparable only within the current, post-roll regime. As at the 19 August close MOVE sits 2.12 points BELOW its pre-war anchor while the 30-year sits 58.05 bp ABOVE its own, and the 10-year breakeven is 5.09 bp above its anchor.',
+  'intraday': 'Intraday caveat, and a note on the section references. Numbered references of the form §9.n in the PDF edition point to the monitor’s internal operating instructions and pitfalls register, which records every failure mode the process has hit since June and the rule adopted in response; they are not sections of the published document. Three entries were added to that register by this edition — the contract-roll artifact, the prohibition on reconciling against a carry, and a note on the adversarial review pass. The latest dated row is a Singapore-AM snapshot and US hours set the close; the error is regime-dependent rather than random and has ranged from 13 cents to $3.99 on Brent within a fortnight. This edition’s was –$0.45 on Brent but –9.68 bp on the 30-year, the largest long-end reconciliation the monitor has recorded and the first in which the snapshot OVERSTATED yields, because the Treasury buyback announcement landed hours after the Singapore cut. Series go dark for multiple sessions and backfill later, sometimes against the prevailing trend rather than with it — two did so this edition. A row can fail to refresh entirely, and an individual field can carry forward inside an otherwise live row, which is what happened to the 30-year on 17 August and to the 5- and 10-year on 19 August. Every one of these failure modes has occurred since 29 July, each is tested for explicitly on every run, and the results of those tests are published rather than assumed. Verification of this edition ran 212 independent recomputations against the parsed dataframe, all passing, followed by a separate adversarial review of the prose that found and corrected fourteen further defects no numeric check could have caught.',
+ },
+}
 
 with open("editions.json", "w") as f:
     json.dump(EDITIONS, f, indent=2, ensure_ascii=False)

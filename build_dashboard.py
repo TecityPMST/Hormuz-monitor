@@ -21,7 +21,8 @@ FROM YOUR SOURCE FILES, not hand-maintained, and also get embedded:
                             robust column-scanning parser the PDF build uses.
                             Feeds the gasoline chart.
   - pdf_manifest.json    <- update_pdf_manifest.py scans pdf/*.pdf. Feeds the
-                            "Full PDF editions" archive table (every PDF in
+                            "Full PDF editions" archive table (capped to the
+                            newest ARCHIVE_LIMIT rows; every PDF in
                             the folder gets a row+download link, not just the
                             two in editions.json).
 
@@ -55,6 +56,11 @@ with open(os.path.join(HERE, "logo.png"), "rb") as f:
     logo_b64 = base64.b64encode(f.read()).decode()
 
 dates_sorted = sorted(editions.keys())
+# How many rows the "Full PDF editions" archive table shows, newest first.
+# Every PDF in pdf/ is still shipped and still downloadable by direct URL —
+# this only caps what the table lists. Set to None to show all of them.
+ARCHIVE_LIMIT = 7
+
 latest_date = dates_sorted[-1]
 previous_date = dates_sorted[-2] if len(dates_sorted) > 1 else None
 
@@ -65,6 +71,7 @@ const SCORE_HISTORY = {json.dumps(score_history, indent=2, ensure_ascii=False)};
 const GAS_SERIES = {json.dumps(gas_series, indent=2, ensure_ascii=False)};
 const LATEST_DATE = {json.dumps(latest_date)};
 const PREVIOUS_DATE = {json.dumps(previous_date)};
+const ARCHIVE_LIMIT = {json.dumps(ARCHIVE_LIMIT)};
 """
 
 HTML = r"""<!DOCTYPE html>
@@ -258,7 +265,7 @@ HTML = r"""<!DOCTYPE html>
     <p class="body-text"><b>Intraday caveat.</b> <span id="methIntraday"></span></p>
 
     <h2 class="section">Full PDF editions</h2>
-    <p class="tablenote">Every archived PDF in the folder, most recent first. Score is read directly from that edition's own PDF (see <code>update_score_history.py</code>).</p>
+    <p class="tablenote" id="archiveNote"></p>
     <table class="mtable">
       <thead><tr><th style="width:20%">Edition</th><th style="width:14%">Score</th><th style="width:20%">Band</th><th style="width:46%">Download</th></tr></thead>
       <tbody id="archiveBody"></tbody>
@@ -444,7 +451,10 @@ function render(){
   // Full PDF archive — every PDF in pdf/, joined against its own extracted score
   const ab = document.getElementById('archiveBody');
   ab.innerHTML = '';
-  PDF_MANIFEST.forEach(p=>{
+  const archiveRows = (ARCHIVE_LIMIT === null || ARCHIVE_LIMIT === undefined)
+    ? PDF_MANIFEST
+    : PDF_MANIFEST.slice(0, ARCHIVE_LIMIT);
+  archiveRows.forEach(p=>{
     const score = SCORE_BY_DATE[p.date];
     const band = score!==undefined ? bandForScore(score) : '—';
     const tr = document.createElement('tr');
@@ -453,6 +463,14 @@ function render(){
       `<td><a class="dl-link" href="pdf/${p.filename}" target="_blank" rel="noopener">Download PDF</a></td>`;
     ab.appendChild(tr);
   });
+
+  const shownCount = archiveRows.length, totalCount = PDF_MANIFEST.length;
+  document.getElementById('archiveNote').innerHTML = (shownCount < totalCount
+      ? `The <b>${shownCount}</b> most recent archived editions, newest first. `
+        + `${totalCount} editions are archived in total and the full run is charted above; `
+        + `older PDFs remain in the <code>pdf/</code> folder and stay reachable by direct link. `
+      : 'Every archived PDF in the folder, most recent first. ')
+    + "Score is read directly from that edition's own PDF (see <code>update_score_history.py</code>).";
 
   document.getElementById('footRight').textContent = ed.editionLine;
 }

@@ -18,8 +18,12 @@ For each pdf/hormuz_us_shock_monitor_YYYY-MM-DD-bbg.pdf:
      in the chart tooltip.
 
 Run this after adding a new PDF to pdf/ (and before running
-build_dashboard.py). It reprocesses every PDF in the folder each time, so
-it's always a full, verifiable rebuild rather than an incremental patch.
+build_dashboard.py). It reprocesses every PDF in the folder each time and
+MERGES the result over whatever score_history.json already holds: readable
+PDFs are re-derived and overwrite the stored value, unreadable ones keep
+their previous entry. This matters because the archive sits in a
+cloud-synced folder — an evicted PDF still appears in a directory listing
+but cannot be opened, and a naive full rebuild in that state wipes history.
 """
 import glob, json, os, re, subprocess, sys
 
@@ -66,7 +70,26 @@ def find_score_and_driver(text):
     return score, driver
 
 def main():
-    rows = []
+    out_path = os.path.join(HERE, "score_history.json")
+
+    # Load whatever is already on disk. The archive lives in a cloud-synced
+    # folder, and a PDF that has been evicted to a cloud-only placeholder
+    # cannot be read by pdftotext even though it still shows up in a
+    # directory listing. Rebuilding from scratch in that state silently
+    # DESTROYS history (17 Aug 2026: a full rebuild dropped 39 editions to
+    # 4). So this script now MERGES: every edition it can read is
+    # re-derived from the PDF and overwrites the stored value, and every
+    # edition it cannot read keeps its previously derived entry.
+    existing = {}
+    if os.path.exists(out_path):
+        try:
+            with open(out_path, encoding="utf-8") as f:
+                for r in json.load(f):
+                    existing[r["date"]] = r
+        except Exception as e:
+            print(f"WARNING: could not read existing {out_path}: {e}", file=sys.stderr)
+
+    derived, unreadable = {}, []
     for pdf_path in sorted(glob.glob(os.path.join(PDF_DIR, "*.pdf"))):
         fname = os.path.basename(pdf_path)
         dm = FNAME_RE.search(fname)
@@ -77,18 +100,34 @@ def main():
         text = extract_text(pdf_path)
         score, driver = find_score_and_driver(text)
         if score is None:
-            print(f"WARNING: could not find a score in {fname} — skipped. Check the PDF's headline phrasing.", file=sys.stderr)
+            unreadable.append(date)
             continue
-        rows.append({"date": date, "score": score, "driver": driver})
+        derived[date] = {"date": date, "score": score, "driver": driver}
 
-    rows.sort(key=lambda r: r["date"])
+    merged = dict(existing)
+    merged.update(derived)          # freshly derived values always win
+    rows = sorted(merged.values(), key=lambda r: r["date"])
 
-    out_path = os.path.join(HERE, "score_history.json")
-    with open(out_path, "w") as f:
+    if not rows:
+        print("No editions found and nothing on disk — refusing to write an empty file.", file=sys.stderr)
+        return
+
+    retained = [d for d in unreadable if d in existing]
+    lost = [d for d in unreadable if d not in existing]
+    if retained:
+        print(f"NOTE: {len(retained)} PDF(s) unreadable (cloud-only placeholders?) — "
+              f"kept their previously derived entries: {', '.join(retained)}", file=sys.stderr)
+    if lost:
+        print(f"WARNING: {len(lost)} PDF(s) unreadable AND absent from score_history.json "
+              f"— these editions have no score: {', '.join(lost)}", file=sys.stderr)
+
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(rows, f, indent=2, ensure_ascii=False)
 
     print(f"Wrote {out_path} with {len(rows)} editions "
-          f"({rows[0]['date']} to {rows[-1]['date']})" if rows else "No editions found.")
+          f"({rows[0]['date']} to {rows[-1]['date']}); "
+          f"{len(derived)} re-derived from PDFs, {len(retained)} retained from disk.")
+
 
 if __name__ == "__main__":
     main()
