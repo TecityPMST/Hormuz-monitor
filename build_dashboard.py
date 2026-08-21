@@ -460,7 +460,9 @@ function render(){
     const tr = document.createElement('tr');
     tr.innerHTML = `<td><b>${p.label}</b></td><td class="num">${score!==undefined?score+'/30':'—'}</td>` +
       `<td><span class="band-badge ${bandClass(band)}" style="font-size:9.5px;padding:2px 8px;">${band}</span></td>` +
-      `<td><a class="dl-link" href="pdf/${p.filename}" target="_blank" rel="noopener">Download PDF</a></td>`;
+      `<td><a class="dl-link" href="pdf/${p.filename}" target="_blank" rel="noopener">Edition PDF</a>` +
+      (p.annex ? ` &middot; <a class="dl-link" href="annex/${p.annex}" target="_blank" rel="noopener">Annex</a>` : '') +
+      `</td>`;
     ab.appendChild(tr);
   });
 
@@ -470,7 +472,9 @@ function render(){
         + `${totalCount} editions are archived in total and the full run is charted above; `
         + `older PDFs remain in the <code>pdf/</code> folder and stay reachable by direct link. `
       : 'Every archived PDF in the folder, most recent first. ')
-    + "Score is read directly from that edition's own PDF (see <code>update_score_history.py</code>).";
+    + "Score is read directly from that edition's own PDF (see <code>update_score_history.py</code>). "
+    + "From 21 Aug 2026 an edition may carry a companion <b>Annex</b> holding the full evidence, "
+    + "source log and methodology; where one exists it is linked beside the edition.";
 
   document.getElementById('footRight').textContent = ed.editionLine;
 }
