@@ -15,28 +15,27 @@ import json
 EDITIONS = {}
 
 # =====================================================================
-# 28 AUGUST 2026
-# ---------------------------------------------------------------------
-# NOTE (1 Sep 2026): this slot should hold 31 AUGUST, the immediately
-# preceding edition. It does not, and the reason is recorded rather than
-# hidden: the 31 Aug PDF build used UNSUFFIXED fragment names
-# (ed_s1.py / ed_s15.py / ed_s2.py) and the 1 Sep build overwrote them,
-# per the handover's own "RENAME the *NNaug fragments back on copy"
-# instruction. The tape and analysis sections for 31 Aug therefore have no
-# surviving source, and reconstructing their tables from the PDF's extracted
-# text would mean publishing re-keyed numbers as if they were sourced.
-# 31 August remains fully present in the archive table and the score-history
-# chart (edition PDF + annex, both downloadable). Rebuild it here only from
-# a real source, never from OCR.
-# =====================================================================
-from ed28_block import ED28
-EDITIONS['2026-08-28'] = ED28
-
-# =====================================================================
 # 1 SEPTEMBER 2026
+# ---------------------------------------------------------------------
+# NOTE: 28 August was dropped from the toggle on 2 September, per the
+# two-editions-only rule. It remains fully present in the archive table
+# and the score-history chart (edition PDF + annex, both downloadable),
+# and ed28_block.py stays on disk unimported.
+# 31 August is still absent from the toggle and the reason stands: the
+# 31 Aug PDF build used UNSUFFIXED fragment names and the 1 Sep build
+# overwrote them, so its tape and analysis sections have no surviving
+# source. Rebuild it here only from a real source, never from OCR.
+# From the 2 September build every fragment is DATE-SUFFIXED, so this
+# cannot recur.
 # =====================================================================
 from ed01sep_block import ED01SEP
 EDITIONS['2026-09-01'] = ED01SEP
+
+# =====================================================================
+# 2 SEPTEMBER 2026
+# =====================================================================
+from ed02sep_block import ED02SEP
+EDITIONS['2026-09-02'] = ED02SEP
 
 
 with open("editions.json", "w") as f:
