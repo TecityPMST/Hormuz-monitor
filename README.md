@@ -106,8 +106,15 @@ script — there's no structured source file to scan it out of.
 
 ## Updating for a new edition (do this each day, after the PDF is built)
 
-1. **Add the new edition to `generate_editions.py`.** Copy the newest
-   `EDITIONS["..."] = {...}` block and adapt every field for the new date —
+1. **Add the new edition as its own `edNN_block.py`, then wire it into
+   `generate_editions.py`.** Since the 28 Aug 2026 build, `generate_editions.py`
+   holds no inline edition literals — it is a short file that imports one `ED<NN>`
+   dict per edition (`from ed27_block import ED27`, `from ed28_block import ED28`)
+   and assigns each to its ISO date. To add a day: copy the newest `edNN_block.py`
+   to the new date, adapt every field, add the two-line import and assignment, and
+   **delete the oldest date's import and assignment** so the file defines exactly
+   two editions. Old block files can stay on disk; only what is imported reaches
+   `editions.json`. Adapt every field for the new date —
    headline, all of section 1's tables (oil/gas, UST, cross-asset, strait),
    section 2's analysis text, the six channels and score-grid rationale,
    what's-changed, scenarios, watchlist, source log, protocol, methodology.
@@ -148,6 +155,41 @@ script — there's no structured source file to scan it out of.
    git commit -m "Dashboard: 2026-07-28 edition"
    git push
    ```
+
+### Two hazards this folder now has scar tissue for (1 Sep 2026)
+
+**1. Hydrate a JSON target before a script writes to it.** Every file here is
+OneDrive cloud-synced, and a cloud-only placeholder cannot be *written* either:
+`update_pdf_manifest.py` and `update_gas_series.py` both died with
+`OSError: [Errno 22] Invalid argument` writing to `pdf_manifest.json` /
+`gas_series.json` until those files had been pulled down to disk. Open each
+output file once before running the update sequence. `score_history.json` is
+the critical one — it is MERGED into, and on 1 Sep all 47 archived PDFs were
+cloud-only placeholders, so the merge safeguard was doing all the work: it
+re-derived 2 editions from the readable new PDFs and retained 47 from disk.
+Had `score_history.json` itself been an unhydrated placeholder, the run would
+have written a 2-edition file and destroyed the history — the exact 17 Aug
+failure the script's docstring describes.
+
+**2. Tape tables are per-edition in width, and that is deliberate.** From the
+1 Sep edition the live-tape tables carry a `BBG ticker` column and run one row
+per series (the lumped `WTI CL2 / CLA`, `10y BE / 5y5y fwd` and
+`VIX / DXY / SOFR` rows were retired). `oilGas` is now 7 columns, `ust` 8 and
+`cross` 6, against 5/6/5 for 28 Aug. Nothing needed changing in
+`build_dashboard.py`: `rowHtml()` maps over whatever cells it is given and the
+header is read from the edition's own `*Header` list, so the toggle adapts per
+edition. **Keep header length == row length for every table in a new block** —
+that is the only invariant, and it is worth asserting before you run
+`generate_editions.py`.
+
+**Known gap:** `editions.json` holds 28 Aug and 1 Sep, not 31 Aug and 1 Sep.
+The 31 Aug PDF build used unsuffixed fragment names (`ed_s1.py`, `ed_s15.py`,
+`ed_s2.py`) and the 1 Sep build overwrote them, so that edition's tape and
+analysis sections have no surviving source. Reconstructing its tables from the
+PDF's extracted text would mean publishing re-keyed numbers as if they were
+sourced, which this project does not do. 31 August is fully present in the
+score-history chart and the archive table, with both its edition PDF and its
+annex downloadable. Rebuild the block only from a real source.
 
 ## Publishing on GitHub Pages (one-time setup)
 
