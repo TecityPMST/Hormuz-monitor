@@ -106,6 +106,39 @@ script — there's no structured source file to scan it out of.
 
 ## Updating for a new edition (do this each day, after the PDF is built)
 
+⚠️ **CHANGED 3 SEP 2026 — this is now part of the daily "run update", not an
+optional extra.** It is §7 steps 11–14 of `HORMUZ_MONITOR_INSTRUCTIONS.md`, and
+the dashboard had drifted a full edition behind before the change.
+
+⚠️ **STEP 1 IS NOW GENERATED, NOT HAND-COPIED.**
+
+```bash
+python3 build/tools/make_edition_block.py --stamp 03sep --var ED03SEP \
+    --label "3 Sep 2026" --seq 18 --prev ed02sep_block.py \
+    --edition-line "Daily edition · …" --session-note "…"
+```
+
+It reads that day's `build/ed_*.py` fragments and writes `ed<NNmon>_block.py`
+here. The fragments are the single source: nothing is re-keyed and nothing is
+read back out of the rendered PDF, so the dashboard cannot say something the
+edition does not. It asserts header-width == row-width for every table and
+refuses to write if that fails. It CARRIES FORWARD `sourceLog`, `protocol` and
+`methodology` from the previous block and says so — read those three and update
+by hand if the annex changed them.
+
+Then wire it into `generate_editions.py`, keeping exactly TWO dates: add the new
+import and assignment, delete the oldest. Old block files stay on disk; only
+what is imported reaches `editions.json`. Then `python3 generate_editions.py`.
+
+⚠️ **The annex goes to `annex/`, NOT to `pdf/`.** `update_score_history.py`
+regexes a score sentence out of every PDF in `pdf/` and an annex has none. Both
+directories need the day's file — that was missed on 3 September and caught by
+checking the manifest's annex count.
+
+<details><summary>The former hand-copy instructions for step 1, kept for
+reference</summary>
+
+
 1. **Add the new edition as its own `edNN_block.py`, then wire it into
    `generate_editions.py`.** Since the 28 Aug 2026 build, `generate_editions.py`
    holds no inline edition literals — it is a short file that imports one `ED<NN>`
@@ -125,7 +158,9 @@ script — there's no structured source file to scan it out of.
    ```bash
    python3 generate_editions.py
    ```
-2. **Copy the new PDF into `pdf/`.** Keep every old one too — the full
+</details>
+
+2. **Copy the new edition PDF into `pdf/` and the annex into `annex/`.** Keep every old one too — the full
    archive table wants all of them, not just the latest two. Then run:
    ```bash
    python3 update_score_history.py
