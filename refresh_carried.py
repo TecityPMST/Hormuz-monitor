@@ -2,7 +2,11 @@
 """Regenerate sourceLog / protocol / methodology in a block FROM the day's annex
 fragments, so the dashboard cannot say something the annex does not (SS12)."""
 import re, sys, json, importlib.util, io
-BUILD = '/sessions/fervent-inspiring-bohr/mnt/Tecity Iran-Hormuz War & US Economic Shock Monitor/build'
+import os
+# resolve the project root from this file's own location -- the sandbox mount name
+# changes every session and must NEVER be hardcoded (SS2).
+BUILD = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                      '..', '..', '..', 'build'))
 sys.path.insert(0, BUILD)
 
 def plain(t):
