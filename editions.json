@@ -1,449 +1,4 @@
 {
-  "2026-09-07": {
-    "label": "7 Sep 2026",
-    "editionLine": "Daily edition · 7 Sep 2026 intraday · Bloomberg · Singapore 7 Sep AM update",
-    "score": 27,
-    "band": "CRISIS",
-    "sessionNote": "Scoring reference is the 4 September close; 7 September is US Labor Day and the cash bond market is shut, so the rates block is carried UNRESOLVED under §9.35.",
-    "headline": "Score HOLDS at 27/30 for a twentieth consecutive edition. No channel moved. One. The war became navy-on-navy, and for the FIRST time in this war CENTCOM published a target list with a battle damage assessment. Iran fired ballistic missiles at TWO US Navy warships — a carrier and a guided-missile destroyer — on 5 September; CENTCOM says both evaded and no American was harmed. It then destroyed THREE Iranian tankers and NAMED them with damage assessments: Downy off Kharg and Stark 1 near Jask permanently disabled, Kylo ‘completely destroyed’, which JMIC 094 logs as sunk. ‘Tanker for tanker’, carried here for two editions as ONE anonymous sourcing chain at TIER 2, is now the theatre commander’s own stated policy on the record — the caveat is DISCHARGED in the direction of confirmation. Iran’s answer is not: its claim to have struck three tankers is UNCORROBORATED — JMIC 094 records NIL new incidents, the count is frozen at 101, no vessel is named, no UKMTO product corroborates it, and CENTCOM called the separate drone-boat claim a lie. (!) 094’s cut-off is 051500Z, so it is SILENT on 6 September. Two. The oil trigger took a THIRD close. The ACTIVE contract closed $96.28 on 4 September after $95.63 and $95.52 — its highest close since 26 May — while the SCORED continuation closed $92.32, $2.68 below $95 and NARROWED from $3.37, the nearest since 21 August. Three consecutive closes is past any reading of sustained. The rule is written on the continuation and is NOT moved to the series that would fire it (§9.26, §9.56b). Oil holds at 2/5 and the other reading is published, not suppressed. Three. Iran began writing the geometry alone. Its security-council secretary said on 6 September that Iran will declare an exclusion zone running from the American blockade line into the Gulf, with entrants added to its own sanctions list, and that Hormuz maps are agreed with Oman and will be signed. OMAN HAS PUBLISHED NOTHING CONFIRMING IT. fm.gov.om read direct: nothing dated 5–7 September, and the last item on its statements page is the 25 August joint statement; and Oman’s foreign minister wrote on 4 September that no solution has been reached. A bilateral instrument carrying one signatory’s text is the 26 August failure repeating. Four, and it is the pump. US retail diesel TOOK ITS ALL-TIME RECORD — AAA $5.85 on 4 September, through the $5.8159 of 19 June 2022, and reset again on 5 and 6 September, to $5.8819 and $5.8970. The last edition put it 3.27 cents away. It is the FIRST US retail fuel price to exceed a pre-war all-time high in this war, and the political channel cannot see it. August payrolls printed +162,000 against a ~53,000 consensus with +55,000 of upward revisions; the curve answered with a BEAR FLATTENER and September hike odds went 48.4% to 58.4% on one venue’s series. MOVE 73.10, a SECOND sub-75 close and below its own pre-war anchor. Sequencing 27 → 27 → 27 → 27 → 27.",
-    "tape": {
-      "note": "1 · LIVE TAPE",
-      "oilGasHeader": [
-        "Series",
-        "BBG ticker",
-        "2 Sep",
-        "3 Sep",
-        "4 Sep close",
-        "7 Sep mark",
-        "Trigger note"
-      ],
-      "oilGas": [
-        [
-          "Brent, front-month listed — scored",
-          "CO2 Comdty",
-          "92.09",
-          "91.63",
-          "92.32",
-          "92.72",
-          "+$0.69. $2.68 from the $95 upgrade, NARROWED from $3.37 — the fourteenth reading and the NEAREST since the 21 August close left $2.33. $19.84 above the $72.48 downgrade. The scored rule is written on THIS series, which has NOT closed above $95 since 24 July"
-        ],
-        [
-          "Brent, active contract",
-          "COA Comdty",
-          "95.63",
-          "95.52",
-          "96.28",
-          "96.69",
-          "(!) A THIRD CONSECUTIVE CLOSE THROUGH $95, and the HIGHEST active close since 26 May ($96.67). Three closes is past any reading of sustained; on THIS series the upgrade condition is MET as written, and the rule is still not moved (§9.56b). TWENTY-SIX such closes in the war — (!) the last edition’s twenty-six for the count through 3 September was one too high and is CORRECTED to twenty-five. Basis 3.54, 3.89, 3.96. See §2.1"
-        ],
-        [
-          "WTI, front-month listed — scored",
-          "CL2 Comdty",
-          "88.28",
-          "88.03",
-          "88.57",
-          "88.96",
-          "+$0.54, the highest since 10 June. NO trigger is written on WTI; corroboration only"
-        ],
-        [
-          "WTI, active contract",
-          "CLA Comdty",
-          "91.01",
-          "91.30",
-          "91.48",
-          "91.95",
-          "+$0.18 — it rose LESS than its own continuation, so this basis NARROWED to 2.91 from 3.27 while Brent’s WIDENED. (!) Two contracts, two directions in one session: an argument against reading either basis as a market signal"
-        ],
-        [
-          "Henry Hub natural gas",
-          "NGA Comdty",
-          "2.956",
-          "2.913",
-          "2.975",
-          "2.929",
-          "+$0.062. 2.87% below its $3.063 anchor, NARROWED from 4.90% — the SMALLEST discount since 8 July, the last session it closed ABOVE the anchor. The control holds, but only just"
-        ],
-        [
-          "Dutch TTF natural gas",
-          "TZTA Comdty",
-          "73.634",
-          "71.810",
-          "71.952",
-          "74.855",
-          "+€0.142, the THIRD-highest close of the war; €73.634 of 2 September STANDS as the war-record close. +130.4% vs pre-war. (!) The 7 Sep MARK of €74.855 is ABOVE that record but is a MARK, not a close, and nothing is claimed on it (A9a) — the same applies to the Henry Hub mark of 2.929, which would put that discount back near 4.4%. A three-year high, NOT an all-time high"
-        ],
-        [
-          "Japan/Asia LNG",
-          "JGLA Comdty",
-          "3,944",
-          "3,960",
-          "3,929",
-          "no print",
-          "−31, the first fall in three. NOT a record: the TWELFTH war-record close of 3,960 (3 Sep) STANDS. +135.4% vs pre-war, the largest multiple on the tape. No 7 Sep print"
-        ]
-      ],
-      "ustNote": "",
-      "ustHeader": [
-        "Tenor",
-        "BBG ticker",
-        "2 Sep",
-        "3 Sep",
-        "4 Sep close",
-        "7 Sep mark",
-        "d/d, bp",
-        "Trigger note"
-      ],
-      "ust": [
-        [
-          "2-year",
-          "USGG2YR Index",
-          "4.3690",
-          "4.3360",
-          "4.3661",
-          "unresolved",
-          "+3.01",
-          "UPWARD, recovering 91% of the previous session’s 3.30 bp fall in one. The 4.3998 war high STANDS by 3.37 bp. NO trigger here"
-        ],
-        [
-          "5-year",
-          "USGG5YR Index",
-          "4.5339",
-          "4.5144",
-          "4.5448",
-          "unresolved",
-          "+3.04",
-          "The largest rise on the curve. 4.5551 stands as the war high by 1.03 bp. NO trigger here"
-        ],
-        [
-          "10-year",
-          "USGG10YR Index",
-          "4.7780",
-          "4.7680",
-          "4.7821",
-          "unresolved",
-          "+1.41",
-          "Less than half the front-end move. 4.7981 stands, by 1.60 bp. SATISFIES Threshold B’s 4.65% leg by 13.21 bp, WIDENED from 11.80 — the first widening in three closes. (!) BE10 FELL 0.07 while the nominal rose 1.41, so the whole rise and more is REAL yield"
-        ],
-        [
-          "30-year",
-          "USGG30YR Index",
-          "5.2571",
-          "5.2465",
-          "5.2423",
-          "unresolved",
-          "−0.42",
-          "The ONLY tenor to fall, and a third consecutive fall. CLEARS Threshold B’s 5.20% by 4.23 bp, NARROWED from 4.65 — a third consecutive narrowing. The Treasury downgrade’s yield leg fails by 24.23 bp, narrowed from 24.65; it has not been within 15 bp since 28 July and has not closed below 5.00% since 6 July. (!) It narrowed on a session that priced a HIKE: the long end fell because the front end rose"
-        ],
-        [
-          "2s10s spread",
-          "USYC2Y10 Index",
-          "40.700",
-          "42.788",
-          "41.394",
-          "unresolved",
-          "−1.394",
-          "A FLATTENING, corroborating the shape INDEPENDENTLY after two steepening sessions. 14.246 bp flatter than the 55.64 anchor. (!) A SEPARATE series, not a difference of the generics"
-        ],
-        [
-          "10-year breakeven",
-          "USGGBE10 Index",
-          "2.3488",
-          "2.3539",
-          "2.3532",
-          "unresolved",
-          "−0.07",
-          "(!) FELL against a RISING nominal — the mirror of 3 Sep, so the whole rise is REAL yield. 9.63 bp above its 2.2569 anchor. It and the 5y5y moved together a second session (§9.54)"
-        ],
-        [
-          "5y5y forward breakeven",
-          "USGG5Y5Y Index",
-          "2.3096",
-          "2.3154",
-          "2.3082",
-          "unresolved",
-          "−0.72",
-          "(!) HOLDS ABOVE the 2.30% firing level for a FOURTH consecutive close, but by the NARROWEST margin of the four — 0.82 bp, against 1.10, 0.96 and 1.54. The margin is inside a single session’s typical move. 16.62 bp above the 2.142% downgrade anchor"
-        ]
-      ],
-      "crossHeader": [
-        "Series",
-        "BBG ticker",
-        "3 Sep",
-        "4 Sep close",
-        "vs pre-war",
-        "Note"
-      ],
-      "cross": [
-        [
-          "Treasury volatility (MOVE)",
-          "MOVE Index",
-          "74.68",
-          "73.10",
-          "−0.28 vs 73.38",
-          "−1.58, a SECOND CONSECUTIVE CLOSE BELOW 75, and the first close BELOW the pre-war anchor since 28 August. The Treasury volatility downgrade leg is SATISFIED for a second session — the last edition’s own watchlist question, answered YES. (!) §9.18 still binds: the longest sub-75 run SINCE THE CURRENT REGIME BEGAN on 29 July is nine closes, 18–28 August, and it ended in one session; the war’s longest is twenty-one, 10 June–10 July (§9.32). No 7 Sep print"
-        ],
-        [
-          "Equity volatility (VIX)",
-          "VIX Index",
-          "14.32",
-          "14.53",
-          "−5.33 vs 19.86",
-          "+0.21, off a 14.32 that came within 0.07 of the 14.25 war low (14 Aug). Still priced as though this war had ended. No 7 Sep print"
-        ],
-        [
-          "US dollar index",
-          "DXY Index",
-          "98.908",
-          "99.176",
-          "+1.57 vs 97.608",
-          "+0.268, recovering a third of the previous fall, on payrolls. (!) The label resolves as DXY Index, never hardcoded (§9.4)"
-        ],
-        [
-          "SOFR overnight rate",
-          "SOFRRATE Index",
-          "3.66",
-          "no print",
-          "−0.02 vs 3.68",
-          "(!) BACKFILLED to 3.66 for 3 Sep, reported dark last edition; dark again 4 and 7 Sep. No trigger here"
-        ],
-        [
-          "Gasoline, retail pump — scored",
-          "AUTMUSAG Index",
-          "4.92",
-          "no print",
-          "+1.40 vs 3.52",
-          "(!) BACKFILLED UP to $4.92 for 3 September, which the last edition reported dark — a FIFTH consecutive rise and the HIGHEST since 29 May; the war high is $5.18 (20 May) and this is expressly NOT one. 32 cents above the $4.60 downgrade condition and 17 above the $4.75 that fired the upgrade, moving AWAY for a fourth edition (§9.30). Dark on 4 and 7 September and NOT extrapolated"
-        ],
-        [
-          "Gasoline, DOE regular retail spot — corroboration",
-          "USRFRUSA Index",
-          "no print",
-          "no print",
-          "+1.13 vs ~2.94",
-          "Weekly, surveyed Monday; last resolved 31 Aug at $4.071. The 7 Sep survey falls on the federal holiday and the release is delayed to 10 Sep, so this stays dark a second week"
-        ]
-      ],
-      "gasChartNote": "The scored series (AUTMUSAG Index, navy) and DOE regular retail (USRFRUSA Index, amber, weekly, corroboration only); the dotted line marks the $4.75 upgrade trigger, NOT the $4.60 downgrade condition. The navy line ends on 3 September at $4.92, backfilled this edition; the amber line still ends on 31 August at $4.071. Neither is extrapolated through the dark 4 and 7 September cells. (!) Neither line is AAA diesel, which took its all-time record on 4 September and is not charted because no trigger is written on it.",
-      "straitHeader": [
-        "Strand",
-        "State on 7 September",
-        "Source"
-      ],
-      "strait": [
-        [
-          "UKMTO / incidents / mines",
-          "JMIC UPDATE 094 OBTAINED (issued 06/09, ICOD 051500Z). THE COUNT IS FROZEN AT 101 — NIL confirmed incidents since 093, and 094 states in terms that there have been no third-flag merchant incidents since its last report. (!) That is what Iran’s 5 September claim to have struck three tankers must be read against: no vessel named, no flag, no damage report, and NO UKMTO warning or advisory on 6 or 7 September on a direct read of both 2026 listings. (!) BOUND IT: 094’s cut-off is 051500Z, so the frozen count contradicts the claim only for the window it covers and is SILENT beyond it; 095 is the first product that can bear on the rest. The three US-struck Iranian tankers are logged as ADVISORY 127-26 A/B/C, which JMIC classes a military-on-listed-tanker event and NOT an attack on a third-flag merchant, so they do NOT enter the 101. (!) The advisory text itself names no vessel; the mapping onto the three CENTCOM-named tankers is this document’s inference from timing and geography, and is stated as one. (!) THE MINE DELETION IS MORE THAN AN ARTEFACT, BUT NOT YET SETTLED: 094 reproduces 093’s weaker ‘remain vigilant’ formula VERBATIM and again carries no declared danger area, no coordinates and no NAVCENT clearance sentence — two consecutive issues, and on this document’s own §9.18 standard two is a run, not a regime. 095 decides. Hormuz SEVERE, all levels unchanged; five merchant vessels still held",
-          "JMIC 094 primary PDF; UKMTO Advisory 127-26; ukmto.org 2026 listings read direct 7 Sep"
-        ],
-        [
-          "Transits + blockade",
-          "THE ORDER-OF-MAGNITUDE SPLIT INSIDE ONE DOCUMENT WIDENED, and is still never spliced (§9.24). ¶ JMIC 094 annex, S&P/SeaVision, universe non-facilitated cargo vessels above 1,000 dwt: 0, 5 and 1 across 3–5 Sep — SIX in 72 hours. ¶ JMIC 094 §4C, universe US NCAGS-facilitated only: 59 across a window JMIC labels 3–5 Sep and calls 48 hours, against 44 for 1–2 Sep and 39 for 30–31 Aug. (!) The label and the dates disagree — 3–5 September spans three calendar days — so NO per-day rate is computed and NO ranking against 093 or 092 is asserted. (!) 094 is the FIRST issue to name the split itself, contrasting single-digit independent tracking with NCAGS traffic above twenty a day. It names the gap; it does not reconcile it. ¶ Kpler via Reuters, 6 Sep, universe commodity-carrying vessels: a ten-day average of 10/day, the LOWEST SINCE MAY — 2 transits Saturday, 6 Sunday, mostly on the Iranian route; one VLCC entered on Sunday and none has exited since Wednesday 2 September. LSEG has a Saudi products tanker turning back on 6 Sep. ¶ BLOCKADE TALLY 87 / 3 / 2, CENTCOM-dated 3 September, from 84/3/2 dated 1 September. (!) A circulating ‘about 90’ is a press paraphrase, unsourceable to any CENTCOM release, and is NOT used",
-          "JMIC 094 §4C and annex; Kpler and LSEG via Reuters 6–7 Sep"
-        ],
-        [
-          "CENTCOM / kinetic",
-          "(!) IRAN FIRED BALLISTIC MISSILES AT TWO US NAVY WARSHIPS AND CENTCOM PUBLISHED IT. The 5 September release — CENTCOM’s first since 1 September and only its second since 15 August — says the IRGC launched at a carrier and a guided-missile destroyer, that both evaded and no US personnel were harmed. The American answer was economic, not territorial: three Iranian tankers, each NAMED with a damage assessment — Downy off Kharg and Stark 1 near Jask ‘permanently disabled’, Kylo ‘completely destroyed’ in the Gulf of Oman, which JMIC 094 logs as sunk — with strike video released. The first CENTCOM product of the war carrying a target list AND a BDA, and it DISCHARGES ‘tanker for tanker’ from TIER 2 to TIER 1. ¶ NO US strike on Iranian TERRITORY in the window; the pause on land runs to a SIXTH day. ¶ Iran’s claim to have hit a US uncrewed vessel was called a lie by CENTCOM’s named spokesman on 6 September. (!) A reported 4 September attack on US targets in JORDAN is UNCONFIRMED — no Jordanian statement, no Iranian claim, a senior US official saying he is unaware of one — and is never merged with the 31 Aug or 1 Sep Jordan events",
-          "CENTCOM release 5 Sep; centcom.mil index read direct 7 Sep; Hawkins via AP 6 Sep"
-        ],
-        [
-          "Diplomacy + economic war",
-          "IRAN MOVED FIRST AND UNILATERALLY. Its Supreme National Security Council secretary said on state television on 6 September that Iran will declare an EXCLUSION ZONE running from the American blockade line toward the Strait and into the Gulf, with any vessel entering it added to Iran’s sanctions list; and that Hormuz passage MAPS are agreed with Oman and will be signed within days. ¶ (!) OMAN HAS PUBLISHED NOTHING CONFIRMING IT. fm.gov.om read direct 7 September, the query being any Omani statement on Iran, Hormuz, mediation, a corridor or a map dated 5–7 September: nothing. The last item on the ministry’s statements page is the 25 August joint statement. What Oman DID publish, on 4 September, is its foreign minister’s own text saying a solution has not been reached. A bilateral instrument with one signatory’s text. ¶ Washington’s precondition is unchanged: no talks unless attacks on commercial shipping stop. ¶ THE SANCTION LANDED one day after the last edition recorded that it had not: OFAC designated a Turkish bank and two subsidiaries on 4 September under EO 13902, the SECOND bank of the campaign. (!) NOTHING on 5, 6 or 7 September on a direct read of the recent-actions index. ¶ PGSA blacklist 56 → 57. OPEC+ held October output UNCHANGED on 6 September",
-          "Rezaei via state TV, AP and Al Jazeera 6 Sep; fm.gov.om and ofac.treasury.gov read direct 7 Sep"
-        ]
-      ]
-    },
-    "analysis": {
-      "intro": "",
-      "bondYieldNote": "",
-      "bondYield": [
-        {
-          "title": "MARITIME DENIAL — 5/5, held. The incident count froze while the water emptied, and the mine deletion survived a second issue.",
-          "text": "(i) The state. The downgrade requires a verified reopening AND traffic above 25% of normal for ten sessions. Neither leg advanced: no reopening occurred, and the traffic leg moved the wrong way. JMIC Update 094 was issued on 6 September (ICOD 051500Z), Hormuz stays SEVERE, every regional threat level is unchanged from 093, and the five held merchant vessels are the same five. (ii) The confirmed-incident count is FROZEN at 101 — NIL since 093 — and that frozen number is the load-bearing fact of this section. Iran claimed on 5 September to have struck three tankers on an ‘unauthorised’ route plus several US-linked vessels, and separately on 6 September to have hit a US uncrewed vessel. No vessel is named, no flag, no damage report; JMIC records no incident; and UKMTO issued no warning or advisory on 6 or 7 September on a direct read of both 2026 listings. (!) BOUND IT: 094’s ICOD is 051500Z, so the frozen count contradicts the 5 September claim only for the window it covers and is SILENT on 6 September. (!) The three tankers the UNITED STATES struck are in the record, as ADVISORY 127-26 A/B/C, and JMIC classes them expressly as a military-on-listed-tanker event rather than an attack on a third-flag merchant, so they do NOT enter the 101 — a distinction this document adopts rather than blurs. (iii) THE MINE DELETION IS NO LONGER AN EDITING ARTEFACT. The last edition’s watchlist asked whether 094 would restore the danger-area language 091 and 092 carried. It did not: 094 reproduces 093’s weaker ‘remain vigilant for mining activity’ formula VERBATIM, with no declared area, no coordinates and no NAVCENT clearance sentence. Two consecutive issues make it more than an editing artefact. (!) It is NOT yet settled — on this document’s own §9.18 standard, applied symmetrically, two observations are a run and not a regime, and 095 decides whether it holds a third issue. It is still not a declaration that the mines are gone: the allied record has gone quiet on mines, which is weaker evidence in BOTH directions. (iv) The traffic leg is measurable and it deteriorated on the series that published. (!) Bound it: PortWatch is UNCHANGED at 7% of typical and a week stale, Windward is NOT FOUND for this window, and the facilitated series ROSE. Kpler puts the ten-day moving average at 10 transits a day on 6 September, the lowest since May, with two on Saturday and six on Sunday, mostly on the Iranian route; one VLCC entered on Sunday and none has exited since Wednesday 2 September; LSEG has a Saudi products tanker turning back on 6 September. JMIC’s own annex gives 0, 5 and 1 across 3–5 September on non-facilitated cargo vessels, against 59 US NCAGS-facilitated transits over a window JMIC labels 3–5 September and calls 48 hours, against 44 and 39 on the two prior reports. (!) The label and the dates disagree, so no per-day rate is computed and no ranking is asserted. 094 is the first issue to NAME the split in its own text, contrasting single-digit independent tracking with NCAGS traffic averaging over twenty a day. Naming a discrepancy is not reconciling it, and this document still publishes both with their universes attached (§9.24). (v) The blockade tally moved a second consecutive edition, to 87 redirected / 3 disabled / 2 boarded, CENTCOM-dated 3 September. A circulating ‘about 90’ is a press paraphrase that could not be sourced to any CENTCOM release and is NOT used (§9.19)."
-        },
-        {
-          "title": "OIL PRICE SHOCK — 2/5, held. A THIRD consecutive close above the level on the active contract, and the scored series moved TOWARD it. The rule still names one price and there are still two.",
-          "text": "(i) §9.56 is now three closes old and the arithmetic has stopped being arguable. The active contract closed $95.63, $95.52 and $96.28 on 2, 3 and 4 September — three consecutive confirmed closes above $95, and the highest active close since 26 May. Two closes is this instrument’s own definition of a sustained break; three is past it. Applied to COA the oil upgrade fired last week. Applied to CO2, the series the rule has always been read on, it has not: the continuation closed $92.32, +$0.69, $2.68 below the level. (ii) The rule is NOT moved, and this edition removes the one comfort the last one had. On 3 September the scored series moved AWAY while the active stayed through, which made it easy to say the trigger had not nearly fired. This session both moved the same way: the scored gap NARROWED from $3.37 to $2.68, the nearest reading since the 21 August close left $2.33 — that close was never an edition’s scoring reference, so its $2.33 is not among the fourteen — while the active extended. There is no longer a divergence to hide behind — only a rule written on the wider of two series that are both rising. It is not moved because moving it would be moving it to the series that fires it (§9.26, §9.56b). (iii) Bound the claim and correct the count. This is the active contract’s first RUN OF THREE closes above $95 since 20–22 May. (!) It has now closed above the level TWENTY-SIX times in this war; the last edition published twenty-six as the count through 3 September, which was one too high, and that figure is CORRECTED to twenty-five (§9.32). (iv) The basis is stable and the roll was clean. Brent’s has run 0.00, 2.12, 3.08, 3.54, 3.89, 3.96 — one step off zero at the 31 August roll, then FOUR sessions of decelerating widening, +0.96, +0.46, +0.35, +0.07, with no second step and no sign change. (!) WTI’s independent basis NARROWED on the same session, 3.27 to 2.91, which is an argument against reading either basis as a market signal rather than a roll artefact. §9.41 clears; §9.36 still forbids constructing anything across the two Brent series. (v) The price is not being set in the Gulf alone. OPEC+ held October output UNCHANGED on 6 September at a 31.1 mb/d target, ending six consecutive monthly increases, and no September IEA or OPEC monthly report had been published at the cut — both are PROSPECTIVE, not NOT OBTAINED (§9.46)."
-        },
-        {
-          "title": "US INFLATION IMPULSE — 5/5, held. The firing trigger held a fourth close but on its narrowest margin of the run, and the labour print reversed the front end.",
-          "text": "(i) The 5y5y forward closed 2.3082%, −0.72 bp, a FOURTH consecutive close above the 2.30% firing level — but by the NARROWEST margin of the four. The run reads 1.10, 0.96, 1.54, 0.82 bp. A margin of 0.82 bp is inside a single session’s typical move and is reported as such rather than as clearance. The scored downgrade, the 2.142% anchor, is 16.62 bp away and has not been approached in this window. §9.26 has paid twice already and the rule is not rewritten to the firing level now that the margin is thin. (ii) The composition inverted again, and it is REAL yield for a second session. The 10-year nominal ROSE 1.41 bp while BE10 FELL 0.07 to 2.3532% — so the whole rise and more came out of real yield, the mirror of 3 September when the whole fall did. BE10 sits 9.63 bp above its 2.2569% anchor. The two breakeven measures moved the same way as each other for a second consecutive session (§9.54). (iii) The hard print of the window is the labour market and it landed AFTER the last cut, exactly as flagged. August payrolls +162,000 against a consensus near 53,000, unemployment unchanged at 4.1%, average hourly earnings +0.3% m/m and +3.1% y/y — with June and July revised UP a combined +55,000 and July flipping from −23,000 to +21,000. (!) The reaction function is INVERTED and behaved as this document said it would: a strong print is the hawkish outcome. CME-implied odds of a 25 bp HIKE on 16 September ran 66.1% on 31 August, 48.4% on 3 September after a governor’s remarks and 58.4% on 4 September after payrolls — ONE outlet’s series, held throughout. (!) A second outlet read 49.4% on 3 September and is NOT spliced into it (§9.24). (iv) The services survey of 3 September stands behind it: ISM Services 55.4 with Prices Paid 72.6, the fifth reading above 70 in six months, against Employment contracting a second month at 47.8. (!) The two point DIFFERENT WAYS and are not merged: the services employment index is already contracting while the aggregate payrolls print ran hot. What is not in dispute is the input-cost shock arriving in the largest part of the US economy."
-        },
-        {
-          "title": "TREASURY STRESS — 5/5, held. The volatility leg is satisfied a SECOND close and is now below its pre-war anchor; the yield leg is 24 bp away and Threshold B armed a sixth time on diverging legs.",
-          "text": "(i) MOVE closed 73.10, −1.58 — a SECOND consecutive close below 75, and the first close BELOW the 73.38 pre-war anchor since 28 August. The last edition’s watchlist asked whether one sub-75 close would become two; it did. The downgrade needs the 30-year below 5.00% WITH MOVE below 75, sustained; the yield leg fails by 24.23 bp, narrowed from 24.65. (ii) (!) §9.18 is not discharged by two closes, and the yield leg has not been within 15 bp of its condition since 28 July nor closed below 5.00% since 6 July. The longest sub-75 run SINCE THE CURRENT REGIME BEGAN on 29 July is NINE closes, 18–28 August, and it ended in a single session on 31 August with MOVE at 75.32; the leg was satisfied and given back inside one session on 5 and on 7 August. (!) Bounded properly (§9.32): the war’s longest sub-75 run is TWENTY-ONE closes, 10 June–10 July, in a regime that no longer obtains. Two closes is the start of a run, not a regime, and the yield leg has never come within 15 bp of its condition. (iii) (!) THE ANOMALY IS BACK. Treasury volatility is now 0.28 points BELOW its pre-war anchor while the 30-year sits 63.17 bp ABOVE its own. That is a fully normalised expectation of movement around a yield that has not normalised at all — the configuration this document described in August, closed on 31 August, and now records again. The two deviations are reported separately and no composite is constructed. (iv) The curve shape was a BEAR FLATTENER falling monotonically with tenor — 2Y +3.01 bp, 5Y +3.04, 10Y +1.41, 30Y −0.42 — with 2s10s −1.394 corroborating independently. This is a Fed repricing, not a Hormuz one, and it is the FIRST bear flattener since 1 September, the third distinct curve signature in the five sessions since 31 August. Every war-high close set on 1 September at the 2-, 5- and 10-year SURVIVES, and the 5-year came within 1.03 bp of taking its own. (!) The 30-year fell BECAUSE the front end rose: a market pricing a hike into a supply shock is pricing a central bank defending its target, which lifts the near path and leaves the far one. (v) The week ahead is the test. A $58bn 3-year on 8 September, a $39bn 10-year reopening on 9 September and a $22bn 30-year reopening on 10 September — $119bn of coupons, all settling 15 September, the first day of the FOMC — and the enlarged long-end buyback regime begins on 9 September, the same day as the 10-year. August CPI on 11 September was named by a Federal Reserve governor as the swing input for the 15–16 September decision. (!) No trend is read from $22bn against August’s $25bn: a reopening is not a new issue (§9.40)."
-        },
-        {
-          "title": "POLITICAL STRESS — 5/5, held. The scored series backfilled up to a three-month high, and the fuel that was three cents from an all-time record took it.",
-          "text": "(i) The scored series moved AWAY from its downgrade for a fourth consecutive edition. AUTMUSAG BACKFILLED UP to $4.92  for 3 September against the $4.90 carried as last resolved — a FIFTH consecutive rise and the highest print since 29 May, expressly NOT a war high ($5.18, 20 May). It sits 32 cents above the $4.60 downgrade condition and 17 above the $4.75 that fired the upgrade. The 4 and 7 September cells are dark and are not extrapolated (§9.30). (ii) THE RECORD FELL, AND THE INSTRUMENT COULD NOT REGISTER IT. The last edition put AAA diesel 3.27 cents below its all-time record of $5.8159 of 19 June 2022. It printed $5.85 the next day, 4 September, taking the record; then $5.8819 and $5.8970. AAA’s own highest-recorded-price table, read direct on 7 September, now carries $5.8970 set 6 September 2026 and no longer displays the 2022 figure. This is the first US retail fuel price to exceed a pre-war all-time high in this war. Gasoline did not follow — AAA regular $4.1473 against its own $5.0165 record of 14 June 2022 — and the divergence widened: +29.35c on the week for diesel against +6.86c for regular, more than four times the pace for a second consecutive edition. (iii) The cause is a US refining constraint, not a crude one, and it is legible in the EIA weekly for the week ending 28 August: distillate stocks 104.2 mn bbl, 14% below the five-year average and 10.1% below the same week of 2025, against refinery utilisation of 98%, the highest since August 2018. A system running at 98% has nothing left with which to rebuild a distillate stock that a chokepoint keeps draining. (!) There is a second, non-Hormuz driver and it must be named rather than absorbed: a Russian diesel export suspension following strikes on Russian refineries. The document does not apportion between the two. (iv) The limitation is the finding, and it is sharper than a slow-moving series. The political channel is scored on AUTMUSAG, which produced NO PRINT AT ALL in the record window — dark on 4 and 7 September, its last resolved value a two-cent backfill dated 3 September, before the record was set. The record was set in a fuel the trigger cannot see, and the $3.52 anchor and the whole scored history are written on the series that moved least. That is stated rather than corrected, because re-basing a trigger to the series that would move it is what §9.21 and §9.56b forbid."
-        },
-        {
-          "title": "ESCALATION RISK — 5/5, held. Iran fired ballistic missiles at two US warships, the US sank a tanker in reply, and the mediator was again the missing signature.",
-          "text": "(i) THE EXCHANGE BECAME DIRECT AND NAVAL, AND THE UNITED STATES PUBLISHED IT. CENTCOM’s 5 September release — its first since 1 September and only its second since 15 August — states that the IRGC launched ballistic missiles toward a carrier and a guided-missile destroyer, that both evaded and that no American was harmed. It then names three Iranian tankers destroyed in reply, each with a damage assessment: Downy off Kharg and Stark 1 near Jask permanently disabled, Kylo sunk in the Gulf of Oman, with strike video released. (!) This is the first CENTCOM product of the war carrying a target list AND a BDA, and this document has spent three editions asking for exactly that. (ii) A STANDING CAVEAT IS DISCHARGED, AND IN THE DIRECTION OF CONFIRMATION. ‘Tanker for tanker’ was carried on 3 and 4 September as TIER 2 — anonymous officials, one outlet, no named confirmation or denial. It is now the theatre commander’s own stated policy, on the record and on CENTCOM’s own site. The Secretary of Defense said the same in public the same day. TIER 2 becomes TIER 1. (iii) Iran’s half of the exchange is the opposite. Its claim to have struck three tankers and several US-linked vessels is UNCORROBORATED — JMIC 094 records NIL new incidents, the count is frozen at 101, no vessel is named and no UKMTO product exists; and its separate claim to have hit a US uncrewed surface vessel was called a lie by CENTCOM’s named spokesman. (!) A reported 4 September missile attack on US targets in JORDAN is UNCONFIRMED: no Jordanian statement, no Iranian claim of responsibility, a senior US official on the record saying he is not aware of one, and a live contamination risk from the 31 August and 1 September Jordan events, which must never be merged with it (§9.13). (iv) What cut the other way: NO US strike on Iranian territory, a sixth day, and NO Iranian attack on any Gulf state after Kuwait on 3 September. The theatre narrowed from host countries back to the water. Against that, Iran’s parliament speaker said on 6 September that the era of proportionate responses has ended. (v) The mediator is again the missing signature. Iran’s security-council secretary announced an exclusion zone Iran will declare unilaterally, with a sanctions list attached, and asserted that Hormuz passage maps are agreed with Oman and will be signed within days. fm.gov.om, read direct on 7 September — the exact query being any Omani statement on Iran, Hormuz, mediation, a corridor or a map since 4 September — returns nothing; the last Iran-related publication is the 25 August joint statement, and Oman’s own foreign minister published a text on 4 September saying no solution has been reached. This is the 26 August failure repeating: a bilateral instrument announced by one party with no counterparty text. The channel has been at 5/5 since 9 July and can register none of it (§9.7)."
-        }
-      ],
-      "stage4Note": "",
-      "stage4": [
-        [
-          "A",
-          "A failed coupon auction: a clearing yield with a tail above the 1pm when-issued level",
-          "UNTESTABLE AS WRITTEN, THEREFORE NOT ARMED ON THE RECORD (§9.39) — the test needs a when-issued level Treasury does not publish, so it returns NEITHER state; it is carried as UNTESTABLE, which is not the same as unarmed, and contributes nothing to Stage 4 in either direction. NO coupon auction cleared in the window. THE TEST IS IMMINENT ON THREE LEGS IN THREE DAYS — 8, 9 AND 10 SEPTEMBER: a $58bn 3-year on 8 SEPTEMBER, a $39bn 10-year reopening on 9 SEPTEMBER and a $22bn 30-year reopening on 10 SEPTEMBER, all settling 15 SEPTEMBER — $119bn of coupons landing on the first day of the FOMC. (!) The 8 September bill auctions were shifted off Monday by the federal holiday and total $246bn across three tenors, which is supply the same week and is stated rather than merged with the coupon figure. (!) NO trend is read from $22bn against August’s $25bn: a reopening is not a new issue and the denominators differ (§9.40). The enlarged long-end buyback regime BEGINS 9 SEPTEMBER, the same session as the 10-year reopening — a demand-side offset and a supply event on one day — and the updated tentative schedule promised in SB0607 is STILL NOT PUBLISHED. Read the allotment composition, not an unsourceable tail (§9.29, §9.40). A2.3.4"
-        ],
-        [
-          "B",
-          "30-year above 5.20% WITH 10-year above 4.65%",
-          "ARMED, a SIXTH consecutive close — extending the longest armed run of the regime. 30-year 5.2423% clearing by 4.23 bp; 10-year 4.7821% clearing by 13.21 bp. (!) THE LEGS DIVERGED FOR THE FIRST TIME IN THE RUN: the 30-year margin narrowed a THIRD consecutive close — 5.71, 4.65, 4.23 bp — while the 10-year’s WIDENED after two narrowings, 12.80, 11.80, 13.21 bp. That is the bear flattener passing through the test, and it is the mechanism §9.49 complains of. Ordinals UNCHANGED and this is NOT a new state: SIX armings and FIVE lapses, ELEVEN states, TEN changes since 29 July. (!) §9.49, the recorded DEFECT, is STRENGTHENED again: B has now been satisfied across SIX closes spanning THREE distinct curve shapes — bear flattener three times, bear steepener once and bull steepener twice, which is three of the four configurations available. A test meant to detect long-end stress has returned the same answer through all three"
-        ],
-        [
-          "C",
-          "MOVE above 130",
-          "NOT ARMED. 73.10 — 56.90 points below C and 41.92 below the 115.02 war high of 26 March. −1.58 on the session, a SECOND consecutive close below 75, and the Treasury downgrade’s volatility leg is SATISFIED a second session. (!) The two anchor deviations are reported SEPARATELY and no composite is constructed: volatility is now 0.28 points BELOW its 73.38 anchor and the 30-year 63.17 bp ABOVE its 4.6106 anchor. They are on OPPOSITE sides of their anchors again for the first time since 28 August, which is the anomaly this document named in August: a fully normalised expectation of movement around a yield that has not normalised at all"
-        ]
-      ],
-      "crossAsset": "¶ THE PROSPECTIVE ITEM RESOLVED AND IT RESOLVED HAWKISH. August payrolls +162,000 against a consensus near 53,000, unemployment unchanged at 4.1%, average hourly earnings +0.3% m/m and +3.1% y/y. June was revised UP +11,000 to +31,000 and July UP +44,000 from −23,000 to +21,000: a combined +55,000, and July flips from a contraction to an expansion. The prior twelve-month average is reported near +31,000 a month, so August ran roughly five times its own trailing run-rate; the denominator is named because the multiple is meaningless without it (§9.19). ¶ The rate response: CME-implied odds of a 25 bp September HIKE 66.1% (31 Aug) → 48.4% (3 Sep, on a governor’s remarks) → 58.4% (4 Sep, on payrolls). A prediction-market reading is at A2.3 and no cross-venue composite is constructed (§9.24). August CPI on 11 SEPTEMBER was named by that governor as the swing input for the 15–16 September decision. ¶ No WPSR falls in this window; the next is DELAYED to 10 September by the federal holiday, which also delays the EIA Monday retail print a second week. The 28 August week stands: commercial crude −4.5 mn bbl to 424.5, refinery utilisation 98%, the highest since August 2018; distillate 104.2 mn bbl, 14% below the five-year average; gasoline 6% below. The §9.28 import test still has NOT reverted: crude imports 6.8 mb/d on a 6.7 four-week average. ¶ The SPR is unchanged at 286.6 mn bbl, EIA, data-dated week ending 28 August. (!) Vendors are restating that as ‘as of 2 September’ — the PUBLICATION date presented as the DATA date; no new print exists. ¶ OPEC+ held October output UNCHANGED on 6 September at a 31.1 mb/d target, ending six consecutive monthly increases — the last edition’s PROSPECTIVE item, resolved. NO September IEA or OPEC monthly and NO updated spare-capacity estimate existed at the cut: PROSPECTIVE, not NOT FOUND (§9.46). ¶ Freight, week 36: TD3C Middle East Gulf–China WS 677.22, +45.55 on the week, a round-trip TCE just under $704,000/day. (!) LNG freight moved the OTHER way — BLNG1 Australia–Japan −$9,000 to $21,400/day on elevated availability in both basins — so the LNG commodity spikes while LNG tonnage idles. The full macro record, WPSR detail, Treasury-supply internals, war-risk insurance and the freight table are at ANNEX A2.3."
-    },
-    "channels": [
-      {
-        "name": "Maritime denial",
-        "score": 5,
-        "state": "max",
-        "rationale": "JMIC 094: count FROZEN at 101, NIL new; blockade 87/3/2 dated 3 Sep. Kpler 10/day, lowest since May At the cap. 6 non-facilitated against 59 facilitated for 3–5 Sep, one document, and 094 labels the same dates 48h"
-      },
-      {
-        "name": "Oil price shock",
-        "score": 2,
-        "state": "live",
-        "rationale": "Brent CO2 $92.32, +$0.69. Henry Hub 2.87% below pre-war, the smallest discount since 8 July $2.68 below $95, NARROWED — nearest since 21 Aug. (!) The ACTIVE contract closed above $95 a THIRD session; §9.56"
-      },
-      {
-        "name": "US inflation impulse",
-        "score": 5,
-        "state": "max",
-        "rationale": "5y5y 2.3082%, a FOURTH close above 2.30% but on its narrowest margin, 0.82 bp. Payrolls +162,000 16.62 bp above the 2.142% anchor. (!) The Treasury yield leg is 24.23 bp away on a DIFFERENT instrument; the two are not ranked"
-      },
-      {
-        "name": "Treasury stress",
-        "score": 5,
-        "state": "max",
-        "rationale": "A BEAR FLATTENER: 2-year +3.01 bp, 30-year −0.42. MOVE 73.10, a SECOND sub-75 close (!) Volatility leg SATISFIED a second session and BELOW its pre-war anchor; yield leg fails by 24.23 bp"
-      },
-      {
-        "name": "Political stress",
-        "score": 5,
-        "state": "max",
-        "rationale": "AUTMUSAG backfilled UP to $4.92 for 3 Sep, a fifth straight rise, then DARK twice. AAA diesel TOOK its all-time record 32 cents above $4.60, moving AWAY a fourth edition. (!) The record fell in the fuel the trigger cannot see"
-      },
-      {
-        "name": "Escalation risk",
-        "score": 5,
-        "state": "max",
-        "rationale": "Iran fired ballistic missiles at TWO US warships; CENTCOM destroyed THREE Iranian tankers in reply and NAMED each At the cap. (!) ‘Tanker for tanker’ goes TIER 2 to TIER 1 on CENTCOM’s own release"
-      }
-    ],
-    "scoreTotal": 27,
-    "whatsChanged": {
-      "title": "Change",
-      "items": [
-        "Iran fired ballistic missiles at TWO US Navy warships on 5 September — a carrier and a guided-missile destroyer. CENTCOM says both evaded, and answered by destroying THREE Iranian tankers, each NAMED with a damage assessment The most direct US–Iran exchange of the war, and the first CENTCOM product with a target list AND a BDA. (!) The answer was economic-target, not territorial: no strike on Iranian soil, a sixth day",
-        "‘Tanker for tanker’ is DISCHARGED from TIER 2 to TIER 1. Carried for two editions as one anonymous sourcing chain, it is now the theatre commander’s stated policy on CENTCOM’s own release, with the Defense Secretary saying the same in public A standing caveat resolving toward confirmation, the rarer direction. (!) Iran’s counter-claim did not: three tankers claimed struck, UNCORROBORATED — JMIC 094 records NIL",
-        "JMIC 094 issued: the confirmed-incident count is FROZEN at 101, and the mine-danger-area language did NOT return — 093’s weaker formula is reproduced verbatim for a second issue. Blockade tally 84/3/2 → 87/3/2, dated 3 Sep The last edition’s watchlist question answered NO — but 095 decides whether it holds a third issue. (!) 094’s ICOD is 051500Z, so the frozen count is SILENT on 6 September",
-        "Iran will declare an EXCLUSION ZONE from the US blockade line into the Gulf, entrants added to its sanctions list, and says Hormuz maps are agreed with Oman and will be signed within days (!) OMAN HAS PUBLISHED NOTHING CONFIRMING IT. fm.gov.om read direct 7 Sep, nothing dated 5–7 September; the last item on its statements page is 25 August, and Oman’s FM wrote on 4 Sep that no solution has been reached",
-        "US retail diesel TOOK ITS ALL-TIME RECORD — AAA $5.85 on 4 September, through the $5.8159 of 19 June 2022, then $5.8819 on the 5th and $5.8970 on the 6th. AAA’s own record table now reads 6 September 2026 The FIRST US retail fuel price to exceed a pre-war all-time high in this war, and the political channel is not scored on it. Regular rose 6.86c on the week to diesel’s 29.35c",
-        "August payrolls +162,000 on a ~53,000 consensus, unemployment 4.1%, with June and July revised UP +55,000 and July flipping from −23,000 to +21,000. September hike odds 48.4% → 58.4% on one venue’s series The PROSPECTIVE item resolved, and hawkish. (!) The 30-year fell BECAUSE the front end rose — a Fed repricing, not a Hormuz one",
-        "MOVE 73.10, −1.58 — a SECOND consecutive close below 75 and the first BELOW the 73.38 pre-war anchor since 28 August, while the 30-year sits 63.17 bp ABOVE its own The last edition’s watchlist question answered YES. (!) §9.18 is not discharged by two: the longest run of this regime is nine closes and it ended in one session. The anomaly of normalised volatility around an un-normalised yield is BACK",
-        "Threshold B armed a SIXTH consecutive close, extending the longest run of the regime — but the legs DIVERGED for the first time in the run: 30-year margin narrowed to 4.23 bp, 10-year’s widened to 13.21 bp §9.49 strengthened: B returns the same answer through three of the four curve shapes available. (!) §9.10 fires on two cells — AUTMUSAG BACKFILLED UP to $4.92 and SOFR to 3.66, both for 3 Sep",
-        "The sanction the last edition recorded as not having landed, landed the same day: OFAC designated a Turkish bank and two subsidiaries on 4 September, the second bank of the campaign. OPEC+ held October output UNCHANGED on 6 September A PROSPECTIVE and a promised-but-absent item both resolve. (!) NOTHING on 5, 6 or 7 September on a direct read of the recent-actions index"
-      ]
-    },
-    "scenarios": [
-      {
-        "name": "Return to full war",
-        "p": 38,
-        "desc": "Sustained US or Israeli strike campaign inside Iran with Iranian reprisals against US bases and Gulf infrastructure",
-        "shift": "+1. Iran fired ballistic missiles at two US capital ships and the US sank a tanker in reply; Iran’s parliament speaker said the era of proportionate responses has ended. (!) Held to +1 because the American answer was economic-target, not territorial, and no strike has hit Iranian soil for six days"
-      },
-      {
-        "name": "Deal collapse on terms",
-        "p": 34,
-        "desc": "The corridor framework exists on paper and dies over geometry, fees and sovereignty; the blockade and the counter-blockade both continue",
-        "shift": "+1. Iran is writing the geometry unilaterally — an exclusion zone with a sanctions list attached — and the only bilateral instrument claimed carries one signatory’s text. (!) Washington’s precondition is unchanged: Iranian conduct, not an Iranian signature"
-      },
-      {
-        "name": "Regional relapse",
-        "p": 15,
-        "desc": "The war widens to Gulf states directly — UAE, Saudi, Bahraini, Kuwaiti or Qatari territory or infrastructure struck",
-        "shift": "−3. NO Iranian attack on any Gulf state after Kuwait on 3 September, on a direct check of every host government. The retaliation was maritime only; the theatre narrowed from host countries back to the water"
-      },
-      {
-        "name": "Contained but violent",
-        "p": 10,
-        "desc": "The present state persists: blockade, counter-blockade, periodic strikes on shipping, no reopening and no general war",
-        "shift": "+1, recovering a third of last edition’s cut: the violence returned to the water and stayed there four days. (!) Only +1, and close to a defect of the line — the shipping in question included two US warships, which is not what ‘confined to shipping’ meant"
-      },
-      {
-        "name": "Mediated pause",
-        "p": 3,
-        "desc": "A verified stand-down, resumed talks and a reopening on published terms",
-        "shift": "UNCHANGED at the lowest reading of the war. FOR: the first concrete signing claim in weeks. AGAINST: it is Iranian-sourced, Oman published nothing confirming it, and Oman’s own foreign minister wrote on 4 September that no solution has been reached"
-      }
-    ],
-    "watchlist": [
-      "The $58bn 3-year on 8 September, the $39bn 10-year reopening on 9 September and the $22bn 30-year reopening on 10 September — $119bn settling 15 September, FOMC day one, with $246bn of bills also auctioning on the 8th The first coupon test since the August refunding, with the enlarged long-end buyback beginning 9 September, the same session as the 10-year. (!) Threshold A stays untestable (§9.39) — read the allotment composition, never a tail",
-      "August CPI on 11 September, named by a Federal Reserve governor as the swing input for the 15–16 September decision, with hike odds at 58.4% after payrolls The inflation channel is scored on a forward that closed 0.82 bp above its firing level. A CPI print moves the 5y5y more than anything in the Gulf will this week",
-      "Whether the ACTIVE Brent contract closes above $95 a FOURTH time and whether the scored continuation closes above $92.67, its 21 August high The two moved the SAME way this session for the first time since the roll. (!) If the scored one keeps closing, §9.56 stops being a disclosure and becomes a decision",
-      "Whether MOVE holds below 75 for a THIRD close on 8 September, and whether it stays below the 73.38 pre-war anchor Two closes is a run, not a regime (§9.18) — this regime’s longest is nine and it ended in one session. The yield leg is still 24.23 bp away and has never been within 15",
-      "Whether Iran promulgates the exclusion zone with actual coordinates, and whether Oman CONFIRMS or DISOWNS the ‘agreed maps’ A zone with coordinates is an enforceable claim on water; without them it is rhetoric. (!) An Omani denial would be the first public contradiction of Tehran by the mediator",
-      "Whether UKMTO or JMIC logs ANY incident from Iran’s claimed 5–6 September attacks. The count has been frozen at 101 since 3 September A frozen count against a public claim of three tankers struck is either fabrication or reporting lag, and the two have opposite implications. (!) 095 also decides whether the mine deletion holds a third issue"
-    ],
-    "sourceLog": {
-      "tier1Market": "Tecity Bloomberg extract, ‘US Iran BBG Data.xlsx’, pulled 7 Sep. 180 rows × 99 columns; tickers read from the header scan, never hardcoded (§3) — EVERY price, yield, spread, volatility and retail-fuel figure in both documents. The 4 September close is the scoring reference; the 7 September row is intraday and moves nothing. (!) No price is taken from the web. The extract’s own row-1 description for AUTMUSAG — ‘US Average Gasoline Price’ — keeps the ‘AAA all-grades’ gloss withdrawn (A1.5)",
-      "tier1News": "US Central Command public release, 5 Sep, ‘CENTCOM Destroys 3 IRGC Oil Tankers After Iran Targets 2 U.S. Navy Warships’, plus the released strike video, read direct from centcom.mil — THE SINGLE MOST IMPORTANT TIER-1 ITEM THIS EDITION. The Iranian ballistic-missile launch at a carrier and a guided-missile destroyer and the statement that both evaded with no US personnel harmed; the three NAMED tankers and their damage assessments; and Adm. Cooper’s on-record statement — which describes three Iranian tankers taken for two US ships fired on, a three-for-two and not a one-for-one — and which DISCHARGES the ‘tanker for tanker’ DOCTRINE from TIER 2 to TIER 1 while correcting its arithmetic. The Secretary of Defense said the same in public the same day, on his own social-media account, carried by Iran International and Al Jazeera. (!) It is the FIRST CENTCOM product of this war carrying both a target list and a BDA ¶ JMIC Advisory Note Update 094, issued 06/09 23:12, ICOD 051500 UTC, obtained as a primary PDF from the ukmto.org media path; UKMTO Advisory 127-26 (5 Sep 1338 UTC); both 2026 UKMTO listings enumerated by href — The count FROZEN at 101 with NIL new incidents and the explicit ‘no third-flag merchant incidents’ line; the three US-struck tankers logged as advisories rather than attacks; 59 NCAGS-facilitated transits for 3–5 Sep and the 0/5/1 annex figures; the CENTCOM blockade tally at 87/3/2 dated 3 September; five held vessels; threat levels unchanged, Hormuz SEVERE. (!) Also the ABSENCE, on a verbatim comparison of 092, 093 and 094: no mine danger area, no coordinates and no NAVCENT clearance sentence for a SECOND consecutive issue ¶ Mohsen Rezaei, Secretary of Iran’s Supreme National Security Council, on Iranian state television, 6 Sep, carried by AP, Al Jazeera and Iran International — The announced EXCLUSION ZONE, its stated geometry from the American blockade line into the Gulf, and the sanctions-list consequence; and the claim that Hormuz passage maps are agreed with Oman and will be signed within days. (!) Used as a Tier 1 statement of IRANIAN intent; the OMAN half is a claim about a third party and is reported against Oman’s own silence, not with it ¶ fm.gov.om News, Statements and Speeches pages, read direct 7 Sep; the Omani foreign minister’s own text republished by his ministry, 4 Sep — THE CENTRAL NEGATIVE, with its query stated (§9.23c): no Omani statement confirming agreed maps or an imminent signature, and no Iran, Hormuz, mediation or corridor publication since 4 September; the last Iran-related item on the statements page is the 25 August joint statement. And the positive that cuts against Tehran’s account: Oman’s own foreign minister writing on 4 September that a solution has NOT been reached ¶ centcom.mil Public Releases and Press Releases indices, read direct 7 Sep; ofac.treasury.gov Recent Actions index, read direct 7 Sep; home.treasury.gov press releases — THE OTHER NEGATIVES, each with its query: CENTCOM published nothing on 2, 3, 4, 6 or 7 September and no BDA beyond the three named tankers; NO OFAC or FinCEN action on 5, 6 or 7 September, the index running 4 Sep (Iran) then 3 Sep (Cuba/Russia) then 2 Sep (Venezuela). And the POSITIVE that supersedes the last edition: the 4 September designation of a Turkish bank and two subsidiaries under EO 13902, with Iran General Licence CC ¶ BLS Employment Situation for August, released 4 Sep, read direct from the news-release archive; ISM Services PMI for August, 3 Sep; BEA/Census US International Trade for July, 3 Sep; Census M3 factory orders, 2 Sep; US Treasury daily par yield curve, downloaded 7 Sep — Payrolls +162,000, unemployment 4.1%, AHE +0.3% m/m and +3.1% y/y, and the +11,000 / +44,000 revisions; ISM Services 55.4 with Prices Paid 72.6 and Employment 47.8; the July deficit at $88.6bn and its 29.6% year-to-date narrowing; factory orders +0.9%. (!) The Treasury CMT series is used ONLY to corroborate the SHAPE of the 4 September move; it is rounded to two decimals and is never substituted for the extract’s four-decimal generics ¶ fiscaldata.treasury.gov auctions API and the tentative auction schedule (the standing method under §9.39a), queried direct 7 Sep; Treasury press release SB0607 — The $58bn 3-year (8 Sep), $39bn 10-year reopening (9 Sep) and $22bn 30-year reopening (10 Sep), all settling 15 Sep; the $246bn of bills auctioning 8 September off the usual Monday; the 20-year and 10-year TIPS reopenings that follow; and that the enlarged long-end buyback regime begins 9 SEPTEMBER. (!) TreasuryDirect announcement pages return empty to a fetcher — the API is the only route that works ¶ AAA Daily Fuel Gauge and its highest-recorded-average-price table, read direct 7 Sep, page stamped ‘price as of 9/6/26’; AAA news release ‘Labor Day On Track to Set Record at the Pump’, 3 Sep; EIA Weekly Petroleum Status Report highlights — Regular $4.1473, mid $4.6486, premium $5.0327, diesel $5.8970 and every week/month/year comparator; and AAA’s own record table now reading diesel $5.8970 set 6 September 2026, superseding the $5.8159 of 19 June 2022; AAA’s statement that the national average has never been above $4.00 on a Labor Day and that the prior record is $3.82 of 3 September 2012. From EIA: SPR 286.6 mn bbl for the week to 28 August, crude imports 6.8 mb/d, distillate 104.2 mn bbl and 14% below the five-year average, utilisation 98%, and that the next WPSR is delayed to 10 September ¶ TIER 2 · Kpler and LSEG via Reuters, 6–7 Sep; Windward MIOC, data-dated 3 Sep; IMF PortWatch — The ten-day moving average of 10 Hormuz transits a day, the LOWEST SINCE MAY, with 2 on Saturday and 6 on Sunday and no VLCC exit since 2 September; the Saudi products tanker that turned back on 6 September; the 22 tankers waiting off Kharg, 20 AIS-dark, with all three berths empty. (!) PortWatch has not published past 30 August and its row is labelled a week stale rather than refreshed ¶ TIER 2 · AP, Reuters, Al Jazeera, CNBC, UPI, Iran International, Washington Post/Washington Times, 4–7 Sep — OPEC+ holding October output unchanged at a 31.1 mb/d target on 6 September; the Iranian parliament speaker’s ‘era of proportionate responses’ remark; the US Treasury Secretary’s 6 September television remarks including the ~30 mn bbl characterisation, recorded as a characterisation and not a stock figure; Capt. Hawkins’ denial of the drone-boat claim. (!) The 4 September reported missile attack on US targets in JORDAN is carried ONLY as UNCONFIRMED: no Jordanian statement, no Iranian claim of responsibility, and a senior US official on the record saying he is unaware of one",
-      "tier3": "IRGC Navy Telegram, Iranian state television, Tasnim, Fars, Mehr, IRNA, 5–7 Sep — The IRGC’s claim to have struck three tankers on an ‘unauthorised’ route plus several US-linked vessels, carried ONLY as an UNCORROBORATED claim against the frozen JMIC count and the absence of any UKMTO product. RECORDED AND NOT USED for any finding: the claim that the US carrier and destroyer ‘sustained some damage and fled’, which CENTCOM contradicts; and the claim to have struck a US uncrewed surface vessel, which CENTCOM’s named spokesman called a lie ¶ 1/2 · Baltic Exchange weekly report for 4 September, republished by DCN — TD3C at WS 677.22 on 3 September, +45.55 on the week, TCE just under $704,000/day; TD34, TD15 and TD22; and the LNG freight lines that fell — BLNG1 −$9,000 to $21,400/day — which is the counterintuitive result carried in A1.6 ¶ NOT OBTAINED · Any Kpler, Vortexa or TankerTrackers Iranian export or loading figure for 4–7 September; a Windward transit reading later than 3 September; UKMTO VRA Overview No. 5, now a week past its Friday cadence; an independent JKM/Asia LNG assessment for this window; CME FedWatch direct from cmegroup.com (the QuikStrike iframe exposes no text); initial jobless claims for the week ended 29 August at a primary source; the OPEC Secretariat’s own release for the 6 September meeting — Recorded as gaps with the method named, so the reader can distinguish a fact about the world from a fact about the fetch (§9.50). (!) A direct method for CME FedWatch is owed for a THIRD consecutive edition; the hike-odds series is therefore carried entirely from dated secondary readings, each with its date attached. (!) The 206k claims figure carried last edition is NOT repeated as confirmed ¶ SUPERSEDED / RESOLVED · The last edition’s ‘no sanctions landed’; its ‘tanker for tanker is one anonymous chain’; its PROSPECTIVE markers on the August employment report, JMIC 094, OPEC+ and Baltic week 36; and the week-35 TD3C figure marked UNCONFIRMED ON RE-CHECK — All SEVEN resolved this edition and are recorded as superseded rather than withdrawn, because each was true at its own cut (§9.46). (!) The week-35 TD3C is superseded by the Baltic’s own week-36 comparator of WS 631.67 for 28 August, close to but not identical with the WS623 carried, so it is retired rather than confirmed ¶ PROSPECTIVE · The 3-year auction (8 Sep), 10-year reopening and first enlarged buyback (9 Sep), 30-year reopening (10 Sep); August CPI (11 Sep); the FOMC (15–16 Sep); the next WPSR and EIA retail print (10 Sep); JMIC Update 095; the September IEA and OPEC monthly reports; the IAEA Board resolution tabled for the week of 7 September in Vienna — Not retrieval failures. (!) ONE item has crossed OUT of this register and into NOT OBTAINED, and is recorded as such for a fifth edition: the updated tentative buyback schedule promised in SB0607 on 19 August, for a regime that begins in two days, is still absent and is a failure to publish rather than a prospective item"
-    },
-    "protocol": [
-      {
-        "step": "Refresh and verify the extract",
-        "detail": "Never build an edition off a stale extract (§9.22). Check the file mtime AND parse the sheet. This edition: the extract carries a 7 September row against the 4 September row the last edition ran on, and the 4 September row has settled into a genuine close on all fourteen scored fields. It is fresh."
-      },
-      {
-        "step": "Parse with a dynamic header scan",
-        "detail": "Column indices move between uploads. Auto-detect the Brent and WTI front month and take whatever label the header scan returns for DXY. Re-verify the 27 February anchor field by field — done this edition, unchanged on all seventeen fields listed at A10.1, and on SOFR at 3.68. (!) Read the DESCRIPTION row, not just the ticker row: doing so is what exposed that AUTMUSAG is labelled ‘US Average Gasoline Price’ and not ‘AAA all-grades’ (A1.5, §9.57). A ticker map is not a definition."
-      },
-      {
-        "step": "Run all THREE integrity checks",
-        "detail": "Row-level (§9.8), field-level identical-value at the precision each series is published to (§9.35, §9.48), and the continuation-versus-active BASIS check (§9.41). This edition: §9.8 and §9.41 CLEAR; §9.35 FIRES on SIX fields at once on the 7 September row, with a known and benign cause — US Labor Day, the cash bond market shut — and the remedy applied regardless of cause. (!) It also fires on the unscored 20-year across THREE consecutive rows, which is recorded even though nothing depends on it: a field-level test run only on the fields one cares about is not a test."
-      },
-      {
-        "step": "Run the backfill check in BOTH directions",
-        "detail": "§9.10: yesterday’s dark cells must be re-examined, not carried, and a backfill is as likely to run against a trend as with it. This edition it fired on TWO cells, both for 3 September and both UPWARD: AUTMUSAG to $4.92, two cents above the value carried and the highest since 29 May though NOT a war high, WIDENING the political distance to 32 cents; and SOFR to 3.66, resolving the non-backfill the last edition recorded. The test has now fired UPWARD on the scored gasoline series in FIVE consecutive editions — $4.83, $4.86, $4.90, $4.92 — against a downgrade case that was live a fortnight ago."
-      },
-      {
-        "step": "Compute deltas and test every trigger",
-        "detail": "d/d, w/w five rows back, and versus pre-war; explicit trigger tests for the four market channels plus Stage-4 A, B and C. Run min, max and last-prior-occurrence on the full column before writing ANY superlative (§9.32). This edition that discipline established that $2.68 is the nearest reading since 21 August and NOT of the war; that Threshold B’s six-close run IS the longest of the regime; that Henry Hub’s discount is the smallest since 8 July; and — the correction — that the count of active-contract closes above $95 published last edition was one too high."
-      },
-      {
-        "step": "Verify the news, and re-verify what was inherited",
-        "detail": "Every claim needs a named source and an exact date, and negative claims decay fastest of all (§9.23). State the exact query behind every negative. Say NOT OBTAINED rather than estimating, and distinguish it from PROSPECTIVE (§9.46). (!) This edition the discipline paid in the other direction: the last edition’s ‘no sanctions landed’ and ‘tanker for tanker is one anonymous chain’ were both true at their cut and both were overtaken within hours, so they are SUPERSEDED rather than withdrawn. A negative that expires is not a negative that was wrong, and the two are recorded differently."
-      },
-      {
-        "step": "Build, then QA in three passes",
-        "detail": "A numeric harness against the dataframe; a STYLE harness measuring bold ratio and headline length (§9.52, §9.55); an adversarial PROSE pass by reviewers with no access to the source data, run as TWO reviewers CONCURRENTLY against the same pre-fix text and merged into one patch (§9.42); and a VISUAL render, which is not optional (§9.43). Re-run the numeric and style harnesses AFTER the prose fixes. Balance the bold tags in every fragment after every edit (§9.42a). Check the page budget at build time, not after the prose is final (§5A)."
-      },
-      {
-        "step": "Deliver both documents",
-        "detail": "The edition and the annex go into the project root together. A file that is not committed never reaches the reader. The annex does not go into the dashboard PDF folder, because the score-history script regexes a score sentence out of every PDF there and the annex has none. Then snapshot the fragments under a date-stamped name, at the END of the run, so no edition can overwrite another’s sources."
-      }
-    ],
-    "methodology": {
-      "scale": "Six channels, each scored 0–5, summed to 0–30. Bands: 0–7 watch; 8–14 stress; 15–21 systemic-risk watch; 22–30 crisis. Maritime denial and escalation risk are event channels; oil, US inflation impulse, Treasury stress and political stress are market channels scored on confirmed closes.",
-      "scaleCap": "(a) Confirmed closes only for market channels. No market channel moves on an intraday print. The 7 September snapshot in this document moves nothing — including an active-contract mark of $96.69 that is through the trigger level, and a TTF mark of €74.855 that is ABOVE the war-record CLOSE and is not reported as a record. (b) Hysteresis, and it is now being tested from the other side. Upgrades fire on a sustained break; downgrades require a sustained reversal past a wider threshold. The 5y5y forward closed BELOW its own firing level on 28 and 31 August and two editions came under pressure to redefine the downgrade to meet it; the rule was NOT moved, and the forward has closed ABOVE the level on 1, 2, 3 and 4 September. (!) But the margin has NARROWED to 0.82 bp, the tightest of the four, and a margin inside one session’s typical move is not clearance. The rule is not rewritten now that it is thin, for the same reason it was not rewritten when it was broken (§9.16, §9.26). (c) The scale saturates in BOTH directions (§9.7, §9.27). FIVE of six channels are at the cap, so the score could not register the first Iranian ballistic-missile attack on US capital ships, the first CENTCOM release of the war carrying both a target list and a battle damage assessment, an Iranian exclusion zone announced with no Omani counterparty text, Hormuz traffic at its lowest since May, or US retail diesel taking an all-time record that predates this war by four years. Nor could it register what cut the other way — no American strike on Iranian territory for a sixth day, no Iranian attack on any Gulf state since 3 September, and Treasury volatility below its pre-war anchor. A flat 27 is an instrument at its stop.",
-      "integrity": "Rules exercised this edition, named so the reader can audit them. §9.8 and §9.41 CLEAR; §9.35 FIRES on six fields (A1.1), and the reasoning for extending the unresolved treatment to BE10 and the 5y5y — which did move — is stated rather than assumed, because a derived generic cannot settle on a closed cash market either. §9.10 — the two-way backfill test, fired on TWO cells, both upward, and has now fired upward on the scored gasoline series in FIVE consecutive editions. §9.11 — an announcement is not an event, applied symmetrically: Iran’s announced exclusion zone moved NO channel, because it has no coordinates, no effective date and no counterparty text; and the parliament speaker’s ‘era of proportionate responses’ remark moved none either. §9.13 — a prior event is never reused for a later one, and this edition it mattered twice: the 4 September reported attack on US targets in Jordan is UNCONFIRMED and is kept wholly apart from the 31 August and 1 September Jordan events; and any Kuwaiti ordnance count encountered in search results belongs to a July attack, not to 3 September, so none is carried. §9.15 — both Treasury legs are computed and compared, not the satisfied one alone: the volatility leg is satisfied a second session while the yield leg fails by 24.23 bp and has not been within 15 since 28 July. §9.18 — a single sub-threshold close is a session; two is the start of a run and NOT a regime, this regime’s longest run being nine closes, ended in one session, against a war-long maximum of twenty-one that belongs to a different regime (§9.32). §9.19 and §9.24 — every denominator named, none spliced or averaged: the 59 facilitated and the 6 non-facilitated that sit inside a single JMIC document, the 85/day and 138/day baselines, the three retail fuel series, and the two Fed-pricing venues over different horizons. §9.23 — every negative names the page checked, the method and the date range, and the central negative this edition is Oman’s silence on a claim Tehran made about Oman. §9.26 — engaged on TWO channels at once again: squarely on oil, where it forbids resolving §9.56 toward whichever Brent series would fire the upgrade; and on inflation, where it now forbids the reverse move of tightening the rule as the margin thins. §9.30 — the scored gasoline series backfilled UP for a fifth consecutive edition and is dark for two sessions after; no trend is read through the gap. §9.31 — the snapshot missed the whole US session, but NOT in one direction: ten of fourteen fields settled above the mark and four below, and the shape is the payrolls reaction rather than a drift. §9.32 — every superlative bounded and checked against the full column BEFORE writing, which produced one CORRECTION to an inherited count. §9.36 and §9.41 — both oil bases quoted, no d/d constructed across the roll. §9.37 — ENGAGED: the entire 7 September rates block is a carry, so no reconciliation gap may ever be computed against it. §9.39 and §9.40 — Threshold A untestable as written, no tail asserted, and three auction legs land within four days. §9.43 — a visual render was run before delivery. §9.46 — the 8–10 September auctions, the 9 September buyback, 11 September CPI, the FOMC and the September IEA and OPEC monthlies are PROSPECTIVE and are kept out of the NOT OBTAINED register. §9.50 — re-applied on CME FedWatch, which owes a further method for a THIRD consecutive edition.",
-      "gasoline": "§9.57 — CARRIED FORWARD FROM LAST EDITION, UNRESOLVED. A TICKER MAP IS NOT A DEFINITION, AND A SERIES DESCRIPTION IS AN INHERITED CLAIM LIKE ANY OTHER. This document captioned AUTMUSAG as ‘AAA all-grades retail pump’ for months, in the tape, the chart, the methodology and the score grid, and scores an entire channel on it against a $3.52 anchor and a $4.75 trigger. The extract’s own description row says only ‘US Average Gasoline Price’. (!) The chart legend in §1.4 has been CORRECTED to the vendor’s own label this edition — the last place the withdrawn gloss survived. The four rules stand. (a) Re-verify a series DESCRIPTION on the same schedule as an inherited news claim (§9.13, §9.23). (b) The failure of a description does NOT impugn the series — AUTMUSAG is continuous, pre-dates the war, and has a stable structural spread to the DOE regular series, a war-long mean of 65.6c in a range of 51.6c to 75.9c on dates where BOTH resolved. (c) DO NOT RE-BASE A SCORED SERIES ON THE EDITION THAT DISCOVERS ITS LABEL IS WRONG (§9.21, §9.56b). (d) Publish the irreconcilable numbers side by side with their denominators named (§9.19) and keep the reconciliation open. (!) It could NOT be advanced this edition: the DOE corroboration series is dark for a second week because the 7 September survey falls on a federal holiday, so the two series cannot be differenced on any recent date.",
-      "anchor": "Pre-war anchor (27 February 2026 close), re-verified field by field this edition and unchanged: Brent $72.48, WTI $67.02, 2-year 3.3749%, 5-year 3.5017%, 10-year 3.9375%, 30-year 4.6106%, 2s10s +55.64 bp, 5y5y 2.142%, 10-year breakeven 2.2569%, MOVE 73.38, VIX 19.86, DXY 97.608, scored gasoline $3.52, DOE gasoline ~$2.94, Henry Hub $3.063, TTF €31.23, Asia LNG ¥1,669.",
-      "intraday": "§9.56 — NOW THREE CLOSES OLD, AND THE LAST DEFENCE OF THE STATUS QUO HAS GONE. A trigger written on a continuation series stops being well-defined the moment the basis opens, and the failure is silent. The oil channel’s upgrade is ‘Brent above $95 sustained’. That rule was written and applied through long stretches in which CO2 and COA printed the SAME NUMBER — most recently exactly zero for twenty consecutive sessions to 28 August. Earlier rolls opened a basis too; what is new is a roll that opened one STRADDLING the trigger. Brent rolled on 31 August and the basis has widened on every session since: 2.12, 3.08, 3.54, 3.89, 3.96. On the 4 September close the trigger falls BETWEEN the two series for a THIRD consecutive session: the scored continuation is $2.68 below it and the active contract $1.28 ABOVE it. ‘Sustained’ has a settled operational meaning here — two consecutive confirmed closes, the test that fired US-inflation 4→5 on 31 July and cut oil 2→1 on 3 July. The active contract has now closed above $95 THREE times in succession, so on that series the upgrade condition is met in full and has been since the 3 September close. (!) THE MATERIAL CHANGE THIS EDITION IS THAT THE TWO SERIES NOW POINT THE SAME WAY. On 3 September the scored series moved AWAY while the active stayed through, and that divergence was a real reason to hold calmly. On 4 September both rose and the scored gap NARROWED to its nearest reading since 21 August. The hold now rests on nothing except which series the rule happens to be written on, and that is stated plainly rather than dressed up. Three things follow and all three remain the practice. (a) The channel is held on the scored continuation, and the alternative reading is published in the EDITION rather than buried here, because a reader checking a screen quote for ‘Brent’ will find the active contract. (b) The rule is NOT moved to whichever series would fire it — the §9.26 discipline. (c) The problem is disclosed as an open methodological question and NOT decided under the pressure of a fired trigger, which is the §9.16 precedent. The general form, which will recur: any threshold expressed as an absolute level on a rolling series has an undefined region as wide as the basis, and the basis is zero exactly when nobody is looking at it. ¶ §9.51 — CARRIED FORWARD, UNCHANGED AND UNSETTLED, and now six observations deep. When a defective test is met a second time by a different mechanism, record the MECHANISM, not a verdict. §9.49 recorded Threshold B’s 28 August arming as a defect: a long-end stress test tripped by an 11.14 bp front-end move in which the 30-year contributed 1.25 bp. On 31 August B held on a bear STEEPENER in which the 30-year contributed the largest move on the curve; on 1 September on a bear FLATTENER in which it contributed the smallest; on 2 and 3 September on a BULL STEEPENER twice; and on 4 September on a bear flattener again, in which the 30-year was the ONLY tenor to FALL. (!) The written test has now returned the same answer through three of the four configurations available, in both directions, and on the latest occasion it was satisfied while its own long-end leg moved TOWARD the threshold, the margin narrowing 4.65 to 4.23 bp — the test held open by the leg it was not written about. That is not ambiguity observed twice but six times, and it strengthens rather than resolves the original complaint. (!) A second observation sharpens it further, and it is new this edition: the two legs DIVERGED for the first time in the run — the 30-year margin narrowed a third consecutive close to 4.23 bp while the 10-year’s WIDENED to 13.21 bp — so a single test is now being held open by the leg it was not written about. The open question is unchanged and is not settled here: whether B should be conditioned on a long-end CONTRIBUTION rather than a long-end LEVEL. ¶ Restatements and comparability. Vendor restatements are normal and make absolute levels non-comparable across editions, though directional analysis is continuous. A contract roll does the same thing to a continuation series silently, which is why the basis check is a standing check. The dual gasoline series is never re-based: AUTMUSAG is the scored reference and preserves the $3.52 anchor and the $4.75 trigger; USRFRUSA is corroboration only; AAA’s published headline is a third series and is never compared with either. The pre-war anchor is the 27 February 2026 close, re-verified field by field every edition; it is unchanged to date. FOUR OPEN ITEMS REMAIN DISCLOSED RATHER THAN DECIDED. (1) FIRST IN LINE AND SHARPER THAN LAST EDITION: §9.56, the oil trigger’s ambiguity across the roll — $2.68 below on the scored series and $1.28 through on the active one, with three consecutive closes through on the active series and, for the first time, both series moving the same way. (2) Threshold B’s long-end LEVEL versus long-end CONTRIBUTION question, per §9.49 and §9.51, now six observations deep with diverging legs and a narrowing 30-year margin. (3) §9.57, the reconciliation of the scored gasoline series to any published construction, open and un-advanceable this edition. (4) The US-inflation channel’s firing-versus-downgrade gap, no longer dormant: the firing trigger has held four closes but the margin has narrowed to 0.82 bp while the downgrade sits 16.62 bp lower. The oil channel’s own separate asymmetry stands unchanged: its downgrade is written as a mediated pause AND ‘a close’ at or below $72.48 while its upgrade requires a SUSTAINED break, which as written makes the downgrade’s PRICE limb easier to trip than the upgrade’s, though the downgrade also requires a mediated pause and is not therefore the easier test overall. It is $19.84 away and not live.",
-      "sequencing": "27 → 27 → 27 → 27 → 27"
-    },
-    "sequencing": "27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27"
-  },
   "2026-09-08": {
     "label": "8 Sep 2026",
     "editionLine": "Daily edition * 8 Sep 2026 intraday * Bloomberg * Singapore 8 Sep AM update",
@@ -884,5 +439,451 @@
       "sequencing": "27 → 27 → 27 → 27 → 27"
     },
     "sequencing": "27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27"
+  },
+  "2026-09-09": {
+    "label": "9 Sep 2026",
+    "editionLine": "Daily edition &middot; 9 Sep 2026 intraday &middot; Bloomberg &middot; Singapore 9 Sep AM update",
+    "score": 27,
+    "band": "CRISIS",
+    "sessionNote": "Score held at 27/30 for a twenty-second consecutive edition. The scored Brent continuation closed $94.38, 62 cents from the $95 upgrade and its highest close since 24 July; the 9 September mark is $95.61, through the level. TTF set a fifteenth war-record close at EUR75.841. One claim withdrawn and three corrected.",
+    "headline": "Score HOLDS at 27/30 for a twenty-second consecutive edition. No channel moved, and what separates the score from 28 is sixty-two cents AND two closes. One, and it is the whole judgment. The scored Brent continuation closed $94.38 on 8 September, its highest close since 24 July, 62 cents below the $95 upgrade and in from $1.84; the active contract closed $97.92, a FIFTH consecutive close through the level and its highest since 22 May. The 9 September row then marks 61 cents ABOVE the level at $95.61 — the first mark on the scored series above $95 since 24 July. A mark decides nothing, and this document has been wrong precisely here: §9.31 was written after an edition led on four intraday readings and withdrew all four by the next close. Two CO2 CLOSES above $95 fire the oil upgrade 2→3 and take the score to 28, and the first is a session away rather than a narrative away. (!) One qualification from this document’s own record: the continuation closed above $95 twice in July without an upgrade firing, because the active contract was below the level on both days. Both series are above or at it now. Two, and it is a correction of this document rather than a reading of the market. ONE CLAIM PUBLISHED HERE ON 8 SEPTEMBER IS WITHDRAWN AND THREE ARE CORRECTED. The withdrawal: CENTCOM DID release on 8 September — it says it destroyed FIVE Iranian tankers after ballistic missiles were fired at a US warship twice in two days — and this document’s ‘no release since 5 September’ came off a cached index page read as though it were the world. (!) That is a release by a party to the conflict and no allied product corroborates it. The first correction: JMIC 094’s 101 is the cumulative CONFIRMED-INCIDENT count since 1 March, not a transit figure; 094’s transit figure is 59 vessels per 48 hours. A negative claim about a source is still a claim (§9.23), and a mislabelled denominator is the defect §9.19 exists to stop. Three. The gas complex set the record the oil complex did not: TTF closed €75.841, a FIFTEENTH war-record close and the first of this war above €75, +142.9% on pre-war — and the second and third corrections are ordinals of this document’s own: Asia LNG’s ¥4,010 was a TWELFTH war record, not a thirteenth, and the $5.18 peak of 20 May belongs to the scored series, not to AAA. Four. Five of six channels sit at the cap, so the score registers none of what this window contained: the heaviest Houthi attack on Saudi Arabia in years, four sites struck including the 400,000 b/d Jizan refinery — already offline for weeks, with the energy ministry reporting fires and a halt to SOME operations — and 73 wounded; a five-year Treasury that closed at a new war high; and Oman publishing three separate items on 8 September, one of them condemning those very attacks, and nothing whatever on the strait arrangement Iran (TIER 3 state media, uncorroborated claim) has now said for a third consecutive edition is days from signature. Sequencing 27 → 27 → 27 → 27 → 27.",
+    "tape": {
+      "note": "1 · LIVE TAPE",
+      "oilGasHeader": [
+        "Series",
+        "BBG ticker",
+        "4 Sep",
+        "7 Sep",
+        "8 Sep close",
+        "9 Sep mark",
+        "Trigger note (full commentary at A1.3)"
+      ],
+      "oilGas": [
+        [
+          "Brent, front-month listed — scored",
+          "CO2 Comdty",
+          "92.32",
+          "93.16",
+          "94.38",
+          "95.61",
+          "(!) +$1.22, highest close since 24 July. 62 cents from the $95 upgrade, from $1.84 — now smaller than its own largest daily move of the run. $21.90 above the $72.48 downgrade"
+        ],
+        [
+          "Brent, active contract",
+          "COA Comdty",
+          "96.28",
+          "97.00",
+          "97.92",
+          "99.51",
+          "(!) A FIFTH consecutive close through $95, the run beginning 2 September; highest since 22 May and the 28th of the war. The rule is not moved (§9.56b)"
+        ],
+        [
+          "WTI, front-month listed — scored",
+          "CL2 Comdty",
+          "88.57",
+          "LOST",
+          "90.19",
+          "91.58",
+          "(!) The 7 Sep cell is still blank two extracts on — the §9.60 loss has not repaired. No trigger on WTI"
+        ],
+        [
+          "WTI, active contract",
+          "CLA Comdty",
+          "91.48",
+          "LOST",
+          "93.03",
+          "94.73",
+          "Same loss. Basis 2.84 against Brent’s 3.54; both narrowed, the same way for the first time in this run"
+        ],
+        [
+          "Henry Hub natural gas",
+          "NGA Comdty",
+          "2.975",
+          "LOST",
+          "2.916",
+          "2.889",
+          "(!) 4.80% BELOW its $3.063 anchor and widening — the only ENERGY series here under pre-war, and the evidence this is a LOADING shock"
+        ],
+        [
+          "Dutch TTF natural gas",
+          "TZTA Comdty",
+          "71.952",
+          "73.306",
+          "75.841",
+          "76.770",
+          "(!) +€2.535, a FIFTEENTH war-record close and the first above €75. +142.9% vs pre-war, the largest multiple on the tape. Nothing claimed on the higher mark"
+        ],
+        [
+          "Japan/Asia LNG",
+          "JGLA Comdty",
+          "3,929",
+          "4,010",
+          "3,975",
+          "no print",
+          "−35 off the record. (!) CORRECTED: that was the TWELFTH war-record close, not a thirteenth (§9.32). +138.2% vs pre-war"
+        ]
+      ],
+      "ustNote": "",
+      "ustHeader": [
+        "Tenor",
+        "BBG ticker",
+        "4 Sep close",
+        "7 Sep",
+        "8 Sep close",
+        "9 Sep mark",
+        "4→8, bp",
+        "Trigger note"
+      ],
+      "ust": [
+        [
+          "2-year",
+          "USGG2YR Index",
+          "4.3661",
+          "carry (unres.)",
+          "4.3936",
+          "4.3960",
+          "+2.75",
+          "The largest move on the curve and the front of a clean bear flattener. War high stands by 0.62 bp"
+        ],
+        [
+          "5-year",
+          "USGG5YR Index",
+          "4.5448",
+          "carry (unres.)",
+          "4.5627",
+          "4.5627 unres.",
+          "+1.79",
+          "(!) A NEW WAR HIGH, taking out 4.5551 of 1 Sep by 0.76 bp. The mark repeats it EXACTLY and is unresolved"
+        ],
+        [
+          "10-year",
+          "USGG10YR Index",
+          "4.7821",
+          "carry (unres.)",
+          "4.7882",
+          "4.7862",
+          "+0.61",
+          "Clears Threshold B’s 4.65% leg by 13.82 bp, from 13.21 — the seventh close of the arming"
+        ],
+        [
+          "30-year",
+          "USGG30YR Index",
+          "5.2423",
+          "carry (unres.)",
+          "5.2454",
+          "5.2391",
+          "+0.31",
+          "Clears 5.20% by 4.54 bp, ending three narrowings. The Treasury yield leg fails by 24.54 bp"
+        ],
+        [
+          "2s10s spread",
+          "USYC2Y10 Index",
+          "41.394",
+          "carry (unres.)",
+          "39.252",
+          "38.813",
+          "−2.142",
+          "The flattest close since 28 August. (!) Consistent BY CONSTRUCTION — not a separate observation"
+        ],
+        [
+          "10-year breakeven",
+          "USGGBE10 Index",
+          "2.3532",
+          "moved on a shut market",
+          "2.3751",
+          "2.3743",
+          "+2.19",
+          "(!) RESOLVED after two editions unresolved, and UPWARD — highest close since 4 June, 11.82 bp above its anchor"
+        ],
+        [
+          "5y5y forward breakeven",
+          "USGG5Y5Y Index",
+          "2.3082",
+          "moved on a shut market",
+          "2.3119",
+          "2.3103",
+          "+0.37",
+          "(!) A FIFTH close above the 2.30% firing level, clearing by 1.19 bp. 16.99 bp above the 2.142% anchor"
+        ]
+      ],
+      "crossHeader": [
+        "Series",
+        "BBG ticker",
+        "4 Sep",
+        "Last resolved close",
+        "vs pre-war",
+        "Note"
+      ],
+      "cross": [
+        [
+          "Treasury volatility (MOVE)",
+          "MOVE Index",
+          "73.10",
+          "76.14 (8 Sep)",
+          "+2.76 vs 73.38",
+          "(!) RESOLVED after two dark rows, AND THE VOLATILITY LEG HAS LAPSED: fails 75 by 1.14 after exactly TWO sub-75 closes — a SIXTH give-back. Back ABOVE its pre-war anchor"
+        ],
+        [
+          "Equity volatility (VIX)",
+          "VIX Index",
+          "14.53",
+          "15.72 (8 Sep)",
+          "−4.14 vs 19.86",
+          "+1.19, its first RESOLVED rise since 4 September; 20.8% below its anchor"
+        ],
+        [
+          "US dollar index",
+          "DXY Index",
+          "99.176",
+          "98.787 (8 Sep)",
+          "+1.18 vs 97.608",
+          "−0.389, the lowest close since 13 May. (!) A weaker dollar CUSHIONS the barrel’s rise in every currency but this one"
+        ],
+        [
+          "SOFR overnight rate",
+          "SOFRRATE Index",
+          "3.65",
+          "3.65 (4 Sep)",
+          "−0.03 vs 3.68",
+          "Blank on the 7, 8 and 9 September rows — a genuine blank"
+        ],
+        [
+          "Gasoline, retail pump — scored",
+          "AUTMUSAG Index",
+          "4.93",
+          "4.93 (4 Sep)",
+          "+1.41 vs 3.52",
+          "(!) UNRESOLVED ON THREE ROWS: the 7 Sep cell repeats $4.93 on a shut market (§9.48), the 8th and 9th blank. 33 cents above $4.60, and the condition needs THREE closes at or below it"
+        ],
+        [
+          "Gasoline, DOE regular retail spot — corroboration",
+          "USRFRUSA Index",
+          "no print",
+          "4.071 (31 Aug)",
+          "+1.13 vs ~2.94",
+          "Weekly. The delayed EIA retail release was due 9 Sep and had NOT published — PROSPECTIVE; the WPSR follows on the 10th"
+        ]
+      ],
+      "gasChartNote": "(!) THE DIESEL RECORD RUN ENDED, BY THREE HUNDREDTHS OF A CENT: AAA diesel printed $5.9012 for 8 September against the $5.9015 record of the 7th, after all-time highs on 4, 6 and 7 September. Gasoline still does not follow — AAA regular $4.1514 is 17.2% below its own $5.0165 record of 14 June 2022. (!) CORRECTED: the $5.18 peak of 20 May is AUTMUSAG’s, NOT an AAA record; the two were adjacent last edition and must never be joined (§9.57). FIVE retail series, never compared (§9.19), are at ANNEX A1.5 with their own records, denominators and the open scope question (§9.61).",
+      "straitHeader": [
+        "Strand",
+        "State at the 9 September cut (each reading carries its own date)",
+        "Source"
+      ],
+      "strait": [
+        [
+          "UKMTO / incidents",
+          "(!) CORRECTED: JMIC 094’s 101 is a CUMULATIVE INCIDENT count since 1 March, NOT a transit figure; its transit figure is 59 US-facilitated vessels per 48 hours, a SUBSET and not total traffic. (!) JMIC 095 NOT OBTAINED, a second edition — three URL probes for update numbers 095–097 returned 404 and the JS index renders nothing. No claim is made that it does not exist: an index is not the source, which is this edition’s own withdrawal (A2.3.7). 094, cut off at 051500Z, does not record the 8 September strikes. Hormuz SEVERE",
+          "JMIC 094; ukmto.org read direct 9 Sep"
+        ],
+        [
+          "Transits + blockade",
+          "CENTCOM 94 redirected as of 7 September, posted to X not by release; no 8 September figure — NOT FOUND. SIX UNIVERSES, NEVER SPLICED, each dated: Kpler 6 vessels on 6 Sep (daily) and separately a 10-day MEAN of 10 — a daily count and a mean are not one series; Windward 12 on 6 Sep, zero dark; Lloyd’s List ~12/day, 26 Aug–1 Sep, over 10,000 dwt; PortWatch 7% of its OWN ~85/day base, 30 Aug, unrefreshed, TIER 3; JMIC 59/48h facilitated; and 30–40 CLAIMED by US officials, universe undefined",
+          "Kpler via Reuters 7 Sep; Windward 6 Sep"
+        ],
+        [
+          "CENTCOM / kinetic",
+          "(!) WITHDRAWN. CENTCOM DID RELEASE ON 8 SEPTEMBER — it says FIVE Iranian crude carriers were destroyed after the IRGC fired ballistic missiles at a US warship twice in two days. The last edition read a CACHED index. (!) A release by a party to the conflict, uncorroborated by any allied product; Adm. Brad Cooper is quoted framing it as economic cost. Scale: three tankers on the 5th, five on the 8th. No acknowledged strike on Iranian SOIL through 8 September, an eighth day — 9 September is unreported at the cut and is not counted",
+          "centcom.mil read direct 9 Sep"
+        ],
+        [
+          "Diplomacy",
+          "OMAN PUBLISHED THREE TIMES ON 8 SEPTEMBER AND SAID NOTHING ON THE STRAIT, one item condemning the attacks on Saudi Arabia — it spoke about the region, not about this. Method: fm.gov.om homepage and English news archive read direct 9 Sep, asked for any Hormuz, Iran, navigation or mediation item; answer NONE; footer 8 September. A THIRD edition with no counterparty text (§9.23) against Iranian claims that are TIER 3 state media and uncorroborated",
+          "fm.gov.om read direct 9 Sep"
+        ]
+      ]
+    },
+    "analysis": {
+      "intro": "",
+      "bondYieldNote": "",
+      "bondYield": [
+        {
+          "title": "MARITIME DENIAL — 5/5, held. The adjudicating product is missing for a second edition, and this document has to correct what it said the last one contained.",
+          "text": "(i) The state. The downgrade requires a verified reopening AND traffic above 25% of normal for ten sessions. (!) ‘NORMAL’ STILL HAS NO SINGLE DENOMINATOR, and the test is run ONLY where one provider supplies BOTH the numerator and the baseline (§9.19, §9.24). On Kpler’s own figures, 6 vessels against a pre-war ~130–140/day is under 5%. On PortWatch’s own, 7% of its ~85/day base. On the last OFFICIAL volume basis — 4.9 mb/d in Q2 against 21.6 mb/d pre-conflict — it is 22.7%, the nearest reading to the leg that exists and a QUARTERLY figure, stale by a quarter. Windward and Lloyd’s List publish no baseline, so the test is UNTESTABLE on them and no cross-provider ratio is constructed. (!) JMIC’s 59/48h is a US-FACILITATED SUBSET, not total traffic, and is not divided by anyone’s baseline. Neither leg advanced. (ii) A CORRECTION THIS DOCUMENT OWES ITS READER, AND IT IS A DENOMINATOR ERROR OF EXACTLY THE KIND §9.19 EXISTS TO STOP. The last edition described JMIC 094’s 101 as a frozen transit count. It is not a transit count at all: it is the CUMULATIVE CONFIRMED-INCIDENT total since 1 March. 094’s transit figure is 59 vessels across the 3–5 September 48 hours, US-facilitated. Every sentence built on ‘101 says nothing about 6, 7 or 8 September’ was directionally right and numerically about the wrong series, and the correct statement is that 094 is cut off at 051500Z and therefore silent on both the incident count AND the transit count for 6–9 September. (iii) (!) JMIC Update 095 is NOT OBTAINED, a second consecutive edition. The method, stated once: three direct URL probes for update numbers 095, 096 and 097 on 9 September, all 404, against a JS-driven index that renders nothing. THIS DOCUMENT DOES NOT CLAIM 095 DOES NOT EXIST. A 404 on a guessed URL plus a non-rendering index is exactly the evidence class that made the last edition’s CENTCOM negative false — that release was reachable only with an explicit page parameter — and a negative built on an index must be probed a second way before it is published (A2.3.7). The honest state is non-retrieval, not non-existence. The consequence is sharper than last edition: 094 does not record the American strikes of 8 September either, so the allied maritime record now omits the largest single kinetic event of the window. (iv) The traffic leg is unchanged in level and better characterised in structure, because a second provider published a same-day count. Windward logged 12 transits on 6 September, seven inbound and five outbound, with ZERO dark crossings; Kpler logged 6 for the same day on visible AIS-active commodity vessels, and separately a ten-day MEAN of 10 that it calls its lowest since May on no published numeric baseline. (!) These are not a discrepancy and they do not average: Windward counts AIS-transmitting cargo and tankers, Kpler counts commodity vessels only, and a same-day two-to-one spread between them is a definitional artefact (§9.24). (!) Kpler’s 15+, 13 and 10 across 4–6 September are NOT one series and are not printed as a sequence: the first two are daily counts and the third is a ten-day mean, which is why a five-point fall in two sessions is arithmetically impossible. No rate of change and no direction is computed across them. There is no 7, 8 or 9 September reading from any provider. (v) CENTCOM’s tally is 94 redirected, 3 disabled, 2 boarded as of 7 September, issued on its X account rather than by release, and no 8 or 9 September figure was found. (!) The ‘100 ships’ milestone that appears in search belongs to 23 MAY and to a different counting basis; joining it to this series would manufacture a jump that did not happen."
+        },
+        {
+          "title": "OIL PRICE SHOCK — 2/5, held on a 62-cent gap, with the very next mark on the wrong side of the line.",
+          "text": "(i) The scored series closed $94.38, +$1.22, its highest close since 24 July and 62 cents below the $95 upgrade. The gap has run $3.37, $2.68, $1.84, $0.62 across four closes, three sessions apart — 82% closed — and it is now SMALLER than this series’ own largest daily move of those four closes. Two sessions ago the arithmetic of ‘more than twice a normal day’ was the reason to expect nothing imminent; that reason is gone, and saying so is the point of restating the same test each edition rather than quoting last edition’s answer. (ii) THE 9 SEPTEMBER MARK IS $95.61 — 61 cents ABOVE the trigger, and the first mark on the scored series above $95 since 24 July. It moves nothing, and the reason is the most expensive lesson in this document. §9.31 was written after an edition led on four intraday readings — a forward below its trigger, a breakeven at its anchor, a lapsed threshold, a yield below its auction stop — and every one was false by that day’s close, because the Singapore-morning cut had missed the entire US session in one direction. (!) THE HONEST FORM OF THAT ARGUMENT CUTS AGAINST THIS DOCUMENT AND IS PRINTED ANYWAY. The 8 September snapshot published here read $93.32 and settled $94.38, and eleven of fourteen reconciled fields settled ABOVE their marks — so on this week’s evidence the morning cut UNDERSTATES a rallying tape, which makes $95.61 a conservative reading of the 9 September close rather than an unreliable one. The channel is nevertheless held, and the reason is the rule and not the arithmetic: a mark is not a close, and this document does not move a market channel on one. (iii) The rule is not moved, and the reason is affirmative rather than procedural. The active contract closed $97.92, a FIFTH consecutive close through $95 and the highest active close since 22 May; on COA the upgrade condition was met on 3 September and has been met every session since. But the $95 upgrade, the $72.48 downgrade and the pre-war anchor are ALL written on the continuation, so moving the upgrade alone to the active contract would leave the other two on a different series and make the channel incoherent in the opposite direction (§9.56b). It would also be moving a rule to the series that fires it, seven days after this document disclosed the problem in the open, which is what §9.26 forbids. What settles this is a print, not an argument: two CO2 closes above $95 fire the upgrade 2→3 and take the score to 28. (iv) The basis narrowed on both contracts for the first time in this run — Brent 3.96 to 3.54, WTI 2.91 to 2.84 — so the two moved the same way, which the last two editions expressly could not say. §9.41 clears; §9.36 still forbids constructing anything across the two Brent series. (v) Three dated events sit in the window and no wire attributes the move to any one of them. OPEC+ held October output UNCHANGED on 6 September and next meets 4 October; pre-meeting REPORTING, not the release, says members must first review spare capacity. CENTCOM says it destroyed five Iranian tankers on the 8th. Houthi forces struck four Saudi sites on the 8th, including the 400,000 b/d Jizan refinery — which was ALREADY offline from earlier attacks, so no incremental barrel loss is asserted — with a halt to some operations and 73 wounded. (!) No quantified OPEC+ or IEA spare-capacity figure dated 4–9 September was published or found, and the 0.07 mb/d effective-spare figure this document has carried since 14 August COULD NOT BE RE-CONFIRMED from a primary source this cycle. It is flagged as unrefreshed rather than repeated as current (§9.13)."
+        },
+        {
+          "title": "US INFLATION IMPULSE — 5/5, held. The breakeven resolved after two editions dark, and it resolved upward; the forward took a fifth close above its firing level.",
+          "text": "(i) The 5y5y forward closed 2.3119%, a FIFTH close above the 2.30% level whose sustained break fired this channel 4→5 on 31 July, clearing by 1.19 bp. The five clearances run 1.10, 0.96, 1.54, 0.82 and 1.19 bp — wider than the fourth, and NOT the widest of the five, which is worth stating because the temptation is to read the latest as the extreme. The scored downgrade, the 2.142% anchor, sits 16.99 bp below and has not been approached. (ii) BE10 RESOLVED, AFTER TWO CONSECUTIVE EDITIONS UNRESOLVED, AND IT RESOLVED THE WAY THE UNDER-CLAIMING RULE PROTECTED AGAINST. On 7 September it was a carry on a shut market (§9.58c); on 8 September this document reported a mark of 2.3536 as an exact four-decimal repeat and asserted no change. The 8 September close is 2.3751% — up 2.19 bp on the 4 September close and the highest close since 4 June. Had the repeat been published as a reading, this edition would be reporting a flat breakeven on a session it rose more than two basis points. That is the seventeenth-of-August failure run in reverse, and it is the second time §9.35 has paid on this series in three sessions. (!) No reconciliation entry exists for BE10, because a gap is a mark minus a close and the mark was published unresolved (§9.37). Compensation now sits 11.82 bp above its 2.2569 anchor, from 9.63. (iii) So the honest form of the standing claim has CHANGED, and it changed against the comfortable reading. For three editions this document reported ten-year compensation as flat, bounded to 4 September, and warned that the diesel records and the $97 close fell after that date and were untested. They have now been tested by one close, and compensation rose. One close is a session, not a regime (§9.18) — but the direction is the one the pass-through thesis predicts and the one this document has spent three editions saying it could not see. (iv) It is still only one close, and the corroborating detail cuts both ways: the five-year nominal set a war high on the same session while the thirty-year rose 0.31 bp, so the move is concentrated in the belly and the front, which is a policy-path move at least as much as an inflation move. The Federal Reserve governor whose 3 September remarks are the last word before the blackout said his earlier worry about energy bleeding into goods and services ‘hasn’t come to pass, at least so far’ — but he also said it might not take much acceleration to nudge him toward supporting tighter policy, and that his vote turns on the August inflation data. Both halves are quoted because the second is the half consistent with the pricing below. That data lands on 11 September, two days after this edition and inside the blackout. (v) The pricing supports a SIGN and not a number. The readings are hike-or-hold and none prices a cut above 1%: a 52% hike on a prediction market and 57.4% from a futures-implied model, both dated 8 September; 44.5% HOLD on two prediction markets dated the 9th; a 66% hike from a futures tool dated 31 August. A fifth figure, a cross-venue volume-weighted 54.2%, is a DERIVED construct and not a venue reading; it is recorded rather than used. (!) These sit on four incompatible venues with different contracts and methods and are NOT joined, averaged or chained (§9.19); the two 8 September readings, taken on the same day, disagree by about five points. What survives is the sign: the September debate is hike-versus-hold."
+        },
+        {
+          "title": "TREASURY STRESS — 5/5, held. The volatility leg has LAPSED for the sixth time in the war, the five-year set a war high, and $119bn of coupons is being absorbed as this is written.",
+          "text": "(i) MOVE RESOLVED at 76.14 on 8 September after going dark on the 7 September row and on the 8 September MARK row — one missed session, two dark rows — and the downgrade’s volatility leg has LAPSED: it fails 75 by 1.14, ending a run of exactly TWO sub-75 closes (3 and 4 September). That is the SIXTH time in this war the leg has been satisfied and given back — single closes on 29 July, 5 August and 7 August, three on 12–14 August, nine on 18–28 August, two now — and it vindicates the refusal to convert two dark rows into a third satisfied close (§9.9). (!) Bound that vindication properly: the downgrade is CONJUNCTIVE and the yield leg has failed since 6 July, so the SCORE was invariant to the MOVE call. What was vindicated is the leg-level statement, not the channel. Volatility is also back ABOVE its own pre-war anchor, by 2.76 points, which retires the ‘fully normalised expectation of movement’ framing for as long as it holds. (ii) The yield leg fails by 24.54 bp, wider than 24.23, and has not closed below 5.00% since 6 July. (!) The bounded form is the only honest one: the pre-war anchor of 4.6106% sits 39 bp INSIDE the condition, so this is a claim about the current regime and not a war-long one. Both legs moved AWAY this session — the first time in three editions that the rotation described by §9.15 has not applied, because nothing rotated. (iii) THE CURVE IS A CLEAN BEAR FLATTENER AND, THIS TIME, IT IS MONOTONIC — which is stated only because the last edition’s draft asserted monotonicity on numbers that contradicted it. From the 4 September close to the 8 September close, one settled session across four calendar days: 2Y +2.75 bp, 5Y +1.79, 10Y +0.61, 20Y +0.52, 30Y +0.31, each smaller than the one before it, with 2s10s −2.14 bp to the flattest close since 28 August. The five-year closed 4.5627%, a NEW WAR HIGH, taking out 4.5551 of 1 September by 0.76 bp; every other tenor’s war high survives, the 2-year’s by 0.62 bp. (!) The 9 September mark repeats the five-year to four decimals and is UNRESOLVED, so the record is not extended and no d/d is asserted (§9.35). A front-led flattening into a September FOMC priced for a hike is a policy-path curve, and it is the shape a war-driven term-premium story does NOT predict. (iv) The supply test is running now and the first leg cleared without incident. The $58bn 3-year of 8 September cleared 4.474% at a bid-to-cover of 2.72, with indirects 62.15%, directs 26.94% and primary dealers 10.91% — on the COMPETITIVE-ACCEPTED denominator of $57.619bn; on total award ex-SOMA those read 61.74, 26.77 and 10.84, and the two bases are never compared with one another (§9.40). A dealer take under 11% is the composition reading that matters and it is a comfortable one (§9.29). (!) NO TAIL IS ASSERTED and none can be: Treasury publishes no when-issued level (§9.39). (v) The $39bn 10-year reopening auctions on 9 September and the $22bn 30-year on the 10th — $119bn of coupons settling 15 September, FOMC day one. Results for neither exist at the cut: PROSPECTIVE. August CPI lands 11 September, inside the blackout."
+        },
+        {
+          "title": "POLITICAL STRESS — 5/5, held. The scored series is unresolved for a third session, and the diesel record run it could not see ended by three hundredths of a cent.",
+          "text": "(i) The scored series has NO RESOLVED OBSERVATION SINCE 4 SEPTEMBER. Its 7 September cell repeats $4.93 exactly on a market that was shut, which is §9.58c; 8 and 9 September are blank. (!) §9.48 is applied and stated rather than assumed: AUTMUSAG is a TWO-decimal retail series that repeats values genuinely — $4.82 ran four consecutive sessions in August — so an exact repeat carries far less improbability here than on a four-decimal yield, and the rule is being run where it discriminates weakly. Nothing turns on it: the distance to the $4.60 condition is 33 cents on either reading, and the condition needs THREE closes at or below it with no intervening print above $4.70, so the earliest possible downgrade is at least three prints away. The series is not extrapolated through the dark cells (§9.30). (ii) THE RECORD RUN ENDED, AND IT ENDED BY THREE HUNDREDTHS OF A CENT. AAA’s national diesel average printed $5.9012 for 8 September against the $5.9015 it set on the 7th. After all-time highs on 4, 6 and 7 September this is a first down-day, and the record STANDS at the 7 September level rather than being taken a fourth time. The 9 September national averages had not posted at the cut. (iii) A CORRECTION, AND IT IS THIS DOCUMENT’S OWN §9.57 FAILING IN A NEW PLACE. The last edition set AAA’s gasoline record and the scored series’ own peak in adjacent sentences. They are different series: $5.18 on 20 May is AUTMUSAG’s war high, and AAA’s all-time regular record is $5.0165 of 14 June 2022. Neither is evidence about the other. On its own terms AUTMUSAG at $4.93 is 4.83% below its war high, while AAA regular at $4.1514 is 17.2% below its 2022 record — two very different distances, and printing them side by side without the labels was the error. (iv) Gasoline still does not follow diesel. On AAA’s week-ago base diesel is +26.87c and regular +5.60c, roughly five times the pace and a fourth consecutive edition of it. (!) A FIFTH retail series is not spliced in: EIA on-highway diesel read $5.599 for 31 August against an EIA all-time high of $5.810, so on the EIA survey the record has still NOT been taken (§9.19). Its delayed print was due 9 September and had not published at the cut. (v) THE SCOPE QUESTION STAYS OPEN AND IS NOT DECIDED HERE. AUTMUSAG is a GASOLINE series and the records were in DIESEL; the channel cannot register a distillate record BY CONSTRUCTION, which is a scope choice and not an instrument failure (§9.61). Whether the political channel should be scored on a distillate series is a real question, and §9.21 and §9.56b forbid settling it on an edition that is watching the record it cannot see reverse."
+        },
+        {
+          "title": "ESCALATION RISK — 5/5, held. The kinetic record this document called empty was not empty, the war widened to four Saudi sites, and the mediator published three times without mentioning the strait.",
+          "text": "(i) THE CENTRAL FACT OF THIS WINDOW IS A WITHDRAWAL. The last edition reported no CENTCOM release since 5 September and built an ‘empty kinetic record’ on it. CENTCOM released on 8 September: it SAYS it destroyed FIVE Iranian crude carriers, four in the Gulf of Oman and one near Kharg, after the IRGC targeted a US warship with ballistic missiles twice in two days. (!) That is a battle-damage claim by a party to the conflict and no allied product corroborates it — JMIC 094 predates it — and it is labelled here on the same terms as Iran’s. The item was unreachable from the release index, which served a stale listing topping out at 5 September, and was reachable only with an explicit page parameter. (!) The lesson is §9.23’s, in its most literal form: a negative claim about a source is a claim about the SOURCE, and a cached index is not the source. The claim was load-bearing for a scenario line and it was wrong. (ii) The escalation is one of scale as well as fact. Three Iranian tankers claimed destroyed on 5 September, FIVE on the 8th; Iranian ballistic missiles fired at US warships in both windows; Adm. Brad Cooper framing it explicitly as raising the economic cost, though in a ratio — three of theirs for two of ours — that describes the 5 September action rather than the five-vessel one announced with it. This is navy-on-navy for a second time in four days, and eight Iranian vessels are claimed destroyed across the two exchanges. (iii) What IS still true is narrower and must be stated narrowly: no acknowledged US strike on Iranian SOIL from 1 September through 8 September, an eighth day — and 9 September is unreported at the cut on every track, so it is NOT counted. The strikes were on tankers in waters near Kharg, not on the island; no damage ashore is reported. (!) Iran’s 5 September claim to have struck three tankers stays UNCORROBORATED into a fifth day; no allied product records it, which is not the same as saying it did not happen. (iv) THE WAR WIDENED, AND IT WIDENED TO A GULF STATE. On 8 September Houthi forces struck Abha International Airport, King Khalid Air Base and Aramco facilities at Abha and Jizan — four sites, 73 wounded, the 400,000 b/d Jizan refinery among them and operations temporarily suspended by the energy ministry. (!) The Jizan plant was ALREADY offline from earlier attacks, and the ministry reported a halt to SOME operations — so no incremental barrel loss is asserted and the 400,000 b/d figure is capacity, not lost supply. It is described as the heaviest such attack in years and follows the collapse of a four-year truce; Saudi Arabia struck Taiz and Marib in reply the same day. The US Secretary of State said on the 8th that the Iranian hand is behind it. (!) That attribution is a STATEMENT and is not treated as establishing Iranian direction; the scenario line below turns on the fact of Gulf-state infrastructure being struck, which is not in dispute. (v) THE MEDIATOR IS THE MISSING SIGNATURE FOR A THIRD CONSECUTIVE EDITION, AND THE NEGATIVE IS AT ITS STRONGEST YET. Iran’s security-council secretary said the maps are agreed and will be signed within days; its foreign ministry said the deal is in final stages and the understanding will be lodged with the IMO within days. (!) Both are TIER 3 state media, uncorroborated, and no IMO filing is asserted. (!) Method, stated exactly (§9.23c): fm.gov.om homepage and its English news archive, read direct on 9 September, asked whether ANY item touches Hormuz, Iran, navigation or the arrangement. Answer: none. The ministry published THREE items on 8 September — on Israeli settlements, a Rwandan state visit, and a condemnation of the attacks on Saudi Arabia — so it commented on the region that day and not on this, from a site whose footer reads last updated 8 September. Its foreign minister’s signed newspaper article of 6 September says no solution has been reached and Oman is not walking away: a holding line, and the only Omani ministerial word in the window. An instrument announced by one party, unacknowledged by the second while that second speaks on other subjects, and rejected in advance by the third is not a mediated pause. The channel has been at 5/5 since 9 July and can register none of it (§9.7)."
+        }
+      ],
+      "stage4Note": "",
+      "stage4": [
+        [
+          "A",
+          "A failed coupon auction: a clearing yield with a tail above the 1pm when-issued level",
+          "UNTESTABLE AS WRITTEN (§9.39) — the test needs a when-issued level Treasury does not publish, so it returns NO state and is excluded from Stage 4 in both directions. It is neither armed nor not-armed. (!) Nothing below is a leg of A, because A has no testable legs; what follows is the COMPOSITION read (§9.29), a different and unwritten test reported here for the reader’s benefit"
+        ],
+        [
+          "A —supply",
+          "The coupon record the test cannot see",
+          "THE FIRST AUCTION HAS CLEARED. the $58bn 3-year of 8 SEPTEMBER cleared 4.474%, bid-to-cover 2.72, SOMA add-on nil, with indirects 62.15%, directs 26.94% and primary dealers 10.91% on the competitive-accepted denominator of $57.619bn (61.74 / 26.77 / 10.84 on total award ex-SOMA — the two bases are stated, never compared, §9.40). Read the composition (§9.29): a dealer take under 11% against directs at more than a quarter is paper absorbed by end buyers, not by the backstop. (!) NO TAIL IS ASSERTED. The $39bn 10-year reopening is auctioning on 9 SEPTEMBER and the $22bn 30-year on the 10th — $119bn of coupons settling 15 SEPTEMBER, FOMC day one. Results for neither exist at the cut: PROSPECTIVE. (!) The BUYBACK CONFLICT is now sourced on both sides and is NOT resolved here: Treasury’s 19 August release raises long-end operations to ‘at least $4bn’ effective 9 SEPTEMBER while its own tentative schedule still lists $2bn for the 10th, and the updated schedule that release promised is unpublished. Both are primary documents and they disagree; no size is asserted. Full documents and dates at A2.3.4"
+        ],
+        [
+          "B",
+          "30-year above 5.20% WITH 10-year above 4.65%",
+          "ARMED, and the run EXTENDS to a SEVENTH close on ONE arming, running 28 August to 8 September with 7 September producing no close at all. 30-year 5.2454% clearing by 4.54 bp, from 4.23 — which ENDS three consecutive narrowings on that leg; 10-year 4.7882% clearing by 13.82 bp, from 13.21. Both legs widened. Across 29 July to 8 September B has armed SIX times and lapsed FIVE — eleven states, ten changes — and the current arming is the sixth. (!) §9.49, the recorded DEFECT, is now WORSE rather than merely unchanged: B has been satisfied across SEVEN closes spanning THREE of the four curve configurations available — bear flattener, bear steepener and bull steepener; only a bull flattener has never occurred under it. A test meant to detect long-end stress has returned the same answer through all three"
+        ],
+        [
+          "C",
+          "MOVE above 130",
+          "NOT ARMED, and RESOLVED after two dark sessions: MOVE closed 76.14, 53.86 points below C and 38.88 below the 115.02 war high of 26 March. (!) The Treasury downgrade’s volatility leg has LAPSED on the same print, a SIXTH satisfied-then-given-back sequence (§9.18). (!) The two anchor deviations are reported SEPARATELY and no composite is constructed: volatility is now 2.76 points ABOVE its 73.38 anchor, having been below it, and the 30-year 63.48 bp ABOVE its 4.6106 anchor. The war’s standing anomaly — normalised volatility around an un-normalised yield — has weakened on the volatility side for the first time since 28 August"
+        ]
+      ],
+      "crossAsset": "¶ THE MACRO WINDOW IS THIN AND THE FED IS SILENT: 7 September was a federal holiday, the blackout opened on 5 September, and NO Federal Reserve speech occurred 4–9 September — a CONFIRMED ABSENCE. No scheduled US macro data was released in the window. PPI lands 10 SEPTEMBER and CPI 11 SEPTEMBER, both inside the blackout; the FOMC meets 15–16 September with projections. ¶ (!) §9.28’S FOLLOW-UP TEST DOES NOT DISCRIMINATE ON THE LEVEL. August imports of 7.3 mb/d against a 6.3 four-week average were the routing signal; on the 28 August week — which PRECEDES this window — they read 6.8, exactly equidistant between the two hypotheses. What HAS collapsed is the spread to the four-week average, from 1.0 mb/d to 0.1, though the average itself ROSE. Crude DREW 4.5 mn bbl on 98% utilisation; SPR 286.6 mn bbl, −3.1 mn, delivery against the March commitment rather than a new decision. The test is re-set on the 10 September WPSR. ¶ The September STEO, the delayed EIA retail print and the WPSR were all due in this window and none had published at the cut: PROSPECTIVE. The full macro record, Treasury-supply internals, buyback documents and Fed pricing are at ANNEX A2.3; freight and war risk at A1.6."
+    },
+    "channels": [
+      {
+        "name": "Maritime denial",
+        "score": 5,
+        "state": "max",
+        "rationale": "As of 6 Sep (Kpler 6/day and a 10-day average of 10; Windward 12, zero dark), 7 Sep (CENTCOM tally 94), 5 Sep (JMIC 094 ICOD) At the cap. The traffic leg is under 5% on Kpler’s own base and 7% on PortWatch’s; on the last OFFICIAL volume basis it is 22.7%, a stale Q2 figure and the nearest reading that exists. (!) 094’s 101 is an INCIDENT count, not transits — CORRECTED"
+      },
+      {
+        "name": "Oil price shock",
+        "score": 2,
+        "state": "live",
+        "rationale": "Brent CO2 $94.38, +$1.22, highest close since 24 July 62 cents below $95, from $1.84. (!) The 9 Sep MARK is 61 cents ABOVE and settles nothing; the ACTIVE contract closed through a FIFTH time"
+      },
+      {
+        "name": "US inflation impulse",
+        "score": 5,
+        "state": "max",
+        "rationale": "5y5y 2.3119%, a FIFTH close above 2.30%. BE10 RESOLVED at 2.3751%, +2.19 bp, highest since 4 June 16.99 bp above the 2.142% anchor. (!) The flat-compensation claim is retired: one close tested it and compensation ROSE"
+      },
+      {
+        "name": "Treasury stress",
+        "score": 5,
+        "state": "max",
+        "rationale": "MOVE 76.14 (8 Sep), resolved after two dark rows; 30Y 5.2454; the 5-year set a war high at 4.5627 (!) Volatility leg LAPSED — fails 75 by 1.14, a SIXTH give-back; yield leg fails by 24.54 bp. Both legs moved away"
+      },
+      {
+        "name": "Political stress",
+        "score": 5,
+        "state": "max",
+        "rationale": "AUTMUSAG UNRESOLVED on three rows; last resolved $4.93 (4 Sep). AAA diesel’s record run ENDED on the 8th by 0.03c 33 cents above $4.60, and the condition needs THREE closes at or below it. (!) The channel is GASOLINE and cannot see a diesel record"
+      },
+      {
+        "name": "Escalation risk",
+        "score": 5,
+        "state": "max",
+        "rationale": "CENTCOM SAYS it destroyed FIVE Iranian tankers on 8 Sep after ballistic missiles at a US warship — a claim by a party to the conflict; four Saudi sites struck the same day At the cap, and the DOWNGRADE (a mediated stand-down with talks resumed) has no candidate — that, not the cap, is what stops the score falling. (!) WITHDRAWN: the ‘empty kinetic record’. No strike on Iranian SOIL through 8 September"
+      }
+    ],
+    "scoreTotal": 27,
+    "whatsChanged": {
+      "title": "Change",
+      "items": [
+        "The SCORED continuation closed $94.38, +$1.22, 62 cents from $95; the ACTIVE contract closed $97.92, a FIFTH straight close through. The 9 Sep mark is $95.61, 61 cents ABOVE The gap ran $3.37, $2.68, $1.84, $0.62 across four closes — 82% closed, and now smaller than its own largest daily move of that run. Two CO2 closes above $95 fire the upgrade and take the score to 28. (!) The mark decides nothing — not because it is unreliable but because it is not a close",
+        "WITHDRAWN — CENTCOM DID RELEASE ON 8 SEPTEMBER, saying it destroyed FIVE Iranian crude carriers after ballistic missiles hit at a US warship twice in two days. The last edition read a CACHED index page (!) §9.23 in its most literal form: a cached index is not the source. Eight Iranian vessels CLAIMED destroyed across two exchanges in four days, uncorroborated by any allied product — labelled on the same terms as Iran’s own claims",
+        "CORRECTED — JMIC 094’s 101 IS AN INCIDENT COUNT, NOT A TRANSIT FIGURE; its transit figure is 59 facilitated vessels per 48 hours. Asia LNG’s ¥4,010 was the TWELFTH war-record close, not a thirteenth; and $5.18 is AUTMUSAG’s peak, not an AAA record A mislabelled denominator is the defect §9.19 exists to stop, and an inherited ordinal is exactly as suspect as a new one (§9.32). All three were re-checked against the primary document and the full column",
+        "THE WAR WIDENED. Four Saudi sites struck on 8 September — Abha airport, King Khalid Air Base and Aramco at Abha and Jizan — 73 wounded, a halt to SOME operations at the 400,000 b/d Jizan refinery, already offline from earlier attacks The heaviest such attack in years, after a four-year truce collapsed; answered by Saudi strikes on Taiz and Marib. (!) NO incremental barrel loss is asserted. The ‘Iranian hand’ attribution is a STATEMENT by a party and is not treated as establishing direction",
+        "THE VOLATILITY LEG LAPSED: MOVE resolved at 76.14, failing 75 by 1.14 after two sub-75 closes, a SIXTH give-back. The five-year closed 4.5627%, a new WAR HIGH; BE10 resolved at 2.3751%, +2.19 bp (!) Publishing the 8 September BE10 repeat as unresolved is vindicated: read as a print it would have shown a flat breakeven on a session it rose 2.19 bp. Both Treasury legs moved AWAY. The MOVE call was vindicated at LEG level only — the downgrade is conjunctive and the score was invariant",
+        "OMAN PUBLISHED THREE ITEMS ON 8 SEPTEMBER — one condemning the attacks on Saudi Arabia — and nothing on the strait, while Iran (TIER 3) said the maps are agreed and an IMO filing is days away A THIRD edition with no counterparty text, and the strongest form of the negative yet (§9.23): the ministry spoke about the region and not about this. Its minister’s 6 September article says no solution has been reached"
+      ]
+    },
+    "scenarios": [
+      {
+        "name": "Return to full war",
+        "p": 38,
+        "desc": "Sustained strikes inside Iran, with Iranian reprisals on US bases",
+        "shift": "+1, on EVENTS rather than words. FOR: ballistic missiles at a US warship twice in two days, and the American answer scaling from three claimed tankers to FIVE. AGAINST: an EIGHTH day with no acknowledged strike on Iranian soil, the half that defines the line"
+      },
+      {
+        "name": "Deal collapse on terms",
+        "p": 35,
+        "desc": "The corridor framework dies; both blockades continue",
+        "shift": "UNCHANGED, and the hold is explained rather than assumed. FOR: a third edition with no Omani text, from a ministry that published three times on the 8th; Washington rejects the corridor (TIER 2, 7 Sep). AGAINST: none of it is NEW — the same silence, one edition longer, and this document will not re-price on a fact restated. (!) The 8 September Treasury threat names Iranian AIRLINES, not the corridor"
+      },
+      {
+        "name": "Regional relapse",
+        "p": 17,
+        "desc": "A SUSTAINED widening to Gulf states — repeated strikes, not one episode",
+        "shift": "+2, the largest RISE. Four Saudi sites struck on 8 September, 73 wounded, after Jizan was struck on the 7th — the heaviest such attack in years, answered by strikes on Taiz and Marib. (!) The line is REWRITTEN this edition to require a SUSTAINED widening: a single-strike condition was already satisfied, and a satisfied condition cannot carry a probability"
+      },
+      {
+        "name": "Contained but violent",
+        "p": 7,
+        "desc": "The present state persists: no reopening, no general war",
+        "shift": "−3, the arithmetic counterpart of the two rises. A line defined by PERSISTENCE loses weight when what it describes changes on three axes in one window: a second navy-on-navy exchange in four days, its scale up from three to five, and the war reaching four Saudi sites"
+      },
+      {
+        "name": "Mediated pause",
+        "p": 3,
+        "desc": "A verified stand-down, talks resumed, a reopening on published terms",
+        "shift": "UNCHANGED at the lowest reading of the war, and HELD on NO NEW EVIDENCE — stated rather than dressed up. FOR: a 6 September signed article saying the mediator remains at the table, thin and already available to the last edition. AGAINST: no talks, venue or date exists. A floor this low has no room left to express one more silent day"
+      }
+    ],
+    "watchlist": [
+      "Whether the SCORED continuation CLOSES above $95. It closed $94.38, 62 cents away; the 9 September mark is $95.61 and the active contract has closed through FIVE times Two CO2 closes fire the oil upgrade 2→3 and take the score to 28 — the first score change in twenty-two editions. (!) §9.56 then becomes a decision, and this document has committed in advance to the continuation",
+      "The $39bn 10-year (9 Sep) and $22bn 30-year (10th), settling 15 September with the 3-year — $119bn on FOMC day one — and the 10Y–20Y buyback The 3-year cleared 4.474% with dealers at 10.91%. (!) Threshold A stays untestable: read the composition, never a tail. Treasury’s two documents disagree on the buyback size",
+      "August PPI on 10 September and CPI on 11 September, both inside the blackout, ahead of the 15–16 September FOMC; a governor has said his vote turns on that data The channel is scored on a forward clearing its firing level by 1.19 bp, and the breakeven has just risen 2.19 bp on its first testable close",
+      "Whether AUTMUSAG PRINTS AT ALL after three unresolved rows, whether AAA diesel retakes the record it missed by 0.03c, and whether the delayed EIA retail print and the WPSR publish The political channel is scored on the 4 September close. (!) A missing print is not a stalled series and is not extrapolated either way",
+      "The MARITIME AND DIPLOMATIC record: whether JMIC 095 issues, whether the CENTCOM tally moves off 94, whether the Houthi–Saudi exchange continues, and whether Oman CONFIRMS or DISOWNS the ‘agreed maps’ 094 omits the window’s largest kinetic event, so Iran’s 5 September claim stays uncorroborated. (!) An Omani denial would be the mediator’s first public contradiction of Tehran"
+    ],
+    "sourceLog": {
+      "tier1Market": "Tecity Bloomberg extract, ‘US Iran BBG Data.xlsx’, saved and read 9 Sep. 182 rows × 99 columns, history from 31 Dec 2025; tickers read from the header scan, never hardcoded (§3) — EVERY price, yield, spread, volatility and retail-fuel figure in both documents. The scoring reference is the 8 September close for every MARKET channel; the two EVENT channels carry their own as-of dates, the first full close since 4 September. The 9 September row is a Singapore-morning mark and moves nothing. (!) No price is taken from the web. The extract’s own row-1 description for AUTMUSAG — ‘US Average Gasoline Price’ — keeps the ‘AAA all-grades’ gloss withdrawn (A1.5)",
+      "tier1News": "US Central Command public release, 8 Sep, ‘U.S. Destroys 5 IRGC Tankers After Iran Targets Another American Warship’, read direct from centcom.mil with an explicit page parameter — THE ITEM THAT FORCES THIS EDITION’S CENTRAL WITHDRAWAL. Five named Iranian crude carriers destroyed — Kaviz, Charminar, Horizon 1 and Riesco in the Gulf of Oman, Derya near Kharg — after the IRGC targeted a US warship with ballistic missiles twice in two days; and Adm. Cooper’s on-record framing of a deliberate economic cost. (!) METHOD, AND IT IS THE DEFECT: the release INDEX served a stale listing topping out at 5 September on repeated fetches. The 8 September item was reachable only with an explicit page parameter. The last edition’s ‘no CENTCOM release since 5 September’ was read off that cache and was false ¶ US Central Command public release, 5 Sep, ‘CENTCOM Destroys 3 IRGC Oil Tankers After Iran Targets 2 U.S. Navy Warships’ — The prior exchange, retained for the SCALE comparison: three Iranian tankers on 5 September against five on the 8th, with Iranian ballistic missiles fired at US warships in both windows. Eight Iranian vessels destroyed across the two. (!) The ‘100 ships’ blockade milestone that surfaces in search belongs to 23 MAY on a different counting basis and is NEVER joined to the 87/92/94 series ¶ JMIC Update 094 primary PDF (ICOD 051500Z), published 6 Sep; ukmto.org product index and constructed product URLs for Updates 095, 096 and 097, probed direct 9 Sep — THE DENOMINATOR CORRECTION. 094’s 101 is the CUMULATIVE CONFIRMED-INCIDENT count since 1 March, NOT a transit figure — the last edition called it a frozen transit count and that is CORRECTED. 094’s transit figure is 59 vessels per 48 hours, 3–5 September, US-facilitated. Hormuz SEVERE, Gulf of Oman MODERATE. Also the central gap, and it is NOT OBTAINED rather than a claim of non-existence: three direct URL probes for update numbers 095–097 returned 404 and the JS-driven index renders no products, so 094 remains operative and does not record the 8 September American strikes either ¶ UKMTO cumulative damage figure, relayed by wire 7 Sep — 27 projectile-strike incidents resulting in vessel damage since 6 July. (!) A cumulative DAMAGE count with its own start date — never added to the 101, never converted into a rate, never compared with a transit figure ¶ fm.gov.om homepage and English news archive, read direct 9 Sep, asked whether ANY item touches Hormuz, Iran, navigation, the corridor or mediation — THE CENTRAL NEGATIVE, AT ITS STRONGEST YET, WITH ITS QUERY STATED (§9.23c). Answer: NONE. The ministry’s most recent publications are dated 8 September and there are THREE of them — on Israeli settlement expansion, a Rwandan state visit, and a CONDEMNATION OF THE ATTACKS ON SAUDI ARABIA. So the ministry commented on the region that day and not on this. Footer: ‘This website was last updated on September 8, 2026’. The most recent Omani text on the strait remains the 23 June joint statement, eleven weeks old. A silence from a live publisher is evidence; a silence from a dead page is not ¶ TIER 2 · Oman’s foreign minister, signed newspaper article, reported 6 Sep — The ONLY Omani ministerial word in the window: no solution reached, Oman ‘not walking away’, the diplomat’s task is to remain at the table. (!) Used as a HOLDING LINE and expressly not as an acknowledgement of the Iranian claim. It is the sole reason the mediated-pause line is held rather than cut ¶ US Secretary of State, 8 Sep; US Treasury Secretary, 8 Sep; US President, 7 Sep — The administration’s standing rejection of any Iran–Oman corridor and its objection to transit fees (TIER 2 relay, 7 Sep) — the only sourced US statement on the corridor, and the basis for the ‘pre-rejected by the third party’ framing. The ‘Iranian hand’ attribution for the Saudi attacks — recorded verbatim and expressly NOT treated as establishing Iranian direction; the threat to cut counterparties of Iranian AIRLINES — not the corridor — off from the financial system; and the presidential claim that oil falls to $3 and then under $2 a gallon on a US win. (!) The last is a POLITICAL forecast and is used only to date the administration’s public framing of fuel prices ¶ fiscaldata.treasury.gov auctions endpoint (the standing method under §9.39a), queried 9 Sep; Treasury press release of 19 Aug; the Tentative Buyback Schedule; Treasury buyback operations data — The $58bn 3-year of 8 September: clearing yield 4.474%, bid-to-cover 2.72, SOMA nil, and the allotment on BOTH denominators (A2.3.4). The $39bn 10-year and $22bn 30-year as PROSPECTIVE. The 8 September bill auctions and their SOMA add-ons. (!) THE BUYBACK CONFLICT, SOURCED ON BOTH SIDES: the release says ‘at least $4bn’ effective 9 September, the schedule still says $2bn for the 10th, and the promised updated schedule is unpublished. No size is asserted. NO TAIL IS ASSERTED and none can be (§9.39) ¶ gasprices.aaa.com, including its Highest Recorded Average Price table, read direct 9 Sep; EIA retail and weekly petroleum pages, read direct — AAA regular $4.1514 and diesel $5.9012 for 8 September, and the finding that the diesel record run ENDED: the all-time record stands at $5.9015 of 7 September and the 8th printed three hundredths of a cent below it. AAA’s all-time REGULAR record of $5.0165, 14 June 2022 — which forces the correction that $5.18 belongs to AUTMUSAG and not to AAA. EIA on-highway diesel $5.599 against an EIA high of $5.810. (!) The 9 September AAA averages had NOT posted at the cut on two direct fetches: PROSPECTIVE ¶ EIA Weekly Petroleum Status Report for the week ending 28 Aug (released 2 Sep), read direct; EIA STEO landing page and WPSR schedule, read direct 9 Sep — THE §9.28 TEST ANSWER: crude −4.5 mn bbl to 424.5 mn, imports 6.8 mb/d against a four-week average of 6.7, utilisation 98%; distillate 104.2 mn bbl and PADD 1 distillate at 19.318 mn bbl; SPR 286.6 mn bbl, −3.1 mn. And the schedule: the retail print and the September STEO due 9 September, the WPSR pushed to 10 September at 12:00 and 14:00 ET. None had published at the cut: PROSPECTIVE ¶ OPEC press release, 6 Sep, read direct — October production held at September levels by the seven voluntary-adjustment countries; next meeting 4 October. (!) NO numeric spare-capacity estimate was published with it, and the 0.07 mb/d effective-spare figure carried since 14 August could NOT be re-confirmed from any primary source this cycle — the monthly OPEC report returns an error to a fetcher and no September IEA report exists. Flagged UNREFRESHED, not repeated as current (§9.13) ¶ Federal Reserve FOMC calendar and September blackout dates; BLS release schedule; a governor’s 3 Sep speech text — The CONFIRMED ABSENCE of any Fed speech 4–9 September; the FOMC on 15–16 September with projections; PPI on the 10th and CPI on the 11th at 08:30 ET, both inside the blackout. The 3 September remarks that energy pass-through ‘hasn’t come to pass, at least so far’ and that the governor’s vote turns on August inflation. (!) NO August CPI consensus could be sourced — NOT OBTAINED, and a consensus this document cannot name is not quoted",
+      "tier3": "Iran: SNSC secretary Mohsen Rezaei, 7–8 Sep; MFA spokesman Esmail Baqaei, 7 Sep; Speaker Ghalibaf, 7–8 Sep; acting defence minister, 7 Sep — all via state media and relays — The announced EXCLUSION ZONE and its stated geometry from the American blockade line into the Gulf; the claim that corridor maps are agreed with Oman and will be signed within days; the claim that the understanding will be lodged with the IMO within days; and three days of verbal escalation. (!) Used as statements of IRANIAN INTENT only. §9.11 gives announcements no weight in either direction. A second voice from the same government is NOT a second source (§9.24). NO IMO filing is asserted: the one aggregator headline claiming it has happened is contradicted by its own body text. No coordinates have been published ¶ 1/2 · Saudi Arabia, 8 Sep: energy-ministry statement and coalition statement, via wire; Aramco facility reporting — The four struck sites — Abha International Airport, King Khalid Air Base, Aramco Abha and Aramco Jizan — 73 wounded, fires at several locations and a temporary halt to some operations; the 400,000 b/d Jizan refinery; the Saudi strikes on Taiz and Marib in reply. (!) Used for the FACT of Gulf-state infrastructure struck, which no source disputes. NO restart date was published — NOT FOUND ¶ 1 / 2 / 3 · Kpler via wire 7 Sep (TIER 1); Windward MIOC 6 Sep (TIER 2); Lloyd’s List Intelligence (TIER 2); IMF PortWatch via aggregator, 30 Aug (TIER 3, unrefreshed). (!) Tiers are carried per provider and NOT lumped — The FIVE provider readings at A1.4, each with its own universe and baseline and NEVER spliced (§9.19, §9.24). (!) Kpler’s 15+, 13 and 10 across 4–6 September are three published readings and NO rate of change is computed across them. Windward’s 12 and Kpler’s 6 for the SAME day are a definitional artefact, not a discrepancy. NOT FOUND: any LSEG transit count for September, and any provider reading for 7, 8 or 9 September ¶ 1/2/3 · Five separate rate-pricing venues, each dated and each recorded at A2.3.3 — The SIGN of September pricing and nothing finer. (!) The venues use different contracts, methods and timestamps and are NOT averaged, chained or joined; the two freshest same-day readings disagree by about five points. The WITHDRAWAL of the 48.4% → 58.4% pair STANDS, and so does the withdrawal of any DIRECTION. What survives is that no venue prices a cut ¶ — · NOT FOUND / NOT OBTAINED — the consolidated register — Any item of any kind dated 9 September on any track, every live news file terminating on the 8th — 9 September is an open, unreported day at the cut. JMIC 095. A CENTCOM blockade tally for 8 or 9 September. Any LSEG Hormuz transit count for September. Any UKMTO or NCAGS transit count beyond 094’s 59/48h. A war-risk quotation dated 6–9 September. Iranian crude export volumes for 6–9 September. Kharg terminal status. A Jizan restart date. A named Norwegian field outage. An August CPI consensus. A re-confirmable OPEC spare-capacity figure. (!) Robots-blocked or 403 to a fetcher and therefore NOT usable as sources here: several major broadcasters, the specialist marine-insurance press, and one business title"
+    },
+    "protocol": [
+      {
+        "step": "Refresh and verify the extract",
+        "detail": "Never build an edition off a stale extract (§9.22). Check the file mtime AND parse the sheet. This edition: the extract was saved on 9 September and carries a 9 September row against the 8 September row the last edition ran on, with the 8 September row now fully settled. It is fresh. (!) The refresh is NOT complete, and the incompleteness is the finding: the three cells §9.60 recorded as LOST for 7 September are STILL blank, so the loss is permanent."
+      },
+      {
+        "step": "Parse with a dynamic header scan",
+        "detail": "Column indices move between uploads. Auto-detect the Brent and WTI front month and take whatever label the header scan returns for DXY. Re-verify the 27 February anchor field by field — done this edition, unchanged on all SEVENTEEN scored fields, which A10.1 tables alongside three unverified rows it marks as such. (!) Read the DESCRIPTION row, not just the ticker row: doing so is what exposed that AUTMUSAG is labelled ‘US Average Gasoline Price’ and not ‘AAA all-grades’ (A1.5, §9.57). A ticker map is not a definition."
+      },
+      {
+        "step": "Run all THREE integrity checks",
+        "detail": "Row-level (§9.8), field-level identical-value at the precision each series is published to (§9.35, §9.48), and the continuation-versus-active BASIS check (§9.41). This edition: §9.41 CLEARS; §9.8 CLEARS — the 8 September row refreshed and carries thirteen values the row before it did not have; §9.35 CLEARS ON THE 8 SEPTEMBER ROW ENTIRELY and FIRES on the 9 September row on ONE field, the five-year at 4.5627, an exact four-decimal repeat in a live row. (!) The field it fires on is the one carrying a new WAR HIGH — which sits on the resolved CLOSE, not on the repeated mark, so the rule costs nothing here and protects everything."
+      },
+      {
+        "step": "Run the backfill check in BOTH directions",
+        "detail": "§9.10: yesterday’s dark cells must be re-examined, not carried, and a backfill is as likely to run against a trend as with it. (!) THIS EDITION IT FIRED ON NOTHING, AND THAT IS THE FINDING. The three cells §9.60 recorded as LOST — WTI CL2 88.96, CLA 91.95 and Henry Hub 2.929 for 7 September — are STILL blank in this extract, so the two-way test has now been run on them and returned nothing: the loss is permanent rather than transient. AUTMUSAG did not backfill either and is unresolved for a third session. A test that fires on nothing after firing upward in five consecutive editions is worth stating, because the absence is what stops a trend being read through the gap (§9.30)."
+      },
+      {
+        "step": "Compute deltas and test every trigger",
+        "detail": "d/d, w/w five rows back, and versus pre-war; explicit trigger tests for the four market channels plus Stage-4 A, B and C. Run min, max and last-prior-occurrence on the full column before writing ANY superlative (§9.32). This edition that discipline produced the five-year WAR HIGH at 4.5627, which no narrative anticipated; established that TTF’s €75.841 is the FIFTEENTH war-record close and the first above €75; established that 62 cents is the nearest the scored Brent series has closed to its trigger since 24 July; and — the correction — that Asia LNG’s ¥4,010 was the TWELFTH war-record close and not the thirteenth this document published."
+      },
+      {
+        "step": "Verify the news, and re-verify what was inherited",
+        "detail": "Every claim needs a named source and an exact date, and negative claims decay fastest of all (§9.23). State the exact query behind every negative. Say NOT OBTAINED rather than estimating, and distinguish it from PROSPECTIVE (§9.46). (!) This edition the discipline paid in the other direction: the last edition’s ‘no sanctions landed’ and ‘tanker for tanker is one anonymous chain’ were both true at their cut and both were overtaken within hours, so they are SUPERSEDED rather than withdrawn. A negative that expires is not a negative that was wrong, and the two are recorded differently."
+      },
+      {
+        "step": "Build, then QA in three passes",
+        "detail": "A numeric harness against the dataframe; a STYLE harness measuring bold ratio and headline length (§9.52, §9.55); an adversarial PROSE pass by reviewers with no access to the source data, run as TWO reviewers CONCURRENTLY against the same pre-fix text and merged into one patch (§9.42); and a VISUAL render, which is not optional (§9.43). Re-run the numeric and style harnesses AFTER the prose fixes. Balance the bold tags in every fragment after every edit (§9.42a). Check the page budget at build time, not after the prose is final (§5A)."
+      },
+      {
+        "step": "Deliver both documents",
+        "detail": "The edition and the annex go into the project root together. A file that is not committed never reaches the reader. The annex does not go into the dashboard PDF folder, because the score-history script regexes a score sentence out of every PDF there and the annex has none. Then snapshot the fragments under a date-stamped name, at the END of the run, so no edition can overwrite another’s sources."
+      }
+    ],
+    "methodology": {
+      "scale": "Six channels, each scored 0–5, summed to 0–30. Bands: 0–7 watch; 8–14 stress; 15–21 systemic-risk watch; 22–30 crisis. Maritime denial and escalation risk are event channels; oil, US inflation impulse, Treasury stress and political stress are market channels scored on confirmed closes.",
+      "scaleCap": "(a) Confirmed closes only for market channels. No market channel moves on an intraday print. THAT RULE IS DOING MORE WORK THIS EDITION THAN IN ANY EDITION OF THIS WAR. The 9 September mark on the SCORED Brent series is $95.61, 61 cents THROUGH the upgrade level; it moves nothing, and a TTF mark of €76.770 above the new war-record close is likewise not reported as a record. (!) The discipline was tested in this exact window and paid TWICE. On 7 September a TTF mark above the record settled €1.549 LOWER. And on 8 September the reverse: the snapshot published here read $93.32 against a close of $94.38, a $1.06 miss, which is 1.7 times the entire remaining distance to the oil trigger — a cut that can be a dollar wrong in either direction cannot adjudicate a 62-cent question. (b) Hysteresis. Upgrades fire on a sustained break; downgrades require a sustained reversal past a wider threshold. It was vindicated again this session: the Treasury downgrade’s volatility leg, satisfied on exactly TWO closes, LAPSED on the third available one at 76.14 — a SIXTH satisfied-then-given-back sequence — and had this document converted two dark sessions into a third satisfied close, as §9.9 forbids, it would have been wrong within one print. On the other side the 5y5y forward took a FIFTH close above its 2.30% firing level, clearing by 1.19 bp, and the downgrade rule sitting 16.99 bp lower is still NOT rewritten to meet it (§9.16, §9.26). (c) The scale saturates in BOTH directions (§9.7, §9.27). FIVE of six channels are at the cap, so the score could not register eight Iranian vessels destroyed in two navy-on-navy exchanges in four days, Iranian ballistic missiles fired at American warships in both, the heaviest Houthi attack on Saudi Arabia in years taking four sites and a 400,000 b/d refinery, or a mediator that published three separate items on 8 September without mentioning the strait. Nor could it register what cut the other way — an eighth day with no acknowledged American strike on Iranian soil, and a 3-year auction absorbed with a dealer take under 11%. A flat 27 is an instrument at its stop.",
+      "integrity": "Rules exercised this edition, named so the reader can audit them. (!) A §9.x reference points to the numbered pitfalls register in this monitor’s operating instructions, not to a subsection of A9; the substance of every rule doing work in this edition is restated in the paragraph that invokes it, so the edition stands alone without the register. §9.41 CLEARS; §9.8 CLEARS; §9.35 fires on ONE field, the five-year mark, and the record it guards sits safely on the resolved close (A1.1). §9.9 — VINDICATED: the refusal to convert two dark MOVE sessions into a third satisfied close was right, because the print that ended the silence was 76.14 and LAPSED the leg. §9.10 — the two-way backfill test fired on NOTHING, confirming the §9.60 losses as permanent. §9.11 — an announcement is not an event: three days of Iranian verbal escalation moved neither the escalation channel nor any scenario line, while the CENTCOM strike and the Saudi attacks, which ARE events, moved two. (!) Bound the first half honestly: the channel is at its cap and could not have risen in any case, so what §9.11 actually prevented was the words entering the SCENARIO map, which is where they would have done damage. §9.13 — the rule that produced this edition’s central work: re-verification of INHERITED claims yielded two withdrawals and three corrections, none of them from news. §9.15 — both Treasury legs computed and compared; this session neither rotated, both moved away. §9.19 and §9.24 — every denominator named, none spliced: JMIC’s incident count against its transit count, Kpler’s visible-commodity universe against Windward’s AIS-transmitting cargo-and-tanker universe for the SAME day, Lloyd’s List’s 10,000 dwt gate, PortWatch’s 85/day base, FIVE retail fuel series, TWO auction-allotment denominators and FIVE rate-pricing venues. §9.23 — the central negative, at its strongest yet AND the source of the central withdrawal. On the positive side: fm.gov.om is demonstrably live, its footer reads last updated 8 September and it published THREE items that day including a condemnation of the attacks on Saudi Arabia, so its silence on the strait is a choice. On the negative side: the CENTCOM release INDEX served a stale cache and this document read it as the source. §9.26 — engaged on two channels at once: on oil, forbidding resolution of §9.56 toward whichever Brent series would fire the upgrade, with the mark now through the level; on inflation, forbidding the reverse move of tightening the rule as the margin thins. §9.30 — the scored gasoline series is unresolved for a third session and no trend is read through the gap. §9.31 — the snapshot missed the US session in ONE direction across eleven of fourteen reconciled fields, and the reconciliation publishes its three exclusions by name. §9.32 — every superlative bounded against the full column BEFORE writing, which is what produced the five-year war high and the Asia LNG ordinal correction. §9.37 — a field published as unresolved yields NO reconciliation entry, which is why BE10 is excluded by name despite having settled. §9.48 — the identical-value test stated at the precision it is being run at, on a two-decimal retail series where it discriminates weakly. §9.57 and §9.61 — the political channel’s scope question restated and left open.",
+      "gasoline": "§9.57 — CARRIED FORWARD, UNRESOLVED, AND IT FAILED IN A NEW PLACE THIS WINDOW. A TICKER MAP IS NOT A DEFINITION, AND A SERIES DESCRIPTION IS AN INHERITED CLAIM LIKE ANY OTHER. This document captioned AUTMUSAG as ‘AAA all-grades retail pump’ for months and scores an entire channel on it against a $3.52 anchor and a $4.75 trigger; the extract’s own description row says only ‘US Average Gasoline Price’. (!) THE NEW FAILURE: the last edition printed AAA’s gasoline record and AUTMUSAG’s own $5.18 peak in adjacent sentences. They are different series and neither is evidence about the other — CORRECTED here, with both distances now stated separately: AUTMUSAG at $4.93 is 4.83% below its own war high, AAA regular at $4.1514 is 17.2% below its $5.0165 record of 14 June 2022. The four rules stand. (a) Re-verify a series DESCRIPTION on the same schedule as an inherited news claim (§9.13, §9.23). (b) The failure of a description does NOT impugn the series — AUTMUSAG is continuous, pre-dates the war, and has a stable structural spread to the DOE regular series, recomputed this edition at a war-long mean of 67.3c in a range of 60.3c to 75.9c across 27 dates where BOTH resolved. (c) DO NOT RE-BASE A SCORED SERIES ON THE EDITION THAT DISCOVERS ITS LABEL IS WRONG (§9.21, §9.56b). (d) Publish the irreconcilable numbers side by side with their denominators named (§9.19) and keep the reconciliation open. (!) It could NOT be advanced this edition: the DOE corroboration series is dark for a second week and its delayed release, due 9 September, had not published at the cut. (!) A FIFTH series is on the record and is not spliced into any of the other four: EIA’s on-highway diesel read $5.599 for 31 August against an EIA all-time high of $5.810, so on the EIA survey the diesel record has still NOT been taken while on AAA’s it was taken three times in four days and then MISSED by three hundredths of a cent on the fourth.",
+      "anchor": "Pre-war anchor (27 February 2026 close), re-verified field by field this edition and unchanged: Brent $72.48, WTI $67.02, 2-year 3.3749%, 5-year 3.5017%, 10-year 3.9375%, 30-year 4.6106%, 2s10s +55.64 bp, 5y5y 2.142%, 10-year breakeven 2.2569%, MOVE 73.38, VIX 19.86, DXY 97.608, scored gasoline $3.52, DOE gasoline ~$2.94, Henry Hub $3.063, TTF €31.23, Asia LNG ¥1,669.",
+      "intraday": "§9.56 — THE LEVEL IS NOW STRADDLED BY 62 CENTS ON ONE SIDE AND 61 ON THE OTHER, AND A DECISION IS ONE CLOSE AWAY. A trigger written on a continuation series stops being well-defined the moment the basis opens, and the failure is silent. The oil channel’s upgrade is ‘Brent above $95 sustained’. That rule was written and applied through long stretches in which CO2 and COA printed the SAME NUMBER — exactly zero basis for twenty consecutive sessions to 28 August. Brent rolled on 31 August and the basis has run 2.12, 3.08, 3.54, 3.89, 3.96, 3.84 and 3.54 on closes, with the 9 September MARK at 3.90 — the mark is labelled and not spliced into the close series. (!) The 2.12 is the roll step itself and is not read as a market move. On the 8 September close the trigger falls BETWEEN the two series for a FIFTH consecutive session: the scored continuation 62 cents below it, the active contract $2.92 above it. ‘Sustained’ has a settled operational meaning here — two consecutive confirmed closes, the test that fired US-inflation 4→5 on 31 July and cut oil 2→1 on 3 July. The active contract has now closed above $95 FIVE times in succession, so on that series the condition has been met in full since 3 September. (!) WHAT IS MATERIALLY NEW IS THAT THE SCORED SERIES IS NO LONGER FAR AWAY. Its gap has run $3.37, $2.68, $1.84, $0.62 across four closes — 82% closed — and is now SMALLER than this series’ own largest daily move within that run. The 9 September mark is $95.61, through the level. The hold rests on nothing except which of two rising series the rule happens to be written on, and this document says so plainly rather than dressing it up. Three things follow and all three remain the practice. (a) The channel is held on the scored continuation, and the alternative reading is published in the EDITION rather than buried here, because a reader checking a screen quote for ‘Brent’ will find the active contract. (b) The rule is NOT moved to whichever series would fire it — the §9.26 discipline — and there is an AFFIRMATIVE reason as well: the $95 upgrade, the $72.48 downgrade and the pre-war anchor are ALL written on the continuation, so moving one alone would make the channel incoherent in the other direction. (c) The problem was disclosed on 2 September, BEFORE the level was straddled, and is not being decided now under the pressure of a fired trigger, which is the §9.16 precedent. (!) THE PRACTICAL CONSEQUENCE, STATED IN ADVANCE SO IT CANNOT BE CHOSEN AFTER THE FACT: two CO2 closes above $95 fire the upgrade 2→3 and take the score to 28. One close does not. (!) With ONE documented exception, which this document raises against itself: the continuation closed above $95 on 23 and 24 July and no upgrade fired, because the ACTIVE contract was below the level on both days (§9.36). That escape does not recur here, since both series are above or at the level together — but the rule as applied has always carried it, and it is stated now rather than discovered later. ¶ §9.51 — CARRIED FORWARD, AND THE OBSERVATION COUNT ADVANCES TO SEVEN. When a defective test keeps returning the same answer, the defect is the finding. Threshold B has now been satisfied on SEVEN consecutive closes on ONE arming — 28 and 31 August, 1, 2, 3, 4 and 8 September, 7 September producing no close at all — and across those seven the curve has taken THREE of the four configurations available to it: bear flattener, bear steepener and bull steepener. Only a bull flattener has never occurred under the current arming. A test written to detect long-end stress has returned ARMED through all three, which means it is discriminating between curve regimes not at all. (!) THE PREVIOUS EDITION’S OBSERVATION IS SUPERSEDED AND IS WITHDRAWN RATHER THAN LEFT STANDING: it recorded the two legs DIVERGING, the 30-year margin narrowing a third consecutive close to 4.23 bp while the 10-year’s widened to 13.21. On the 8 September close BOTH legs widened — 30-year to 4.54 bp, ending the three narrowings, and 10-year to 13.82 — so the divergence lasted one observation and the sentence that called it new must not be carried a second time. That is the whole of §9.13 applied to this document’s own analysis rather than to a news claim: a paragraph inherited from the last edition is exactly as suspect as a figure inherited from it, and this one had to be rewritten rather than re-run. The open question is unchanged and is NOT decided here: whether B should test the long end’s LEVEL, as written, or its CONTRIBUTION to the curve, which is what a stress test is presumably for. ¶ Restatements and comparability. Vendor restatements are normal and make absolute levels non-comparable across editions, though directional analysis is continuous. A contract roll does the same thing to a continuation series silently, which is why the basis check is a standing check. The dual gasoline series is never re-based: AUTMUSAG is the scored reference and preserves the $3.52 anchor and the $4.75 trigger; USRFRUSA is corroboration only; AAA’s published headline is a third series and is never compared with either. The pre-war anchor is the 27 February 2026 close, re-verified field by field every edition; it is unchanged to date. FOUR OPEN ITEMS REMAIN DISCLOSED RATHER THAN DECIDED. (1) FIRST IN LINE AND NOW AT THE POINT OF DECISION: §9.56, the oil trigger’s ambiguity across the roll — 62 cents below on the scored series and $2.92 through on the active one, with FIVE consecutive closes through on the active series and a 9 September mark through it on the scored one. Two CO2 closes settle it. (2) Threshold B’s long-end LEVEL versus long-end CONTRIBUTION question, per §9.49 and §9.51, now SEVEN observations deep and spanning FOUR distinct curve shapes — a test meant to detect long-end stress has returned the same answer through every configuration available to it. (3) §9.57 and §9.61, the scored gasoline series’ reconciliation and the political channel’s GASOLINE-versus-DISTILLATE scope question, both open and neither advanceable this edition. (4) The US-inflation channel’s firing-versus-downgrade gap: the firing trigger has now held FIVE closes with the latest clearing by 1.19 bp while the downgrade sits 16.99 bp lower. The oil channel’s own separate asymmetry stands unchanged: its downgrade is written as a mediated pause AND a close at or below $72.48 while its upgrade requires a SUSTAINED break, which as written makes the downgrade’s PRICE limb easier to trip than the upgrade’s, though the downgrade also requires a mediated pause and is not therefore the easier test overall. It is $21.90 away and not live.",
+      "sequencing": "27 → 27 → 27 → 27 → 27"
+    },
+    "sequencing": "27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27 → 27"
   }
 }
