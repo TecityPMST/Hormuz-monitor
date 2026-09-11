@@ -53,18 +53,24 @@ for p in paras:
     joined = ''.join(re.findall(r'"((?:[^"\\]|\\.)*)"', p))
     texts.append(plain(joined))
 a9 = [t for t in texts if len(t) > 200]
-def find(*keys, default=''):
-    for t in a9:
-        if all(k in t for k in keys):
-            return t
+def find(*keychains, default=''):
+    """Each argument is a tuple of keys that must ALL appear; chains are tried
+    in order so a reworded A9 heading falls through instead of yielding ''."""
+    for chain in keychains:
+        if isinstance(chain, str): chain = (chain,)
+        for t in a9:
+            if all(k in t for k in chain):
+                return t
     return default
 scale_txt   = find('Six channels, each scored')
-disc_txt    = find('Confirmed closes only for market channels')
-rules_txt   = find('Rules exercised this edition')
-s956        = find('§9.56 —')
-s951        = find('§9.51 —')
-s957        = find('§9.57 —')
-restate     = find('Restatements and comparability')
+disc_txt    = find('Confirmed closes only for market channels',
+                   'Confirmed closes only', 'sustained means more than one')
+rules_txt   = find('Rules exercised this edition',
+                   '§9.19 forbids splicing', '§9.19', 'governs negatives')
+s956        = find('§9.56 —', '§9.56')
+s951        = find('§9.51 —', '§9.51')
+s957        = find('§9.57 —', ('§9.57', 'WITHDRAWN'), '§9.57')
+restate     = find('Restatements and comparability', 'Vendor restatements', 'restatements are normal')
 
 methodology = {
     'scale': scale_txt,
@@ -77,7 +83,7 @@ methodology = {
                'VIX 19.86, DXY 97.608, scored gasoline $3.52, DOE gasoline ~$2.94, Henry Hub $3.063, '
                'TTF €31.23, Asia LNG ¥1,669.'),
     'intraday': (s956 + ' ¶ ' + s951 + ' ¶ ' + restate).strip(' ¶'),
-    'sequencing': '27 → 27 → 27 → 27 → 27',
+    'sequencing': '27 → 27 → 27 → 27 → 28',
 }
 
 # ---------- splice into the block ----------
@@ -107,6 +113,9 @@ def replace_obj(src, key, newval):
     dumped = '\n'.join(('  ' + ln) if n else ln for n, ln in enumerate(dumped.split('\n')))
     return src[:j] + dumped + src[k2+1:]
 
+_empty = [k for k, v in methodology.items() if not str(v).strip()]
+if _empty:
+    print('  (!) TOOL FAILURE: methodology fields empty -> %r' % _empty)
 for key, val in [('sourceLog', sourceLog), ('protocol', protocol), ('methodology', methodology)]:
     s = replace_obj(s, key, val)
 open(path, 'w', encoding='utf-8').write(s)

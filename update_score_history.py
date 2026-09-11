@@ -40,8 +40,8 @@ PDF_DIR = os.path.join(HERE, "pdf")
 # extracted driver text ends up nonsensical). The verb itself varies in
 # casing across editions, so only the verb alternation is case-flexible.
 SCORE_RE = re.compile(
-    r"Score\s+(?:FALLS|falls|RISES|rises|HOLDS|holds|JUMPS|jumps|"
-    r"returns|Returns|crosses|Crosses)\b.{0,100}?(\d{1,2})\s*/\s*30",
+    r"[Ss]core\s+(?:FALLS|falls|RISES|rises|HOLDS|holds|JUMPS|jumps|"
+    r"MOVES|moves|returns|Returns|crosses|Crosses)\b.{0,160}?(\d{1,2})\s*/\s*30",
     re.DOTALL,
 )
 FNAME_RE = re.compile(r"(\d{4}-\d{2}-\d{2})")
